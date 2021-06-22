@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pet_harmony.iml" filepath="$PROJECT_DIR$/.idea/modules/pet_harmony.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/pet_harmony.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/pet_harmony.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-689696658/pet_harmony.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/-689696658/pet_harmony.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1146014679/pet_harmony.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/-1146014679/pet_harmony.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/783004755/pet_harmony.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/783004755/pet_harmony.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1157110190/pet_harmony.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/-1157110190/pet_harmony.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/464364778/pet_harmony.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/464364778/pet_harmony.react-native-screens.iml" />
+    </modules>
+  </component>
+</project>
