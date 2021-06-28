@@ -19,6 +19,7 @@ const TelevetScreen = props => {
   const Label = (props) => {
     return (
       <View>
+        <Header title='PET HARMONY' headerColor={'transparent'} />
         <Text>From parent</Text>
         <Text>From parent</Text>
         <Text>From parent</Text>
@@ -31,6 +32,7 @@ const TelevetScreen = props => {
     <SafeAreaView style={styles.container}>
       <Layout2
         inner={Label}
+        layoutColor={colors.RED} // color is required
       />
     </SafeAreaView>
   );

@@ -8,7 +8,7 @@ import { images } from '../constants'
 const CustomHeader = ({ title, headerColor }) => {
 
     const { headerContainer, leftHeader, rightHeader, textStyle, headerLogo } = styles;
-    const headerContainerStyle = headerColor ? [headerContainer, { backgroundColor: headerColor }] : headerContainer;
+    const headerContainerStyle = headerColor ? headerColor=='transparent' ? [headerContainer, { backgroundColor: headerColor }]: [headerContainer, { backgroundColor: headerColor , paddingHorizontal: size.SIZE.PADDING * 2, paddingVertical:size.SIZE.PADDING*1.5, }]: headerContainer;
     return (
         <View style={headerContainerStyle}>
             <View style={leftHeader}>
@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingHorizontal: size.SIZE.PADDING * 2,
-        paddingVertical:size.SIZE.PADDING*1.5,
+        // paddingHorizontal: size.SIZE.PADDING * 2,
+        // paddingVertical:size.SIZE.PADDING*1.5,
         alignItems: 'center'
     },
     textStyle: {

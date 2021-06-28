@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Dimensions } from 'react-native';
 import { colors } from '../../theme'
 import { Svg, Path } from 'react-native-svg';
-import { Button, Layout2 } from '../../components'
+import { Button, Layout2, Header } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 
@@ -15,10 +15,20 @@ const Layout1 = props => {
     // const navigatePage = () => {
     //   navigate('LiveScreen');
     // };
-
+    const Label =(props) => {
+        return (
+          <View>
+           <Header title='PET HARMONY' headerColor={'transparent'} />
+            
+          </View>
+          )
+      }
     return (
         <SafeAreaView style={styles.container}>
-            <Layout2 />
+            <Layout2
+            inner={Label}  
+            halfScreen          
+            layoutColor={colors.RED} />
 
         </SafeAreaView>
     );
@@ -29,6 +39,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "column",
         justifyContent: 'space-between',
+        
 
     },
     containerStyle: {

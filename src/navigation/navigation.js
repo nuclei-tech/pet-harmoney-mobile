@@ -14,7 +14,8 @@ import { colors } from '../theme'
 import { Header } from '../components'
 // Screen List
 import HomeScreen from '../screens/homeScreen/homeScreen';
-import TelevetScreen from '../screens/televetScreen/televetScreen'; '../screens/televetScreen/televetScreen';
+import TelevetScreen from '../screens/televetScreen/televetScreen'; 
+import ComunityScreen from '../screens/comunity/comunityScreen';
 import Layout1 from '../screens/layouts/layout1';
 // Connect redux store.
 import { useSelector, useDispatch } from 'react-redux';
@@ -57,7 +58,8 @@ function HeaderTitle() {
 const MaineStackScreen = () => {
   const userToken = useSelector(state => state.auth.token);
   return (
-    <MainStack.Navigator>
+    <MainStack.Navigator
+    >
       <MainStack.Screen
         name={'HomeScreen'}
         options={{
@@ -73,7 +75,10 @@ const MaineStackScreen = () => {
 //Other route
 const TelevetScreenStack = () => {
   return (
-    <OtherStack.Navigator>
+    <OtherStack.Navigator
+    screenOptions={{
+        headerShown: false
+      }}>
       <OtherStack.Screen
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
@@ -85,15 +90,36 @@ const TelevetScreenStack = () => {
     </OtherStack.Navigator>
   );
 };
-
-const OtherScreenStack = () => {
+const ComunityScreenStack = () => {
   return (
-    <OtherStack.Navigator>
+    <OtherStack.Navigator
+    screenOptions={{
+        headerShown: false
+      }}>
       <OtherStack.Screen
         options={{
-          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.BLUE} />),
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
           // backgroundColor: nowTheme.COLORS.WHITE
         }}
+        name="televet"
+        component={ComunityScreen}
+      />
+    </OtherStack.Navigator>
+  );
+};
+const OtherScreenStack = () => {
+  return (
+    <OtherStack.Navigator
+
+      screenOptions={{
+        headerShown: false
+      }}>
+      <OtherStack.Screen
+
+        // options={{
+        //   header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.BLUE} />),
+        //   // backgroundColor: nowTheme.COLORS.WHITE
+        // }}
         name="Layout1"
         component={Layout1}
       />
@@ -210,12 +236,17 @@ const TabNav = props => {
 
       >
         <Tab.Screen
-          name="Main"
+          name="HOME"
           component={MaineStackScreen}
         />
+       
         <Tab.Screen
           name="TELEVET"
           component={TelevetScreenStack}
+        />
+         <Tab.Screen
+          name="COMMUNITY"
+          component={ComunityScreenStack}
         />
         <Tab.Screen
           name="Other"
