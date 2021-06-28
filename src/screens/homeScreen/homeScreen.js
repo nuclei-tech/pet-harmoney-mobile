@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View,StatusBar, SafeAreaView } from 'react-native';
 import { colors } from '../../theme'
 import { Button, Header, ReminderButton  } from '../../components'
 // Connect redux store.
@@ -19,9 +19,7 @@ const HomeScreen = props => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Header title='PET HARMONY' headerColor={colors.RED} /> */}
-      {/* <StatusBar style="auto" /> */}
-
+        {/* <StatusBar  hidden={true} /> */}
       <Button title="Outline button" type={'outline'} onPress={action} />
       <View style={{ backgroundColor: colors.PURPLE, flexDirection: "row" }} >
         <Button title="Solid Button" type={'outline'} color={colors.WHITE} textColor={colors.WHITE} />

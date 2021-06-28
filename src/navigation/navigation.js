@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {NavigationContainer, StackActions} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import React, { useEffect, useState } from 'react';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import {
   StyleSheet,
@@ -10,14 +10,14 @@ import {
   Dimensions,
   Keyboard,
 } from 'react-native';
-import {colors} from '../theme'
-import {Header} from '../components'
+import { colors } from '../theme'
+import { Header } from '../components'
 // Screen List
 import HomeScreen from '../screens/homeScreen/homeScreen';
+import TelevetScreen from '../screens/televetScreen/televetScreen'; '../screens/televetScreen/televetScreen';
 import Layout1 from '../screens/layouts/layout1';
-
 // Connect redux store.
-import {useSelector, useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Tab = createBottomTabNavigator();
 const MainStack = createStackNavigator();
@@ -44,7 +44,7 @@ const headerTitleAlign = {
 function HeaderTitle() {
   return (
     <View>
-    <Text>Pet harmony</Text>
+      <Text>Pet harmony</Text>
     </View>
   );
 }
@@ -63,7 +63,7 @@ const MaineStackScreen = () => {
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
           // backgroundColor: nowTheme.COLORS.WHITE
-        }} 
+        }}
         component={HomeScreen}
       />
     </MainStack.Navigator>
@@ -71,14 +71,29 @@ const MaineStackScreen = () => {
 };
 
 //Other route
-const OtherScreenStack = () => {
+const TelevetScreenStack = () => {
   return (
     <OtherStack.Navigator>
       <OtherStack.Screen
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
           // backgroundColor: nowTheme.COLORS.WHITE
-        }} 
+        }}
+        name="televet"
+        component={TelevetScreen}
+      />
+    </OtherStack.Navigator>
+  );
+};
+
+const OtherScreenStack = () => {
+  return (
+    <OtherStack.Navigator>
+      <OtherStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.BLUE} />),
+          // backgroundColor: nowTheme.COLORS.WHITE
+        }}
         name="Layout1"
         component={Layout1}
       />
@@ -87,7 +102,7 @@ const OtherScreenStack = () => {
 };
 
 const TabNav = props => {
-  const {theme} = useSelector(state => state.theme);
+  const { theme } = useSelector(state => state.theme);
   const [didKeyboardShow, setKeyboardShow] = useState(true);
 
   useEffect(() => {
@@ -151,8 +166,8 @@ const TabNav = props => {
           },
           showLabel: false,
         }}
-        screenOptions={({route}) => ({
-          tabBarIcon: ({focused}) => {
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused }) => {
             let iconName;
             let iconStyle;
             let fontStyle;
@@ -170,7 +185,7 @@ const TabNav = props => {
               // iconStyle = focused
               //   ? true add icon styles
               //   : false add icon styles
-             // fontStyle = focused
+              // fontStyle = focused
               //   ? true //add font style
               //   : false //add font style
             }
@@ -179,22 +194,28 @@ const TabNav = props => {
                 {didKeyboardShow ? (
                   iconName === 'Main' ? (
                     <Text>Main</Text>
+                  ) : iconName === 'TELEVET' ? (
+                    <Text>Main</Text>
                   ) : (
                     <Text>Other</Text>
                   )
                 ) : null}
-                <Text style={{...styles(theme).bottemText}}>
+                <Text style={{ ...styles(theme).bottemText }}>
                   {route.name}
                 </Text>
               </View>
             );
           },
         })}
-        
-        >
+
+      >
         <Tab.Screen
           name="Main"
           component={MaineStackScreen}
+        />
+        <Tab.Screen
+          name="TELEVET"
+          component={TelevetScreenStack}
         />
         <Tab.Screen
           name="Other"

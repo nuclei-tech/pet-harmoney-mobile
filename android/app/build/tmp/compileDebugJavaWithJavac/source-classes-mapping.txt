@@ -1,14 +1,14 @@
-com/pet_harmony/MainApplication.java
- com.pet_harmony.MainApplication
- com.pet_harmony.MainApplication$1
+com/pet_harmony/ReactNativeFlipper.java
+ com.pet_harmony.ReactNativeFlipper
+ com.pet_harmony.ReactNativeFlipper$1
+ com.pet_harmony.ReactNativeFlipper$2
+ com.pet_harmony.ReactNativeFlipper$2$1
 com/pet_harmony/BuildConfig.java
  com.pet_harmony.BuildConfig
 com/pet_harmony/MainActivity.java
  com.pet_harmony.MainActivity
 com/facebook/react/PackageList.java
  com.facebook.react.PackageList
-com/pet_harmony/ReactNativeFlipper.java
- com.pet_harmony.ReactNativeFlipper
- com.pet_harmony.ReactNativeFlipper$1
- com.pet_harmony.ReactNativeFlipper$2
- com.pet_harmony.ReactNativeFlipper$2$1
+com/pet_harmony/MainApplication.java
+ com.pet_harmony.MainApplication
+ com.pet_harmony.MainApplication$1
