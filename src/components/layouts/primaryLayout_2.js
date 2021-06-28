@@ -32,9 +32,7 @@ const Layout2 = (props) => {
             case colors.PURPLE:
                 backgroundImage = images.bgPurple;
                 break;
-            case 'cover':
-                backgroundImage = images.cover;
-                break;
+
             default:
                 backgroundImage = images.bgRed
                 break;
@@ -43,8 +41,8 @@ const Layout2 = (props) => {
         return backgroundImage;
     }
     // const backgroundImage =  
-    const { fullScreen, halfScreen, betweenHalfAndFull, small } = styles
-    const backgroundStyle = props.fullScreen ? fullScreen : props.halfScreen ? halfScreen : props.small ? small : betweenHalfAndFull;
+    const { fullScreen, halfScreen,betweenHalfAndFull} = styles
+    const backgroundStyle = props.fullScreen? fullScreen : props.halfScreen? halfScreen:betweenHalfAndFull;
     console.log(backgroundStyle);
     return (
 
@@ -56,30 +54,24 @@ const Layout2 = (props) => {
 };
 
 const styles = StyleSheet.create({
-
-    fullScreen: {
+   
+    fullScreen:{
         flex: 1,
         resizeMode: 'stretch',
         padding: size.SIZE.BASE,
         height: '90%',
     },
-    halfScreen: {
+    halfScreen :{
         flex: 1,
         resizeMode: 'stretch',
         padding: size.SIZE.BASE,
         height: '60%',
     },
-    betweenHalfAndFull: {
+    betweenHalfAndFull : {
         flex: 1,
         resizeMode: 'stretch',
         padding: size.SIZE.BASE,
         height: '75%',
-    },
-    small: {
-        flex: 1,
-        resizeMode: 'stretch',
-        padding: size.SIZE.BASE,
-        height: '30%',
     }
 
 });
