@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { colors } from '../../theme'
+import { StyleSheet, Text, View,StatusBar, SafeAreaView } from 'react-native';
+import { colors, size } from '../../theme'
 import { Button, Header, ReminderButton  } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
@@ -9,19 +9,14 @@ import { navigate } from '../../navigation/navigation';
 
 const HomeScreen = props => {
   const { theme } = useSelector(state => state.theme);
+  
   const action = () => {
     console.log('in');
   }
-  // navigate the page
-  // const navigatePage = () => {
-  //   navigate('LiveScreen');
-  // };
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Header title='PET HARMONY' headerColor={colors.RED} /> */}
-      {/* <StatusBar style="auto" /> */}
-
+        {/* <StatusBar  backgroundColor={colors.RED} hidden={true} /> */}
       <Button title="Outline button" type={'outline'} onPress={action} />
       <View style={{ backgroundColor: colors.PURPLE, flexDirection: "row" }} >
         <Button title="Solid Button" type={'outline'} color={colors.WHITE} textColor={colors.WHITE} />
@@ -41,7 +36,8 @@ const HomeScreen = props => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    paddingHorizontal:size.SIZE.BASE
   },
 });
 

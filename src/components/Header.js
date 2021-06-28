@@ -7,8 +7,11 @@ import { images } from '../constants'
 
 const CustomHeader = ({ title, headerColor }) => {
 
-    const { headerContainer, leftHeader, rightHeader, textStyle, headerLogo } = styles;
-    const headerContainerStyle = headerColor ? [headerContainer, { backgroundColor: headerColor }] : headerContainer;
+    const { headerContainer, leftHeader, rightHeader, textStyle, headerLogo, header } = styles;
+    const headerContainerStyle =
+        headerColor ? headerColor == 'transparent' ? [headerContainer, { backgroundColor: headerColor }] :
+            [headerContainer, { backgroundColor: headerColor }, header] : headerContainer;
+
     return (
         <View style={headerContainerStyle}>
             <View style={leftHeader}>
@@ -22,7 +25,6 @@ const CustomHeader = ({ title, headerColor }) => {
                 <TouchableOpacity>
                     <Image source={images.profileIcon} style={headerLogo} />
                 </TouchableOpacity>
-
             </View>
         </View>
     );
@@ -32,10 +34,13 @@ const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingHorizontal: size.SIZE.PADDING * 2,
-        paddingVertical:size.SIZE.PADDING*1.5,
+        paddingBottom: size.SIZE.BASE,
         alignItems: 'center'
     },
+    header: {
+        padding: size.SIZE.BASE
+    },
+
     textStyle: {
         fontSize: size.FONT_SIZES.HEADER_TITLE,
         color: colors.WHITE,
