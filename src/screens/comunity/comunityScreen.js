@@ -32,8 +32,8 @@ const ComunityScreen = props => {
     <SafeAreaView style={styles.container}>
       <Layout2
         inner={Label}
-        small
-        layoutColor={'cover'} // color is required
+        fullScreen
+        layoutColor={colors.YELLOW} // color is required
       />
     </SafeAreaView>
   );
