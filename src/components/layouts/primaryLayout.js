@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,  Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import { colors } from '../../theme'
 import { Svg, Path, Ellipse } from 'react-native-svg';
 // Connect redux store.
@@ -24,7 +24,7 @@ const Layout = props => {
 
                 </Svg>
             </View>
-            
+
         </View>
     );
 };
@@ -40,11 +40,11 @@ const styles = StyleSheet.create({
     containerStyle: {
         height: 244
     },
-    bottomContainer: { 
-        position: 'absolute', 
-        bottom: 0, 
-        alignItems: 'center', 
-        width: '100%' 
+    bottomContainer: {
+        position: 'absolute',
+        bottom: 0,
+        alignItems: 'center',
+        width: '100%'
     }
 
 });

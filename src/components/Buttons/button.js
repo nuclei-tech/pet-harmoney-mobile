@@ -44,11 +44,11 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     width: '100%',
-    borderRadius:size.SIZE.BASE*2 ,
+    borderRadius:size.SIZE.BASE ,
     borderWidth: 2,
   },
   containerStyle:{
-    borderRadius: size.SIZE.BASE*2 ,
+    borderRadius: size.SIZE.BASE ,
   },
   textStyle: {
     fontSize: size.FONT_SIZES.BUTTON
