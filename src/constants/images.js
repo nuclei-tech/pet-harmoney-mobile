@@ -1,5 +1,6 @@
 
-const logo =  require('../assets/images/Header_LOGO.png');
+//images
+const logo = require('../assets/images/Header_LOGO.png');
 const searchIcon = require('../assets/images/SEARCH_ICON.png');
 const profileIcon = require('../assets/images/USER_PROFILE_ICON.png');
 const bgBlue = require('../assets/images/background/BG_Blue.png');
@@ -10,7 +11,20 @@ const bgGreen = require('../assets/images/background/BG_Green.png');
 const bgPurple = require('../assets/images/background/BG_Purple.png');
 const bgWhite = require('../assets/images/background/BG_White.png');
 const cover = require('../assets/images/background/cover.png');
-const profile = require('../assets/images/profile.png');
+
+//bottom icon
+const televet = require('../assets/images/bottomIcon/TELEVET.png');
+const televetPurple = require('../assets/images/bottomIcon/TELEVET_PURPLR.png');
+const homeIcon = require('../assets/images/bottomIcon/HOME_ICON.png');
+const homeIconRed = require('../assets/images/bottomIcon/HOME_ICON_RED.png');
+const shoppingIcon = require('../assets/images/bottomIcon/SHOPPING.png');
+const shoppingIconBlue = require('../assets/images/bottomIcon/SHOPPING_BLUE.png');
+const timeLine = require('../assets/images/bottomIcon/TIMELINE.png');
+const petsIcon = require('../assets/images/bottomIcon/PETS_ICON.png');
+const community = require('../assets/images/bottomIcon/COMMUNITY_ICON.png');
+const communityBlue = require('../assets/images/bottomIcon/COMMUNITY_ICON_BLUE.png');
+
+
 export default {
     logo,
     searchIcon,
@@ -23,5 +37,14 @@ export default {
     bgYellow,
     bgWhite,
     cover,
-    profile
+    community,
+    petsIcon,
+    televet,
+    homeIcon,
+    shoppingIcon,
+    timeLine,
+    homeIconRed,
+    televetPurple,
+    communityBlue,
+    shoppingIconBlue
 };

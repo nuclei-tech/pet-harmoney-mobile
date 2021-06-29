@@ -36,7 +36,8 @@ const HomeScreen = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal:size.SIZE.BASE
+    paddingHorizontal:size.SIZE.BASE,
+    backgroundColor:'white'
   },
 });
 
