@@ -39,10 +39,8 @@ const CustomButton = ({ title, onPress, type, color, customTextStyle  }) => {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    // margin: size.SIZE.MARGIN,
-    // flexDirection: 'row',
-    width: 73,
-    height: 19
+    margin: size.SIZE.MARGIN,
+    flexDirection: 'row',
   },
   buttonStyle: {
     width: '100%',
