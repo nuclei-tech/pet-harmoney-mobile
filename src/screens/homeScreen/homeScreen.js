@@ -19,16 +19,15 @@ const HomeScreen = props => {
         {/* <StatusBar  backgroundColor={colors.RED} hidden={true} /> */}
       <Button title="Outline button" type={'outline'} onPress={action} />
       <View style={{ backgroundColor: colors.PURPLE, flexDirection: "row" }} >
-        <Button title="Solid Button" type={'outline'} color={colors.WHITE} textColor={colors.WHITE} />
+        <Button title="Solid Button" type={'outline'} custonTextStyle={{color: colors.WHITE}} color={colors.WHITE} />
         <ReminderButton />
       </View>
 
       <Button title="Solid Button" color={colors.GREEN} />
 
       <Button title="Solid Button" color={colors.RED} />
-      <Button title="Solid Button" color={colors.YELLOW} textColor={colors.WHITE} />
-      <Button title="Solid Button" color={colors.YELLOW} textColor={colors.BLACK} />
-
+      <Button title="Solid Button" color={colors.YELLOW} custonTextStyle={{color: colors.WHITE}} />
+      <Button title="Solid Button" color={colors.YELLOW} custonTextStyle={{color: colors.GREEN, fontSize:9}} />
 
     </SafeAreaView>
   );

@@ -5,11 +5,11 @@ import { Header } from 'react-native-elements';
 import { size, colors } from '../theme'
 import { images } from '../constants'
 
-const CustomHeader = ({ title, headerColor }) => {
+const CustomHeader = ({ title, headerColor, customStyle }) => {
 
     const { headerContainer, leftHeader, rightHeader, textStyle, headerLogo, header } = styles;
     const headerContainerStyle =
-        headerColor ? headerColor == 'transparent' ? [headerContainer, { backgroundColor: headerColor }] :
+        headerColor ? headerColor == 'transparent' ? customStyle ? [headerContainer, customStyle, { backgroundColor: headerColor }] : [headerContainer, { backgroundColor: headerColor }] :
             [headerContainer, { backgroundColor: headerColor }, header] : headerContainer;
 
     return (
