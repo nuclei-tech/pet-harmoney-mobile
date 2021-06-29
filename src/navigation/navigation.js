@@ -1,182 +1,154 @@
+//Navigation
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import {
   StyleSheet,
   View,
   Text,
   Dimensions,
   Keyboard,
+  Image
 } from 'react-native';
 import { colors } from '../theme'
 import { Header } from '../components'
 // Screen List
 import HomeScreen from '../screens/homeScreen/homeScreen';
-import TelevetScreen from '../screens/televetScreen/televetScreen'; 
+import TelevetScreen from '../screens/televetScreen/televetScreen';
 import ComunityScreen from '../screens/comunity/comunityScreen';
+import ShoppingScreen from '../screens/shopping/shoppingScreen'
+import MyPetScreen from '../screens/MyPet/myPetScreen'
 import Layout1 from '../screens/layouts/layout1';
+import {
+ images
+} from '../constants'
 // Connect redux store.
 import { useSelector, useDispatch } from 'react-redux';
+import {currentRoute} from '../store/modules/screen/screen'
 
 const Tab = createBottomTabNavigator();
 const MainStack = createStackNavigator();
-const OtherStack = createStackNavigator();
+const ShoppingScreenStack = createStackNavigator();
+const ComunityScreenStack = createStackNavigator();
+const TelevetScreenStack = createStackNavigator();
+const MyPetScreenStack = createStackNavigator();
 const navigationRef = React.createRef();
 
-//enableScreens(true);
-
-//Navigate any route with params
 export const navigate = (name, params) => {
   navigationRef.current && navigationRef.current.navigate(name, params);
 };
 
-const headerStyle = {
-  elevation: 0,
-  shadowOpacity: 0,
-};
-
-const headerTitleAlign = {
-  headerTitleAlign: 'center',
-};
-
-//Tob bar image
-function HeaderTitle() {
-  return (
-    <View>
-      <Text>Pet harmony</Text>
-    </View>
-  );
-}
-
-//Header Right side content view
-// function HeaderRight(props) {
-// }
-
 //Main route
 const MaineStackScreen = () => {
-  const userToken = useSelector(state => state.auth.token);
   return (
     <MainStack.Navigator
     >
       <MainStack.Screen
         name={'HomeScreen'}
         options={{
-          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
-          // backgroundColor: nowTheme.COLORS.WHITE
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={HomeScreen}
       />
     </MainStack.Navigator>
   );
 };
-
 //Other route
-const TelevetScreenStack = () => {
+const TelevetScreenStacks = () => {
   return (
-    <OtherStack.Navigator
-    screenOptions={{
+    <TelevetScreenStack.Navigator
+      screenOptions={{
         headerShown: false
       }}>
-      <OtherStack.Screen
+      <TelevetScreenStack.Screen
         options={{
-          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
-          // backgroundColor: nowTheme.COLORS.WHITE
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         name="televet"
         component={TelevetScreen}
       />
-    </OtherStack.Navigator>
+    </TelevetScreenStack.Navigator>
   );
 };
-const ComunityScreenStack = () => {
+const ComunityScreenStacks = () => {
   return (
-    <OtherStack.Navigator
-    screenOptions={{
-        headerShown: false
-      }}>
-      <OtherStack.Screen
-        options={{
-          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
-          // backgroundColor: nowTheme.COLORS.WHITE
-        }}
-        name="televet"
-        component={ComunityScreen}
-      />
-    </OtherStack.Navigator>
-  );
-};
-const OtherScreenStack = () => {
-  return (
-    <OtherStack.Navigator
-
+    <ComunityScreenStack.Navigator
       screenOptions={{
         headerShown: false
       }}>
-      <OtherStack.Screen
-
-        // options={{
-        //   header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.BLUE} />),
-        //   // backgroundColor: nowTheme.COLORS.WHITE
-        // }}
-        name="Layout1"
-        component={Layout1}
+      <ComunityScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+        }}
+        name="community"
+        component={ComunityScreen}
       />
-    </OtherStack.Navigator>
+    </ComunityScreenStack.Navigator>
+  );
+};
+const ShoppingScreenStacks = () => {
+  return (
+    <ShoppingScreenStack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}>
+      <ShoppingScreenStack.Screen
+        name="Shopping"
+        component={ShoppingScreen}
+      />
+    </ShoppingScreenStack.Navigator>
   );
 };
 
+
+const MyPetScreenStacks = () => {
+  return (
+    <MyPetScreenStack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}>
+      <MyPetScreenStack.Screen
+        name="My pet"
+        component={MyPetScreen}
+      />
+    </MyPetScreenStack.Navigator>
+  );
+};
+
+
 const TabNav = props => {
   const { theme } = useSelector(state => state.theme);
-  const [didKeyboardShow, setKeyboardShow] = useState(true);
+  const { currentScreen } = useSelector(state => state.screen);
 
+  const dispatch = useDispatch()
+
+  const [didKeyboardShow, setKeyboardShow] = useState(true);
   useEffect(() => {
     Keyboard.addListener('keyboardDidShow', _keyboardDidShow);
     Keyboard.addListener('keyboardDidHide', _keyboardDidHide);
-
     return () => {
       Keyboard.removeListener('keyboardDidShow', _keyboardDidShow);
       Keyboard.removeListener('keyboardDidHide', _keyboardDidHide);
     };
   }, []);
-
   const _keyboardDidShow = () => {
     setKeyboardShow(false);
   };
-
   const _keyboardDidHide = () => {
     setKeyboardShow(true);
   };
 
-  //reset tab 
-  // const resetStackOnTabPress = ({navigation}) => ({
-  //   tabPress: e => {
-  //     const state = navigation.dangerouslyGetState();
+  let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
 
-  //     if (state) {
-  //       // Grab all the tabs that are NOT the one we just pressed
-  //       const nonTargetTabs = state.routes.filter(r => r.key !== e.target);
-
-  //       nonTargetTabs.forEach(tab => {
-  //         // Find the tab we want to reset and grab the key of the nested stack
-  //         const tabName = tab?.name;
-  //         const stackKey = tab?.state?.key;
-
-  //         if (stackKey) {
-  //           // Pass the stack key that we want to reset and use popToTop to reset it
-  //           navigation.dispatch({
-  //             ...StackActions.popToTop(),
-  //             target: stackKey,
-  //           });
-  //         }
-  //       });
-  //     }
-  //   },
-  // });
 
   return (
-    <NavigationContainer ref={navigationRef}>
+    <NavigationContainer ref={navigationRef}
+    onStateChange={() => {
+      currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
+      dispatch(currentRoute(currentRouteName))
+    }}
+    >
       <Tab.Navigator
         tabBarOptions={{
           keyboardHidesTabBar: true,
@@ -194,125 +166,112 @@ const TabNav = props => {
         }}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused }) => {
-            let iconName;
-            let iconStyle;
+            let iconName = route.name;
             let fontStyle;
-
-            if (route.name === 'Main') {
-              iconName = "Main";
-              // iconStyle = focused
-              //   ? true add icon styles
-              //   : false add icon styles
-              // fontStyle = focused
-              //   ? true //add font style
-              //   : false //add font style
-            } else if (route.name === 'Main') {
-              iconName = 'Other';
-              // iconStyle = focused
-              //   ? true add icon styles
-              //   : false add icon styles
-              // fontStyle = focused
-              //   ? true //add font style
-              //   : false //add font style
+            let homeImageIcon = images.homeIcon
+            let televetIcon = images.televet
+            let communityIcon = images.community
+            let shoppingIcon = images.shoppingIcon
+            let petIcon = images.petsIcon
+            if (route.name === 'Home') {
+              if(currentScreen === "HomeScreen" || currentScreen === null){
+                homeImageIcon = images.homeIconRed
+                fontStyle = theme.Theme.bottomIconColor.darkRed
+              }
+            } else if (route.name === 'Community') {
+              if(currentScreen === "community"){
+                communityIcon = images.communityBlue
+                fontStyle = theme.Theme.bottomIconColor.lightBlue
+              }
+            }
+            else if (route.name === 'TeleMed') {
+              if(currentScreen === "televet"){
+                televetIcon = images.televetPurple
+                fontStyle = theme.Theme.bottomIconColor.darkPurple
+              }
+            }
+            else if (route.name === 'Shopping') {
+              if(currentScreen === "Shopping"){
+                shoppingIcon = images.shoppingIconBlue
+                fontStyle = theme.Theme.bottomIconColor.lightBlue
+              }
+            }
+            else if (route.name === 'My pets') {
+              if(currentScreen === "My pet"){
+                petIcon = images.petsIcon
+              }
             }
             return (
               <View style={styles(theme).iconContanier}>
                 {didKeyboardShow ? (
-                  iconName === 'Main' ? (
-                    <Text>Main</Text>
-                  ) : iconName === 'TELEVET' ? (
-                    <Text>Main</Text>
-                  ) : (
-                    <Text>Other</Text>
+                  iconName === 'Home' ? (
+                    <Image style={styles(props).iconStyle} source={homeImageIcon}/>
+                  ) : iconName === 'Shopping' ? (
+                    <Image style={styles(props).iconStyle} source={shoppingIcon}/>
+                  ) : iconName === 'TeleMed' ? (
+                    <Image style={styles(props).iconStyle} source={televetIcon}/>
+                  ) : iconName === 'Community' ?(
+                    <Image style={styles(props).iconStyle} source={communityIcon}/>
+                  ): (
+                    <Image style={styles(props).iconStyle} source={petIcon}/>
                   )
                 ) : null}
-                <Text style={{ ...styles(theme).bottemText }}>
+                <Text style={{ ...styles(theme).bottemText,color:fontStyle }}>
                   {route.name}
                 </Text>
               </View>
             );
           },
         })}
-
       >
         <Tab.Screen
-          name="HOME"
+          name="Home"
           component={MaineStackScreen}
         />
-       
         <Tab.Screen
-          name="TELEVET"
-          component={TelevetScreenStack}
-        />
-         <Tab.Screen
-          name="COMMUNITY"
-          component={ComunityScreenStack}
+          name="Shopping"
+          component={ShoppingScreenStacks}
         />
         <Tab.Screen
-          name="Other"
-          component={OtherScreenStack}
+          name="TeleMed"
+          component={TelevetScreenStacks}
+        />
+        <Tab.Screen
+          name="Community"
+          component={ComunityScreenStacks}
+        />
+        <Tab.Screen
+          name="My pets"
+          component={MyPetScreenStacks}
         />
       </Tab.Navigator>
     </NavigationContainer>
   );
 };
-
 export const styles = props =>
   StyleSheet.create({
-    tabColor: {
-      backgroundColor: props.Theme.tab.TAB_BACKGROUND,
-    },
-    imageSize: {
-      fontSize: 25,
-      marginRight: 20,
-    },
-    popoverContanier: {
-      alignSelf: 'stretch',
-      alignItems: 'flex-start',
-      width: (Dimensions.get('window').width / 3) * 1.4,
-      borderRadius: 10,
-      borderColor: props.Theme.popover.BORDER_COLOR,
-      borderWidth: 1.2,
-      backgroundColor: props.Theme.popover.BACKGROUND_COLOR,
-    },
-    arrowStyle: {
-      marginLeft: -10,
-    },
-    popoverContent: {
-      marginVertical: 15,
-      marginHorizontal: 5,
-      fontSize: 22,
-      width: '100%',
-    },
-    popoverItem: {
-      fontSize: 14,
-      fontFamily: 'Lato-Bold',
-      color: '#FF01B4',
-    },
     bottemText: {
-      fontSize: 12,
+      fontSize: 6,
       letterSpacing: 0.6,
-      marginTop: 1,
+      marginTop: 5,
       marginBottom: 5,
+      textTransform:'uppercase',
+      fontFamily:'Aqum'
     },
     iconContanier: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
+      marginTop:5,
     },
-    mainContanier: {
-      flex: 1,
-      //width: (Dimensions.get('window').width / 100) * 65,
-      marginTop: (Dimensions.get('window').height / 100) * 8,
-      justifyContent: 'center',
-      marginHorizontal: 40,
-    },
-    mainText: {
-      fontFamily: 'Lato-Medium',
-      fontSize: 20,
-      marginBottom: 35,
-      marginTop: 5,
-    },
+    iconStyle:{
+      height:Dimensions.get('window').width/12*1,
+      width:Dimensions.get('window').width/12*1
+    }
   });
+
+
+
+
 
 export default TabNav;
