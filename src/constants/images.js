@@ -24,6 +24,10 @@ const petsIcon = require('../assets/images/bottomIcon/PETS_ICON.png');
 const community = require('../assets/images/bottomIcon/COMMUNITY_ICON.png');
 const communityBlue = require('../assets/images/bottomIcon/COMMUNITY_ICON_BLUE.png');
 
+//common icon
+const petHarmonyLogo = require('../assets/images/commonImage/petHarmonyLogo.png');
+
+
 
 export default {
     logo,
@@ -46,5 +50,6 @@ export default {
     homeIconRed,
     televetPurple,
     communityBlue,
-    shoppingIconBlue
+    shoppingIconBlue,
+    petHarmonyLogo
 };

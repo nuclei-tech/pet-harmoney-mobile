@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, View, TouchableNativeFeedback } from 'react-native';
+import { StyleSheet, View, TouchableNativeFeedback,TouchableOpacity } from 'react-native';
 import { Button } from 'react-native-elements';
 import { size, colors } from '../../theme'
 
@@ -8,7 +8,7 @@ import { size, colors } from '../../theme'
 const CustomButton = ({ title, onPress, type, color, custonTextStyle  }) => {
 
   const onPressHandle = () => {
-    console.log("innnnnn");
+    console.warn("innnnnn");
   }
 
   const { buttonStyle, textStyle, buttonContainer, containerStyle } = styles;
@@ -24,13 +24,6 @@ const CustomButton = ({ title, onPress, type, color, custonTextStyle  }) => {
         onPress={onPress ? onPress : onPressHandle}
         titleStyle={textStyles}
         containerStyle={containerStyle}
-        TouchableComponent={props => {
-          return (
-            <TouchableNativeFeedback background={TouchableNativeFeedback.Ripple("white")}>
-              {props.children}
-            </TouchableNativeFeedback>
-          )
-        }}
       />
     </View>
 
@@ -40,7 +33,7 @@ const CustomButton = ({ title, onPress, type, color, custonTextStyle  }) => {
 const styles = StyleSheet.create({
   buttonContainer: {
     margin: size.SIZE.MARGIN,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   buttonStyle: {
     width: '100%',
