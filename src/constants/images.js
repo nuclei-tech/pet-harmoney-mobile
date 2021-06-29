@@ -10,6 +10,7 @@ const bgGreen = require('../assets/images/background/BG_Green.png');
 const bgPurple = require('../assets/images/background/BG_Purple.png');
 const bgWhite = require('../assets/images/background/BG_White.png');
 const cover = require('../assets/images/background/cover.png');
+const profile = require('../assets/images/profile.png');
 export default {
     logo,
     searchIcon,
@@ -21,5 +22,6 @@ export default {
     bgPurple,
     bgYellow,
     bgWhite,
-    cover
+    cover,
+    profile
 };

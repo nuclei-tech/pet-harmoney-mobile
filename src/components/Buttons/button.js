@@ -5,7 +5,7 @@ import { Button } from 'react-native-elements';
 import { size, colors } from '../../theme'
 
 
-const CustomButton = ({ title, onPress, type, color, textColor }) => {
+const CustomButton = ({ title, onPress, type, color, custonTextStyle  }) => {
 
   const onPressHandle = () => {
     console.log("innnnnn");
@@ -13,7 +13,7 @@ const CustomButton = ({ title, onPress, type, color, textColor }) => {
 
   const { buttonStyle, textStyle, buttonContainer, containerStyle } = styles;
   const buttonStyles = color ? type == 'outline' ? [buttonStyle, { borderColor: color }] : [buttonStyle, { borderColor: color, backgroundColor: color }] : buttonStyle;
-  const textStyles = textColor ? [textStyle, { color: textColor }] : textStyle;
+  const textStyles = custonTextStyle ? [textStyle, custonTextStyle] : textStyle;
 
   return (
     <View style={buttonContainer}>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     width: '100%',
-    borderRadius:size.SIZE.BASE ,
+    borderRadius:size.SIZE.BASE*2 ,
     borderWidth: 2,
   },
   containerStyle:{

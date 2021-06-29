@@ -57,11 +57,13 @@ const styles = StyleSheet.create({
         resizeMode: 'stretch',
         padding: size.SIZE.BASE,
         height: '90%',
+        backgroundColor:colors.WHITE
     },
     halfScreen :{
         flex: 1,
         resizeMode: 'stretch',
         padding: size.SIZE.BASE,
+        backgroundColor:colors.WHITE,
         height: '60%',
     },
     betweenHalfAndFull : {
@@ -69,6 +71,7 @@ const styles = StyleSheet.create({
         resizeMode: 'stretch',
         padding: size.SIZE.BASE,
         height: '75%',
+        backgroundColor:colors.WHITE
     }
 
 });
