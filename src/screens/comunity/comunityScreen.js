@@ -30,16 +30,17 @@ const ComunityScreen = props => {
       </View>
     )
   }
+  const {container, backGroundImageContainer} = styles;
   return (
-    <SafeAreaView style={styles.container}>
-      <View flex={1} style={{ justifyContent: 'space-between' }}>
+    <SafeAreaView style={container}>
+      <View flex={1} style={backGroundImageContainer}>
         <TouchableOpacity  flex={0.6} style={{ position: 'absolute', width: '100%' }} >
           <Image resizeMode='stretch' source={images.cover} style={{ width: '100%' }} />
         </TouchableOpacity>
         <Header  title='PET HARMONY' headerColor={'transparent'} customStyle={{ padding: size.SIZE.BASE }} />
-        <View flex={0.4} style={{ alignItems: 'center' }}>
-          <Image source={images.profile} style={{ position:'absolute', top:window.height*0.2/100 ,borderRadius: 100, borderColor: colors.WHITE, borderWidth: 4, zIndex: 1 }} />
-        </View>
+        <TouchableOpacity flex={0.4} style={{ alignItems: 'center', zIndex: 2  }}>
+          <Image source={images.profile} style={{ position:'absolute', bottom:-window.height*10/100 ,borderRadius: 100, borderColor: colors.WHITE, borderWidth: 4}} />
+        </TouchableOpacity>
       </View>
 
       <View flex={3}  >
@@ -57,9 +58,11 @@ const ComunityScreen = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 4,
-    backgroundColor: colors.RED,
-    // flexDirection:"column"
+    backgroundColor: colors.WHITE
   },
+  backGroundImageContainer:{
+    justifyContent: 'space-between'
+  }
 });
 
 
