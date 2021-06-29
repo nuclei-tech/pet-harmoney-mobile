@@ -11,6 +11,9 @@ const bgPurple = require('../assets/images/background/BG_Purple.png');
 const bgWhite = require('../assets/images/background/BG_White.png');
 const cover = require('../assets/images/background/cover.png');
 const profile = require('../assets/images/profile.png');
+const reminderDetailCheckBoxIcon = require('../assets/images/CHECK_BOX.png');
+const reminderDetailCheckedCheckBoxIcon = require('../assets/images/CHECKED_CHECK_BOX.png');
+
 export default {
     logo,
     searchIcon,
@@ -23,5 +26,7 @@ export default {
     bgYellow,
     bgWhite,
     cover,
-    profile
+    profile,
+    reminderDetailCheckBoxIcon,
+    reminderDetailCheckedCheckBoxIcon
 };
