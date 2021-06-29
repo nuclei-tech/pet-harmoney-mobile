@@ -43,9 +43,9 @@ const styles = StyleSheet.create({
         padding: size.SIZE.BASE
     },
     textStyle: {
+        fontFamily:'Aqum',
         fontSize: size.FONT_SIZES.HEADER_TITLE,
         color: colors.WHITE,
-        fontWeight: 'bold',
         letterSpacing: 0.2,
         textAlign: 'center'
     },

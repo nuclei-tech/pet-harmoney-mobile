@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image, ImageBackground, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image, ImageBackground, TouchableOpacity, Dimensions, TouchableHighlight } from 'react-native';
 import { colors, size } from '../../theme'
 import { Button, Header, ReminderButton, Layout2 } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
-;
 import { navigate } from '../../navigation/navigation';
 import { images } from '../../constants';
 
+const window = Dimensions.get('window');
 const ComunityScreen = props => {
   const { theme } = useSelector(state => state.theme);
   const action = () => {
@@ -17,7 +17,8 @@ const ComunityScreen = props => {
   // const navigatePage = () => {
   //   navigate('LiveScreen');
   // };
-  const window = Dimensions.get('window');
+
+
   const Label = (props) => {
     return (
       <View>
@@ -30,20 +31,34 @@ const ComunityScreen = props => {
       </View>
     )
   }
+  const changeProfileImage = () => {
+    console.log('in');
+  }
+
+  const {
+    container,
+    backGroundImageContainer,
+    imageContainer,
+    image,
+    headerCustomStyle,
+    proPicContainer,
+    proPic,
+    whitBackgroundContainer
+  } = styles;
   return (
-    <SafeAreaView style={styles.container}>
-      <View flex={1} style={{ justifyContent: 'space-between' }}>
-        <TouchableOpacity  flex={0.6} style={{ position: 'absolute', width: '100%' }} >
-          <Image resizeMode='stretch' source={images.cover} style={{ width: '100%' }} />
+    <SafeAreaView style={container}>
+      <View flex={1} style={backGroundImageContainer}>
+        <TouchableHighlight onPress={changeProfileImage} flex={0.6} style={imageContainer} >
+          <Image resizeMode='stretch' source={images.cover} style={image} />
+        </TouchableHighlight>
+        <Header title='PET HARMONY' headerColor={'transparent'} customStyle={headerCustomStyle} />
+        <TouchableOpacity onPress={changeProfileImage} flex={0.4} style={proPicContainer}>
+          <Image source={images.profile} style={proPic} />
         </TouchableOpacity>
-        <Header  title='PET HARMONY' headerColor={'transparent'} customStyle={{ padding: size.SIZE.BASE }} />
-        <View flex={0.4} style={{ alignItems: 'center' }}>
-          <Image source={images.profile} style={{ position:'absolute', top:window.height*0.2/100 ,borderRadius: 100, borderColor: colors.WHITE, borderWidth: 4, zIndex: 1 }} />
-        </View>
       </View>
 
-      <View flex={3}  >
-        <ImageBackground  resizeMode='stretch' source={images.bgWhite} style={{ width: '100%', height: '100%' }}>
+      <View flex={3} >
+        <ImageBackground resizeMode='stretch' source={images.bgWhite} style={whitBackgroundContainer}>
           <View>
             {/* <Text>gggggggggggg</Text> */}
           </View>
@@ -57,9 +72,35 @@ const ComunityScreen = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 4,
-    backgroundColor: colors.RED,
-    // flexDirection:"column"
+    backgroundColor: colors.WHITE
   },
+  backGroundImageContainer: {
+    justifyContent: 'space-between'
+  },
+  imageContainer: {
+    position: 'absolute',
+    width: '100%'
+  },
+  image: {
+    width: '100%'
+  },
+  headerCustomStyle: {
+    padding: size.SIZE.BASE
+  },
+  proPicContainer: {
+    alignItems: 'center',
+    zIndex: 2
+  },
+  proPic: {
+    position: 'absolute',
+    bottom: -(window.height * 10 / 100), 
+    borderRadius: 100,
+    borderColor: colors.WHITE,
+    borderWidth: 4
+  },
+  whitBackgroundContainer:{ 
+    width: '100%',
+    height: '100%' }
 });
 
 
