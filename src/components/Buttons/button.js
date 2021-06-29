@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     borderRadius: size.SIZE.BASE ,
   },
   textStyle: {
+    fontFamily: 'Source Sans Pro',
     fontSize: size.FONT_SIZES.BUTTON
   }
 })

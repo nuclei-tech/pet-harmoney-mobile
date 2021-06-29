@@ -42,9 +42,9 @@ const styles = StyleSheet.create({
     },
 
     textStyle: {
+        fontFamily:'Aqum',
         fontSize: size.FONT_SIZES.HEADER_TITLE,
         color: colors.WHITE,
-        fontWeight: 'bold',
         letterSpacing: 0.2,
         textAlign: 'center'
     },
