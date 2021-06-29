@@ -70,7 +70,8 @@ const HomeScreen = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: Platform.OS === 'android' ? size.SIZE.BASE : size.SIZE.BASE / 4
+    paddingHorizontal: Platform.OS === 'android' ? size.SIZE.BASE : size.SIZE.BASE / 4,
+    backgroundColor:'white'
   },
 });
 
