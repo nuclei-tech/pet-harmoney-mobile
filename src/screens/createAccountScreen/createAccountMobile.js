@@ -1,8 +1,8 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 
-import {Button,RegisterLayout} from '../../components'
+import { Button, RegisterLayout, InputField } from '../../components'
 import { styles } from './styles';
-import { navigate } from '../../navigation/navigation';
+import {Text} from 'react-native'
 
 // Connect redux store.
 import { useSelector } from 'react-redux';
@@ -12,7 +12,16 @@ const CreateAccountMobile = props => {
 
   return (
     <RegisterLayout>
-       <Button title={'Register'} color={theme.Theme.createAccount.registerBackGroundColor} buttonStyle={styles(theme).registerButtonStyle} customTextStyle={styles(theme).buttonRegisterStyle} />
+      <InputField
+        placeholderColor={theme.Theme.createAccount.placeHolderColor}
+        placeholder={'123 - 456 - 7890'}
+      />
+      <InputField
+        placeholderColor={theme.Theme.createAccount.placeHolderColor}
+        placeholder={'.   .   .   .   .   .   .   .'}
+      />
+      <Button title={'Register'} color={theme.Theme.createAccount.registerBackGroundColor} buttonStyle={styles(theme).registerButtonStyle} customTextStyle={styles(theme).buttonRegisterStyle} />
+      <Text style={styles(theme).textAlready}>already have an account?</Text>
     </RegisterLayout>
   );
 };
