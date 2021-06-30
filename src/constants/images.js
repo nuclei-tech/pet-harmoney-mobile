@@ -6,6 +6,9 @@ const profileIcon = require('../assets/images/USER_PROFILE_ICON.png');
 const bgBlue = require('../assets/images/background/BG_Blue.png');
 const bgRed = require('../assets/images/background/BG_Red.png');
 const bgDBlue = require('../assets/images/background/BG_DBlue.png');
+const bgBlue2 = require('../assets/images/background/BG_Blue_2.png');
+const bgRed2 = require('../assets/images/background/BG_Red_2.png');
+const bgDBlue2 = require('../assets/images/background/BG_DBlue_2.png');
 const bgYellow = require('../assets/images/background/BG_Yellow.png');
 const bgGreen = require('../assets/images/background/BG_Green.png');
 const bgPurple = require('../assets/images/background/BG_Purple.png');
@@ -37,6 +40,9 @@ export default {
     bgBlue,
     bgRed,
     bgDBlue,
+    bgBlue2,
+    bgRed2,
+    bgDBlue2,
     bgGreen,
     bgPurple,
     bgYellow,

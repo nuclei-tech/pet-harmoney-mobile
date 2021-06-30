@@ -12,7 +12,7 @@ const FONT_SIZES = {
 
 const SIZE = {
     BASE : 24,
-
+    CONTAINER_PADDING:30,
 
     MARGIN: 8,
     PADDING:8,

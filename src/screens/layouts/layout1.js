@@ -27,7 +27,8 @@ const Layout1 = props => {
         <SafeAreaView style={styles.container}>
             <Layout2
             inner={Label}  
-            halfScreen          
+            halfScreen      
+            curve = {'primary'}    
             layoutColor={colors.BLUE} />
 
         </SafeAreaView>
