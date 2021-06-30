@@ -24,4 +24,8 @@ export const styles = props =>
       ...props.Theme.createAccount.buttonTextStyles,
       color: props.Theme.createAccount.registerTextColor,
     },
+    textAlready:{
+      ...props.Theme.createAccount.textAlready,
+      marginTop:4
+    }
   });

@@ -155,7 +155,6 @@ const TabNav = props => {
         dispatch(currentRoute(currentRouteName))
       }}
     >
-
       {!token ? 
        <RegisterStackScreen.Navigator
        screenOptions={{
@@ -288,8 +287,8 @@ export const styles = props =>
       marginTop: 5,
     },
     iconStyle: {
-      height: Dimensions.get('window').width / 12 * 1,
-      width: Dimensions.get('window').width / 12 * 1
+      height: Dimensions.get('window').width / 15 * 1,
+      width: Dimensions.get('window').width / 15 * 1
     }
   });
 
