@@ -98,7 +98,7 @@ const HomeScreen = props => {
           listBtnTitle={'Start Session'}
         />
 
-        <View style={{backgroundColor: colors.DARK_BLUE, paddingVertical: 20, marginTop: 10}}>
+        <View style={{backgroundColor: colors.DARK_BLUE, paddingVertical: 20, marginTop: 10, paddingHorizontal: 30}}>
           <ParagraphCard 
             cardBorderColor={colors.GREEN}
             cardBackgroundColor={'transparent'}
@@ -110,7 +110,7 @@ const HomeScreen = props => {
             imageExists
           />
         </View>
-        <View style={{backgroundColor: colors.WHITE, paddingVertical: 20, marginTop: 10}}>
+        <View style={{backgroundColor: colors.WHITE, paddingVertical: 20, marginTop: 10, paddingHorizontal: 30}}>
           <ParagraphCard 
             cardBorderColor={colors.YELLOW}
             cardBackgroundColor={'transparent'}

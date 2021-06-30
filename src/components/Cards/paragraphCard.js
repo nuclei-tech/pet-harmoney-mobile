@@ -14,8 +14,8 @@ const ParagrapghCard = ({
     imageExists
 }) => {
     return (
-        <Card containerStyle={[styles.cardContainer, {backgroundColor: cardBackgroundColor, borderColor: cardBorderColor,}]}>
-            {title && <Card.Title style={[styles.cardTitle, {textAlign: titleAlign, color: titleColor}]}>{title}</Card.Title>}
+        <View style={[styles.cardContainer, {backgroundColor: cardBackgroundColor, borderColor: cardBorderColor,}]}>
+            {title && <Text style={[styles.cardTitle, {textAlign: titleAlign, color: titleColor}]}>{title}</Text>}
             <Text style={[styles.paragraphText, {color: textColor}]}>
                 {paragraph}
             </Text>
@@ -26,7 +26,7 @@ const ParagrapghCard = ({
                     PlaceholderContent={<ActivityIndicator />}
                 />
             </View>}
-        </Card>
+        </View>
     )
 }
 
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         paddingRight: 34, 
         paddingTop: 35, 
         paddingBottom: 35,
-        maxWidth: 316,
+        width: '100%',
         minHeight: 414
     },
     cardTitle: {
