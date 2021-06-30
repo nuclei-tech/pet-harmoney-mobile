@@ -14,6 +14,6 @@ export{
     Layout,
     Layout2,
     MediumContanier,
-    RegisterLayout
+    RegisterLayout,
     ReminderDetailCard
 }
