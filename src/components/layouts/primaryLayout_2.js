@@ -1,25 +1,25 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, Dimensions } from 'react-native';
 import { colors, size } from '../../theme'
-
+import { Header } from '../../components'
 import { images } from '../../constants';
 
 const window = Dimensions.get('window');
 const Layout2 = (props) => {
-    
-    const Inner = props.inner; // Note: variable name _must_ start with a capital letter 
 
+    const Inner = props.inner; // Note: variable name _must_ start with a capital letter 
+    const curve = props.curve ? props.curve : 'primary'
     const getBackgroundImage = () => {
         let backgroundImage;
         switch (props.layoutColor) {
             case colors.RED:
-                backgroundImage = images.bgRed;
+                backgroundImage = curve == 'primary' ? images.bgRed : images.bgRed2;
                 break;
             case colors.BLUE:
-                backgroundImage = images.bgBlue;
+                backgroundImage = curve == 'primary' ? images.bgBlue : images.bgBlue2;
                 break;
             case colors.DARK_BLUE:
-                backgroundImage = images.bgDBlue;
+                backgroundImage = curve == 'primary' ? images.bgDBlue : images.bgDBlue2;
                 break;
             case colors.YELLOW:
                 backgroundImage = images.bgYellow;
@@ -37,41 +37,80 @@ const Layout2 = (props) => {
         }
         return backgroundImage;
     }
+    const { fullScreen, halfScreen, noImage, samllScreen } = styles(props)
+    const getBackgroundStyle = () => {
+        let backgroundStyle;
+        switch (props.type) {
+            case 'fullScreen':
+                backgroundStyle = fullScreen;
+                break;
+            case 'halfScreen':
+                backgroundStyle = halfScreen;
+                break;
+            case 'small':
+                backgroundStyle = samllScreen;
+                break;
 
-    const { fullScreen, halfScreen,betweenHalfAndFull} = styles
-    const backgroundStyle = props.fullScreen? fullScreen : props.halfScreen? halfScreen:betweenHalfAndFull;
+            default:
+                backgroundStyle = fullScreen;
+                break;
+        }
+        return backgroundStyle;
+    }
+
+    const backgroundStyle = getBackgroundStyle();
 
     return (
+        <View flex={1}>
+            {props.type ? (
+            <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={getBackgroundStyle()}>
+                <Header title='PET HARMONY' headerColor={'transparent'} />
+                {props.children}
+            </ImageBackground>
+            ) : (<View  style={noImage}>
+                <Header title='PET HARMONY' headerColor={'transparent'} />
+                {props.children}
+            </View>)}
 
-        <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={backgroundStyle}>
-            {props.inner ? (<Inner>Foo</Inner>) : (<View></View>)}
-        </ImageBackground>
+        </View>
+
 
     );
 };
 
-const styles = StyleSheet.create({
-   
-    fullScreen:{
+const styles = (props) => StyleSheet.create({
+
+    noImage: {
         flex: 1,
         resizeMode: 'stretch',
-        padding: size.SIZE.BASE,
+        padding: size.SIZE.CONTAINER_PADDING,
+        paddingBottom: 0,
         height: '90%',
-        backgroundColor:colors.WHITE
+        backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE
     },
-    halfScreen :{
+    fullScreen: {
         flex: 1,
         resizeMode: 'stretch',
-        padding: size.SIZE.BASE,
-        backgroundColor:colors.WHITE,
+        padding: size.SIZE.CONTAINER_PADDING,
+        paddingBottom: 0,
+        height: '90%',
+        backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE
+    },
+    samllScreen: {
+        flex: 1,
+        resizeMode: 'stretch',
+        padding: size.SIZE.CONTAINER_PADDING,
+        backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE,
         height: '60%',
+        paddingBottom: 0,
     },
-    betweenHalfAndFull : {
+    halfScreen: {
         flex: 1,
         resizeMode: 'stretch',
-        padding: size.SIZE.BASE,
+        padding: size.SIZE.CONTAINER_PADDING,
         height: '75%',
-        backgroundColor:colors.WHITE
+        paddingBottom: 0,
+        backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE
     }
 
 });

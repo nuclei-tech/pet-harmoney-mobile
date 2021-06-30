@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   headerCustomStyle: {
-    padding: size.SIZE.BASE
+    padding: size.SIZE.CONTAINER_PADDING
   },
   proPicContainer: {
     alignItems: 'center',

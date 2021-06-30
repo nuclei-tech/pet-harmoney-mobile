@@ -46,7 +46,9 @@ export const navigate = (name, params) => {
 const MaineStackScreen = () => {
   return (
     <MainStack.Navigator
-    >
+    screenOptions={{
+      headerShown: false
+    }}>
       <MainStack.Screen
         name={'HomeScreen'}
         options={{
@@ -143,7 +145,7 @@ const TabNav = props => {
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = null
+  let token = 1
 
 
   return (

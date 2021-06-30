@@ -19,21 +19,28 @@ const TelevetScreen = props => {
   const Label = (props) => {
     return (
       <View>
-        <Header title='PET HARMONY' headerColor={'transparent'} />
+        {/* <Header title='PET HARMONY' headerColor={'transparent'} /> */}
         <Text>From parent</Text>
         <Text>From parent</Text>
         <Text>From parent</Text>
         <Text>From parent</Text>
-        
+
       </View>
-      )
+    )
   }
   return (
     <SafeAreaView style={styles.container}>
       <Layout2
         inner={Label}
+        backgroundColor={colors.DARK_BLUE}
         layoutColor={colors.RED} // color is required
-      />
+      >
+          <Text>From parent</Text>
+          <Text>From parent</Text>
+          <Text>From parent</Text>
+          <Text>From parent</Text>
+
+      </Layout2>
     </SafeAreaView>
   );
 };

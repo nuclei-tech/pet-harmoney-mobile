@@ -12,28 +12,15 @@ const MyPetScreen = props => {
   const action = () => {
     console.log('in');
   }
-  // navigate the page
-  // const navigatePage = () => {
-  //   navigate('LiveScreen');
-  // };
-  const Label = (props) => {
-    return (
-      <View>
-        <Header title='PET HARMONY' headerColor={'transparent'} />
-        <Text>From parent</Text>
-        <Text>From parent</Text>
-        <Text>From parent</Text>
-        <Text>From parent</Text>
-        
-      </View>
-      )
-  }
+
   return (
     <SafeAreaView style={styles.container}>
       <Layout2
-        inner={Label}
+        type={'small'}
         layoutColor={colors.RED} // color is required
-      />
+      >
+        <Text>From parent</Text>
+      </Layout2>
     </SafeAreaView>
   );
 };
