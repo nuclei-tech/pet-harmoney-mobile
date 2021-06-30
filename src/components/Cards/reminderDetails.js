@@ -73,7 +73,7 @@ const ReminderDetailsCard = ({
                     <ListItem.Title style={[styles.descriptionStyle, {color: descriptionColor}, listButtonExist && {fontSize: size.FONT_SIZES.DETAIL_CARD_TITLE_SMALL}]}>{item.description}</ListItem.Title>
                 </ListItem.Content>
                 {listButtonExist && <ListItem.Content>
-                    <Button onPress={btnPressHandler} customTextStyle={{color: listBtnTxtColor, fontSize: 9}} textColor={listBtnTxtColor} title={listBtnTitle} color={listBtnColor} />
+                    <Button onPress={btnPressHandler} buttonType={'small'} customTextStyle={{color: listBtnTxtColor}} title={listBtnTitle} color={listBtnColor} />
                 </ListItem.Content>}
             </ListItem>
             

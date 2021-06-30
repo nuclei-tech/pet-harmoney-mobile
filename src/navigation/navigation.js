@@ -143,7 +143,7 @@ const TabNav = props => {
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = 1
+  let token = null
 
 
   return (
