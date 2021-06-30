@@ -26,7 +26,8 @@ const CreateAccountScreen = props => {
     <SafeAreaView style={styles.container}>
       <Layout2
         inner={Label}
-        layoutColor={colors.RED} // color is required
+        curve = {'secondary'} 
+        layoutColor={colors.BLUE} // color is required
       />
     </SafeAreaView>
   );
