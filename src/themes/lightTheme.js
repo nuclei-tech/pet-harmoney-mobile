@@ -26,6 +26,7 @@ const Theme = {
     registerTextColor:'#0F1E51',
     mainTextColor:'#FFCA27',
     registerBackGroundColor:"#FFCA27",
+    placeHolderColor:"#46E4C1",
     mainText: {
       fontFamily: "Aqum",
       fontSize: 18,
@@ -38,6 +39,12 @@ const Theme = {
       fontSize: 17,
       lineHeight: 21,
       letterSpacing: 0.2,
+    },
+    textAlready:{
+      fontFamily: "SourceSansPro-Regular",
+      fontSize: 12,
+      lineHeight: 15,
+      color:'#46E4C1'
     }
   },
 
@@ -53,6 +60,18 @@ const Theme = {
       fontSize: 9,
       fontWeight:'bold',
     }
+  },
+
+   //default input style
+   defaultInputStyle:{
+    textStyle: {
+      fontFamily: "SourceSansPro-Black",
+      fontWeight:'bold',
+      fontSize: 17,
+    },
+    boderColor:'#46E4C1',
+    textColor:'#46E4C1',
+    placeHolderColor:"#46E4C1",
   }
 };
 

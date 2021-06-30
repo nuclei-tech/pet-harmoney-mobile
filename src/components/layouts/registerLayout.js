@@ -35,8 +35,9 @@ const styles = (props) => StyleSheet.create({
       },
       mainText: {
         ...props.Theme.createAccount.mainText,
-        marginTop: 31,
-        marginBottom: 31,
+        paddingTop: 22.5,
+        paddingBottom: 22.5,
+        marginBottom:8
       },
       buttonStyle: {
         borderColor: props.Theme.createAccount.borderColor,
