@@ -46,7 +46,9 @@ export const navigate = (name, params) => {
 const MaineStackScreen = () => {
   return (
     <MainStack.Navigator
-    >
+    screenOptions={{
+      headerShown: false
+    }}>
       <MainStack.Screen
         name={'HomeScreen'}
         options={{

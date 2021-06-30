@@ -10,10 +10,15 @@ import { navigate } from '../../navigation/navigation';
 const CreateAccountScreen = props => {
   const { theme } = useSelector(state => state.theme);
 
-  const Label = (props) => {
-    return (
+ 
+  return (
+    <SafeAreaView style={styles.container}>
+      <Layout2
+      type={'halfScreen'}
+        curve = {'secondary'} 
+        layoutColor={colors.BLUE} // color is required
+      >
       <View>
-        <Header title='PET HARMONY' headerColor={'transparent'} />
         <Text>From parent</Text>
         <Text>From parent</Text>
         <Text>From parent</Text>
@@ -25,15 +30,7 @@ const CreateAccountScreen = props => {
         <Text>From parent</Text>
         
       </View>
-      )
-  }
-  return (
-    <SafeAreaView style={styles.container}>
-      <Layout2
-        inner={Label}
-        curve = {'secondary'} 
-        layoutColor={colors.BLUE} // color is required
-      />
+      </Layout2>
     </SafeAreaView>
   );
 };

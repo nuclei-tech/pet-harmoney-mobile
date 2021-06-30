@@ -38,7 +38,8 @@ const CustomButton = ({ title, onPress, type, color, textColor }) => {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    margin: size.SIZE.MARGIN
+    margin: size.SIZE.BASE,
+    width:size.SIZE.BASE*2.5
   },
   containerStyle:{
     borderRadius: size.SIZE.BASE*2,
