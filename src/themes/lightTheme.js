@@ -33,11 +33,25 @@ const Theme = {
       letterSpacing: 0.2,
       color:"#FFCA27",
     },
-    buttonTextColor:{
+    buttonTextStyles:{
       fontFamily: "SourceSansPro-Black",
       fontSize: 17,
       lineHeight: 21,
       letterSpacing: 0.2,
+    }
+  },
+
+  //default button style
+  defaultButtonStyle:{
+    textStyle: {
+      fontFamily: 'Source Sans Pro',
+      fontSize: 17,
+      fontWeight:'bold',
+    },
+    smallTextStyle: {
+      fontFamily: 'Source Sans Pro',
+      fontSize: 9,
+      fontWeight:'bold',
     }
   }
 };

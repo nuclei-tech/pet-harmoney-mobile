@@ -1,44 +1,73 @@
-
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { size } from '../../theme'
 
+import { useSelector } from 'react-redux';
 
-const CustomButton = ({ title, onPress, type, color, custonTextStyle, buttonContainStyle }) => {
 
-  const { buttonStyle, textStyle } = styles;
-  const buttonStyles = color ? type == 'outline' ? [buttonStyle, buttonContainStyle, { borderColor: color }] : [buttonStyle, buttonContainStyle, { borderColor: color, backgroundColor: color }] : [buttonStyle, buttonContainStyle];
-  const textStyles = custonTextStyle ? [textStyle, custonTextStyle] : textStyle;
+const CustomButton = (props) => {
+  const { theme } = useSelector(state => state.theme);
+  const { title, onPress, type, color, customTextStyle, buttonContainStyle,buttonType} = props
+  const { buttonStyle, textStyle,smallButtonStyle,smallTextStyle,borderColorAdd,backGroundAndBorder } = styles(props,theme);
+  
+  let buttonStyles 
+  let textStyles 
 
-  return (
+  if(buttonType == 'small'){
+    buttonStyles = color ? type == 'outline' ? [smallButtonStyle, buttonContainStyle, borderColorAdd] : [smallButtonStyle, buttonContainStyle,backGroundAndBorder] : [smallButtonStyle, buttonContainStyle];
+    textStyles = customTextStyle ? [smallTextStyle, customTextStyle] : smallTextStyle;
+  }else{
+    buttonStyles = color ? type == 'outline' ? [buttonStyle, buttonContainStyle, borderColorAdd] : [buttonStyle, buttonContainStyle,backGroundAndBorder] : [buttonStyle, buttonContainStyle];
+    textStyles = customTextStyle ? [textStyle, customTextStyle] : textStyle;
+  }
+
+return (
     <TouchableOpacity style={buttonStyles} onPress={onPress ? onPress : null}>
       <Text style={textStyles}>
         {title}
       </Text>
     </TouchableOpacity>
-
-  );
+  )
 };
 
-const styles = StyleSheet.create({
+const styles =(props,theme) => StyleSheet.create({
+  borderColorAdd:{
+    borderColor: props.color
+  },
+  backGroundAndBorder:{
+    borderColor: props.color,
+    backgroundColor: props.color
+  },
   buttonStyle: {
     width: '100%',
-    borderRadius: size.SIZE.BASE * 2,
-    borderWidth: 2,
+    borderRadius: 20,
+    borderWidth: 4,
     marginTop: 8,
-    marginBottom: 8
+    marginBottom: 8,
+    paddingTop: 10.5,
+    paddingBottom: 10.5,
+  },
+  smallButtonStyle: {
+    width: '100%',
+    borderRadius: 20,
+    borderWidth: 4,
+    marginTop: 8,
+    marginBottom: 12,
+    paddingTop: 5,
+    paddingBottom: 5,
   },
   containerStyle: {
     borderRadius: size.SIZE.BASE,
   },
   textStyle: {
-    fontFamily: 'Source Sans Pro',
-    fontSize: size.FONT_SIZES.BUTTON,
-    fontWeight:'bold',
-    paddingTop: 10.5,
-    paddingBottom: 10.5,
+    ...theme.Theme.defaultButtonStyle.textStyle,
     textAlign: 'center',
-    textTransform:'uppercase'
+    textTransform:props.textTransform ? props.textTransform : 'none'
+  },
+  smallTextStyle: {
+    ...theme.Theme.defaultButtonStyle.smallTextStyle,
+    textAlign: 'center',
+    textTransform:props.textTransform ? props.textTransform : 'none'
   }
 })
 export default CustomButton;

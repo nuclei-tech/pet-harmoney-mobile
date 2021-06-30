@@ -12,7 +12,7 @@ const CreateAccountMobile = props => {
 
   return (
     <RegisterLayout>
-       <Button title={'Register'} color={theme.Theme.createAccount.registerBackGroundColor} buttonStyle={styles(theme).registerButtonStyle} custonTextStyle={styles(theme).buttonRegisterStyle} />
+       <Button title={'Register'} color={theme.Theme.createAccount.registerBackGroundColor} buttonStyle={styles(theme).registerButtonStyle} customTextStyle={styles(theme).buttonRegisterStyle} />
     </RegisterLayout>
   );
 };
