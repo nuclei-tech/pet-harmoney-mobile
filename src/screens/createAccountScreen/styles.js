@@ -3,13 +3,6 @@ import { Colors } from '../../../config';
 
 export const styles = props =>
   StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: props.Theme.createAccount.backGroundColor,
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexDirection:'column'
-    },
     mainText: {
       ...props.Theme.createAccount.mainText,
       marginTop: 31,
@@ -22,5 +15,13 @@ export const styles = props =>
     buttonTextStyle: {
       ...props.Theme.createAccount.buttonTextColor,
       color: props.Theme.createAccount.borderColor,
-    }
+    },
+    registerButtonStyle: {
+      borderColor: props.Theme.createAccount.registerBackGroundColor,
+      borderWidth: 4
+    },
+    buttonRegisterStyle: {
+      ...props.Theme.createAccount.buttonTextColor,
+      color: props.Theme.createAccount.registerTextColor,
+    },
   });

@@ -23,7 +23,9 @@ const Theme = {
     buttonColor:'#46E4C1',
     borderColor:'#46E4C1',
     backGroundColor:'#0F1E51',
+    registerTextColor:'#0F1E51',
     mainTextColor:'#FFCA27',
+    registerBackGroundColor:"#FFCA27",
     mainText: {
       fontFamily: "Aqum",
       fontSize: 18,

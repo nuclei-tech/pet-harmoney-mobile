@@ -20,6 +20,7 @@ import ComunityScreen from '../screens/comunity/comunityScreen';
 import ShoppingScreen from '../screens/shopping/shoppingScreen'
 import MyPetScreen from '../screens/MyPet/myPetScreen'
 import CreateAccountScreen from '../screens/createAccountScreen/createAccountScreen'
+import CreateAccountMobile from '../screens/createAccountScreen/createAccountMobile'
 import Layout1 from '../screens/layouts/layout1';
 import {
   images
@@ -142,7 +143,7 @@ const TabNav = props => {
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = null
+  let token = 1
 
 
   return (
@@ -161,6 +162,10 @@ const TabNav = props => {
        <RegisterStackScreen.Screen
          name="Create Account"
          component={CreateAccountScreen}
+       />
+       <RegisterStackScreen.Screen
+         name="Create Account Mobile"
+         component={CreateAccountMobile}
        />
      </RegisterStackScreen.Navigator> 
      :
