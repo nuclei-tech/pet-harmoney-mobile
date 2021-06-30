@@ -7,7 +7,9 @@ import MediumContanier from './contaniers/mediumContanier'
 import RegisterLayout from './layouts/registerLayout'
 import ReminderDetailCard from "./Cards/reminderDetails";
 import ParagraphCard from './Cards/paragraphCard'
+import IconHeader from './IconHeader/iconHeader'
 import InputField from './layouts/textField'
+
 
 export{
     ReminderButton,
@@ -19,5 +21,6 @@ export{
     RegisterLayout,
     ReminderDetailCard,
     ParagraphCard,
+    IconHeader,
     InputField
 }

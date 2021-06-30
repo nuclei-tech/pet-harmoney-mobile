@@ -19,6 +19,12 @@ const profile = require('../assets/images/profile.png');
 const reminderDetailCheckBoxIcon = require('../assets/images/CHECK_BOX.png');
 const reminderDetailCheckedCheckBoxIcon = require('../assets/images/CHECKED_CHECK_BOX.png');
 const termsDownArrow = require('../assets/images/DOWN_ARROW.png');
+const careTaker = require('../assets/images/CARE_TAKER.png');
+const pets = require('../assets/images/PETS.png');
+const records = require('../assets/images/RECORDS.png');
+const sessions = require('../assets/images/SESSIONS.png');
+const medication = require('../assets/images/MEDICATION.png');
+const shopping = require('../assets/images/SHOPPING.png');
 
 //bottom icon
 const televet = require('../assets/images/bottomIcon/TELEVET.png');
@@ -68,5 +74,11 @@ export default {
     communityBlue,
     shoppingIconBlue,
     petHarmonyLogo,
-    termsDownArrow
+    termsDownArrow,
+    careTaker,
+    pets,
+    sessions,
+    records,
+    medication,
+    shopping
 };
