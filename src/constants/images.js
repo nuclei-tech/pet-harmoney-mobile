@@ -12,6 +12,11 @@ const bgPurple = require('../assets/images/background/BG_Purple.png');
 const bgWhite = require('../assets/images/background/BG_White.png');
 const cover = require('../assets/images/background/cover.png');
 
+const profile = require('../assets/images/profile.png');
+const reminderDetailCheckBoxIcon = require('../assets/images/CHECK_BOX.png');
+const reminderDetailCheckedCheckBoxIcon = require('../assets/images/CHECKED_CHECK_BOX.png');
+
+
 //bottom icon
 const televet = require('../assets/images/bottomIcon/TELEVET.png');
 const televetPurple = require('../assets/images/bottomIcon/TELEVET_PURPLR.png');
@@ -41,6 +46,11 @@ export default {
     bgYellow,
     bgWhite,
     cover,
+
+    profile,
+    reminderDetailCheckBoxIcon,
+    reminderDetailCheckedCheckBoxIcon,
+
     community,
     petsIcon,
     televet,
