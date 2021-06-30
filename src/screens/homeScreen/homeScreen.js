@@ -2,12 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View,StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
 import { colors, size } from '../../theme'
 import InputField from '../../layout/forms/textField'
-import { Button, Header, ReminderButton, ReminderDetailCard  } from '../../components'
+import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard  } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 ;
 import { navigate } from '../../navigation/navigation';
-import {reminderDetails} from '../../constants'
+import {reminderDetails, termsAndConditions, ratingComment} from '../../constants'
 
 const HomeScreen = props => {
   const { theme } = useSelector(state => state.theme);
@@ -15,6 +15,7 @@ const HomeScreen = props => {
   const action = () => {
     console.log('in');
   }
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -96,6 +97,27 @@ const HomeScreen = props => {
           listBtnTxtColor={colors.DARK_BLUE}
           listBtnTitle={'Start Session'}
         />
+
+        <View style={{backgroundColor: colors.DARK_BLUE, paddingVertical: 20, marginTop: 10, paddingHorizontal: 30}}>
+          <ParagraphCard 
+            cardBorderColor={colors.GREEN}
+            cardBackgroundColor={'transparent'}
+            titleColor={colors.GREEN}
+            textColor={colors.WHITE}
+            title={'Terms and Conditions'}
+            titleAlign={'left'}
+            paragraph={termsAndConditions}
+            imageExists
+          />
+        </View>
+        <View style={{backgroundColor: colors.WHITE, paddingVertical: 20, marginTop: 10, paddingHorizontal: 30}}>
+          <ParagraphCard 
+            cardBorderColor={colors.YELLOW}
+            cardBackgroundColor={'transparent'}
+            textColor={colors.BLACK}
+            paragraph={ratingComment}
+          />
+        </View>
       </ScrollView>
 
     </SafeAreaView>

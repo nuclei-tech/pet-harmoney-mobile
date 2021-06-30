@@ -15,7 +15,7 @@ const cover = require('../assets/images/background/cover.png');
 const profile = require('../assets/images/profile.png');
 const reminderDetailCheckBoxIcon = require('../assets/images/CHECK_BOX.png');
 const reminderDetailCheckedCheckBoxIcon = require('../assets/images/CHECKED_CHECK_BOX.png');
-
+const termsDownArrow = require('../assets/images/DOWN_ARROW.png');
 
 //bottom icon
 const televet = require('../assets/images/bottomIcon/TELEVET.png');
@@ -61,5 +61,6 @@ export default {
     televetPurple,
     communityBlue,
     shoppingIconBlue,
-    petHarmonyLogo
+    petHarmonyLogo,
+    termsDownArrow
 };

@@ -1,7 +1,9 @@
 import images from "./images";
-import {reminderDetails} from './dummyData'
+import {reminderDetails, termsAndConditions, ratingComment} from './dummyData'
 
 export {
     images,
-    reminderDetails
+    reminderDetails,
+    termsAndConditions,
+    ratingComment
 }
