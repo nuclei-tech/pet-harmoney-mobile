@@ -53,8 +53,8 @@ const styles =(props,theme) => StyleSheet.create({
     borderWidth: 4,
     marginTop: 8,
     marginBottom: 12,
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingTop: 4,
+    paddingBottom: 4,
   },
   containerStyle: {
     borderRadius: size.SIZE.BASE,

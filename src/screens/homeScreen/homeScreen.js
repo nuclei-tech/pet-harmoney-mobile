@@ -34,20 +34,29 @@ const HomeScreen = props => {
           <Button title="Solid Button" color={colors.GREEN} />
 
           <Button title="Solid Button" color={colors.RED} />
-          <Button title="Solid Button" color={colors.YELLOW} custonTextStyle={{ color: colors.WHITE }} />
-          <Button title="Solid Button" color={colors.YELLOW} custonTextStyle={{ color: colors.GREEN, fontSize: 9 }} />
+          <Button title="Solid Button" textTransform={'lowercase'}color={colors.YELLOW} custonTextStyle={{ color: colors.WHITE }} />
+          <Button title="Solid Button" textTransform={'uppercase'} color={colors.YELLOW} custonTextStyle={{ color: colors.GREEN, fontSize: 9 }} />
 
-          <View style={{ flex: 12, flexDirection: 'row'}}>
-          <View style={{ flex: 8 }}>
+          <View>
             <InputField
               customMainContanier={{ backgroundColor: '#0F1E51' }}
               placeholderColor={theme.Theme.createAccount.placeHolderColor}
               placeholder={'123 - 456 - 7890'}
             />
-          </View>
-          <View style={{ flex: 4 ,marginLeft:4}}>
+        </View>
+
+        <View style={{ flex: 12, flexDirection: 'row'}}>
+          <View style={{ flex: 8 }}>
             <InputField
-              customMainContanier={{ backgroundColor: '#0F1E51' }}
+              customMainContanier={{ backgroundColor: '#ffffff',borderColor:'#ffffff' }}
+              placeholderColor={theme.Theme.createAccount.placeHolderColor}
+              placeholder={'123 - 456 - 7890'}
+            />
+          </View>
+          <View style={{ flex: 4 ,marginLeft:10}}>
+            <InputField
+              customMainContanier={{ backgroundColor: '#ffffff',borderColor:'#ffffff' }}
+              customTextStyle={{textAlign:'left'}}
               placeholderColor={theme.Theme.createAccount.placeHolderColor}
               placeholder={'123'}
             />
