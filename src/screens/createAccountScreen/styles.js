@@ -13,7 +13,7 @@ export const styles = props =>
       borderWidth: 4
     },
     buttonTextStyle: {
-      ...props.Theme.createAccount.buttonTextColor,
+      ...props.Theme.createAccount.buttonTextStyles,
       color: props.Theme.createAccount.borderColor,
     },
     registerButtonStyle: {
@@ -21,7 +21,7 @@ export const styles = props =>
       borderWidth: 4
     },
     buttonRegisterStyle: {
-      ...props.Theme.createAccount.buttonTextColor,
+      ...props.Theme.createAccount.buttonTextStyles,
       color: props.Theme.createAccount.registerTextColor,
     },
   });

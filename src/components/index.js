@@ -6,6 +6,7 @@ import Layout2 from "./layouts/primaryLayout_2"
 import MediumContanier from './contaniers/mediumContanier'
 import RegisterLayout from './layouts/registerLayout'
 import ReminderDetailCard from "./Cards/reminderDetails";
+import ParagraphCard from './Cards/paragraphCard'
 
 export{
     ReminderButton,
@@ -15,5 +16,6 @@ export{
     Layout2,
     MediumContanier,
     RegisterLayout,
-    ReminderDetailCard
+    ReminderDetailCard,
+    ParagraphCard
 }
