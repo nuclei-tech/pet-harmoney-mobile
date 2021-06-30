@@ -7,15 +7,9 @@ import { useSelector } from 'react-redux';
 ;
 import { navigate } from '../../navigation/navigation';
 
-const ShoppingScreen = props => {
+const CreateAccountScreen = props => {
   const { theme } = useSelector(state => state.theme);
-  const action = () => {
-    console.log('in');
-  }
-  // navigate the page
-  // const navigatePage = () => {
-  //   navigate('LiveScreen');
-  // };
+
   const Label = (props) => {
     return (
       <View>
@@ -51,4 +45,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default ShoppingScreen;
+export default CreateAccountScreen;
