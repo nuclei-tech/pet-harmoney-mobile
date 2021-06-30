@@ -5,12 +5,13 @@ import { Header } from 'react-native-elements';
 import { size, colors } from '../theme'
 import { images } from '../constants'
 
-const CustomHeader = ({ title, headerColor }) => {
-    const { headerContainer, leftHeader, rightHeader, textStyle, headerLogo, header } = styles;
-    const headerContainerStyle =
+const CustomHeader = ({ title, headerColor, customStyle }) => {
+    const { headerContainer, leftHeader, rightHeader, textStyle, headerLogo, header,headerIcon } = styles;
+    const headerContainee =
         headerColor ? headerColor == 'transparent' ? [headerContainer, { backgroundColor: headerColor }] :
             [headerContainer, { backgroundColor: headerColor }, header] : headerContainer;
     const headerMainStyle = {backgroundColor: headerColor}
+    const headerContainerStyle = customStyle ? [headerContainee,customStyle]:headerContainer
     return (
         <View style={headerMainStyle}>
             <SafeAreaView>
@@ -21,10 +22,10 @@ const CustomHeader = ({ title, headerColor }) => {
                     </View>
                     <View style={rightHeader}>
                         <TouchableOpacity>
-                            <Image source={images.searchIcon} style={headerLogo} />
+                            <Image source={images.searchIcon} style={headerIcon} />
                         </TouchableOpacity>
                         <TouchableOpacity>
-                            <Image source={images.profileIcon} style={headerLogo} />
+                            <Image source={images.profileIcon} style={headerIcon} />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -50,6 +51,13 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     headerLogo: {
+        width:29,
+        height:33.1,
+        marginRight: size.SIZE.MARGIN
+    },
+    headerIcon:{
+        width:24,
+        height:24,
         marginRight: size.SIZE.MARGIN
     },
     leftHeader: {

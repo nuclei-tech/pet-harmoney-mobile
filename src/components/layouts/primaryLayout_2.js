@@ -83,7 +83,7 @@ const styles = (props) => StyleSheet.create({
     noImage: {
         flex: 1,
         resizeMode: 'stretch',
-        padding: size.SIZE.BASE,
+        padding: size.SIZE.CONTAINER_PADDING,
         paddingBottom: 0,
         height: '90%',
         backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE
@@ -91,7 +91,7 @@ const styles = (props) => StyleSheet.create({
     fullScreen: {
         flex: 1,
         resizeMode: 'stretch',
-        padding: size.SIZE.BASE,
+        padding: size.SIZE.CONTAINER_PADDING,
         paddingBottom: 0,
         height: '90%',
         backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE
@@ -99,7 +99,7 @@ const styles = (props) => StyleSheet.create({
     samllScreen: {
         flex: 1,
         resizeMode: 'stretch',
-        padding: size.SIZE.BASE,
+        padding: size.SIZE.CONTAINER_PADDING,
         backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE,
         height: '60%',
         paddingBottom: 0,
@@ -107,7 +107,7 @@ const styles = (props) => StyleSheet.create({
     halfScreen: {
         flex: 1,
         resizeMode: 'stretch',
-        padding: size.SIZE.BASE,
+        padding: size.SIZE.CONTAINER_PADDING,
         height: '75%',
         paddingBottom: 0,
         backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE
