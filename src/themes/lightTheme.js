@@ -142,6 +142,15 @@ const Theme = {
       fontSize: 14,
       lineHeight: 19,
     }
+  },
+
+  //tab icon header font styles
+  tabIconHeaderFontStyles: {
+        fontFamily: 'Aqum',
+        fontWeight: 'bold',
+        fontSize: 6,
+        lineHeight: 6,
+        color: colors.WHITE
   }
 };
 

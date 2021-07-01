@@ -67,3 +67,22 @@ export const myCardList = [
         price:'X.XX'
     }
 ];
+
+export const iconTabDetails = [
+    {
+        image: images.sessions,
+        title: 'Sessions'
+    },
+    {
+        image: images.records,
+        title: 'Records'
+    },
+    {
+        image: images.pets,
+        title: 'Pets'
+    },
+    {
+        image: images.medication,
+        title: 'Medication'
+    }
+];

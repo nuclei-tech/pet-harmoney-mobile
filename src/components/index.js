@@ -11,6 +11,8 @@ import IconHeader from './IconHeader/iconHeader'
 import InputField from './layouts/textField'
 import Paragraph from './Paragraph/paragraph'
 import MyCardList from './Cards/myCartList'
+import IconTabHeader from './IconTabHeader/iconTabHeader'
+
 
 export{
     ReminderButton,
@@ -25,5 +27,6 @@ export{
     IconHeader,
     InputField,
     Paragraph,
-    MyCardList
+    MyCardList,
+    IconTabHeader
 }
