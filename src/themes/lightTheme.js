@@ -191,6 +191,7 @@ const Theme = {
     }
   },
 
+
   //subscription card
   subscriptionCard: {
     borderColor: colors.WHITE,
@@ -225,7 +226,28 @@ const Theme = {
       fontSize: 14,
       color: colors.WHITE,
     },
-  }
+  },
+
+  
+  //secondary Top Title Header Font Styles
+    secondaryTopStylesMainText: {
+        fontFamily: 'Aqum',
+        fontWeight: 'bold',
+        fontSize: 12,
+        lineHeight: 12,
+        letterSpacing: 3.2,
+        color: colors.WHITE,
+    },
+    secondaryTopStylesSecondaryText: {
+        fontFamily: 'Aqum',
+        fontWeight: 'bold',
+        fontSize: 16,
+        lineHeight: 15,
+        letterSpacing: 3.2,
+        color: colors.WHITE,
+    }
+  
+
 };
 
 export default { Theme };

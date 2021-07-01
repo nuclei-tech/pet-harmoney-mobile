@@ -13,9 +13,9 @@ import ProfilePicture from "./ProfilePicture";
 import MyCardList from './Cards/myCartList'
 import IconTabHeader from './IconTabHeader/iconTabHeader'
 import ShoppingCardList from './Cards/shoppingCartList'
-import Paragraph from './Paragraph/paragraph';
 import SubscriptionCard from './Cards/subscriptionCard'
-
+import Paragraph from './Paragraph/paragraph'
+import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
 
 export{
     ReminderButton,
@@ -35,5 +35,6 @@ export{
     IconTabHeader,
     ShoppingCardList,
     Paragraph,
-    SubscriptionCard
+    SubscriptionCard,
+    SecondaryTopTitleHeader
 }
