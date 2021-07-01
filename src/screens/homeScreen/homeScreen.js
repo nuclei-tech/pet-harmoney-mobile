@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
 import { colors, size } from '../../theme'
-import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField, Paragraph  } from '../../components'
+import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField, Paragraph, MyCardList  } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 ;
 import { navigate } from '../../navigation/navigation';
-import {reminderDetails, termsAndConditions, ratingComment} from '../../constants'
+import {reminderDetails, termsAndConditions, ratingComment,myCardList} from '../../constants'
 
 const HomeScreen = props => {
   const { theme } = useSelector(state => state.theme);
@@ -144,6 +144,15 @@ const HomeScreen = props => {
                 textFontWeight={'bold'}
             />
         </View>
+
+        <View style={{backgroundColor:'white',paddingHorizontal:20}}>
+          {myCardList.map(data =>{
+            return(
+              <MyCardList data={data}/>
+            )
+          })}
+        </View>
+        
         </ScrollView>
 
       </Layout2>
