@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { StyleSheet, View, TouchableNativeFeedback, ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
 import { Card, ListItem, Image } from 'react-native-elements';
+import { useSelector } from 'react-redux';
 import { images } from '../../constants'
 import { size, colors } from '../../theme'
 import { Button } from '../../components'
@@ -19,6 +20,8 @@ const ReminderDetailsCard = ({
     listBtnColor,
     listBtnTxtColor
 }) => {
+    const {theme} = useSelector(state => state.theme)
+
     const [selectedItem, setSelectedItem] = useState([])
 
     // useEffect(() => {
@@ -50,7 +53,7 @@ const ReminderDetailsCard = ({
                <TouchableOpacity onPress={() => checkBoxHandler(index)}>
                     <Image
                         source={images.reminderDetailCheckBoxIcon}
-                        style={styles.checkBoxIcon}
+                        style={styles(theme).checkBoxIcon}
                         // PlaceholderContent={<ActivityIndicator />}
                         onPress={() => checkBoxHandlerSelect(index)}
                     />
@@ -60,17 +63,17 @@ const ReminderDetailsCard = ({
                 <TouchableOpacity onPress={() => checkBoxHandler(index)}>
                     <Image
                         source={images.reminderDetailCheckedCheckBoxIcon}
-                        style={styles.checkBoxIcon}
+                        style={styles(theme).checkBoxIcon}
                         // PlaceholderContent={<ActivityIndicator />}
                         onPress={() => checkBoxHandlerUnselect(index)}
                     />
                 </TouchableOpacity>
                 }
                 <ListItem.Content >
-                    <ListItem.Title style={[styles.titleStyle, selectedItem && selectedItem.length !== 0 && selectedItem.includes(index) ? {color: colors.GREEN} : {color: titleColor}, listButtonExist && {fontSize: size.FONT_SIZES.DETAIL_CARD_TITLE_SMALL} ]}>{item.title}</ListItem.Title>
+                    <ListItem.Title style={[styles(theme).titleStyle, selectedItem && selectedItem.length !== 0 && selectedItem.includes(index) ? {color: colors.GREEN} : {color: titleColor}, listButtonExist && {fontSize: size.FONT_SIZES.DETAIL_CARD_TITLE_SMALL} ]}>{item.title}</ListItem.Title>
                 </ListItem.Content>
                 <ListItem.Content>
-                    <ListItem.Title style={[styles.descriptionStyle, {color: descriptionColor}, listButtonExist && {fontSize: size.FONT_SIZES.DETAIL_CARD_TITLE_SMALL}]}>{item.description}</ListItem.Title>
+                    <ListItem.Title style={[styles(theme).descriptionStyle, {color: descriptionColor}, listButtonExist && {fontSize: size.FONT_SIZES.DETAIL_CARD_TITLE_SMALL}]}>{item.description}</ListItem.Title>
                 </ListItem.Content>
                 {listButtonExist && <ListItem.Content>
                     <Button onPress={btnPressHandler} buttonType={'small'} customTextStyle={{color: listBtnTxtColor}} title={listBtnTitle} color={listBtnColor} />
@@ -81,7 +84,7 @@ const ReminderDetailsCard = ({
     
     return (
         <Card containerStyle={{backgroundColor: backgroundColor}}>
-            {headerTitle && <Card.Title style={[styles.headerTitleStyle, {color: headerTitleColor}]}>{headerTitle}</Card.Title>}
+            {headerTitle && <Card.Title style={[styles(theme).headerTitleStyle, {color: headerTitleColor}]}>{headerTitle}</Card.Title>}
             <FlatList
                 keyExtractor={(item, index) => keyExtractor(item,index)}
                 data={dataList}
@@ -93,18 +96,18 @@ const ReminderDetailsCard = ({
 
 }
 
-const styles = StyleSheet.create({
+const styles = (props) => StyleSheet.create({
     checkBoxIcon: { width: 15, height: 15 },
     headerTitleStyle: {
-        fontSize: size.FONT_SIZES.DETAIL_CARD_HEADER_TITLE,
+        fontSize:  props.theme.Theme.size.DETAIL_CARD_HEADER_TITLE,
         fontWeight: 'bold'
     },
     titleStyle: {
-        fontSize: size.FONT_SIZES.DETAIL_CARD_TITLE,
+        fontSize: props.theme.Theme.size.DETAIL_CARD_TITLE,
         fontWeight: 'bold'
     },
     descriptionStyle: {
-        fontSize: size.FONT_SIZES.DETAIL_CARD_TITLE,
+        fontSize: props.theme.Theme.size.DETAIL_CARD_TITLE,
     }
 })
 

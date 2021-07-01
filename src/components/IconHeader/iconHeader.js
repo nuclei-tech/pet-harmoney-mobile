@@ -1,6 +1,7 @@
 import React from 'react'
 import {StyleSheet, View, Text, ActivityIndicator} from 'react-native'
 import { Image } from 'react-native-elements';
+import { useSelector } from 'react-redux';
 import { images } from '../../constants'
 import { size, colors } from '../../theme'
 
@@ -20,44 +21,45 @@ const IconHeader = ({
 }) => {
 
     const imageStyles = {width: primaryImageWidth, height: primaryImageHeight}
+    const {theme} = useSelector(state => state.theme)
 
     return (
         <>
-        {!multiple ? <View style={styles.mainContainer}>
+        {!multiple ? <View style={styles(theme).mainContainer}>
             <Image
                     source={primaryImage}
                     style={imageStyles}
                     PlaceholderContent={<ActivityIndicator />}
             />
-            <Text style={[styles.mainText, {color: mainTextColor, fontSize: primaryTextFontSize, lineHeight: primaryTextLineHeight}]}>{mainText}</Text>
+            <Text style={[styles(theme).mainText, {color: mainTextColor, fontSize: primaryTextFontSize, lineHeight: primaryTextLineHeight}]}>{mainText}</Text>
         </View>
         :
-        <View style={styles.mainContainerHorizontal}>
+        <View style={styles(theme).mainContainerHorizontal}>
             <View>
                 <Image
                         source={secondaryImage1}
-                        style={styles.secondaryImage}
+                        style={styles(theme).secondaryImage}
                         PlaceholderContent={<ActivityIndicator />}
                 />
             </View>
             <View>
                 <Image
                         source={secondaryImage2}
-                        style={styles.secondaryImage}
+                        style={styles(theme).secondaryImage}
                         PlaceholderContent={<ActivityIndicator />}
                 />
             </View>
             <View>
                 <Image
                         source={secondaryImage3}
-                        style={styles.secondaryImage}
+                        style={styles(theme).secondaryImage}
                         PlaceholderContent={<ActivityIndicator />}
                 />
             </View>
             <View>
                 <Image
                         source={secondaryImage4}
-                        style={styles.secondaryImage}
+                        style={styles(theme).secondaryImage}
                         PlaceholderContent={<ActivityIndicator />}
                 />
             </View>
@@ -66,7 +68,7 @@ const IconHeader = ({
     )
 }
 
-const styles = StyleSheet.create({
+const styles = (props) => StyleSheet.create({
     mainText: {
         fontFamily: 'Source Sans Pro',
         fontWeight: 'bold',
