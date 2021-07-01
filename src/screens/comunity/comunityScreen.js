@@ -10,6 +10,7 @@ import { images } from '../../constants';
 const window = Dimensions.get('window');
 const ComunityScreen = props => {
   const { theme } = useSelector(state => state.theme);
+
   const action = () => {
     console.log('in');
   }
@@ -44,7 +45,7 @@ const ComunityScreen = props => {
     proPicContainer,
     proPic,
     whitBackgroundContainer
-  } = styles;
+  } = styles(theme.Theme);
   return (
     <SafeAreaView style={container}>
       <View flex={1} style={backGroundImageContainer}>
@@ -69,10 +70,10 @@ const ComunityScreen = props => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles = (theme) =>StyleSheet.create({
   container: {
     flex: 4,
-    backgroundColor: colors.WHITE
+    backgroundColor: theme.colors.WHITE
   },
   backGroundImageContainer: {
     justifyContent: 'space-between'
@@ -85,7 +86,7 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   headerCustomStyle: {
-    padding: size.SIZE.CONTAINER_PADDING
+    padding: theme.size.CONTAINER_PADDING
   },
   proPicContainer: {
     alignItems: 'center',
@@ -95,7 +96,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: -(window.height * 10 / 100), 
     borderRadius: 100,
-    borderColor: colors.WHITE,
+    borderColor: theme.colors.WHITE,
     borderWidth: 4
   },
   whitBackgroundContainer:{ 
