@@ -161,9 +161,6 @@ const HomeScreen = props => {
             )
           })}
         </View>
-        
-
-          </View>
 
           <View style={{ backgroundColor: 'white', paddingHorizontal: 20 }}>
             {myCardList.map(data => {
@@ -172,6 +169,7 @@ const HomeScreen = props => {
               )
             })}
           </View>
+
           <View style={{paddingTop:16, flexDirection:"row", justifyContent:"space-between", alignItems:'center'}}>
             <ProfilePicture source={images.profile} />
             <ProfilePicture source={images.profile} customStyle={{width:79, height: 79, borderWidth: 2}}/>
