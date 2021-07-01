@@ -65,7 +65,7 @@ const Layout2 = (props) => {
         <View flex={1}>
             {props.type ? (
                 <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={getBackgroundStyle()}>
-                    <Header title='PET HARMONY' headerColor={'transparent'} />
+                    <Header title='PET HARMONY'/>
                     {props.children}
                 </ImageBackground>
             ) : (<View style={noImage}>

@@ -12,6 +12,9 @@ import InputField from './layouts/textField'
 import Paragraph from './paragraph/paragraph'
 import MyCardList from './cards/myCartList'
 import PlaceOrderCard from "./cards/placeOrderCard";
+import ProfilePicture from "./profilePicture";
+import IconTabHeader from './iconTabHeader/iconTabHeader'
+import ShoppingCardList from './cards/shoppingCartList'
 
 export{
     ReminderButton,
@@ -23,9 +26,13 @@ export{
     RegisterLayout,
     ReminderDetailCard,
     ParagraphCard,
+    ProfilePicture,
     IconHeader,
     InputField,
     Paragraph,
     MyCardList,
-    PlaceOrderCard
+    PlaceOrderCard,
+    IconTabHeader,
+    ShoppingCardList
+
 }

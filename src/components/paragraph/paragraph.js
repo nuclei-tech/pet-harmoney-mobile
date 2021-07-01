@@ -17,7 +17,8 @@ const Paragraph = ({textColor, paragraph, textFontSize, textFontLineHeight, text
 
 const styles = (props) => StyleSheet.create({
     paragraphText: {
-        ...props.Theme.defaultParagraphStyles
+        ...props.Theme.defaultParagraphStyles,
+        marginBottom: 5
     },
 })
 
