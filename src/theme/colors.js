@@ -9,5 +9,6 @@ export default {
     YELLOW: '#FFCA27',
     GREY: '#C4C4C4',
     LIGHT_BLACK: '#636363',
-    PINK: '#FF01B4'
+    PINK: '#FF01B4',
+    PLACEHOLDER_GRAY:'#E5E5E5'
 }

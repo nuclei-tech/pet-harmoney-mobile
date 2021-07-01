@@ -69,7 +69,10 @@ const Layout2 = (props) => {
                     {props.children}
                 </ImageBackground>
             ) : (<View style={noImage}>
-                <Header title='PET HARMONY' headerColor={'transparent'} />
+                {props.Header == 'black' ? <Header title='PET HARMONY' headerColor={'Black'} /> :
+                 props.header == 'hide' ? <></> :
+                    <Header title='PET HARMONY' headerColor={'transparent'} />
+                }
                 {props.children}
             </View>)}
 

@@ -32,8 +32,9 @@ const TelevetScreen = props => {
     <SafeAreaView style={styles.container}>
       <Layout2
         inner={Label}
-        backgroundColor={colors.DARK_BLUE}
-        layoutColor={colors.RED} // color is required
+        backgroundColor={colors.WHITE}
+        layoutColor={colors.WHITE}
+        header={'black'} // color is required
       >
           <Text>From parent</Text>
           <Text>From parent</Text>

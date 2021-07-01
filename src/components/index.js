@@ -1,16 +1,17 @@
-import Button from "./Buttons/button";
-import ReminderButton from "./Buttons/reminderButton"
-import Header from "./Header";
+import Button from "./buttons/button";
+import ReminderButton from "./buttons/reminderButton"
+import Header from "./header";
 import Layout from "./layouts/primaryLayout"
 import Layout2 from "./layouts/primaryLayout_2"
 import MediumContanier from './contaniers/mediumContanier'
 import RegisterLayout from './layouts/registerLayout'
-import ReminderDetailCard from "./Cards/reminderDetails";
-import ParagraphCard from './Cards/paragraphCard'
-import IconHeader from './IconHeader/iconHeader'
+import ReminderDetailCard from "./cards/reminderDetails";
+import ParagraphCard from './cards/paragraphCard'
+import IconHeader from './iconHeader/iconHeader'
 import InputField from './layouts/textField'
-import Paragraph from './Paragraph/paragraph'
-import MyCardList from './Cards/myCartList'
+import Paragraph from './paragraph/paragraph'
+import MyCardList from './cards/myCartList'
+import PlaceOrderCard from "./cards/placeOrderCard";
 
 export{
     ReminderButton,
@@ -25,5 +26,6 @@ export{
     IconHeader,
     InputField,
     Paragraph,
-    MyCardList
+    MyCardList,
+    PlaceOrderCard
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
 import { colors, size } from '../../theme'
-import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField, Paragraph, MyCardList  } from '../../components'
+import { Button,PlaceOrderCard, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField, Paragraph, MyCardList  } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 ;
@@ -152,7 +152,11 @@ const HomeScreen = props => {
             )
           })}
         </View>
-        
+        <View>
+          <PlaceOrderCard
+          
+          />
+        </View>
         </ScrollView>
 
       </Layout2>

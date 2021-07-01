@@ -1,6 +1,7 @@
 
 //images
 const logo = require('../assets/images/Header_LOGO.png');
+const logo_Black = require('../assets/images/Header_LOGO_Black.png');
 const searchIcon = require('../assets/images/SEARCH_ICON.png');
 const profileIcon = require('../assets/images/USER_PROFILE_ICON.png');
 const bgBlue = require('../assets/images/background/BG_Blue.png');
@@ -51,6 +52,7 @@ const cardIcon3 = require('../assets/images/listImages/Z3pUdU@300x1.png')
 
 export default {
     logo,
+    logo_Black,
     searchIcon,
     profileIcon,
     bgBlue,
