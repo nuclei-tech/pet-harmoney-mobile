@@ -93,6 +93,23 @@ const Theme = {
     placeHolderColor: colors.GREEN,
   },
 
+  //default paragraph font family
+  defaultParagraphStyles: {
+    fontFamily: 'Source Sans Pro',
+  },
+
+  //default paragraph card Font Styles
+  defaultParagraphCardTitleStyles: {
+      fontSize: 14,
+      lineHeight: 18,
+      fontFamily: 'Source Sans Pro',
+      fontWeight: 'bold'
+  },
+  //default icon header font styles
+  defaultIconHeaderTitleStyles: {
+    fontFamily: 'Source Sans Pro',
+    fontWeight: 'bold',
+  },
   //cart list component style
   cartListStyles: {
     description: {
