@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
 import { colors, size } from '../../theme'
-import { ProfilePicture, Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2, InputField, Paragraph, MyCardList } from '../../components'
+import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField,Paragraph,MyCardList,ShoppingCardList,ProfilePicture} from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 import { images} from'../../constants';
@@ -143,6 +143,26 @@ const HomeScreen = props => {
               textFontLineHeight={15}
               textFontWeight={'bold'}
             />
+
+        </View>
+
+        <View style={{backgroundColor:'white',paddingHorizontal:10}}>
+          {myCardList.map(data =>{
+            return(
+              <MyCardList data={data}/>
+            )
+          })}
+        </View>
+
+        <View style={{backgroundColor:'white',paddingHorizontal:10,marginTop:15}}>
+          {myCardList.map(data =>{
+            return(
+              <ShoppingCardList data={data}/>
+            )
+          })}
+        </View>
+        
+
           </View>
 
           <View style={{ backgroundColor: 'white', paddingHorizontal: 20 }}>
@@ -157,6 +177,7 @@ const HomeScreen = props => {
             <ProfilePicture source={images.profile} customStyle={{width:79, height: 79, borderWidth: 2}}/>
             <ProfilePicture source={images.profile} customStyle={{width:24, height: 24, borderWidth: 1}}/>
           </View>
+
         </ScrollView>
 
       </Layout2>
