@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
 import { colors, size } from '../../theme'
-import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField,Paragraph,MyCardList,ShoppingCardList,ProfilePicture} from '../../components'
+import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField,Paragraph,MyCardList,ShoppingCardList,ProfilePicture,SubscriptionCard} from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 import { images} from'../../constants';
@@ -162,13 +162,9 @@ const HomeScreen = props => {
           })}
         </View>
 
-          <View style={{ backgroundColor: 'white', paddingHorizontal: 20 }}>
-            {myCardList.map(data => {
-              return (
-                <MyCardList data={data} />
-              )
-            })}
-          </View>
+        <View style={{backgroundColor:'#6732C8',paddingHorizontal:10,marginTop:15,paddingBottom:15}}>
+          <SubscriptionCard title={'Subscription'} contentTitle={'Yearly Subscription '} leftContent={'$XX.XX Billed annually asa recurring payment'} rightTopContent={'$X.XX'} rightBottomContent={'Per Month'}/>
+        </View>
 
           <View style={{paddingTop:16, flexDirection:"row", justifyContent:"space-between", alignItems:'center'}}>
             <ProfilePicture source={images.profile} />

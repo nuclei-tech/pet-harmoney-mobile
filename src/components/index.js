@@ -13,6 +13,7 @@ import ProfilePicture from "./ProfilePicture";
 import MyCardList from './Cards/myCartList'
 import IconTabHeader from './IconTabHeader/iconTabHeader'
 import ShoppingCardList from './Cards/shoppingCartList'
+import SubscriptionCard from './Cards/subscriptionCard'
 import Paragraph from './Paragraph/paragraph'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
 
@@ -33,5 +34,7 @@ export{
     MyCardList,
     IconTabHeader,
     ShoppingCardList,
+    Paragraph,
+    SubscriptionCard,
     SecondaryTopTitleHeader
 }
