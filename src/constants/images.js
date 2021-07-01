@@ -20,10 +20,10 @@ const reminderDetailCheckBoxIcon = require('../assets/images/CHECK_BOX.png');
 const reminderDetailCheckedCheckBoxIcon = require('../assets/images/CHECKED_CHECK_BOX.png');
 const termsDownArrow = require('../assets/images/DOWN_ARROW.png');
 const careTaker = require('../assets/images/CARE_TAKER.png');
-const pets = require('../assets/images/PETS.png');
-const records = require('../assets/images/RECORDS.png');
-const sessions = require('../assets/images/SESSIONS.png');
-const medication = require('../assets/images/MEDICATION.png');
+const pets = require('../assets/images/PETS_NEW.png');
+const records = require('../assets/images/RECORDS_NEW.png');
+const sessions = require('../assets/images/SESSIONS_NEW.png');
+const medication = require('../assets/images/MEDICATION_NEW.png');
 const shopping = require('../assets/images/SHOPPING.png');
 
 //bottom icon

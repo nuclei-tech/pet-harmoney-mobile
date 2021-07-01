@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { Button, Header, ReminderButton, Layout2, IconHeader } from '../../components'
-import { images } from '../../constants'
+import { Button, Header, ReminderButton, Layout2, IconHeader, IconTabHeader } from '../../components'
+import { images, iconTabDetails } from '../../constants'
 
 // Connect redux store.
 import { useSelector } from 'react-redux';
@@ -16,11 +16,11 @@ const CreateAccountScreen = props => {
     <SafeAreaView style={styles.container}>
       <Layout2
       type={'halfScreen'}
-        curve = {'secondary'} 
-        layoutColor={colors.GREEN} // color is required
+        curve = {'primary'} 
+        layoutColor={theme.Theme.colors.BLUE} // color is required
       >
       <View>
-        <IconHeader 
+        {/* <IconHeader 
           primaryImage={images.careTaker}
           primaryTextFontSize={24}
           primaryTextLineHeight={28.49}
@@ -28,15 +28,11 @@ const CreateAccountScreen = props => {
           primaryImageHeight={60}
           mainTextColor={colors.PURPLE}
           mainText={'Approved Caretakers'}
+        /> */}
+        <IconTabHeader
+          tabDetails={iconTabDetails}
         />
-        <IconHeader
-          multiple
-          secondaryImage1={images.sessions}
-          secondaryImage2={images.records}
-          secondaryImage3={images.pets}
-          secondaryImage4={images.medication}
-        />
-        <IconHeader 
+        {/* <IconHeader 
           primaryImage={images.shopping}
           primaryTextFontSize={18}
           primaryTextLineHeight={21.37}
@@ -44,7 +40,7 @@ const CreateAccountScreen = props => {
           primaryImageHeight={53}
           mainTextColor={colors.DARK_BLUE}
           mainText={'My Cart'}
-        />
+        /> */}
         {/* <Text>From parent</Text>
         <Text>From parent</Text>
         <Text>From parent</Text>
