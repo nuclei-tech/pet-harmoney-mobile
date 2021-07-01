@@ -14,6 +14,7 @@ import MyCardList from './Cards/myCartList'
 import IconTabHeader from './IconTabHeader/iconTabHeader'
 import ShoppingCardList from './Cards/shoppingCartList'
 import Paragraph from './Paragraph/paragraph'
+import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
 
 export{
     ReminderButton,
@@ -31,6 +32,6 @@ export{
     Paragraph,
     MyCardList,
     IconTabHeader,
-    ShoppingCardList
-
+    ShoppingCardList,
+    SecondaryTopTitleHeader
 }
