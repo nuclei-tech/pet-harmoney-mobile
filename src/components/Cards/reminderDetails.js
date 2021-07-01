@@ -99,15 +99,15 @@ const ReminderDetailsCard = ({
 const styles = (props) => StyleSheet.create({
     checkBoxIcon: { width: 15, height: 15 },
     headerTitleStyle: {
-        fontSize:  props.theme.Theme.size.DETAIL_CARD_HEADER_TITLE,
+        fontSize:  props.Theme.size.DETAIL_CARD_HEADER_TITLE,
         fontWeight: 'bold'
     },
     titleStyle: {
-        fontSize: props.theme.Theme.size.DETAIL_CARD_TITLE,
+        fontSize: props.Theme.size.DETAIL_CARD_TITLE,
         fontWeight: 'bold'
     },
     descriptionStyle: {
-        fontSize: props.theme.Theme.size.DETAIL_CARD_TITLE,
+        fontSize: props.Theme.size.DETAIL_CARD_TITLE,
     }
 })
 

@@ -1,17 +1,10 @@
 import { Dimensions } from 'react-native';
+import { colors } from '../theme'
 
 const Theme = {
   // Main theam colors
   colors: {
-    BLACK: '#000000',
-    BLUE: '#3176FF',
-    DARK_BLUE: '#0F1E51',
-    GREEN: '#46E4C1',
-    PURPLE: '#6732C8',
-    RED: '#FF6A64',
-    WHITE: '#FFFFFF',
-    YELLOW: '#FFCA27',
-    GREY: '#C4C4C4'
+    ...colors
   },
 
   //font sizes 
@@ -30,35 +23,35 @@ const Theme = {
   },
   //Tab
   tab: {
-    TAB_BACKGROUND: '#ffffff',
-    TAB_TEXT_COLOR: '#636363',
-    INACTIVE_COLOR: '#FF01B4',
-    ACTIVE_COLOR: '#FF01B4',
+    TAB_BACKGROUND: colors.WHITE,
+    TAB_TEXT_COLOR: colors.LIGHT_BLACK,
+    INACTIVE_COLOR: colors.PINK,
+    ACTIVE_COLOR: colors.PINK,
   },
 
   //bottomTab
   bottomIconColor: {
-    darkRed: '#FF6A64',
-    lightBlue: '#3176FF',
-    darkPurple: '#6732C8',
-    black: '#000000'
+    darkRed: colors.RED,
+    lightBlue: colors.BLUE,
+    darkPurple: colors.PURPLE,
+    black: colors.BLACK
   },
 
   //create an account
   createAccount: {
-    buttonColor: '#46E4C1',
-    borderColor: '#46E4C1',
-    backGroundColor: '#0F1E51',
-    registerTextColor: '#0F1E51',
-    mainTextColor: '#FFCA27',
-    registerBackGroundColor: "#FFCA27",
-    placeHolderColor: "#46E4C1",
+    buttonColor: colors.GREEN,
+    borderColor: colors.GREEN,
+    backGroundColor: colors.DARK_BLUE,
+    registerTextColor: colors.DARK_BLUE,
+    mainTextColor: colors.YELLOW,
+    registerBackGroundColor: colors.YELLOW,
+    placeHolderColor: colors.GREEN,
     mainText: {
       fontFamily: "Aqum",
       fontSize: 18,
       lineHeight: 17,
       letterSpacing: 0.2,
-      color: "#FFCA27",
+      color: colors.YELLOW,
     },
     buttonTextStyles: {
       fontFamily: "SourceSansPro-Black",
@@ -70,7 +63,7 @@ const Theme = {
       fontFamily: "SourceSansPro-Regular",
       fontSize: 12,
       lineHeight: 15,
-      color: '#46E4C1'
+      color: colors.GREEN
     }
   },
 
@@ -95,9 +88,9 @@ const Theme = {
       fontWeight: 'bold',
       fontSize: 17,
     },
-    boderColor: '#46E4C1',
-    textColor: '#46E4C1',
-    placeHolderColor: "#46E4C1",
+    boderColor: colors.GREEN,
+    textColor: colors.GREEN,
+    placeHolderColor: colors.GREEN,
   }
 };
 
