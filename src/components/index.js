@@ -10,7 +10,8 @@ import ParagraphCard from './Cards/paragraphCard'
 import ProfilePicture from "./ProfilePicture";
 import IconHeader from './IconHeader/iconHeader';
 import InputField from './layouts/textField';
-
+import Paragraph from './Paragraph/paragraph';
+import MyCardList from './Cards/myCartList';
 
 export{
     ReminderButton,
@@ -24,5 +25,7 @@ export{
     ParagraphCard,
     ProfilePicture,
     IconHeader,
-    InputField
+    InputField,
+    Paragraph,
+    MyCardList
 }

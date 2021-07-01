@@ -16,10 +16,10 @@ const Theme = {
     BUTTON: 17,
 
     //sizes
-    BASE : 24,
-    CONTAINER_PADDING:30,
+    BASE: 24,
+    CONTAINER_PADDING: 30,
     MARGIN: 8,
-    PADDING:8,
+    PADDING: 8,
   },
   //Tab
   tab: {
@@ -91,6 +91,57 @@ const Theme = {
     boderColor: colors.GREEN,
     textColor: colors.GREEN,
     placeHolderColor: colors.GREEN,
+  },
+
+  //default paragraph font family
+  defaultParagraphStyles: {
+    fontFamily: 'Source Sans Pro',
+  },
+
+  //default paragraph card Font Styles
+  defaultParagraphCardTitleStyles: {
+      fontSize: 14,
+      lineHeight: 18,
+      fontFamily: 'Source Sans Pro',
+      fontWeight: 'bold'
+  },
+  //default icon header font styles
+  defaultIconHeaderTitleStyles: {
+    fontFamily: 'Source Sans Pro',
+    fontWeight: 'bold',
+  },
+  //cart list component style
+  cartListStyles: {
+    description: {
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.BLUE,
+      fontSize: 16,
+      lineHeight: 19,
+    },
+    subDiscription: {
+      fontFamily: 'SourceSansPro-Regular',
+      color: colors.DARK_BLUE,
+      fontSize: 11,
+      lineHeight: 15,
+    },
+    offer: {
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.RED,
+      fontSize: 11,
+      lineHeight: 11,
+    },
+    change: {
+      fontFamily: 'SourceSansPro-Regular',
+      color: colors.DARK_BLUE,
+      fontSize: 8,
+      lineHeight: 11,
+    },
+    total: {
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.DARK_BLUE,
+      fontSize: 14,
+      lineHeight: 19,
+    }
   }
 };
 
