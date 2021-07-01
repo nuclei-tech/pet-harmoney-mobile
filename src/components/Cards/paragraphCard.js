@@ -8,21 +8,18 @@ const ParagrapghCard = ({
     cardBorderColor, 
     cardBackgroundColor,
     titleColor,
-    textColor,
-    paragraph, 
     titleAlign, 
     title,
-    imageExists
+    imageExists,
+    children
 }) => {
     const {theme} = useSelector(state => state.theme)
-    const {cardContainer, cardTitle, paragraphText, image, imageContainer} = styles(theme)
+    const {cardContainer, cardTitle, image, imageContainer} = styles(theme)
 
     return (
         <View style={[cardContainer, {backgroundColor: cardBackgroundColor, borderColor: cardBorderColor,}]}>
             {title && <Text style={[cardTitle, {textAlign: titleAlign, color: titleColor}]}>{title}</Text>}
-            <Text style={[paragraphText, {color: textColor}]}>
-                {paragraph}
-            </Text>
+                {children}
             {imageExists && <View style={imageContainer}>
                 <Image
                     source={images.termsDownArrow}
@@ -47,17 +44,9 @@ const styles = (props) => StyleSheet.create({
     },
     cardTitle: {
         marginBottom: 12, 
-        fontSize: 14,
-        lineHeight: 18,
-        fontFamily: 'Source Sans Pro',
-        fontWeight: 'bold'
+        ...props.Theme.defaultParagraphCardTitleStyles
     },
-    paragraphText: {
-        fontSize: 14, 
-        lineHeight: 18, 
-        fontFamily: 'Source Sans Pro',
-        fontWeight: '300',
-    },
+    
     image: {
         width: 22.8,
         height: 19,

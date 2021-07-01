@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
 import { colors, size } from '../../theme'
-import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField  } from '../../components'
+import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField, Paragraph  } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 ;
@@ -96,20 +96,53 @@ const HomeScreen = props => {
             cardBorderColor={theme.Theme.colors.GREEN}
             cardBackgroundColor={'transparent'}
             titleColor={theme.Theme.colors.GREEN}
-            textColor={theme.Theme.colors.WHITE}
             title={'Terms and Conditions'}
             titleAlign={'left'}
-            paragraph={termsAndConditions}
             imageExists
-          />
+          >
+            <Paragraph 
+                textColor={theme.Theme.colors.WHITE}
+                paragraph={termsAndConditions}
+                textFontSize={14}
+                textFontLineHeight={18}
+                textFontWeight={'300'}
+            />
+          </ParagraphCard>
         </View>
         <View style={{backgroundColor: theme.Theme.colors.WHITE, paddingVertical: 20, marginTop: 10, paddingHorizontal: 30}}>
           <ParagraphCard 
             cardBorderColor={theme.Theme.colors.YELLOW}
             cardBackgroundColor={'transparent'}
-            textColor={theme.Theme.colors.BLACK}
-            paragraph={ratingComment}
-          />
+          >
+            <Paragraph 
+                textColor={theme.Theme.colors.BLACK}
+                paragraph={ratingComment}
+                textFontSize={14}
+                textFontLineHeight={18}
+                textFontWeight={'300'}
+            />
+          </ParagraphCard>
+          <Paragraph 
+                textColor={theme.Theme.colors.YELLOW}
+                paragraph={ratingComment}
+                textFontSize={11}
+                textFontLineHeight={14}
+                textFontWeight={'300'}
+            />
+            <Paragraph 
+                textColor={theme.Theme.colors.DARK_BLUE}
+                paragraph={ratingComment}
+                textFontSize={10}
+                textFontLineHeight={13}
+                textFontWeight={'200'}
+            />
+            <Paragraph 
+                textColor={theme.Theme.colors.DARK_BLUE}
+                paragraph={ratingComment}
+                textFontSize={12}
+                textFontLineHeight={15}
+                textFontWeight={'bold'}
+            />
         </View>
         </ScrollView>
 

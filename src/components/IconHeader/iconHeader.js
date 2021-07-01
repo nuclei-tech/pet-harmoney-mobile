@@ -21,6 +21,7 @@ const IconHeader = ({
     const imageStyles = {width: primaryImageWidth, height: primaryImageHeight}
     const {theme} = useSelector(state => state.theme)
     const {mainTextStyle, mainContainer, mainContainerHorizontal, secondaryImage} = styles(theme)
+    const mainTitleStyles = {color: mainTextColor, fontSize: primaryTextFontSize, lineHeight: primaryTextLineHeight}
 
     return (
         <>
@@ -30,7 +31,7 @@ const IconHeader = ({
                     style={imageStyles}
                     PlaceholderContent={<ActivityIndicator />}
             />
-            <Text style={[mainTextStyle, {color: mainTextColor, fontSize: primaryTextFontSize, lineHeight: primaryTextLineHeight}]}>{mainText}</Text>
+            <Text style={[mainTextStyle, mainTitleStyles]}>{mainText}</Text>
         </View>
         :
         <View style={mainContainerHorizontal}>
@@ -69,9 +70,8 @@ const IconHeader = ({
 
 const styles = (props) => StyleSheet.create({
     mainTextStyle: {
-        fontFamily: 'Source Sans Pro',
-        fontWeight: 'bold',
-        marginTop: 15
+        marginTop: 15,
+        ...props.Theme.defaultIconHeaderTitleStyles
     },
     mainContainer: {
         alignItems: 'center', 

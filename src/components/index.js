@@ -9,7 +9,7 @@ import ReminderDetailCard from "./Cards/reminderDetails";
 import ParagraphCard from './Cards/paragraphCard'
 import IconHeader from './IconHeader/iconHeader'
 import InputField from './layouts/textField'
-
+import Paragraph from './Paragraph/paragraph'
 
 export{
     ReminderButton,
@@ -22,5 +22,6 @@ export{
     ReminderDetailCard,
     ParagraphCard,
     IconHeader,
-    InputField
+    InputField,
+    Paragraph
 }
