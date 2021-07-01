@@ -7,5 +7,7 @@ export default {
     RED:'#FF6A64',
     WHITE: '#FFFFFF',
     YELLOW: '#FFCA27',
-    GREY: '#C4C4C4'
+    GREY: '#C4C4C4',
+    LIGHT_BLACK: '#636363',
+    PINK: '#FF01B4'
 }

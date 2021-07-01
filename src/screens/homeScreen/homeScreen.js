@@ -20,22 +20,22 @@ const HomeScreen = props => {
     <SafeAreaView style={styles.container}>
       <Layout2
       type={'fullScreen'} // {halfScreen, small }
-      layoutColor={colors.DARK_BLUE}
-      backgroundColor={colors.GREEN}
+      layoutColor={theme.Theme.colors.DARK_BLUE}
+      backgroundColor={theme.Theme.colors.GREEN}
       >
         <ScrollView style={{ marginBottom: 10 }}   showsVerticalScrollIndicator={false}
 >
 
-          {/* <StatusBar  backgroundColor={colors.RED} hidden={true} /> */}
+          {/* <StatusBar  backgroundColor={theme.Theme.colors.RED} hidden={true} /> */}
           <Button title="Outline button" type={'outline'} onPress={action} />
-            <Button title="Solid Button" type={'outline'} custonTextStyle={{ color: colors.WHITE }} color={colors.WHITE} />
+            <Button title="Solid Button" type={'outline'} custonTextStyle={{ color: theme.Theme.colors.WHITE }} color={theme.Theme.colors.WHITE} />
             <ReminderButton />
 
-          <Button title="Solid Button" color={colors.GREEN} />
+          <Button title="Solid Button" color={theme.Theme.colors.GREEN} />
 
-          <Button title="Solid Button" color={colors.RED} />
-          <Button title="Solid Button" textTransform={'lowercase'}color={colors.YELLOW} custonTextStyle={{ color: colors.WHITE }} />
-          <Button title="Solid Button" textTransform={'uppercase'} color={colors.YELLOW} custonTextStyle={{ color: colors.GREEN, fontSize: 9 }} />
+          <Button title="Solid Button" color={theme.Theme.colors.RED} />
+          <Button title="Solid Button" textTransform={'lowercase'}color={theme.Theme.colors.YELLOW} custonTextStyle={{ color: theme.Theme.colors.WHITE }} />
+          <Button title="Solid Button" textTransform={'uppercase'} color={theme.Theme.colors.YELLOW} custonTextStyle={{ color: theme.Theme.colors.GREEN, fontSize: 9 }} />
 
           <View>
             <InputField
@@ -64,50 +64,50 @@ const HomeScreen = props => {
         </View>
 
           <ReminderDetailCard
-            backgroundColor={colors.DARK_BLUE}
-            titleColor={colors.YELLOW}
-            descriptionColor={colors.GREY}
-            borderBottomColor={colors.GREY}
+            backgroundColor={theme.Theme.colors.DARK_BLUE}
+            titleColor={theme.Theme.colors.YELLOW}
+            descriptionColor={theme.Theme.colors.GREY}
+            borderBottomColor={theme.Theme.colors.GREY}
             dataList={reminderDetails}
             checkBoxExist
           />
           <ReminderDetailCard
-            backgroundColor={colors.GREEN}
-            titleColor={colors.PURPLE}
-            descriptionColor={colors.DARK_BLUE}
-            borderBottomColor={colors.DARK_BLUE}
+            backgroundColor={theme.Theme.colors.GREEN}
+            titleColor={theme.Theme.colors.PURPLE}
+            descriptionColor={theme.Theme.colors.DARK_BLUE}
+            borderBottomColor={theme.Theme.colors.DARK_BLUE}
             dataList={reminderDetails}
           />
           <ReminderDetailCard
-            backgroundColor={colors.BLUE}
-            titleColor={colors.GREEN}
-            descriptionColor={colors.WHITE}
-            borderBottomColor={colors.GREY}
-            headerTitleColor={colors.WHITE}
+            backgroundColor={theme.Theme.colors.BLUE}
+            titleColor={theme.Theme.colors.GREEN}
+            descriptionColor={theme.Theme.colors.WHITE}
+            borderBottomColor={theme.Theme.colors.GREY}
+            headerTitleColor={theme.Theme.colors.WHITE}
             headerTitle={'Upcoming Sessions'}
             dataList={reminderDetails}
             listButtonExist
-            listBtnColor={colors.GREEN}
-            listBtnTxtColor={colors.DARK_BLUE}
+            listBtnColor={theme.Theme.colors.GREEN}
+            listBtnTxtColor={theme.Theme.colors.DARK_BLUE}
             listBtnTitle={'Start Session'}
           />
-           <View style={{backgroundColor: colors.DARK_BLUE, paddingVertical: 20, marginTop: 10, paddingHorizontal: 30}}>
+           <View style={{backgroundColor: theme.Theme.colors.DARK_BLUE, paddingVertical: 20, marginTop: 10, paddingHorizontal: 30}}>
           <ParagraphCard 
-            cardBorderColor={colors.GREEN}
+            cardBorderColor={theme.Theme.colors.GREEN}
             cardBackgroundColor={'transparent'}
-            titleColor={colors.GREEN}
-            textColor={colors.WHITE}
+            titleColor={theme.Theme.colors.GREEN}
+            textColor={theme.Theme.colors.WHITE}
             title={'Terms and Conditions'}
             titleAlign={'left'}
             paragraph={termsAndConditions}
             imageExists
           />
         </View>
-        <View style={{backgroundColor: colors.WHITE, paddingVertical: 20, marginTop: 10, paddingHorizontal: 30}}>
+        <View style={{backgroundColor: theme.Theme.colors.WHITE, paddingVertical: 20, marginTop: 10, paddingHorizontal: 30}}>
           <ParagraphCard 
-            cardBorderColor={colors.YELLOW}
+            cardBorderColor={theme.Theme.colors.YELLOW}
             cardBackgroundColor={'transparent'}
-            textColor={colors.BLACK}
+            textColor={theme.Theme.colors.BLACK}
             paragraph={ratingComment}
           />
         </View>
