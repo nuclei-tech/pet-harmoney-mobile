@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
 import { colors, size } from '../../theme'
-import InputField from '../../layout/forms/textField'
-import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2  } from '../../components'
+import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField  } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 ;
@@ -35,43 +34,34 @@ const HomeScreen = props => {
           <Button title="Solid Button" color={colors.GREEN} />
 
           <Button title="Solid Button" color={colors.RED} />
-          <Button title="Solid Button" color={colors.YELLOW} custonTextStyle={{ color: colors.WHITE }} />
-          <Button title="Solid Button" color={colors.YELLOW} custonTextStyle={{ color: colors.GREEN, fontSize: 9 }} />
+          <Button title="Solid Button" textTransform={'lowercase'}color={colors.YELLOW} custonTextStyle={{ color: colors.WHITE }} />
+          <Button title="Solid Button" textTransform={'uppercase'} color={colors.YELLOW} custonTextStyle={{ color: colors.GREEN, fontSize: 9 }} />
 
-
-          <InputField
-            inputBackgroundColor={colors.DARK_BLUE}
-            borderColor={colors.GREEN}
-            inputColor={colors.GREEN}
-            placeholderColor={colors.GREEN}
-            placeholder={'Enter name here'}
-            inputTextAlign={'center'}
-          />
-
-          <View style={{  paddingTop: 20 }}>
-
+          <View>
             <InputField
-              inputBackgroundColor={colors.RED}
-              borderColor={colors.WHITE}
-              inputColor={colors.WHITE}
-              placeholderColor={colors.WHITE}
-              placeholder={'Enter pet name'}
-              inputTextAlign={'center'}
+              customMainContanier={{ backgroundColor: '#0F1E51' }}
+              placeholderColor={theme.Theme.createAccount.placeHolderColor}
+              placeholder={'123 - 456 - 7890'}
             />
+        </View>
 
-          </View>
-
-          <View style={{paddingTop: 20 }}>
-
+        <View style={{ flex: 12, flexDirection: 'row'}}>
+          <View style={{ flex: 8 }}>
             <InputField
-              inputBackgroundColor={colors.WHITE}
-              borderColor={colors.WHITE}
-              inputColor={colors.GREEN}
-              placeholderColor={colors.GREEN}
-              placeholder={'Enter card name'}
-              inputTextAlign={'left'}
+              customMainContanier={{ backgroundColor: '#ffffff',borderColor:'#ffffff' }}
+              placeholderColor={theme.Theme.createAccount.placeHolderColor}
+              placeholder={'123 - 456 - 7890'}
             />
           </View>
+          <View style={{ flex: 4 ,marginLeft:10}}>
+            <InputField
+              customMainContanier={{ backgroundColor: '#ffffff',borderColor:'#ffffff' }}
+              customTextStyle={{textAlign:'left'}}
+              placeholderColor={theme.Theme.createAccount.placeHolderColor}
+              placeholder={'123'}
+            />
+          </View>
+        </View>
 
           <ReminderDetailCard
             backgroundColor={colors.DARK_BLUE}

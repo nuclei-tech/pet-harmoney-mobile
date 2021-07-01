@@ -8,6 +8,10 @@ import RegisterLayout from './layouts/registerLayout'
 import ReminderDetailCard from "./Cards/reminderDetails";
 import ParagraphCard from './Cards/paragraphCard'
 import ProfilePicture from "./ProfilePicture";
+import IconHeader from './IconHeader/iconHeader';
+import InputField from './layouts/textField';
+
+
 export{
     ReminderButton,
     Button,
@@ -18,5 +22,7 @@ export{
     RegisterLayout,
     ReminderDetailCard,
     ParagraphCard,
-    ProfilePicture
+    ProfilePicture,
+    IconHeader,
+    InputField
 }
