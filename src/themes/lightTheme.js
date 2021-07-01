@@ -112,6 +112,7 @@ const Theme = {
   },
   //cart list component style
   cartListStyles: {
+    borderBottomColor:colors.GREY,
     description: {
       fontFamily: 'SourceSansPro-Bold',
       color: colors.BLUE,
@@ -144,6 +145,7 @@ const Theme = {
     }
   },
 
+
   //tab icon header font styles
   tabIconHeaderFontStyles: {
         fontFamily: 'Aqum',
@@ -151,6 +153,42 @@ const Theme = {
         fontSize: 6,
         lineHeight: 6,
         color: colors.WHITE
+  },
+  //shopping card styles
+  shppoingListStyles: {
+    borderBottomColor:colors.GREY,
+    buttonBackGroundColor:colors.DARK_BLUE,
+    buttonTextColor:colors.WHITE,
+    description: {
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.BLUE,
+      fontSize: 16,
+      lineHeight: 19,
+    },
+    subDiscription: {
+      fontFamily: 'SourceSansPro-Regular',
+      color: colors.DARK_BLUE,
+      fontSize: 11,
+      lineHeight: 15,
+    },
+    rating: {
+      fontFamily: 'SourceSansPro-Light',
+      color: colors.DARK_BLUE,
+      fontSize: 11,
+      lineHeight: 14,
+    },
+    change: {
+      fontFamily: 'SourceSansPro-Regular',
+      color: colors.DARK_BLUE,
+      fontSize: 8,
+      lineHeight: 11,
+    },
+    total: {
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.DARK_BLUE,
+      fontSize: 13,
+      lineHeight: 15,
+    }
   }
 };
 
