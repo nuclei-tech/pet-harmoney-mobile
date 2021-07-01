@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Image, ImageBackground, TouchableOpacity, Dimensions, TouchableHighlight } from 'react-native';
 import { colors, size } from '../../theme'
-import { Button, Header, ReminderButton, Layout2 } from '../../components'
+import { Button, Header, ReminderButton, ProfilePicture } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 import { navigate } from '../../navigation/navigation';
@@ -52,9 +52,9 @@ const ComunityScreen = props => {
           <Image resizeMode='stretch' source={images.cover} style={image} />
         </TouchableHighlight>
         <Header title='PET HARMONY' headerColor={'transparent'} customStyle={headerCustomStyle} />
-        <TouchableOpacity onPress={changeProfileImage} flex={0.4} style={proPicContainer}>
-          <Image source={images.profile} style={proPic} />
-        </TouchableOpacity>
+        <View onPress={changeProfileImage} flex={0.4} style={proPicContainer}>
+          <ProfilePicture source={images.profile}  />
+        </View>
       </View>
 
       <View flex={3} >
