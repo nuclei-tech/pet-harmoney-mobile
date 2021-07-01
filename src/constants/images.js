@@ -42,6 +42,12 @@ const communityBlue = require('../assets/images/bottomIcon/COMMUNITY_ICON_BLUE.p
 const petHarmonyLogo = require('../assets/images/commonImage/petHarmonyLogo.png');
 
 
+//list icons
+const cardIcon1 = require('../assets/images/listImages/98UziT@300x1.png')
+const cardIcon2 = require('../assets/images/listImages/pB0lst@300x1.png')
+const cardIcon3 = require('../assets/images/listImages/Z3pUdU@300x1.png')
+
+
 
 export default {
     logo,
@@ -80,5 +86,10 @@ export default {
     sessions,
     records,
     medication,
-    shopping
+    shopping,
+
+
+    cardIcon1,
+    cardIcon2,
+    cardIcon3
 };
