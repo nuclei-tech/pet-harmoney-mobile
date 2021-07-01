@@ -54,7 +54,7 @@ const styles =(theme)=> StyleSheet.create({
         flexDirection: 'row',
         paddingTop:16,
         paddingBottom:17,
-        borderBottomColor:'#C4C4C4',
+        borderBottomColor:theme.Theme.cartListStyles.borderBottomColor,
         borderBottomWidth:0.5 
     },
     imageContanier:{
@@ -65,7 +65,7 @@ const styles =(theme)=> StyleSheet.create({
         flex: 7,
         flexDirection:'column',
         justifyContent:'center',
-        paddingLeft:21
+        paddingHorizontal:15
     },
     otherContanier:{
         flex: 4,
@@ -78,11 +78,11 @@ const styles =(theme)=> StyleSheet.create({
     },
     subDiscription:{
         ...theme.Theme.cartListStyles.subDiscription,
-        marginTop:2
+        marginTop:5
     },
     offer:{
         ...theme.Theme.cartListStyles.offer,
-        marginTop:3
+        marginTop:4,
     },
     change:{
         ...theme.Theme.cartListStyles.change,

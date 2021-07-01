@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
 import { colors, size } from '../../theme'
-import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField, Paragraph, MyCardList  } from '../../components'
+import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField,Paragraph,MyCardList,ShoppingCardList} from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 ;
@@ -145,10 +145,18 @@ const HomeScreen = props => {
             />
         </View>
 
-        <View style={{backgroundColor:'white',paddingHorizontal:20}}>
+        <View style={{backgroundColor:'white',paddingHorizontal:10}}>
           {myCardList.map(data =>{
             return(
               <MyCardList data={data}/>
+            )
+          })}
+        </View>
+
+        <View style={{backgroundColor:'white',paddingHorizontal:10,marginTop:15}}>
+          {myCardList.map(data =>{
+            return(
+              <ShoppingCardList data={data}/>
             )
           })}
         </View>
