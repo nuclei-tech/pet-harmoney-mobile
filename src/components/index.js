@@ -34,7 +34,6 @@ export{
     MyCardList,
     IconTabHeader,
     ShoppingCardList,
-    Paragraph,
     SubscriptionCard,
     SecondaryTopTitleHeader
 }
