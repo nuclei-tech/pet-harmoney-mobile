@@ -13,7 +13,9 @@ import ProfilePicture from "./ProfilePicture";
 import MyCardList from './Cards/myCartList'
 import IconTabHeader from './IconTabHeader/iconTabHeader'
 import ShoppingCardList from './Cards/shoppingCartList'
-import Paragraph from './Paragraph/paragraph'
+import Paragraph from './Paragraph/paragraph';
+import SubscriptionCard from './Cards/subscriptionCard'
+
 
 export{
     ReminderButton,
@@ -31,6 +33,7 @@ export{
     Paragraph,
     MyCardList,
     IconTabHeader,
-    ShoppingCardList
-
+    ShoppingCardList,
+    Paragraph,
+    SubscriptionCard
 }

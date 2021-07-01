@@ -100,10 +100,10 @@ const Theme = {
 
   //default paragraph card Font Styles
   defaultParagraphCardTitleStyles: {
-      fontSize: 14,
-      lineHeight: 18,
-      fontFamily: 'Source Sans Pro',
-      fontWeight: 'bold'
+    fontSize: 14,
+    lineHeight: 18,
+    fontFamily: 'Source Sans Pro',
+    fontWeight: 'bold'
   },
   //default icon header font styles
   defaultIconHeaderTitleStyles: {
@@ -112,7 +112,7 @@ const Theme = {
   },
   //cart list component style
   cartListStyles: {
-    borderBottomColor:colors.GREY,
+    borderBottomColor: colors.GREY,
     description: {
       fontFamily: 'SourceSansPro-Bold',
       color: colors.BLUE,
@@ -156,9 +156,9 @@ const Theme = {
   },
   //shopping card styles
   shppoingListStyles: {
-    borderBottomColor:colors.GREY,
-    buttonBackGroundColor:colors.DARK_BLUE,
-    buttonTextColor:colors.WHITE,
+    borderBottomColor: colors.GREY,
+    buttonBackGroundColor: colors.BLUE,
+    buttonTextColor: colors.WHITE,
     description: {
       fontFamily: 'SourceSansPro-Bold',
       color: colors.BLUE,
@@ -189,6 +189,42 @@ const Theme = {
       fontSize: 13,
       lineHeight: 15,
     }
+  },
+
+  //subscription card
+  subscriptionCard: {
+    borderColor: colors.WHITE,
+    backgroundColor: colors.LIGHT_PURPLE,
+    fontColor:colors.WHITE,
+    mainTextStyle: {
+      fontFamily: 'SourceSansPro-Regular',
+      fontSize: 14,
+      color: colors.WHITE,
+      lineHeight: 18,
+    },
+    contentTitleStyle: {
+      fontFamily: 'SourceSansPro-Regular',
+      fontSize: 20,
+      lineHeight: 25,
+      color: colors.WHITE,
+    },
+    leftContentStyle: {
+      fontFamily: 'SourceSansPro-Regular',
+      fontSize: 11,
+      lineHeight: 14,
+      color: colors.WHITE,
+    },
+    rightTopStyle: {
+      fontFamily: 'SourceSansPro-Bold',
+      fontSize: 18,
+      lineHeight: 23,
+      color: colors.WHITE,
+    },
+    rightBottomStyle: {
+      fontFamily: 'SourceSansPro-Regular',
+      fontSize: 14,
+      color: colors.WHITE,
+    },
   }
 };
 
