@@ -1,12 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, Dimensions } from 'react-native';
-import { colors, size } from '../../theme'
 import { Header } from '../../components'
 import { images } from '../../constants';
+import { useSelector } from 'react-redux';
 
 const window = Dimensions.get('window');
 const Layout2 = (props) => {
-
+    const { theme } = useSelector(state => state.theme);
+    const colors = theme.Theme.colors;
     const Inner = props.inner; // Note: variable name _must_ start with a capital letter 
     const curve = props.curve ? props.curve : 'primary'
     const getBackgroundImage = () => {
@@ -37,7 +38,7 @@ const Layout2 = (props) => {
         }
         return backgroundImage;
     }
-    const { fullScreen, halfScreen, noImage, samllScreen } = styles(props)
+    const { fullScreen, halfScreen, noImage, samllScreen } = styles(props, theme.Theme);
     const getBackgroundStyle = () => {
         let backgroundStyle;
         switch (props.type) {
@@ -63,11 +64,11 @@ const Layout2 = (props) => {
     return (
         <View flex={1}>
             {props.type ? (
-            <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={getBackgroundStyle()}>
-                <Header title='PET HARMONY' headerColor={'transparent'} />
-                {props.children}
-            </ImageBackground>
-            ) : (<View  style={noImage}>
+                <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={getBackgroundStyle()}>
+                    <Header title='PET HARMONY' headerColor={'transparent'} />
+                    {props.children}
+                </ImageBackground>
+            ) : (<View style={noImage}>
                 <Header title='PET HARMONY' headerColor={'transparent'} />
                 {props.children}
             </View>)}
@@ -78,39 +79,39 @@ const Layout2 = (props) => {
     );
 };
 
-const styles = (props) => StyleSheet.create({
+const styles = (props, theme) => StyleSheet.create({
 
     noImage: {
         flex: 1,
         resizeMode: 'stretch',
-        padding: size.SIZE.CONTAINER_PADDING,
+        padding: theme.size.CONTAINER_PADDING,
         paddingBottom: 0,
         height: '90%',
-        backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE
+        backgroundColor: props.backgroundColor ? props.backgroundColor : theme.colors.WHITE
     },
     fullScreen: {
         flex: 1,
         resizeMode: 'stretch',
-        padding: size.SIZE.CONTAINER_PADDING,
+        padding: theme.size.CONTAINER_PADDING,
         paddingBottom: 0,
         height: '90%',
-        backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE
+        backgroundColor: props.backgroundColor ? props.backgroundColor : theme.colors.WHITE
     },
     samllScreen: {
         flex: 1,
         resizeMode: 'stretch',
-        padding: size.SIZE.CONTAINER_PADDING,
-        backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE,
+        padding: theme.size.CONTAINER_PADDING,
+        backgroundColor: props.backgroundColor ? props.backgroundColor : theme.colors.WHITE,
         height: '60%',
         paddingBottom: 0,
     },
     halfScreen: {
         flex: 1,
         resizeMode: 'stretch',
-        padding: size.SIZE.CONTAINER_PADDING,
+        padding: theme.size.CONTAINER_PADDING,
         height: '75%',
         paddingBottom: 0,
-        backgroundColor: props.backgroundColor ? props.backgroundColor : colors.WHITE
+        backgroundColor: props.backgroundColor ? props.backgroundColor : theme.colors.WHITE
     }
 
 });

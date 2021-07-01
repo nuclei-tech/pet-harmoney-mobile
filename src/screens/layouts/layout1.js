@@ -10,7 +10,7 @@ import { navigate } from '../../navigation/navigation';
 const window = Dimensions.get('window');
 const Layout1 = props => {
     const { theme } = useSelector(state => state.theme);
-
+    
     // navigate the page
     // const navigatePage = () => {
     //   navigate('LiveScreen');
@@ -29,7 +29,7 @@ const Layout1 = props => {
             inner={Label}  
             type={'halfScreen'}       
             curve = {'primary'}    
-            layoutColor={colors.BLUE} />
+            layoutColor={theme.Theme.colors.BLUE} />
 
         </SafeAreaView>
     );

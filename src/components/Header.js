@@ -53,12 +53,12 @@ const styles = StyleSheet.create({
     headerLogo: {
         width:29,
         height:33.1,
-        marginRight: size.SIZE.MARGIN
+        marginRight: 18
     },
     headerIcon:{
         width:24,
         height:24,
-        marginRight: size.SIZE.MARGIN
+        marginLeft: 10
     },
     leftHeader: {
         flexDirection: "row",

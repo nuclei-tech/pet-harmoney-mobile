@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { colors, size } from '../../theme'
 import { Button, Header, ReminderButton, Layout2, IconHeader } from '../../components'
 import { images } from '../../constants'
 
@@ -11,7 +10,7 @@ import { navigate } from '../../navigation/navigation';
 
 const CreateAccountScreen = props => {
   const { theme } = useSelector(state => state.theme);
-
+  const colors = theme.Theme.colors
  
   return (
     <SafeAreaView style={styles.container}>
