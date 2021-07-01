@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, ActivityIndicator, View } from 'react-native';
-import { Card, Image } from 'react-native-elements';
+import { Image } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 import { images } from '../../constants'
 
@@ -15,17 +15,18 @@ const ParagrapghCard = ({
     imageExists
 }) => {
     const {theme} = useSelector(state => state.theme)
+    const {cardContainer, cardTitle, paragraphText, image, imageContainer} = styles(theme)
 
     return (
-        <View style={[styles(theme).cardContainer, {backgroundColor: cardBackgroundColor, borderColor: cardBorderColor,}]}>
-            {title && <Text style={[styles(theme).cardTitle, {textAlign: titleAlign, color: titleColor}]}>{title}</Text>}
-            <Text style={[styles(theme).paragraphText, {color: textColor}]}>
+        <View style={[cardContainer, {backgroundColor: cardBackgroundColor, borderColor: cardBorderColor,}]}>
+            {title && <Text style={[cardTitle, {textAlign: titleAlign, color: titleColor}]}>{title}</Text>}
+            <Text style={[paragraphText, {color: textColor}]}>
                 {paragraph}
             </Text>
-            {imageExists && <View style={styles(theme).imageContainer}>
+            {imageExists && <View style={imageContainer}>
                 <Image
                     source={images.termsDownArrow}
-                    style={styles(theme).image}
+                    style={image}
                     PlaceholderContent={<ActivityIndicator />}
                 />
             </View>}

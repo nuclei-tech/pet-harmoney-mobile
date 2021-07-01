@@ -3,7 +3,6 @@ import { StyleSheet, View, TouchableNativeFeedback, ActivityIndicator, FlatList,
 import { Card, ListItem, Image } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 import { images } from '../../constants'
-import { size, colors } from '../../theme'
 import { Button } from '../../components'
 
 const ReminderDetailsCard = ({
@@ -21,6 +20,7 @@ const ReminderDetailsCard = ({
     listBtnTxtColor
 }) => {
     const {theme} = useSelector(state => state.theme)
+    const {checkBoxIcon, headerTitleStyle, titleStyle, descriptionStyle} = styles(theme)
 
     const [selectedItem, setSelectedItem] = useState([])
 
@@ -53,7 +53,7 @@ const ReminderDetailsCard = ({
                <TouchableOpacity onPress={() => checkBoxHandler(index)}>
                     <Image
                         source={images.reminderDetailCheckBoxIcon}
-                        style={styles(theme).checkBoxIcon}
+                        style={checkBoxIcon}
                         // PlaceholderContent={<ActivityIndicator />}
                         onPress={() => checkBoxHandlerSelect(index)}
                     />
@@ -63,17 +63,17 @@ const ReminderDetailsCard = ({
                 <TouchableOpacity onPress={() => checkBoxHandler(index)}>
                     <Image
                         source={images.reminderDetailCheckedCheckBoxIcon}
-                        style={styles(theme).checkBoxIcon}
+                        style={checkBoxIcon}
                         // PlaceholderContent={<ActivityIndicator />}
                         onPress={() => checkBoxHandlerUnselect(index)}
                     />
                 </TouchableOpacity>
                 }
                 <ListItem.Content >
-                    <ListItem.Title style={[styles(theme).titleStyle, selectedItem && selectedItem.length !== 0 && selectedItem.includes(index) ? {color: colors.GREEN} : {color: titleColor}, listButtonExist && {fontSize: size.FONT_SIZES.DETAIL_CARD_TITLE_SMALL} ]}>{item.title}</ListItem.Title>
+                    <ListItem.Title style={[titleStyle, selectedItem && selectedItem.length !== 0 && selectedItem.includes(index) ? {color: theme.Theme.colors.GREEN} : {color: titleColor}, listButtonExist && {fontSize: theme.Theme.size.DETAIL_CARD_TITLE_SMALL} ]}>{item.title}</ListItem.Title>
                 </ListItem.Content>
                 <ListItem.Content>
-                    <ListItem.Title style={[styles(theme).descriptionStyle, {color: descriptionColor}, listButtonExist && {fontSize: size.FONT_SIZES.DETAIL_CARD_TITLE_SMALL}]}>{item.description}</ListItem.Title>
+                    <ListItem.Title style={[descriptionStyle, {color: descriptionColor}, listButtonExist && {fontSize: theme.Theme.size.DETAIL_CARD_TITLE_SMALL}]}>{item.description}</ListItem.Title>
                 </ListItem.Content>
                 {listButtonExist && <ListItem.Content>
                     <Button onPress={btnPressHandler} buttonType={'small'} customTextStyle={{color: listBtnTxtColor}} title={listBtnTitle} color={listBtnColor} />
@@ -84,7 +84,7 @@ const ReminderDetailsCard = ({
     
     return (
         <Card containerStyle={{backgroundColor: backgroundColor}}>
-            {headerTitle && <Card.Title style={[styles(theme).headerTitleStyle, {color: headerTitleColor}]}>{headerTitle}</Card.Title>}
+            {headerTitle && <Card.Title style={[headerTitleStyle, {color: headerTitleColor}]}>{headerTitle}</Card.Title>}
             <FlatList
                 keyExtractor={(item, index) => keyExtractor(item,index)}
                 data={dataList}
