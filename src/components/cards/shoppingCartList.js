@@ -19,7 +19,9 @@ const ShoppingCardList = (props) => {
         customTotal,
         customRating,
         customButtonContanier,
-        customButtonTextStyle
+        customButtonTextStyle,
+        buttonBackground,
+        buttonTextColor
     } = props
 
     const {
@@ -34,7 +36,7 @@ const ShoppingCardList = (props) => {
         discriptionContanier,
         otherContanier,
         buttonContanier,
-        buttonTextStyle
+        buttonTextStyle,
     } = styles(theme)
 
     return (
@@ -58,7 +60,10 @@ const ShoppingCardList = (props) => {
                 </View>
             </View>
             <View style={{ ...otherContanier, ...customOtherContanier }}>
-                <Button buttonType={'small'} customTextStyle={{...buttonTextStyle,...customButtonTextStyle}} buttonContainStyle={{...buttonContanier,...customButtonContanier}} title={'Add to cart'} />
+                <Button buttonType={'small'} 
+                textColor={buttonTextColor} 
+                backgroundColor={buttonBackground} 
+                customTextStyle={{...buttonTextStyle,...customButtonTextStyle}} buttonContainStyle={{...buttonContanier,...customButtonContanier}} title={'Add to cart'} />
             </View>
         </View>
     )
