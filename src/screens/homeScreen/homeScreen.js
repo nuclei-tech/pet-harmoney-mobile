@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
-import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2, InputField, Paragraph, MyCardList, ShoppingCardList, ProfilePicture, SubscriptionCard } from '../../components'
+import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2, InputField, Paragraph, MyCardList, ShoppingCardList, ProfilePicture, SubscriptionCard, SearchField } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 import { images } from '../../constants';
@@ -28,7 +28,7 @@ const HomeScreen = props => {
         // login={true} 
         // customtTitleStyle={{color:theme.Theme.colors.DARK_BLUE}}
         />
-        <ScrollView style={{ marginBottom: 10 }} showsVerticalScrollIndicator={false}
+        <ScrollView style={{ marginBottom: 10 }} showsVerticalScrollIndicator={false} nestedScrollEnabled={true}
         >
 
           <Button title="Outline button" type={'outline'} onPress={action} />
@@ -81,6 +81,10 @@ const HomeScreen = props => {
             </View>
           </View>
 
+          <View style={{ backgroundColor: '#ffffff', borderColor: '#ffffff', paddingHorizontal: 5 }}>
+            <SearchField />
+          </View>
+
           <ReminderDetailCard
             backgroundColor={theme.Theme.colors.DARK_BLUE}
             titleColor={theme.Theme.colors.YELLOW}
@@ -89,6 +93,7 @@ const HomeScreen = props => {
             dataList={reminderDetails}
             checkBoxExist
           />
+
           <ReminderDetailCard
             backgroundColor={theme.Theme.colors.GREEN}
             titleColor={theme.Theme.colors.PURPLE}

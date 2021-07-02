@@ -16,6 +16,7 @@ import ShoppingCardList from './cards/shoppingCartList'
 import SubscriptionCard from './cards/subscriptionCard'
 import Paragraph from './forms/paragraph'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
+import SearchField from './forms/searchField'
 
 export{
     ReminderButton,
@@ -35,5 +36,6 @@ export{
     IconTabHeader,
     ShoppingCardList,
     SubscriptionCard,
-    SecondaryTopTitleHeader
+    SecondaryTopTitleHeader,
+    SearchField
 }
