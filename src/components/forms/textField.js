@@ -26,9 +26,9 @@ const InputField = ({ customMainContanier, customTextStyle, placeholderColor, pl
         phone:/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/
     };
 
-    const Validation = () => {
-        const value = values;
+    const Validation = (text) => {
         const validateRes = new RegExp(customvalidators[validator] || validator);
+        let value = text
         if (value) {
             setValid(validateRes.test(value));
             setErrordMessage(errorMessage);
@@ -39,6 +39,7 @@ const InputField = ({ customMainContanier, customTextStyle, placeholderColor, pl
             onValidatorExecuted && onValidatorExecuted(validateRes.test(value));
         }
     };
+
 
     switch (type) {
         case 'phone number':
@@ -53,7 +54,7 @@ const InputField = ({ customMainContanier, customTextStyle, placeholderColor, pl
         var cleaned = ('' + text).replace(/\D/g, '')
         var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/)
         if (match) {
-           let number = [match[2], ' - ', match[3], ' - ', match[4]].join('');
+           let number = [match[2],' - ', match[3], ' - ', match[4]].join('');
             return number
         }
         return text
@@ -68,20 +69,20 @@ const InputField = ({ customMainContanier, customTextStyle, placeholderColor, pl
                 onChangeText={text => {
                     if (phoneNumber) {
                         let number = checkPhoneNumber(text)
-                        Validation();
                         setValue(number)
+                        Validation(number);
                         onChangeText(number);
                     } else {
                         setValue(text)
                         onChangeText(text);
-                        Validation();
+                        Validation(text);
                     }
                 }}
                 textContentType={phoneNumber ? 'telephoneNumber' : 'none'}
                 dataDetectorTypes={phoneNumber ? 'phoneNumber' : 'all'}
                 keyboardType={phoneNumber ? 'phone-pad' : 'default'}
                 onEndEditing={() => {
-                    Validation();
+                    Validation(values);
                 }}
                 value={values}
             />
