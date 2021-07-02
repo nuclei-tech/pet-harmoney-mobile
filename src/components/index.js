@@ -1,20 +1,21 @@
-import Button from "./Buttons/button";
-import ReminderButton from "./Buttons/reminderButton"
-import Header from "./Header";
+import Button from "./buttons/button";
+import ReminderButton from "./buttons/reminderButton"
+import Header from "./header";
 import Layout from "./layouts/primaryLayout"
 import Layout2 from "./layouts/primaryLayout_2"
 import MediumContanier from './contaniers/mediumContanier'
 import RegisterLayout from './layouts/registerLayout'
-import ReminderDetailCard from "./Cards/reminderDetails";
-import ParagraphCard from './Cards/paragraphCard'
-import IconHeader from './IconHeader/iconHeader'
+import ReminderDetailCard from "./cards/reminderDetails";
+import ParagraphCard from './cards/paragraphCard'
+import IconHeader from './iconHeader/iconHeader'
 import InputField from './layouts/textField'
-import ProfilePicture from "./ProfilePicture";
-import MyCardList from './Cards/myCartList'
-import IconTabHeader from './IconTabHeader/iconTabHeader'
-import ShoppingCardList from './Cards/shoppingCartList'
-import SubscriptionCard from './Cards/subscriptionCard'
-import Paragraph from './Paragraph/paragraph'
+import Paragraph from './paragraph/paragraph'
+import MyCardList from './cards/myCartList'
+import PlaceOrderCard from "./cards/placeOrderCard";
+import ProfilePicture from "./profilePicture";
+import IconTabHeader from './iconTabHeader/iconTabHeader'
+import ShoppingCardList from './cards/shoppingCartList'
+import SubscriptionCard from './cards/subscriptionCard'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
 
 export{
@@ -32,6 +33,7 @@ export{
     InputField,
     Paragraph,
     MyCardList,
+    PlaceOrderCard,
     IconTabHeader,
     ShoppingCardList,
     SubscriptionCard,

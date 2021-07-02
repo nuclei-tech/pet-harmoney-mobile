@@ -1,16 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
-import { colors, size } from '../../theme'
 import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField,Paragraph,MyCardList,ShoppingCardList,ProfilePicture,SubscriptionCard} from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
-import { images} from'../../constants';
+import { images } from '../../constants';
 import { navigate } from '../../navigation/navigation';
 import { reminderDetails, termsAndConditions, ratingComment, myCardList } from '../../constants'
 
 const HomeScreen = props => {
   const { theme } = useSelector(state => state.theme);
-
+  const colors = theme.Theme.colors
   const action = () => {
     console.log('in');
   }
@@ -22,6 +21,12 @@ const HomeScreen = props => {
         layoutColor={theme.Theme.colors.DARK_BLUE}
         backgroundColor={theme.Theme.colors.GREEN}
       >
+        <Header 
+        title='PET HARMONY' 
+        // dark 
+        // login={true} 
+        // customtTitleStyle={{color:theme.Theme.colors.DARK_BLUE}}
+        />
         <ScrollView style={{ marginBottom: 10 }} showsVerticalScrollIndicator={false}
         >
           
@@ -148,16 +153,23 @@ const HomeScreen = props => {
               paragraphMarginBottom={5}
             />
 
-        </View>
+          </View>
 
-        <View style={{backgroundColor:'white',paddingHorizontal:10}}>
-          {myCardList.map(data =>{
-            return(
-              <MyCardList data={data}/>
-            )
-          })}
-        </View>
-
+          <View style={{ backgroundColor: 'white', paddingHorizontal: 10 }}>
+            {myCardList.map(data => {
+              return (
+                <MyCardList data={data} />
+              )
+            })}
+          </View>
+          
+          <View style={{ backgroundColor: 'white', paddingHorizontal: 10, marginTop: 15 }}>
+            {myCardList.map(data => {
+              return (
+                <ShoppingCardList data={data} />
+              )
+            })}
+          </View>
         <View style={{backgroundColor:'white',paddingHorizontal:10,marginTop:15}}>
           {myCardList.map(data =>{
             return(
@@ -173,10 +185,10 @@ const HomeScreen = props => {
           <SubscriptionCard title={'Subscription'} contentTitle={'Yearly Subscription '} leftContent={'$XX.XX Billed annually asa recurring payment'} rightTopContent={'$X.XX'} rightBottomContent={'Per Month'}/>
         </View>
 
-          <View style={{paddingTop:16, flexDirection:"row", justifyContent:"space-between", alignItems:'center'}}>
+          <View style={{ paddingTop: 16, flexDirection: "row", justifyContent: "space-between", alignItems: 'center' }}>
             <ProfilePicture source={images.profile} />
-            <ProfilePicture source={images.profile} customStyle={{width:79, height: 79, borderWidth: 2}}/>
-            <ProfilePicture source={images.profile} customStyle={{width:24, height: 24, borderWidth: 1}}/>
+            <ProfilePicture source={images.profile} customStyle={{ width: 79, height: 79, borderWidth: 2 }} />
+            <ProfilePicture source={images.profile} customStyle={{ width: 24, height: 24, borderWidth: 1 }} />
           </View>
 
         </ScrollView>

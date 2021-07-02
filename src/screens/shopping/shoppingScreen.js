@@ -11,13 +11,15 @@ import { navigate } from '../../navigation/navigation';
 const CreateAccountScreen = props => {
   const { theme } = useSelector(state => state.theme);
   const colors = theme.Theme.colors
- 
+
   return (
     <SafeAreaView style={styles.container}>
       <Layout2
-      type={'halfScreen'}
-        curve = {'primary'} 
-        layoutColor={theme.Theme.colors.BLUE} // color is required
+        type={'halfScreen'}
+        curve={'primary'}
+        layoutColor={theme.Theme.colors.BLUE}
+        customStyle={{ padding: 0 }}
+      // header={'hide'} // color is required
       >
       <SecondaryTopTitleHeader
         primaryTitle={'Pet Harmony'}
@@ -25,7 +27,7 @@ const CreateAccountScreen = props => {
         backgroundCustomColor={colors.BLUE}
       />
       <View>
-        <IconHeader 
+      <IconHeader 
           primaryImage={images.careTaker}
           primaryTextFontSize={24}
           primaryTextLineHeight={28.49}
@@ -61,8 +63,8 @@ const CreateAccountScreen = props => {
         <Text>From parent</Text>
         <Text>From parent</Text>
         <Text>From parent</Text> */}
-        
-      </View>
+
+        </View>
       </Layout2>
     </SafeAreaView>
   );
