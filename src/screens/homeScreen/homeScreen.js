@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
-import { colors, size } from '../../theme'
 import { Button, PlaceOrderCard, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2, InputField, Paragraph, MyCardList, ShoppingCardList, ProfilePicture } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
@@ -23,9 +22,14 @@ const HomeScreen = props => {
         layoutColor={theme.Theme.colors.DARK_BLUE}
         backgroundColor={theme.Theme.colors.GREEN}
       >
+        <Header 
+        title='PET HARMONY' 
+        // dark 
+        // login={true} 
+        // customtTitleStyle={{color:theme.Theme.colors.DARK_BLUE}}
+        />
         <ScrollView style={{ marginBottom: 10 }} showsVerticalScrollIndicator={false}
         >
-
           {/* <StatusBar  backgroundColor={theme.Theme.colors.RED} hidden={true} /> */}
           <Button title="Outline button" type={'outline'} onPress={action} />
           <Button title="Solid Button" type={'outline'} custonTextStyle={{ color: theme.Theme.colors.WHITE }} color={theme.Theme.colors.WHITE} />
@@ -153,11 +157,7 @@ const HomeScreen = props => {
               )
             })}
           </View>
-          <View>
-            <PlaceOrderCard
-
-            />
-          </View>
+          
           <View style={{ backgroundColor: 'white', paddingHorizontal: 10, marginTop: 15 }}>
             {myCardList.map(data => {
               return (

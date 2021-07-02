@@ -16,8 +16,9 @@ const CreateAccountScreen = props => {
     <SafeAreaView style={styles.container}>
       <Layout2
       type={'halfScreen'}
-        curve = {'primary'} 
-        layoutColor={theme.Theme.colors.BLUE} // color is required
+      curve = {'primary'} 
+      layoutColor={theme.Theme.colors.BLUE}
+      // header={'hide'} // color is required
       >
       <View>
         {/* <IconHeader 

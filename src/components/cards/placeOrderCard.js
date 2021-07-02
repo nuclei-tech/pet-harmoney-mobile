@@ -1,27 +1,45 @@
 import React from 'react'
-import { Text, View, Image, StyleSheet } from 'react-native'
+import { Text, View, Image, StyleSheet, Dimensions } from 'react-native'
 
 // Connect redux store.
 import { useSelector } from 'react-redux';
-import { InputField } from '../../components'
-const PlaceOrderCard = ({ data }) => {
+import { InputField, Button } from '../../components'
+import { colors } from '../../theme';
+const PlaceOrderCard = ({subtotal, shipping, total }) => {
     const { theme } = useSelector(state => state.theme);
 
+    const { width, height } = Dimensions.get('window');
     const {
         placeOrderCardContanier
     } = styles(theme)
 
     return (
         <View style={{ ...placeOrderCardContanier }}>
-            <View flex={1} style={{alignItems:'flex-end'}}>
+            <View flex={0.75} style={{ alignItems: 'flex-end', marginRight: width * 0.072 }}>
                 <InputField
-                    customMainContanier={{ backgroundColor: '#ffffff', borderColor: theme.Theme.colors.PLACEHOLDER_GRAY, borderWidth: 1}}
+                    customMainContanier={{ backgroundColor: '#ffffff', borderColor: theme.Theme.colors.PLACEHOLDER_GRAY, borderWidth: 1 }}
                     placeholderColor={theme.Theme.colors.PLACEHOLDER_GRAY}
-                    customTextStyle={{fontSize:12, paddingVertical:0, color:theme.Theme.colors.PLACEHOLDER_GRAY}}
+                    customTextStyle={{ fontSize: 12, paddingVertical: 0, color: theme.Theme.colors.PLACEHOLDER_GRAY }}
                     placeholder={'Apply Coupon Code'}
                 />
             </View>
-            <View flex={1}>
+            <View flex={0.75}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }} >
+                    <Text style={{ fontFamily: 'SourceSansPro-Bold', alignSelf: 'flex-end', fontSize: 13, lineHeight: 16 }} flex={0.5}>Subtotal</Text>
+                    <Text style={{ fontFamily: 'SourceSansPro-Light', fontSize: 24, lineHeight: 30 }} flex={0.5}>{subtotal}</Text>
+                </View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }} >
+                    <Text style={{ fontFamily: 'SourceSansPro-Bold', alignSelf: 'flex-end', fontSize: 13, lineHeight: 16 }} flex={0.5}>Shiping</Text>
+                    <Text style={{ fontFamily: 'SourceSansPro-Light', fontSize: 24, lineHeight: 30 }} flex={0.5}>{shipping}</Text>
+                </View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }} >
+                    <Text style={{ fontFamily: 'SourceSansPro-Bold', alignSelf: 'flex-end', fontSize: 13, lineHeight: 16 }} flex={0.5}>Total</Text>
+                    <Text style={{ fontFamily: 'SourceSansPro-Light', fontSize: 24, lineHeight: 30 }} flex={0.5}>{total}</Text>
+                </View>
+                <View style={{ justifyContent: 'space-between', marginTop:height*0.02 }} >
+                    <Button title="Place Order" buttonType={'small'} color={theme.Theme.colors.BLUE} customTextStyle={{ color: colors.WHITE, fontSize: 14, lineHeight: 18, }} />
+                    <Text style={{ fontFamily: 'SourceSansPro-Light', fontSize: 9, lineHeight: 11, textAlign:'center' }} flex={0.5}>Use card ending in 7890</Text>
+                </View>
             </View>
 
         </View>
@@ -30,15 +48,11 @@ const PlaceOrderCard = ({ data }) => {
 
 const styles = (theme) => StyleSheet.create({
     placeOrderCardContanier: {
-        flex: 15,
+        flex: 2,
         flexDirection: 'row',
-        paddingTop: 16,
-        paddingBottom: 17,
-        borderBottomColor: '#C4C4C4',
-        borderBottomWidth: 0.5,
-        backgroundColor:theme.Theme.colors.WHITE,
-        paddingLeft:25
-        
+        paddingLeft: 25,
+        justifyContent: 'space-between'
+
     },
 
 

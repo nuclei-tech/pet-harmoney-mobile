@@ -4,6 +4,8 @@ const logo = require('../assets/images/Header_LOGO.png');
 const logo_Black = require('../assets/images/Header_LOGO_Black.png');
 const searchIcon = require('../assets/images/SEARCH_ICON.png');
 const profileIcon = require('../assets/images/USER_PROFILE_ICON.png');
+const searchIcon_Black = require('../assets/images/SEARCH_ICON_BLACK.png');
+const profileIcon_Black = require('../assets/images/USER_PROFILE_ICON_BLACK.png');
 const bgBlue = require('../assets/images/background/BG_Blue.png');
 const bgRed = require('../assets/images/background/BG_Red.png');
 const bgDBlue = require('../assets/images/background/BG_DBlue.png');
@@ -54,7 +56,9 @@ export default {
     logo,
     logo_Black,
     searchIcon,
+    searchIcon_Black,
     profileIcon,
+    profileIcon_Black,
     bgBlue,
     bgRed,
     bgDBlue,

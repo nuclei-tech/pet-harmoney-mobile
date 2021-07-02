@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { Button, Header, ReminderButton, Layout2 } from '../../components'
+import { StyleSheet, View, SafeAreaView,  } from 'react-native';
+import {  PlaceOrderCard, Header, Layout2,  IconHeader} from '../../components'
+import {images} from '../../constants'
 // Connect redux store.
 import { useSelector } from 'react-redux';
-;
-import { navigate } from '../../navigation/navigation';
 
 const TelevetScreen = props => {
   const { theme } = useSelector(state => state.theme);
@@ -16,31 +15,35 @@ const TelevetScreen = props => {
   // const navigatePage = () => {
   //   navigate('LiveScreen');
   // };
-  const Label = (props) => {
-    return (
-      <View>
-        {/* <Header title='PET HARMONY' headerColor={'transparent'} /> */}
-        <Text>From parent</Text>
-        <Text>From parent</Text>
-        <Text>From parent</Text>
-        <Text>From parent</Text>
 
-      </View>
-    )
-  }
   return (
     <SafeAreaView style={styles.container}>
       <Layout2
-        inner={Label}
+        // 
         backgroundColor={colors.WHITE}
         layoutColor={colors.WHITE}
-        header={'black'} // color is required
+        header={'Dark'} // color is required
       >
-          <Text>From parent</Text>
-          <Text>From parent</Text>
-          <Text>From parent</Text>
-          <Text>From parent</Text>
-
+        <Header
+          title='PET HARMONY'
+          dark
+          // login={true} 
+          customtTitleStyle={{ color: theme.Theme.colors.DARK_BLUE }}
+        />
+        <IconHeader 
+          primaryImage={images.shopping}
+          primaryTextFontSize={18}
+          primaryTextLineHeight={21.37}
+          primaryImageWidth={53}
+          primaryImageHeight={53}
+          mainTextColor={colors.DARK_BLUE}
+          mainText={'My Cart'}
+        />
+        <PlaceOrderCard 
+        subtotal={'$.x.xx'} 
+        shipping={'$.x.xx'} 
+        total ={'$.x.xx'}
+        />
       </Layout2>
     </SafeAreaView>
   );
