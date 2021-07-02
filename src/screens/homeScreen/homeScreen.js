@@ -15,7 +15,6 @@ const HomeScreen = props => {
     console.log('in');
   }
 
-
   return (
     <SafeAreaView style={styles.container}>
       <Layout2
@@ -25,17 +24,17 @@ const HomeScreen = props => {
       >
         <ScrollView style={{ marginBottom: 10 }} showsVerticalScrollIndicator={false}
         >
-
-          {/* <StatusBar  backgroundColor={theme.Theme.colors.RED} hidden={true} /> */}
+          
           <Button title="Outline button" type={'outline'} onPress={action} />
-          <Button title="Solid Button" type={'outline'} custonTextStyle={{ color: theme.Theme.colors.WHITE }} color={theme.Theme.colors.WHITE} />
+          <Button title="Solid Button" type={'outline'} textColor={theme.Theme.colors.WHITE } backgroundColor={theme.Theme.colors.YELLOW} />
+          <Button title="Solid Button" type={'outline'} boarderColor={theme.Theme.colors.YELLOW} textColor={theme.Theme.colors.WHITE }/>
           <ReminderButton />
 
-          <Button title="Solid Button" color={theme.Theme.colors.GREEN} />
+          <Button title="Solid Button" backgroundColor={theme.Theme.colors.RED} color={theme.Theme.colors.GREEN} />
 
-          <Button title="Solid Button" color={theme.Theme.colors.RED} />
-          <Button title="Solid Button" textTransform={'lowercase'} color={theme.Theme.colors.YELLOW} custonTextStyle={{ color: theme.Theme.colors.WHITE }} />
-          <Button title="Solid Button" textTransform={'uppercase'} color={theme.Theme.colors.YELLOW} custonTextStyle={{ color: theme.Theme.colors.GREEN, fontSize: 9 }} />
+          <Button title="Solid Button" buttonWidth={250} backgroundColor={theme.Theme.colors.RED} />
+          <Button title="Solid Button" textTransform={'lowercase'} type={'outline'} boarderColor={theme.Theme.colors.GREEN} backgroundColor={theme.Theme.colors.YELLOW} textColor={theme.Theme.colors.WHITE } />
+          <Button title="Solid Button" textTransform={'uppercase'} backgroundColor={theme.Theme.colors.GREEN} textColor={ theme.Theme.colors.YELLOW} />
 
           <View>
             <InputField
@@ -157,7 +156,10 @@ const HomeScreen = props => {
         <View style={{backgroundColor:'white',paddingHorizontal:10,marginTop:15}}>
           {myCardList.map(data =>{
             return(
-              <ShoppingCardList data={data}/>
+              <ShoppingCardList  
+              buttonBackground={colors.BLUE}
+              buttonTextColor={colors.WHITE} 
+              data={data}/>
             )
           })}
         </View>

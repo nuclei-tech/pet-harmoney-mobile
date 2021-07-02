@@ -20,7 +20,7 @@ const CreateAccountMobile = props => {
         placeholderColor={theme.Theme.createAccount.placeHolderColor}
         placeholder={'.   .   .   .   .   .   .   .'}
       />
-      <Button title={'Register'} color={theme.Theme.createAccount.registerBackGroundColor} buttonStyle={styles(theme).registerButtonStyle} customTextStyle={styles(theme).buttonRegisterStyle} />
+      <Button title={'Register'} backgroundColor={theme.Theme.createAccount.registerBackGroundColor} textColor={theme.Theme.createAccount.registerTextColor} buttonStyle={styles(theme).registerButtonStyle} customTextStyle={styles(theme).buttonRegisterStyle} />
       <Text style={styles(theme).textAlready}>already have an account?</Text>
     </RegisterLayout>
   );

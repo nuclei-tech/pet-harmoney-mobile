@@ -9,7 +9,6 @@ export const styles = props =>
       marginBottom: 31,
     },
     buttonStyle: {
-      borderColor: props.Theme.createAccount.borderColor,
       borderWidth: 4
     },
     buttonTextStyle: {
@@ -22,7 +21,6 @@ export const styles = props =>
     },
     buttonRegisterStyle: {
       ...props.Theme.createAccount.buttonTextStyles,
-      color: props.Theme.createAccount.registerTextColor,
     },
     textAlready:{
       ...props.Theme.createAccount.textAlready,
