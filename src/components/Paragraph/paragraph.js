@@ -2,11 +2,11 @@ import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 
-const Paragraph = ({textColor, paragraph, textFontSize, textFontLineHeight, textFontWeight}) => {
+const Paragraph = ({textColor, paragraph, textFontSize, textFontLineHeight, textFontWeight, paragraphMarginBottom}) => {
     const {theme} = useSelector(state => state.theme)
     const {paragraphText} = styles(theme)
 
-    const manuallyConfiguredTextStyles = {color: textColor, fontSize: textFontSize, lineHeight: textFontLineHeight, fontWeight: textFontWeight}
+    const manuallyConfiguredTextStyles = {color: textColor, fontSize: textFontSize, lineHeight: textFontLineHeight, fontWeight: textFontWeight, marginBottom: paragraphMarginBottom}
 
     return (
         <Text style={[paragraphText, manuallyConfiguredTextStyles]}>
@@ -18,7 +18,6 @@ const Paragraph = ({textColor, paragraph, textFontSize, textFontLineHeight, text
 const styles = (props) => StyleSheet.create({
     paragraphText: {
         ...props.Theme.defaultParagraphStyles,
-        marginBottom: 5
     },
 })
 
