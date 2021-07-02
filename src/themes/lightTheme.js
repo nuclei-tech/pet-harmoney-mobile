@@ -149,7 +149,7 @@ const Theme = {
   //tab icon header font styles
   tabIconHeaderFontStyles: {
         fontFamily: 'Aqum',
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
         fontSize: 6,
         lineHeight: 6,
         color: colors.WHITE

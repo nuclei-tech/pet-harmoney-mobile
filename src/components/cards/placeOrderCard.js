@@ -17,8 +17,9 @@ const PlaceOrderCard = ({ subtotal, shipping, total }) => {
         viewContainer,
         titleText,
         valueText,
-        smallText
-    } = styles(theme)
+        smallText,
+        smallBtn
+    } = styles(theme, width, height)
 
     return (
         <View style={{ ...placeOrderCardContanier }}>
@@ -44,7 +45,10 @@ const PlaceOrderCard = ({ subtotal, shipping, total }) => {
                     <Text style={valueText} flex={0.5}>{total}</Text>
                 </View>
                 <View style={{ justifyContent: 'space-between', marginTop: height * 0.02 }} >
-                    <Button title="Place Order" buttonType={'small'} color={theme.Theme.colors.BLUE} customTextStyle={{ color: colors.WHITE, fontSize: 14, lineHeight: 18, }} />
+                    <Button title="Solid Button"
+                        type={'outline'} textColor={theme.Theme.colors.WHITE}
+                        backgroundColor={theme.Theme.colors.BLUE}
+                        customTextStyle={smallBtn } />
                     <Text style={smallText} flex={0.5}>Use card ending in 7890</Text>
                 </View>
             </View>
@@ -53,7 +57,7 @@ const PlaceOrderCard = ({ subtotal, shipping, total }) => {
     )
 }
 
-const styles = (theme) => StyleSheet.create({
+const styles = (theme, width, height) => StyleSheet.create({
     placeOrderCardContanier: {
         flex: 2,
         flexDirection: 'row',
@@ -65,7 +69,7 @@ const styles = (theme) => StyleSheet.create({
         alignItems: 'flex-end',
         marginRight: width * 0.072
     },
-    customMainContanier: {
+    btnContanier: {
         backgroundColor: '#ffffff',
         borderColor: theme.Theme.colors.PLACEHOLDER_GRAY,
         borderWidth: 1
@@ -94,6 +98,11 @@ const styles = (theme) => StyleSheet.create({
         fontSize: 9,
         lineHeight: 11,
         textAlign: 'center'
+    },
+    smallBtn: {
+        color: theme.Theme.colors.WHITE,
+        fontSize: 14,
+        lineHeight: 18,
     }
 })
 

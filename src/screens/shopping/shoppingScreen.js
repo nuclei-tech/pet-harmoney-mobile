@@ -21,32 +21,40 @@ const CreateAccountScreen = props => {
         customStyle={{ padding: 0 }}
       // header={'hide'} // color is required
       >
-         <SecondaryTopTitleHeader />
-        <View style={{padding:theme.Theme.size.CONTAINER_PADDING, paddingBottom:0}}>
-         
-          <View>
-            <IconHeader
-              primaryImage={images.careTaker}
-              primaryTextFontSize={24}
-              primaryTextLineHeight={28.49}
-              primaryImageWidth={60}
-              primaryImageHeight={60}
-              mainTextColor={colors.PURPLE}
-              mainText={'Approved Caretakers'}
-            />
-            <IconTabHeader
-              tabDetails={iconTabDetails}
-            />
-            <IconHeader
-              primaryImage={images.shopping}
-              primaryTextFontSize={18}
-              primaryTextLineHeight={21.37}
-              primaryImageWidth={53}
-              primaryImageHeight={53}
-              mainTextColor={colors.DARK_BLUE}
-              mainText={'My Cart'}
-            />
-            {/* <Text>From parent</Text>
+      <SecondaryTopTitleHeader
+        primaryTitle={'Pet Harmony'}
+        secondaryTitle={'Practitioners'}
+        backgroundCustomColor={colors.BLUE}
+      />
+      <View>
+      <IconHeader 
+          primaryImage={images.careTaker}
+          primaryTextFontSize={24}
+          primaryTextLineHeight={28.49}
+          primaryImageWidth={60}
+          primaryImageHeight={60}
+          mainTextColor={colors.PURPLE}
+          mainText={'Approved Caretakers'}
+          containerMarginTop={40}
+          containerMarginBottom={35}
+        />
+        <IconTabHeader
+          tabDetails={iconTabDetails}
+          containerMarginTop={61}
+          containerMarginBottom={35}
+        />
+        <IconHeader 
+          primaryImage={images.shopping}
+          primaryTextFontSize={18}
+          primaryTextLineHeight={21.37}
+          primaryImageWidth={53}
+          primaryImageHeight={53}
+          mainTextColor={colors.DARK_BLUE}
+          mainText={'My Cart'}
+          containerMarginTop={40}
+          containerMarginBottom={35}
+        />
+        {/* <Text>From parent</Text>
         <Text>From parent</Text>
         <Text>From parent</Text>
         <Text>From parent</Text>
@@ -56,7 +64,6 @@ const CreateAccountScreen = props => {
         <Text>From parent</Text>
         <Text>From parent</Text> */}
 
-          </View>
         </View>
       </Layout2>
     </SafeAreaView>
