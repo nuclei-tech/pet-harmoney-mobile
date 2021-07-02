@@ -2,12 +2,13 @@ import React from 'react'
 import {StyleSheet, View, Text, SafeAreaView} from 'react-native'
 import { useSelector } from 'react-redux';
 
-const SecondaryTitleHeader = ({primaryTitle, secondaryTitle}) => {
+const SecondaryTitleHeader = ({primaryTitle, secondaryTitle, backgroundCustomColor}) => {
     const {theme} = useSelector(state => state.theme)
     const {mainContainer, mainText, secondaryText} = styles(theme)
+    const backgroundColor = {backgroundColor: backgroundCustomColor}
 
     return (
-        <View style={mainContainer}>
+        <View style={[mainContainer, backgroundColor]}>
             <SafeAreaView>
                 <Text style={mainText}>{primaryTitle}</Text>
                 <Text style={secondaryText}>{secondaryTitle}</Text>
@@ -30,7 +31,6 @@ const styles = (props) => StyleSheet.create({
             elevation: 5,
             paddingVertical: 42.5,
             width: '100%',
-            backgroundColor: props.Theme.colors.BLUE,
             borderWidth: 0
             
     },

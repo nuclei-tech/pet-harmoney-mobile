@@ -22,6 +22,7 @@ const CreateAccountScreen = props => {
       <SecondaryTopTitleHeader
         primaryTitle={'Pet Harmony'}
         secondaryTitle={'Practitioners'}
+        backgroundCustomColor={colors.BLUE}
       />
       <View>
         <IconHeader 
