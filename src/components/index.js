@@ -17,7 +17,7 @@ import IconTabHeader from './iconTabHeader/iconTabHeader'
 import ShoppingCardList from './cards/shoppingCartList'
 import SubscriptionCard from './cards/subscriptionCard'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
-
+import Cover from "./cover";
 export{
     ReminderButton,
     Button,
@@ -37,5 +37,6 @@ export{
     IconTabHeader,
     ShoppingCardList,
     SubscriptionCard,
-    SecondaryTopTitleHeader
+    SecondaryTopTitleHeader,
+    Cover
 }
