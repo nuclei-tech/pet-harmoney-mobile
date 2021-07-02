@@ -9,6 +9,7 @@ import { reminderDetails, termsAndConditions, ratingComment, myCardList } from '
 
 const HomeScreen = props => {
   const { theme } = useSelector(state => state.theme);
+  const [phoneNumber,setPhoneNumber] = useState('')
   const colors = theme.Theme.colors
   const action = () => {
     console.log('in');
@@ -45,7 +46,9 @@ const HomeScreen = props => {
             <InputField
               customMainContanier={{ backgroundColor: '#0F1E51' }}
               placeholderColor={theme.Theme.createAccount.placeHolderColor}
-              placeholder={'123 - 456 - 7890'}
+              type={'phone number'}
+              onChangeText={text => setPhoneNumber(text)}
+              value={phoneNumber}
             />
           </View>
 
@@ -54,7 +57,8 @@ const HomeScreen = props => {
               <InputField
                 customMainContanier={{ backgroundColor: '#ffffff', borderColor: '#ffffff' }}
                 placeholderColor={theme.Theme.createAccount.placeHolderColor}
-                placeholder={'123 - 456 - 7890'}
+                placeholder={'123'}
+                onChangeText={text => setPhoneNumber(text)}
               />
             </View>
             <View style={{ flex: 4, marginLeft: 10 }}>
@@ -63,6 +67,7 @@ const HomeScreen = props => {
                 customTextStyle={{ textAlign: 'left' }}
                 placeholderColor={theme.Theme.createAccount.placeHolderColor}
                 placeholder={'123'}
+                onChangeText={text => setPhoneNumber(text)}
               />
             </View>
           </View>
