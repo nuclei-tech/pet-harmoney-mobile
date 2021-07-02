@@ -10,5 +10,6 @@ export default {
     GREY: '#C4C4C4',
     LIGHT_BLACK: '#636363',
     PINK: '#FF01B4',
+    PLACEHOLDER_GRAY:'#E5E5E5',
     LIGHT_PURPLE:'rgba(255, 255, 255, 0.17)'
 }

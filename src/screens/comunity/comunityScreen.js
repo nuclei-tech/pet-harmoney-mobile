@@ -53,7 +53,7 @@ const ComunityScreen = props => {
           <Image resizeMode='stretch' source={images.cover} style={image} />
         </TouchableHighlight>
         <View>
-          <Header title='PET HARMONY' login={true} headerColor={'transparent'} customStyle={headerCustomStyle} />
+          <Header title='PET HARMONY' login={true} customStyle={headerCustomStyle} />
         </View>
         <View onPress={changeProfileImage} flex={1} style={proPicContainer}>
           <ProfilePicture source={images.profile} />
