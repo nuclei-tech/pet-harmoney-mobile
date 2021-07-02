@@ -6,8 +6,21 @@ import { Rating, AirbnbRating } from 'react-native-elements';
 // Connect redux store.
 import { useSelector } from 'react-redux';
 
-const ShoppingCardList = ({ data }) => {
+const ShoppingCardList = (props) => {
     const { theme } = useSelector(state => state.theme);
+    const {
+        data,
+        customImageContanier,
+        customDiscriptionContanier,
+        customOtherContanier,
+        customMyCardListContanier,
+        customDescription,
+        customRatingContent,
+        customTotal,
+        customRating,
+        customButtonContanier,
+        customButtonTextStyle
+    } = props
 
     const {
         description,
@@ -20,14 +33,6 @@ const ShoppingCardList = ({ data }) => {
         imageContanier,
         discriptionContanier,
         otherContanier,
-        customImageContanier,
-        customDiscriptionContanier,
-        customOtherContanier,
-        customMyCardListContanier,
-        customDescription,
-        customRatingContent,
-        customTotal,
-        customRating,
         buttonContanier,
         buttonTextStyle
     } = styles(theme)
@@ -53,7 +58,7 @@ const ShoppingCardList = ({ data }) => {
                 </View>
             </View>
             <View style={{ ...otherContanier, ...customOtherContanier }}>
-                <Button buttonType={'small'} customTextStyle={buttonTextStyle} buttonContainStyle={buttonContanier} title={'Add to cart'} />
+                <Button buttonType={'small'} customTextStyle={{...buttonTextStyle,...customButtonTextStyle}} buttonContainStyle={{...buttonContanier,...customButtonContanier}} title={'Add to cart'} />
             </View>
         </View>
     )
