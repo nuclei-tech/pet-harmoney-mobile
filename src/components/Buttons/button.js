@@ -4,21 +4,30 @@ import { size } from '../../theme'
 
 import { useSelector } from 'react-redux';
 
+//boarderColor
+//backgroundColor
+//buttonWidth
+//textColor
+//buttonWidth
+//textTransform
 
 const CustomButton = (props) => {
   const { theme } = useSelector(state => state.theme);
-  const { title, onPress, type, color, customTextStyle, buttonContainStyle,buttonType} = props
-  const { buttonStyle, textStyle,smallButtonStyle,smallTextStyle,borderColorAdd,backGroundAndBorder } = styles(props,theme);
+  const { title, onPress, type,boarderColor,customTextStyle, buttonContainStyle,buttonType} = props
+  const { buttonStyle, textStyle,smallButtonStyle,smallTextStyle,borderColorAdd,backGroundAndBorder, } = styles(props,theme);
   
   let buttonStyles 
   let textStyles 
 
-  if(buttonType == 'small'){
-    buttonStyles = color ? type == 'outline' ? [smallButtonStyle, buttonContainStyle, borderColorAdd] : [smallButtonStyle, buttonContainStyle,backGroundAndBorder] : [smallButtonStyle, buttonContainStyle];
+  switch (buttonType) {
+    case 'small':
+      buttonStyles = boarderColor ? type == 'outline' ? [smallButtonStyle, buttonContainStyle, borderColorAdd] : [smallButtonStyle, buttonContainStyle,backGroundAndBorder] : [smallButtonStyle, buttonContainStyle,backGroundAndBorder];
     textStyles = customTextStyle ? [smallTextStyle, customTextStyle] : smallTextStyle;
-  }else{
-    buttonStyles = color ? type == 'outline' ? [buttonStyle, buttonContainStyle, borderColorAdd] : [buttonStyle, buttonContainStyle,backGroundAndBorder] : [buttonStyle, buttonContainStyle];
-    textStyles = customTextStyle ? [textStyle, customTextStyle] : textStyle;
+      break;
+    default:
+      buttonStyles = boarderColor ? type == 'outline' ? [buttonStyle, buttonContainStyle, borderColorAdd] : [buttonStyle, buttonContainStyle,backGroundAndBorder] : [buttonStyle, buttonContainStyle,backGroundAndBorder];
+      textStyles = customTextStyle ? [textStyle, customTextStyle] : textStyle;
+      break;
   }
 
 return (
@@ -32,14 +41,15 @@ return (
 
 const styles =(props,theme) => StyleSheet.create({
   borderColorAdd:{
-    borderColor: props.color
+    borderColor: props.boarderColor,
+    backgroundColor: props.backgroundColor 
   },
   backGroundAndBorder:{
-    borderColor: props.color,
-    backgroundColor: props.color
+    borderColor: props.type == 'outline' ? props.boarderColor ? props.boarderColor : props.backgroundColor : 'transparent',
+    backgroundColor: props.backgroundColor
   },
   buttonStyle: {
-    width: '100%',
+    width: props.buttonWidth ? props.buttonWidth : '100%',
     borderRadius: 100,
     borderWidth: 4,
     marginTop: 8,
@@ -48,7 +58,7 @@ const styles =(props,theme) => StyleSheet.create({
     paddingBottom: 10,
   },
   smallButtonStyle: {
-    width: '100%',
+    width: props.buttonWidth ? props.buttonWidth : '100%',
     borderRadius: 100,
     borderWidth: 4,
     marginTop: 8,
@@ -62,11 +72,13 @@ const styles =(props,theme) => StyleSheet.create({
   textStyle: {
     ...theme.Theme.defaultButtonStyle.textStyle,
     textAlign: 'center',
+    color:props.textColor,
     textTransform:props.textTransform ? props.textTransform : 'none'
   },
   smallTextStyle: {
     ...theme.Theme.defaultButtonStyle.smallTextStyle,
     textAlign: 'center',
+    color:props.textColor,
     textTransform:props.textTransform ? props.textTransform : 'none'
   }
 })
