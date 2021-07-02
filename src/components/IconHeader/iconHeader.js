@@ -4,28 +4,25 @@ import { Image } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 
 const IconHeader = ({
+    containerMarginTop,
+    containerMarginBottom,
     primaryImage,
     primaryTextFontSize,
     primaryImageWidth,
     primaryImageHeight,
     primaryTextLineHeight,
     mainTextColor, 
-    mainText, 
-    multiple, 
-    secondaryImage1, 
-    secondaryImage2, 
-    secondaryImage3, 
-    secondaryImage4
+    mainText,
 }) => {
 
     const imageStyles = {width: primaryImageWidth, height: primaryImageHeight}
     const {theme} = useSelector(state => state.theme)
-    const {mainTextStyle, mainContainer, mainContainerHorizontal, secondaryImage} = styles(theme)
+    const {mainTextStyle, mainContainer} = styles(theme)
     const mainTitleStyles = {color: mainTextColor, fontSize: primaryTextFontSize, lineHeight: primaryTextLineHeight}
+    const mainContainerStyles = {marginTop: containerMarginTop, marginBottom: containerMarginBottom}
 
     return (
-        <>
-        {!multiple ? <View style={mainContainer}>
+       <View style={[mainContainer, mainContainerStyles]}>
             <Image
                     source={primaryImage}
                     style={imageStyles}
@@ -33,38 +30,7 @@ const IconHeader = ({
             />
             <Text style={[mainTextStyle, mainTitleStyles]}>{mainText}</Text>
         </View>
-        :
-        <View style={mainContainerHorizontal}>
-            <View>
-                <Image
-                        source={secondaryImage1}
-                        style={secondaryImage}
-                        PlaceholderContent={<ActivityIndicator />}
-                />
-            </View>
-            <View>
-                <Image
-                        source={secondaryImage2}
-                        style={secondaryImage}
-                        PlaceholderContent={<ActivityIndicator />}
-                />
-            </View>
-            <View>
-                <Image
-                        source={secondaryImage3}
-                        style={secondaryImage}
-                        PlaceholderContent={<ActivityIndicator />}
-                />
-            </View>
-            <View>
-                <Image
-                        source={secondaryImage4}
-                        style={secondaryImage}
-                        PlaceholderContent={<ActivityIndicator />}
-                />
-            </View>
-        </View>}
-        </>
+       
     )
 }
 
@@ -74,20 +40,9 @@ const styles = (props) => StyleSheet.create({
         ...props.Theme.defaultIconHeaderTitleStyles
     },
     mainContainer: {
-        alignItems: 'center', 
+        alignItems: 'center',
         marginTop: 40,
         marginBottom: 35
-    },
-    mainContainerHorizontal: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        marginBottom: 35,
-        marginTop: 61
-    },
-    secondaryImage: {
-        width: 53.26,
-        height: 69,
     },
 })
 

@@ -105,6 +105,7 @@ const HomeScreen = props => {
                 textFontSize={14}
                 textFontLineHeight={18}
                 textFontWeight={'300'}
+                paragraphMarginBottom={5}
               />
             </ParagraphCard>
           </View>
@@ -119,6 +120,7 @@ const HomeScreen = props => {
                 textFontSize={14}
                 textFontLineHeight={18}
                 textFontWeight={'300'}
+                paragraphMarginBottom={5}
               />
             </ParagraphCard>
             <Paragraph
@@ -127,6 +129,7 @@ const HomeScreen = props => {
               textFontSize={11}
               textFontLineHeight={14}
               textFontWeight={'300'}
+              paragraphMarginBottom={5}
             />
             <Paragraph
               textColor={theme.Theme.colors.DARK_BLUE}
@@ -134,6 +137,7 @@ const HomeScreen = props => {
               textFontSize={10}
               textFontLineHeight={13}
               textFontWeight={'200'}
+              paragraphMarginBottom={5}
             />
             <Paragraph
               textColor={theme.Theme.colors.DARK_BLUE}
@@ -141,6 +145,7 @@ const HomeScreen = props => {
               textFontSize={12}
               textFontLineHeight={15}
               textFontWeight={'bold'}
+              paragraphMarginBottom={5}
             />
 
         </View>

@@ -19,7 +19,11 @@ const CreateAccountScreen = props => {
         curve = {'primary'} 
         layoutColor={theme.Theme.colors.BLUE} // color is required
       >
-      <SecondaryTopTitleHeader />
+      <SecondaryTopTitleHeader
+        primaryTitle={'Pet Harmony'}
+        secondaryTitle={'Practitioners'}
+        backgroundCustomColor={colors.BLUE}
+      />
       <View>
         <IconHeader 
           primaryImage={images.careTaker}
@@ -29,9 +33,13 @@ const CreateAccountScreen = props => {
           primaryImageHeight={60}
           mainTextColor={colors.PURPLE}
           mainText={'Approved Caretakers'}
+          containerMarginTop={40}
+          containerMarginBottom={35}
         />
         <IconTabHeader
           tabDetails={iconTabDetails}
+          containerMarginTop={61}
+          containerMarginBottom={35}
         />
         <IconHeader 
           primaryImage={images.shopping}
@@ -41,6 +49,8 @@ const CreateAccountScreen = props => {
           primaryImageHeight={53}
           mainTextColor={colors.DARK_BLUE}
           mainText={'My Cart'}
+          containerMarginTop={40}
+          containerMarginBottom={35}
         />
         {/* <Text>From parent</Text>
         <Text>From parent</Text>

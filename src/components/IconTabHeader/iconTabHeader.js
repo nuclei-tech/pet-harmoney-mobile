@@ -3,16 +3,19 @@ import {StyleSheet, View, Text, ActivityIndicator, TouchableOpacity} from 'react
 import { Image } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 
-const IconHeader = ({
-    tabDetails
+const IconTabHeader = ({
+    tabDetails,
+    containerMarginTop,
+    containerMarginBottom
 }) => {
 
     const {theme} = useSelector(state => state.theme)
     const {titleTextStyle, mainContainerHorizontal, secondaryImage} = styles(theme)
+    const containerStyles = {marginTop: containerMarginTop, marginBottom: containerMarginBottom}
 
     return (
         
-        <View style={mainContainerHorizontal}>
+        <View style={[mainContainerHorizontal, containerStyles]}>
             {
                 tabDetails.map((item, index) => {
                     return (
@@ -44,8 +47,8 @@ const styles = (props) => StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
-        marginBottom: 35,
-        marginTop: 61
+        marginTop: 61, 
+        marginBottom: 35
     },
     secondaryImage: {
         width: 48.44,
@@ -53,4 +56,4 @@ const styles = (props) => StyleSheet.create({
     },
 })
 
-export default IconHeader
+export default IconTabHeader
