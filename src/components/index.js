@@ -15,7 +15,6 @@ import PlaceOrderCard from "./cards/placeOrderCard";
 import ProfilePicture from "./profilePicture";
 import IconTabHeader from './iconTabHeader/iconTabHeader'
 import ShoppingCardList from './cards/shoppingCartList'
-import ProfilePicture from "./profilePicture";
 import SubscriptionCard from './cards/subscriptionCard'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
 
