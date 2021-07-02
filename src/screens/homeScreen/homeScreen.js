@@ -49,11 +49,10 @@ const HomeScreen = props => {
               type={'phone number'}
               onChangeText={text => setPhoneNumber(text)}
               value={phoneNumber}
-              iconName="email"
               required={true}
               validator="phone"
               errorMessage="Phone number is invalid"
-              requireMessage={'Email is required'}
+              requireMessage={'Phone number is required'}
             />
           </View>
 
@@ -63,7 +62,6 @@ const HomeScreen = props => {
                 customMainContanier={{ backgroundColor: '#ffffff', borderColor: '#ffffff' }}
                 placeholderColor={theme.Theme.createAccount.placeHolderColor}
                 placeholder={'123'}
-                iconName="email"
                 required={true}
                 validator="email"
                 errorMessage="Email is invalid"
