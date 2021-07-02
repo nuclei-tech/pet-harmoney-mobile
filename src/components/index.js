@@ -17,6 +17,7 @@ import SubscriptionCard from './cards/subscriptionCard'
 import Paragraph from './forms/paragraph'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
 import SearchField from './forms/searchField'
+import CheckBoxField from './forms/checkBoxField'
 
 export{
     ReminderButton,
@@ -37,5 +38,6 @@ export{
     ShoppingCardList,
     SubscriptionCard,
     SecondaryTopTitleHeader,
-    SearchField
+    SearchField,
+    CheckBoxField
 }

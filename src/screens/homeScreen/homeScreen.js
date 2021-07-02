@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
-import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2, InputField, Paragraph, MyCardList, ShoppingCardList, ProfilePicture, SubscriptionCard, SearchField } from '../../components'
+import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2, InputField, Paragraph, MyCardList, ShoppingCardList, ProfilePicture, SubscriptionCard, SearchField,CheckBoxField } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 import { images } from '../../constants';
@@ -83,6 +83,10 @@ const HomeScreen = props => {
 
           <View style={{ backgroundColor: '#ffffff', borderColor: '#ffffff', paddingHorizontal: 5 }}>
             <SearchField />
+          </View>
+
+          <View style={{marginVertical:15}}>
+            <CheckBoxField title={'I agree to the terms and conditions'}/>
           </View>
 
           <ReminderDetailCard
