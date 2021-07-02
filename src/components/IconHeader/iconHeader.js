@@ -40,7 +40,9 @@ const styles = (props) => StyleSheet.create({
         ...props.Theme.defaultIconHeaderTitleStyles
     },
     mainContainer: {
-        alignItems: 'center', 
+        alignItems: 'center',
+        marginTop: 40,
+        marginBottom: 35
     },
 })
 

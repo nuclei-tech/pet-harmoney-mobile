@@ -47,6 +47,8 @@ const styles = (props) => StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
+        marginTop: 61, 
+        marginBottom: 35
     },
     secondaryImage: {
         width: 48.44,
