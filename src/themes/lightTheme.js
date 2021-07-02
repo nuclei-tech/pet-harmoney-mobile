@@ -245,8 +245,23 @@ const Theme = {
         lineHeight: 15,
         letterSpacing: 3.2,
         color: colors.WHITE,
+    },
+
+    //credit card scanner fonst and colors
+    titleStyles: {
+      fontFamily: 'SourceSansPro-Regular',
+        fontSize: 16,
+        fontWeight: '300',
+        lineHeight: 20,
+        color: colors.WHITE,
+    },
+    cardTitle: {
+      fontFamily: 'Source Sans Pro',
+        fontSize: 14,
+        fontWeight: '700',
+        lineHeight: 18,
+        color: colors.WHITE
     }
-  
 
 };
 

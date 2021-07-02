@@ -16,6 +16,7 @@ import ShoppingCardList from './Cards/shoppingCartList'
 import SubscriptionCard from './Cards/subscriptionCard'
 import Paragraph from './Paragraph/paragraph'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
+import CreditCardScanner from './creditCardScanner/creditCardScanner'
 
 export{
     ReminderButton,
@@ -35,5 +36,6 @@ export{
     IconTabHeader,
     ShoppingCardList,
     SubscriptionCard,
-    SecondaryTopTitleHeader
+    SecondaryTopTitleHeader,
+    CreditCardScanner
 }
