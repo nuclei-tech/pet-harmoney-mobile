@@ -8,14 +8,13 @@ import RegisterLayout from './layouts/registerLayout'
 import ReminderDetailCard from "./cards/reminderDetails";
 import ParagraphCard from './cards/paragraphCard'
 import IconHeader from './iconHeader/iconHeader'
-import InputField from './layouts/textField'
-import Paragraph from './paragraph/paragraph'
-import MyCardList from './cards/myCartList'
-import PlaceOrderCard from "./cards/placeOrderCard";
+import InputField from './forms/textField'
 import ProfilePicture from "./profilePicture";
+import MyCardList from './cards/myCartList'
 import IconTabHeader from './iconTabHeader/iconTabHeader'
 import ShoppingCardList from './cards/shoppingCartList'
 import SubscriptionCard from './cards/subscriptionCard'
+import Paragraph from './forms/paragraph'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
 
 export{
@@ -33,7 +32,6 @@ export{
     InputField,
     Paragraph,
     MyCardList,
-    PlaceOrderCard,
     IconTabHeader,
     ShoppingCardList,
     SubscriptionCard,

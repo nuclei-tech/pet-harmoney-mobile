@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
-import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2,InputField,Paragraph,MyCardList,ShoppingCardList,ProfilePicture,SubscriptionCard} from '../../components'
+import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2, InputField, Paragraph, MyCardList, ShoppingCardList, ProfilePicture, SubscriptionCard } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 import { images } from '../../constants';
@@ -9,6 +9,7 @@ import { reminderDetails, termsAndConditions, ratingComment, myCardList } from '
 
 const HomeScreen = props => {
   const { theme } = useSelector(state => state.theme);
+  const [phoneNumber, setPhoneNumber] = useState('')
   const colors = theme.Theme.colors
   const action = () => {
     console.log('in');
@@ -21,31 +22,37 @@ const HomeScreen = props => {
         layoutColor={theme.Theme.colors.DARK_BLUE}
         backgroundColor={theme.Theme.colors.GREEN}
       >
-        <Header 
-        title='PET HARMONY' 
+        <Header
+          title='PET HARMONY'
         // dark 
         // login={true} 
         // customtTitleStyle={{color:theme.Theme.colors.DARK_BLUE}}
         />
         <ScrollView style={{ marginBottom: 10 }} showsVerticalScrollIndicator={false}
         >
-          
+
           <Button title="Outline button" type={'outline'} onPress={action} />
-          <Button title="Solid Button" type={'outline'} textColor={theme.Theme.colors.WHITE } backgroundColor={theme.Theme.colors.YELLOW} />
-          <Button title="Solid Button" type={'outline'} boarderColor={theme.Theme.colors.YELLOW} textColor={theme.Theme.colors.WHITE }/>
+          <Button title="Solid Button" type={'outline'} textColor={theme.Theme.colors.WHITE} backgroundColor={theme.Theme.colors.YELLOW} />
+          <Button title="Solid Button" type={'outline'} boarderColor={theme.Theme.colors.YELLOW} textColor={theme.Theme.colors.WHITE} />
           <ReminderButton />
 
           <Button title="Solid Button" backgroundColor={theme.Theme.colors.RED} color={theme.Theme.colors.GREEN} />
 
           <Button title="Solid Button" buttonWidth={250} backgroundColor={theme.Theme.colors.RED} />
-          <Button title="Solid Button" textTransform={'lowercase'} type={'outline'} boarderColor={theme.Theme.colors.GREEN} backgroundColor={theme.Theme.colors.YELLOW} textColor={theme.Theme.colors.WHITE } />
-          <Button title="Solid Button" textTransform={'uppercase'} backgroundColor={theme.Theme.colors.GREEN} textColor={ theme.Theme.colors.YELLOW} />
+          <Button title="Solid Button" textTransform={'lowercase'} type={'outline'} boarderColor={theme.Theme.colors.GREEN} backgroundColor={theme.Theme.colors.YELLOW} textColor={theme.Theme.colors.WHITE} />
+          <Button title="Solid Button" textTransform={'uppercase'} backgroundColor={theme.Theme.colors.GREEN} textColor={theme.Theme.colors.YELLOW} />
 
           <View>
             <InputField
               customMainContanier={{ backgroundColor: '#0F1E51' }}
               placeholderColor={theme.Theme.createAccount.placeHolderColor}
-              placeholder={'123 - 456 - 7890'}
+              type={'phone number'}
+              onChangeText={text => setPhoneNumber(text)}
+              value={phoneNumber}
+              required={true}
+              validator="phone"
+              errorMessage="Phone number is invalid"
+              requireMessage={'Phone number is required'}
             />
           </View>
 
@@ -54,7 +61,13 @@ const HomeScreen = props => {
               <InputField
                 customMainContanier={{ backgroundColor: '#ffffff', borderColor: '#ffffff' }}
                 placeholderColor={theme.Theme.createAccount.placeHolderColor}
-                placeholder={'123 - 456 - 7890'}
+                placeholder={'123'}
+                required={true}
+                validator="email"
+                errorMessage="Email is invalid"
+                requireMessage={'Email is required'}
+                //onValidatorExecuted={isValid => validEmail(isValid)}
+                onChangeText={text => setPhoneNumber(text)}
               />
             </View>
             <View style={{ flex: 4, marginLeft: 10 }}>
@@ -63,6 +76,7 @@ const HomeScreen = props => {
                 customTextStyle={{ textAlign: 'left' }}
                 placeholderColor={theme.Theme.createAccount.placeHolderColor}
                 placeholder={'123'}
+                onChangeText={text => setPhoneNumber(text)}
               />
             </View>
           </View>
@@ -162,7 +176,7 @@ const HomeScreen = props => {
               )
             })}
           </View>
-          
+
           <View style={{ backgroundColor: 'white', paddingHorizontal: 10, marginTop: 15 }}>
             {myCardList.map(data => {
               return (
@@ -170,20 +184,20 @@ const HomeScreen = props => {
               )
             })}
           </View>
-        <View style={{backgroundColor:'white',paddingHorizontal:10,marginTop:15}}>
-          {myCardList.map(data =>{
-            return(
-              <ShoppingCardList  
-              buttonBackground={colors.BLUE}
-              buttonTextColor={colors.WHITE} 
-              data={data}/>
-            )
-          })}
-        </View>
+          <View style={{ backgroundColor: 'white', paddingHorizontal: 10, marginTop: 15 }}>
+            {myCardList.map(data => {
+              return (
+                <ShoppingCardList
+                  buttonBackground={colors.BLUE}
+                  buttonTextColor={colors.WHITE}
+                  data={data} />
+              )
+            })}
+          </View>
 
-        <View style={{backgroundColor:'#6732C8',paddingHorizontal:10,marginTop:15,paddingBottom:15}}>
-          <SubscriptionCard title={'Subscription'} contentTitle={'Yearly Subscription '} leftContent={'$XX.XX Billed annually asa recurring payment'} rightTopContent={'$X.XX'} rightBottomContent={'Per Month'}/>
-        </View>
+          <View style={{ backgroundColor: '#6732C8', paddingHorizontal: 10, marginTop: 15, paddingBottom: 15 }}>
+            <SubscriptionCard title={'Subscription'} contentTitle={'Yearly Subscription '} leftContent={'$XX.XX Billed annually asa recurring payment'} rightTopContent={'$X.XX'} rightBottomContent={'Per Month'} />
+          </View>
 
           <View style={{ paddingTop: 16, flexDirection: "row", justifyContent: "space-between", alignItems: 'center' }}>
             <ProfilePicture source={images.profile} />

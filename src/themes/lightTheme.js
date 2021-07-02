@@ -88,6 +88,11 @@ const Theme = {
       fontWeight: 'bold',
       fontSize: 17,
     },
+    textStyleError: {
+      fontFamily: "SourceSansPro-Black",
+      fontWeight: 'bold',
+      fontSize: 12,
+    },
     boderColor: colors.GREEN,
     textColor: colors.GREEN,
     placeHolderColor: colors.GREEN,
