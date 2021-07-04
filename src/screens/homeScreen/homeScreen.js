@@ -1,19 +1,31 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
 import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2, InputField, Paragraph, MyCardList, ShoppingCardList, ProfilePicture, SubscriptionCard, SearchField } from '../../components'
+
+
+
+
 // Connect redux store.
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { images } from '../../constants';
-import { navigate } from '../../navigation/navigation';
+import {loginUser} from '../../store/modules/auth/auth'
 import { reminderDetails, termsAndConditions, ratingComment, myCardList } from '../../constants'
 
 const HomeScreen = props => {
   const { theme } = useSelector(state => state.theme);
   const [phoneNumber, setPhoneNumber] = useState('')
+  const dispatch = useDispatch()
+  // const { error_load_owners, loading, data } = useQuery(LOAD_OWNERS);
+  // console.warn('eeee=>>>>',data);
   const colors = theme.Theme.colors
   const action = () => {
     console.log('in');
   }
+
+  useEffect(()=>{
+    // const { error_load_owners, loading, data } = useQuery(LOAD_OWNERS);
+    dispatch(loginUser())
+  },[])
 
   return (
     <SafeAreaView style={styles.container}>

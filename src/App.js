@@ -1,15 +1,37 @@
 import React from 'react';
 import axios from 'axios';
-import {API_URL} from '../config';
-import {StatusBar} from 'react-native';
+import { API_URL } from '../config';
+import { StatusBar } from 'react-native';
 
-import {bindActionCreators} from 'redux';
+import { bindActionCreators } from 'redux';
 import configureStore from './store';
-import {Provider, connect} from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import MainApp from './index';
+
+import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink, from } from '@apollo/client';
+import { onError } from '@apollo/client/link/error';
+
 
 // create our store
 const store = configureStore();
+
+const errorLink = onError(({ graphqlErrors, networkErrors }) => {
+  if (graphqlErrors) {
+    graphqlErrors.map(({ message, location, path }) => {
+      alert(`Graphql error ${message}`)
+    })
+  }
+});
+
+const link = from([
+  errorLink,
+  new HttpLink({ uri: 'http://localhost:4000/graphql' }),
+]);
+
+const client = new ApolloClient({
+  link:link,
+  cache: new InMemoryCache()
+});
 
 axios.defaults.baseURL = API_URL;
 
@@ -30,7 +52,7 @@ axios.interceptors.response.use(
     return response;
   },
   async error => {
-    const {response} = error;
+    const { response } = error;
 
     return Promise.reject(response);
   },
@@ -52,12 +74,14 @@ let AppWrapper = connect(mapStateToProps, mapDispatchToProps)(IndexApp);
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <StatusBar barStyle={'dark-content'} />
-      <AppWrapper>
-        <MainApp />
-      </AppWrapper>
-    </Provider>
+    <ApolloProvider client={client} >
+      <Provider  store={store}>
+        <StatusBar barStyle={'dark-content'} />
+        <AppWrapper>
+          <MainApp />
+        </AppWrapper>
+      </Provider>
+    </ApolloProvider>
   );
 };
 
