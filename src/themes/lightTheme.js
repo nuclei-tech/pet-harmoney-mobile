@@ -268,6 +268,16 @@ const Theme = {
     placeHolderColor: colors.GREEN,
   },
 
+  //box field style
+  boxFieldStyle:{
+    textStyle:{
+      fontFamily: 'SourceSansPro-Bold',
+      fontSize: 14,
+      lineHeight: 18,
+      color: colors.GREEN,
+    }
+  }
+
 
 };
 
