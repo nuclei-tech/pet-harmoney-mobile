@@ -16,6 +16,7 @@ import ShoppingCardList from './cards/shoppingCartList'
 import SubscriptionCard from './cards/subscriptionCard'
 import Paragraph from './forms/paragraph'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
+import Cover from "./cover";
 import SearchField from './forms/searchField'
 
 export{
@@ -37,5 +38,6 @@ export{
     ShoppingCardList,
     SubscriptionCard,
     SecondaryTopTitleHeader,
+    Cover,
     SearchField
 }
