@@ -20,7 +20,6 @@ import Cover from "./cover";
 import SearchField from './forms/searchField'
 import CheckBoxField from './forms/checkBoxField'
 import PlaceOrderCard from "./cards/placeOrderCard";
-import CheckBoxField from './forms/checkBoxField';
 import Calendar from "./calendar";
 
 export{
@@ -45,7 +44,6 @@ export{
     SearchField,
     CheckBoxField,
     Cover,
-    SearchField,
     PlaceOrderCard,
     Calendar
 }
