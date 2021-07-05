@@ -2,13 +2,10 @@ import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
 import { Button, Header, ReminderButton, ReminderDetailCard, ParagraphCard, Layout2, InputField, Paragraph, MyCardList, ShoppingCardList, ProfilePicture, SubscriptionCard, SearchField } from '../../components'
 
-
-
-
 // Connect redux store.
 import { useSelector,useDispatch } from 'react-redux';
 import { images } from '../../constants';
-import {loginUser} from '../../store/modules/auth/auth'
+import {loginUser,addUser} from '../../store/modules/auth/auth'
 import { reminderDetails, termsAndConditions, ratingComment, myCardList } from '../../constants'
 
 const HomeScreen = props => {
@@ -21,9 +18,8 @@ const HomeScreen = props => {
   const action = () => {
     console.log('in');
   }
-
+  
   useEffect(()=>{
-    // const { error_load_owners, loading, data } = useQuery(LOAD_OWNERS);
     dispatch(loginUser())
   },[])
 
@@ -46,7 +42,7 @@ const HomeScreen = props => {
           <Button title="Outline button" type={'outline'} onPress={action} />
           <Button title="Solid Button" type={'outline'} textColor={theme.Theme.colors.WHITE} backgroundColor={theme.Theme.colors.YELLOW} />
           <Button title="Solid Button" type={'outline'} boarderColor={theme.Theme.colors.YELLOW} textColor={theme.Theme.colors.WHITE} />
-          <ReminderButton />
+          {/* <ReminderButton /> */}
 
           <Button title="Solid Button" backgroundColor={theme.Theme.colors.RED} color={theme.Theme.colors.GREEN} />
 
