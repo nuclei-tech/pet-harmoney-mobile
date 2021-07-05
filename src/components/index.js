@@ -43,6 +43,5 @@ export{
     SearchField,
     CheckBoxField,
     Cover,
-    SearchField,
     PlaceOrderCard
 }
