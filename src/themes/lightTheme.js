@@ -55,6 +55,7 @@ const Theme = {
     },
     buttonTextStyles: {
       fontFamily: "SourceSansPro-Black",
+      fontWeight: 'bold',
       fontSize: 17,
       lineHeight: 21,
       letterSpacing: 0.2,
@@ -87,6 +88,10 @@ const Theme = {
       fontFamily: "SourceSansPro-Black",
       fontWeight: 'bold',
       fontSize: 17,
+    },
+    textStyleBold:{
+      fontFamily: "SourceSansPro-SemiBold",
+      fontSize: 18,
     },
     textStyleError: {
       fontFamily: "SourceSansPro-Black",
