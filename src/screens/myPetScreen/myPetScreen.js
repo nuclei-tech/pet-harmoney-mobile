@@ -6,16 +6,16 @@ import { styles } from './styles';
 import { useSelector } from 'react-redux';
 
 
-const TelevetScreen = props => {
+const MyPetScreen = props => {
   const { theme } = useSelector(state => state.theme);
 
   return (
         <SafeAreaView>
-            <Text>Televet Screen</Text>
+            <Text>MyPet Screen</Text>
         </SafeAreaView>
   );
 };
 
 
 
-export default TelevetScreen;
+export default MyPetScreen;

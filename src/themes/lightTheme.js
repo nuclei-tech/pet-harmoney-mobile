@@ -1,5 +1,5 @@
 import { Dimensions } from 'react-native';
-import { colors } from '../theme'
+import { colors } from './colors'
 
 const Theme = {
   // Main theam colors
@@ -267,6 +267,16 @@ const Theme = {
     textColor: colors.GREEN,
     placeHolderColor: colors.GREEN,
   },
+
+  //box field style
+  boxFieldStyle:{
+    textStyle:{
+      fontFamily: 'SourceSansPro-Bold',
+      fontSize: 14,
+      lineHeight: 18,
+      color: colors.GREEN,
+    }
+  }
 
 
 };

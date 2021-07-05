@@ -17,8 +17,10 @@ import SubscriptionCard from './cards/subscriptionCard'
 import Paragraph from './forms/paragraph'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
 import Cover from "./cover";
-import SearchField from './forms/searchField';
+import SearchField from './forms/searchField'
+import CheckBoxField from './forms/checkBoxField'
 import PlaceOrderCard from "./cards/placeOrderCard";
+import CheckBoxField from './forms/checkBoxField';
 import Calendar from "./calendar";
 
 export{
@@ -40,6 +42,8 @@ export{
     ShoppingCardList,
     SubscriptionCard,
     SecondaryTopTitleHeader,
+    SearchField,
+    CheckBoxField,
     Cover,
     SearchField,
     PlaceOrderCard,
