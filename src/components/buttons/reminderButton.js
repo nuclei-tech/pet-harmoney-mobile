@@ -4,14 +4,13 @@ import { StyleSheet, View, } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 import { size, colors } from '../../theme'
 
+// Connect redux store.
+import { useSelector } from 'react-redux';
 
 const CustomButton = ({ title, onPress, type, color, textColor }) => {
+  const { theme } = useSelector(state => state.theme);
 
-  const onPressHandle = () => {
-    console.log("innnnnn");
-  }
-
-  const { buttonStyle, textStyle, buttonContainer,containerStyle } = styles;
+  const { buttonStyle, textStyle, buttonContainer,containerStyle } = styles(theme);
   const buttonStyles = buttonStyle;
   const textStyles = textStyle;
   
@@ -36,26 +35,26 @@ const CustomButton = ({ title, onPress, type, color, textColor }) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles =(theme)=> StyleSheet.create({
   buttonContainer: {
-    margin: size.SIZE.BASE,
-    width:size.SIZE.BASE*2.5
+    margin: theme.Theme.size.BASE,
+    width:theme.Theme.size.BASE*2.5
   },
   containerStyle:{
-    borderRadius: size.SIZE.BASE*2,
-    backgroundColor:colors.WHITE,
+    borderRadius: theme.Theme.size.BASE*2,
+    backgroundColor:theme.Theme.colors.WHITE,
   },
   buttonStyle: {
-    width: size.SIZE.BASE*2.5,
-    height: size.SIZE.BASE*2.5,
-    borderRadius: size.SIZE.BASE*2,
+    width: theme.Theme.size.BASE*2.5,
+    height: theme.Theme.size.BASE*2.5,
+    borderRadius: theme.Theme.size.BASE*2,
     borderWidth: 2,
-    borderColor: colors.WHITE,
-    backgroundColor:colors.WHITE,
+    borderColor: theme.Theme.colors.WHITE,
+    backgroundColor:theme.Theme.colors.WHITE,
   },
   textStyle: {
     fontSize: size.FONT_SIZES.BUTTON,
-    color: colors.BLACK
+    color: theme.Theme.colors.BLACK
   }
 })
 export default CustomButton;

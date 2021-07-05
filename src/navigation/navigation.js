@@ -1,6 +1,6 @@
 //Navigation
 import React, { useEffect, useState } from 'react';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -11,7 +11,7 @@ import {
   Keyboard,
   Image
 } from 'react-native';
-import { colors } from '../theme'
+import { colors } from '../themes/colors.js'
 import { Header } from '../components'
 import { images } from '../constants'
 
