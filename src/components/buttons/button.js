@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Text } from 'react-native';
-import { size } from '../../theme'
 
 import { useSelector } from 'react-redux';
 
@@ -65,9 +64,6 @@ const styles =(props,theme) => StyleSheet.create({
     marginBottom: 12,
     paddingTop: 4,
     paddingBottom: 4,
-  },
-  containerStyle: {
-    borderRadius: size.SIZE.BASE,
   },
   textStyle: {
     ...theme.Theme.defaultButtonStyle.textStyle,

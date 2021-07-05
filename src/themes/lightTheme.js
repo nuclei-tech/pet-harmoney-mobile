@@ -1,5 +1,5 @@
 import { Dimensions } from 'react-native';
-import { colors } from '../theme'
+import { colors } from './colors'
 
 const Theme = {
   // Main theam colors
