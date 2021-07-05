@@ -25,5 +25,8 @@ export const styles = props =>
     textAlready:{
       ...props.Theme.createAccount.textAlready,
       marginTop:4
+    },
+    viewFillContain:{
+      width:'100%'
     }
   });
