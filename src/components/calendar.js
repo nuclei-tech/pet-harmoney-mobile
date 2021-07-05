@@ -2,14 +2,24 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 import { useSelector } from 'react-redux';
+import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
+
 
 const { width, height } = Dimensions.get('window');
-const Calendar = ({ containerStyle, titleStyle }) => {
+const MonthCalendar = ({ containerStyle, titleStyle }) => {
     const { theme } = useSelector(state => state.theme);
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];;
-    let today = new Date();
-    let m =today.getMonth();
-    const [month, setMonth] = useState(months[6]);
+
+    const [selecetedDays, setSelecetedDays] = useState(
+        {
+            '2021-07-05': { selected: true },
+            '2021-07-10': { selected: true },
+            '2021-07-12': { selected: true },
+            '2021-07-16': { selected: true },
+            '2021-07-17': { selected: true },
+            '2021-07-18': { selected: true },
+            '2021-07-22': { selected: true },
+        }
+    );
 
     const onPressDate = () => {
         console.log('in');
@@ -18,7 +28,8 @@ const Calendar = ({ containerStyle, titleStyle }) => {
         container,
         titleContainer,
         heading,
-        description
+        description,
+        monthStyle
 
     } = styles(theme.Theme);
     return (
@@ -29,7 +40,49 @@ const Calendar = ({ containerStyle, titleStyle }) => {
             </View>
             <View flex={3}>
                 <View>
-                    <Text>{month}</Text>
+                    {/* <Text style={monthStyle}>{month}</Text> */}
+                </View>
+                <View>
+                    <Calendar
+                        hideDayNames={true}
+                        hideExtraDays={true}
+                        hideArrows={true}
+                        // calendarBackground={'red'}
+                        theme={{
+                            backgroundColor: '#b6c1cd',
+                            calendarBackground: '#6732C8',
+                            textSectionTitleColor: '#b6c1cd',
+                            // textSectionTitleDisabledColor: '#d9e1e8',
+                            selectedDayBackgroundColor: '#ffffff',
+                            // todayTextColor: '#00adf5',
+                            dayTextColor: '#ffffff',
+                            // textDisabledColor: '#d9e1e8',
+                            // dotColor: '#00adf5',
+                            // selectedDotColor: '#ffffff',
+                            // arrowColor: 'orange',
+                            // disabledArrowColor: '#d9e1e8',
+                            monthTextColor: '#ffffff',
+                            // indicatorColor: 'blue',
+                            textDayFontFamily: 'Source Sans Pro',
+                            textMonthFontFamily: 'Source Sans Pro',
+                            // textMonthColor: '#ffffff',
+                            // textDayHeaderFontFamily: 'monospace',
+                            // textDayFontWeight: '300',
+                            textMonthFontWeight: '700',
+                            // textDayHeaderFontWeight: '300',
+                            textDayFontSize: 12,
+                            textMonthFontSize: 26,
+                            textDayStyle: { borderColor: '#ffffff', alignItems: "center", borderWidth: 3, padding: 8, fontWeight: '700', borderRadius: 20, width: 33, height: 33, textAlign: 'center', marginTop: 0 },
+                            selectedDayTextColor: '#b6c1cd',
+                            // textDayHeaderFontSize: 16
+                        }}
+                        // style={{backgroundColor:'transparent'}}
+                        onDayPress={(day) => {
+                            let date = day.dateString;
+                            console.log(selecetedDays);
+                        }}
+                        markedDates={selecetedDays}
+                    />
                 </View>
             </View>
         </View>
@@ -60,7 +113,16 @@ const styles = (theme) => StyleSheet.create({
         paddingVertical: 5,
         fontSize: 12,
         lineHeight: 15,
+    },
+    monthStyle: {
+        fontFamily: 'SourceSansPro-Regular',
+        color: theme.colors.WHITE,
+        fontWeight: '700',
+        textAlign: 'center',
+        paddingVertical: 5,
+        fontSize: 26,
+        lineHeight: 33,
     }
 
 })
-export default Calendar;
+export default MonthCalendar;
