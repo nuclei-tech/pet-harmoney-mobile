@@ -22,7 +22,7 @@ const TelevetScreen = props => {
         // 
         backgroundColor={colors.WHITE}
         layoutColor={colors.WHITE}
-        header={'Dark'} // color is required
+        header={'Dark'} 
       >
         <Header
           title='PET HARMONY'
