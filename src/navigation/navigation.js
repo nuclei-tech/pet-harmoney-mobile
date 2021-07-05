@@ -13,50 +13,52 @@ import {
 } from 'react-native';
 import { colors } from '../theme'
 import { Header } from '../components'
-// Screen List
+import { images } from '../constants'
+
+// sample Screen List
+// import HomeScreen from '../screens/homeScreen/homeScreen';
+// import TelevetScreen from '../screens/televetScreen/televetScreen';
+// import ComunityScreen from '../screens/comunity/comunityScreen';
+// import ShoppingScreen from '../screens/shopping/shoppingScreen'
+// import MyPetScreen from '../screens/MyPet/myPetScreen'
+
 import HomeScreen from '../screens/homeScreen/homeScreen';
 import TelevetScreen from '../screens/televetScreen/televetScreen';
-import ComunityScreen from '../screens/comunity/comunityScreen';
-import ShoppingScreen from '../screens/shopping/shoppingScreen'
-import MyPetScreen from '../screens/MyPet/myPetScreen'
-import CreateAccountScreen from '../screens/createAccountScreen/createAccountScreen'
-import CreateAccountMobile from '../screens/createAccountScreen/createAccountMobile'
-import Layout1 from '../screens/layouts/layout1';
-import {
-  images
-} from '../constants'
+import ComunityScreen from '../screens/communityScreen/communityScreen';
+import ShoppingScreen from '../screens/shoppingScreen/shoppingScreen'
+import MyPetScreen from '../screens/myPetScreen/myPetScreen'
+
 // Connect redux store.
 import { useSelector, useDispatch } from 'react-redux';
 import { currentRoute } from '../store/modules/screen/screen'
 
 const Tab = createBottomTabNavigator();
-const MainStack = createStackNavigator();
+const HomeStack = createStackNavigator();
 const ShoppingScreenStack = createStackNavigator();
 const ComunityScreenStack = createStackNavigator();
 const TelevetScreenStack = createStackNavigator();
 const MyPetScreenStack = createStackNavigator();
-const RegisterStackScreen = createStackNavigator()
 const navigationRef = React.createRef();
 
 export const navigate = (name, params) => {
   navigationRef.current && navigationRef.current.navigate(name, params);
 };
 
-//Main route
-const MaineStackScreen = () => {
+//Home route
+const HomeStackScreen = () => {
   return (
-    <MainStack.Navigator
+    <HomeStack.Navigator
     screenOptions={{
       headerShown: false
     }}>
-      <MainStack.Screen
+      <HomeStack.Screen
         name={'HomeScreen'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={HomeScreen}
       />
-    </MainStack.Navigator>
+    </HomeStack.Navigator>
   );
 };
 //Other route
@@ -155,21 +157,6 @@ const TabNav = props => {
         dispatch(currentRoute(currentRouteName))
       }}
     >
-      {!token ? 
-       <RegisterStackScreen.Navigator
-       screenOptions={{
-         headerShown: false
-       }}>
-       <RegisterStackScreen.Screen
-         name="Create Account"
-         component={CreateAccountScreen}
-       />
-       <RegisterStackScreen.Screen
-         name="Create Account Mobile"
-         component={CreateAccountMobile}
-       />
-     </RegisterStackScreen.Navigator> 
-     :
         <Tab.Navigator
           tabBarOptions={{
             keyboardHidesTabBar: true,
@@ -247,7 +234,7 @@ const TabNav = props => {
         >
           <Tab.Screen
             name="Home"
-            component={MaineStackScreen}
+            component={HomeStackScreen}
           />
           <Tab.Screen
             name="Shopping"
@@ -266,7 +253,6 @@ const TabNav = props => {
             component={MyPetScreenStacks}
           />
         </Tab.Navigator>
-      }
     </NavigationContainer>
   );
 };
