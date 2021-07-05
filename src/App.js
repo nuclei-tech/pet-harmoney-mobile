@@ -1,7 +1,9 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import axios from 'axios';
 import {API_URL} from '../config';
 import {StatusBar} from 'react-native';
+import SplashScreen from 'react-native-splash-screen'
+
 
 import {bindActionCreators} from 'redux';
 import configureStore from './store';
@@ -51,6 +53,9 @@ const mapStateToProps = state => {
 let AppWrapper = connect(mapStateToProps, mapDispatchToProps)(IndexApp);
 
 const App = () => {
+  useEffect(()=>{
+    SplashScreen.hide();
+  },[])
   return (
     <Provider store={store}>
       <StatusBar barStyle={'dark-content'} />
