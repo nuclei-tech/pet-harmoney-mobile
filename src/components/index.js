@@ -18,6 +18,8 @@ import Paragraph from './forms/paragraph'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
 import Cover from "./cover";
 import SearchField from './forms/searchField'
+import PlaceOrderCard from "./cards/placeOrderCard";
+
 
 export{
     ReminderButton,
@@ -39,5 +41,6 @@ export{
     SubscriptionCard,
     SecondaryTopTitleHeader,
     Cover,
-    SearchField
+    SearchField,
+    PlaceOrderCard
 }
