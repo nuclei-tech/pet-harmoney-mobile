@@ -2,7 +2,6 @@
 import React from 'react';
 import { StyleSheet, View, } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
-import { size, colors } from '../../theme'
 
 // Connect redux store.
 import { useSelector } from 'react-redux';

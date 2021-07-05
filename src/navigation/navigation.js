@@ -15,7 +15,7 @@ import { colors } from '../themes/colors.js'
 import { Header } from '../components'
 import { images } from '../constants'
 
-// sample Screen List
+// Sample Screen List
 // import HomeScreen from '../screens/homeScreen/homeScreen';
 // import TelevetScreen from '../screens/televetScreen/televetScreen';
 // import ComunityScreen from '../screens/comunity/comunityScreen';
@@ -28,6 +28,10 @@ import ComunityScreen from '../screens/communityScreen/communityScreen';
 import ShoppingScreen from '../screens/shoppingScreen/shoppingScreen'
 import MyPetScreen from '../screens/myPetScreen/myPetScreen'
 
+//Registration screen
+import CreateAccountScreen from '../screens/registrationScreens/createAccountScreen'
+import CreateAccountMobile from '../screens/registrationScreens/createAccountMobile'
+
 // Connect redux store.
 import { useSelector, useDispatch } from 'react-redux';
 import { currentRoute } from '../store/modules/screen/screen'
@@ -38,6 +42,7 @@ const ShoppingScreenStack = createStackNavigator();
 const ComunityScreenStack = createStackNavigator();
 const TelevetScreenStack = createStackNavigator();
 const MyPetScreenStack = createStackNavigator();
+const RegisterStackScreen = createStackNavigator()
 const navigationRef = React.createRef();
 
 export const navigate = (name, params) => {
@@ -108,7 +113,6 @@ const ShoppingScreenStacks = () => {
   );
 };
 
-
 const MyPetScreenStacks = () => {
   return (
     <MyPetScreenStack.Navigator
@@ -140,7 +144,7 @@ const TabNav = props => {
     };
   }, []);
   const _keyboardDidShow = () => {
-    setKeyboardShow(false);
+    setKeyboardShow(false)
   };
   const _keyboardDidHide = () => {
     setKeyboardShow(true);
@@ -157,6 +161,21 @@ const TabNav = props => {
         dispatch(currentRoute(currentRouteName))
       }}
     >
+       {!token ? 
+       <RegisterStackScreen.Navigator
+       screenOptions={{
+         headerShown: false
+       }}>
+       <RegisterStackScreen.Screen
+         name="Create Account"
+         component={CreateAccountScreen}
+       />
+       <RegisterStackScreen.Screen
+         name="Create Account Mobile"
+         component={CreateAccountMobile}
+       />
+     </RegisterStackScreen.Navigator> 
+     :
         <Tab.Navigator
           tabBarOptions={{
             keyboardHidesTabBar: true,
@@ -253,6 +272,7 @@ const TabNav = props => {
             component={MyPetScreenStacks}
           />
         </Tab.Navigator>
+}
     </NavigationContainer>
   );
 };
