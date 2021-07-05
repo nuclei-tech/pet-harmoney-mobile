@@ -88,6 +88,11 @@ const Theme = {
       fontWeight: 'bold',
       fontSize: 17,
     },
+    textStyleError: {
+      fontFamily: "SourceSansPro-Black",
+      fontWeight: 'bold',
+      fontSize: 12,
+    },
     boderColor: colors.GREEN,
     textColor: colors.GREEN,
     placeHolderColor: colors.GREEN,
@@ -148,11 +153,11 @@ const Theme = {
 
   //tab icon header font styles
   tabIconHeaderFontStyles: {
-        fontFamily: 'Aqum',
-        // fontWeight: 'bold',
-        fontSize: 6,
-        lineHeight: 6,
-        color: colors.WHITE
+    fontFamily: 'Aqum',
+    // fontWeight: 'bold',
+    fontSize: 6,
+    lineHeight: 6,
+    color: colors.WHITE
   },
   //shopping card styles
   shppoingListStyles: {
@@ -196,7 +201,7 @@ const Theme = {
   subscriptionCard: {
     borderColor: colors.WHITE,
     backgroundColor: colors.LIGHT_PURPLE,
-    fontColor:colors.WHITE,
+    fontColor: colors.WHITE,
     mainTextStyle: {
       fontFamily: 'SourceSansPro-Regular',
       fontSize: 14,
@@ -228,25 +233,41 @@ const Theme = {
     },
   },
 
-  
+
   //secondary Top Title Header Font Styles
-    secondaryTopStylesMainText: {
-        fontFamily: 'Aqum',
-        fontWeight: 'bold',
-        fontSize: 12,
-        lineHeight: 12,
-        letterSpacing: 3.2,
-        color: colors.WHITE,
+  secondaryTopStylesMainText: {
+    fontFamily: 'Aqum',
+    fontWeight: 'bold',
+    fontSize: 12,
+    lineHeight: 12,
+    letterSpacing: 3.2,
+    color: colors.WHITE,
+  },
+  secondaryTopStylesSecondaryText: {
+    fontFamily: 'Aqum',
+    fontWeight: 'bold',
+    fontSize: 16,
+    lineHeight: 15,
+    letterSpacing: 3.2,
+    color: colors.WHITE,
+  },
+
+  //search filed style
+  searchFieldStyle: {
+    textStyle: {
+      fontFamily: "SourceSansPro-Black",
+      fontWeight: 'bold',
+      fontSize: 15,
     },
-    secondaryTopStylesSecondaryText: {
-        fontFamily: 'Aqum',
-        fontWeight: 'bold',
-        fontSize: 16,
-        lineHeight: 15,
-        letterSpacing: 3.2,
-        color: colors.WHITE,
-    }
-  
+    listTextField:{
+      fontFamily: "SourceSansPro-Regular",
+      fontSize: 12,
+    },
+    boderColor: colors.DARK_BLUE,
+    textColor: colors.GREEN,
+    placeHolderColor: colors.GREEN,
+  },
+
 
 };
 
