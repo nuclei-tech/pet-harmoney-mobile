@@ -90,8 +90,9 @@ const Theme = {
       fontSize: 17,
     },
     textStyleBold:{
-      fontFamily: "SourceSansPro-SemiBold",
-      fontSize: 18,
+      fontFamily: "SourceSansPro-Black",
+      fontWeight: 'bold',
+      fontSize: 17,
     },
     textStyleError: {
       fontFamily: "SourceSansPro-Black",
