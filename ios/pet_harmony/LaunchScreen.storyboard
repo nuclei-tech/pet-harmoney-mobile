@@ -22,7 +22,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="0.058823529411764705" green="0.11764705882352941" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" white="0.51536217514349492" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.058823529411764705" green="0.11764705882352941" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PHJ-7i-tdd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="68" id="5ae-eG-s2g"/>
                             <constraint firstItem="PHJ-7i-tdd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="H2q-jW-mlA"/>

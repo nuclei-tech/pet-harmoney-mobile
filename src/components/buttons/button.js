@@ -53,8 +53,8 @@ const styles =(props,theme) => StyleSheet.create({
     borderWidth: 4,
     marginTop: 8,
     marginBottom: 8,
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingTop: 8,
+    paddingBottom: 8,
   },
   smallButtonStyle: {
     width: props.buttonWidth ? props.buttonWidth : '100%',
@@ -62,8 +62,8 @@ const styles =(props,theme) => StyleSheet.create({
     borderWidth: 4,
     marginTop: 8,
     marginBottom: 12,
-    paddingTop: 4,
-    paddingBottom: 4,
+    paddingTop: 3,
+    paddingBottom: 3,
   },
   textStyle: {
     ...theme.Theme.defaultButtonStyle.textStyle,
