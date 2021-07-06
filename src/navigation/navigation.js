@@ -32,6 +32,12 @@ import MyPetScreen from '../screens/myPetScreen/myPetScreen'
 import CreateAccountScreen from '../screens/registrationScreens/createAccountScreen'
 import CreateAccountMobile from '../screens/registrationScreens/createAccountMobile'
 
+//forgotPassword screen
+import EmailEnterScreen from '../screens/forgotPasswordScreens/emailEnterScreen'
+import OtpHandleScreen from '../screens/forgotPasswordScreens/otpHandleScreen'
+import PasswordVerifyScreen from '../screens/forgotPasswordScreens/passwordVerifyScreen'
+
+
 // Connect redux store.
 import { useSelector, useDispatch } from 'react-redux';
 import { currentRoute } from '../store/modules/screen/screen'
@@ -43,6 +49,8 @@ const ComunityScreenStack = createStackNavigator();
 const TelevetScreenStack = createStackNavigator();
 const MyPetScreenStack = createStackNavigator();
 const RegisterStackScreen = createStackNavigator()
+const FogotPasswordStackScreen = createStackNavigator()
+
 const navigationRef = React.createRef();
 
 export const navigate = (name, params) => {
@@ -53,9 +61,9 @@ export const navigate = (name, params) => {
 const HomeStackScreen = () => {
   return (
     <HomeStack.Navigator
-    screenOptions={{
-      headerShown: false
-    }}>
+      screenOptions={{
+        headerShown: false
+      }}>
       <HomeStack.Screen
         name={'HomeScreen'}
         options={{
@@ -151,7 +159,7 @@ const TabNav = props => {
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = 1
+  let token = null
 
 
   return (
@@ -161,21 +169,39 @@ const TabNav = props => {
         dispatch(currentRoute(currentRouteName))
       }}
     >
-       {!token ? 
-       <RegisterStackScreen.Navigator
-       screenOptions={{
-         headerShown: false
-       }}>
-       <RegisterStackScreen.Screen
-         name="Create Account"
-         component={CreateAccountScreen}
-       />
-       <RegisterStackScreen.Screen
-         name="Create Account Mobile"
-         component={CreateAccountMobile}
-       />
-     </RegisterStackScreen.Navigator> 
-     :
+      {!token ?
+           <RegisterStackScreen.Navigator
+           screenOptions={{
+             headerShown: false
+           }}>
+           <RegisterStackScreen.Screen
+             name="Create Account"
+             component={CreateAccountScreen}
+           />
+           <RegisterStackScreen.Screen
+             name="Create Account Mobile"
+             component={CreateAccountMobile}
+           />
+         </RegisterStackScreen.Navigator> 
+
+        // <FogotPasswordStackScreen.Navigator
+        //   screenOptions={{
+        //     headerShown: false
+        //   }}>
+        //   <FogotPasswordStackScreen.Screen
+        //     name="Email Enter Screen"
+        //     component={EmailEnterScreen}
+        //   />
+        //   <FogotPasswordStackScreen.Screen
+        //     name="Otp Handle Screen"
+        //     component={OtpHandleScreen}
+        //   />
+        //    <FogotPasswordStackScreen.Screen
+        //     name="Password Verify Screen"
+        //     component={PasswordVerifyScreen}
+        //   />
+        // </FogotPasswordStackScreen.Navigator>
+        :
         <Tab.Navigator
           tabBarOptions={{
             keyboardHidesTabBar: true,
@@ -272,7 +298,7 @@ const TabNav = props => {
             component={MyPetScreenStacks}
           />
         </Tab.Navigator>
-}
+      }
     </NavigationContainer>
   );
 };

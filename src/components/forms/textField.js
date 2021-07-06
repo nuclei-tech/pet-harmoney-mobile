@@ -5,13 +5,14 @@ import { useSelector } from 'react-redux';
 //textFieldWidth
 //alignText
 
-const InputField = ({ customMainContanier, customTextStyle, placeholderColor, placeholder, type, onChangeText, required, validator, errorMessage, requireMessage, onValidatorExecuted, customErrorContain, customErrorText }, props) => {
+const InputField = (props) => {
     const { theme } = useSelector(state => state.theme);
     const [values, setValue] = useState('')
     const [phoneNumber, setPhoneNumber] = useState(false)
     const [errordMessage, setErrordMessage] = useState();
     const [isvalid, setValid] = useState(true);
     const { mainTextStyles, errorContain, errorText,mainTextStylesPlaceHolder } = styles(theme, props)
+    const { customMainContanier, customTextStyle, placeholderColor, placeholder, type, onChangeText, required, validator, errorMessage, requireMessage, onValidatorExecuted, customErrorContain, customErrorText } = props
 
     let placeHolderText
 
@@ -88,6 +89,7 @@ const InputField = ({ customMainContanier, customTextStyle, placeholderColor, pl
                     Validation(values);
                 }}
                 value={values}
+                {...props}
             />
             {!isvalid ? (
                 <View style={{ ...errorContain, ...customErrorContain }}>

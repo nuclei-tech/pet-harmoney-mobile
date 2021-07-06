@@ -9,13 +9,14 @@ import { useSelector } from 'react-redux';
 import { navigate } from '../../navigation/navigation';
 
 const RegisterLayout = props => {
+  const  {customMainContanier,customContainer,customMainText} = props
   const { theme } = useSelector(state => state.theme);
 
   return (
-    <View style={styles(theme).mainContanier}>
-    <MediumContanier customContainStyle={styles(theme).container}>
+    <View style={{...styles(theme).mainContanier,...customMainContanier}}>
+    <MediumContanier customContainStyle={{...styles(theme).container,...customContainer}}>
       <Image source={images.petHarmonyLogo} />
-      <Text style={styles(theme).mainText}>PET HARMONY</Text>
+      <Text style={{...styles(theme).mainText,...customMainText}}>PET HARMONY</Text>
       {props.children}
     </MediumContanier>
     </View>
