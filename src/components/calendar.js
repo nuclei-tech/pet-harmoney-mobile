@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image } from 'rea
 import { useSelector } from 'react-redux';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 import { images } from '../constants'
-
+import {ScheduleTitle} from '../components'
 const { width, height } = Dimensions.get('window');
 const MonthCalendar = ({ containerStyle, titleStyle }) => {
     const { theme } = useSelector(state => state.theme);
@@ -102,7 +102,7 @@ const MonthCalendar = ({ containerStyle, titleStyle }) => {
     return (
         <View style={{ ...container, ...containerStyle }}>
             <View  style={{ ...titleContainer, ...titleStyle }}>
-                <Text style={heading}>Schedule a virtual session</Text>
+                <ScheduleTitle>Schedule a virtual session</ScheduleTitle>
                 <Text style={description}>Click on the solid dates to book an appointment</Text>
             </View>
             <View flex={3}>
