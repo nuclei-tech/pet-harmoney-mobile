@@ -50,7 +50,7 @@ const Theme = {
       fontFamily: "Aqum",
       fontSize: 18,
       lineHeight: 17,
-      letterSpacing: 0.2,
+      letterSpacing: 1.6,
       color: colors.YELLOW,
     },
     buttonTextStyles: {
@@ -282,9 +282,28 @@ const Theme = {
       lineHeight: 18,
       color: colors.GREEN,
     }
+  },
+
+
+  //forgot email screen
+  forgotEmail:{
+    forgotTextStyles:{
+      fontFamily: 'SourceSansPro-Regular',
+      fontSize: 16,
+      lineHeight: 20,
+      color:colors.YELLOW
+    }
+  },
+
+  //otp screen
+  forgotOtp:{
+    forgotOtpText:{
+      fontFamily: 'SourceSansPro-Regular',
+      fontSize: 16,
+      lineHeight: 20,
+      color:colors.YELLOW
+    }
   }
-
-
 };
 
 export default { Theme };
