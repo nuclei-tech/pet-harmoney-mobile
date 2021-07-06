@@ -1,88 +1,119 @@
 //header
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image } from 'react-native';
 import { useSelector } from 'react-redux';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
-
+import { images } from '../constants'
 
 const { width, height } = Dimensions.get('window');
 const MonthCalendar = ({ containerStyle, titleStyle }) => {
     const { theme } = useSelector(state => state.theme);
-
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const month = months[new Date().getMonth()];
+    const selecetdStyle = { selected: true, selectedColor: 'white', width: 29, height: 29, disableTouchEvent: true }
+    const [currentMonth, setCurrentMonth] = useState(month)
     const [selecetedDays, setSelecetedDays] = useState(
         {
-            '2021-07-05': { selected: true },
-            '2021-07-10': { selected: true },
-            '2021-07-12': { selected: true },
-            '2021-07-16': { selected: true },
-            '2021-07-17': { selected: true },
-            '2021-07-18': { selected: true },
-            '2021-07-22': { selected: true },
+            '2021-07-05': selecetdStyle,
+            '2021-07-10': selecetdStyle,
+            '2021-07-12': selecetdStyle,
+            '2021-07-16': selecetdStyle,
+            '2021-07-17': selecetdStyle,
+            '2021-07-18': selecetdStyle,
+            '2021-07-22': selecetdStyle,
         }
     );
 
-    const onPressDate = () => {
-        console.log('in');
+    const [selecetedDay, setSelecetedDay] = useState({});
+    // useEffect(() => {
+    //     CalendarItem();
+    //     console.log("jjjjjjjjjj");
+    //   },[selecetedDays])
+
+    const CalendarItem = () => {
+        return (<Calendar
+            hideDayNames={true}
+            hideExtraDays={true}
+            hideArrows={true}
+            // monthFormat={'yyyy MM'}
+            // calendarBackground={'red'}
+            theme={{
+                'stylesheet.calendar.header': {
+                    week: {
+                        marginTop: 5
+                    }
+                },
+                backgroundColor: '#b6c1cd',
+                calendarBackground: '#6732C8',
+                textSectionTitleColor: '#b6c1cd',
+                // textSectionTitleDisabledColor: '#d9e1e8',
+                selectedDayBackgroundColor: '#ffffff',
+                // todayTextColor: '#00adf5',
+                dayTextColor: '#ffffff',
+                // textDisabledColor: '#d9e1e8',
+                // dotColor: '#00adf5',
+                // selectedDotColor: '#ffffff',
+                // arrowColor: 'orange',
+                // disabledArrowColor: '#d9e1e8',
+                monthTextColor: '#ffffff',
+                // indicatorColor: 'blue',
+                textDayFontFamily: 'Source Sans Pro',
+                textMonthFontFamily: 'Source Sans Pro',
+                // textMonthColor: '#ffffff',
+                // textDayHeaderFontFamily: 'monospace',
+                // textDayFontWeight: '300',
+                textMonthFontWeight: '700',
+                // textDayHeaderFontWeight: '300',
+                textDayFontSize: 12,
+                textMonthFontSize: 26,
+                textDayStyle: { borderColor: '#ffffff', alignItems: "center", borderWidth: 3, padding: 6, fontWeight: '700', borderRadius: 20, width: 29, height: 29, textAlign: 'center', marginTop: 1.5 },
+                selectedDayTextColor: '#6732C8',
+                selectedDayBackgroundColor: '#6732C8',
+                'stylesheet.calendar.IGNORE': {
+                    IGNORE: {
+                        width: 29,
+                        height: 29
+                    }
+                }
+                // textDayHeaderFontSize: 16
+            }}
+            // style={{backgroundColor:'transparent'}}
+            onDayPress={(day) => {
+                let date = day.dateString;
+                setSelecetedDay({ [date]: selecetdStyle })
+            }}
+            markedDates={{ ...selecetedDays, ...selecetedDay }}
+            renderHeader={(date) => { return <></>}}
+            onMonthChange={(month) => {console.log(month);
+                setCurrentMonth(months[month.month-1]);}}
+            enableSwipeMonths={true}
+
+        />)
     }
     const {
         container,
         titleContainer,
         heading,
         description,
-        monthStyle
-
+        monthStyle,
+        imageContainer,
+        image
     } = styles(theme.Theme);
     return (
         <View style={{ ...container, ...containerStyle }}>
-            <View flex={0.75} style={{ ...titleContainer, ...titleStyle }}>
+            <View  style={{ ...titleContainer, ...titleStyle }}>
                 <Text style={heading}>Schedule a virtual session</Text>
                 <Text style={description}>Click on the solid dates to book an appointment</Text>
             </View>
             <View flex={3}>
                 <View>
-                    {/* <Text style={monthStyle}>{month}</Text> */}
+                    <Text style={monthStyle}>{currentMonth}</Text>
                 </View>
                 <View>
-                    <Calendar
-                        hideDayNames={true}
-                        hideExtraDays={true}
-                        hideArrows={true}
-                        // calendarBackground={'red'}
-                        theme={{
-                            backgroundColor: '#b6c1cd',
-                            calendarBackground: '#6732C8',
-                            textSectionTitleColor: '#b6c1cd',
-                            // textSectionTitleDisabledColor: '#d9e1e8',
-                            selectedDayBackgroundColor: '#ffffff',
-                            // todayTextColor: '#00adf5',
-                            dayTextColor: '#ffffff',
-                            // textDisabledColor: '#d9e1e8',
-                            // dotColor: '#00adf5',
-                            // selectedDotColor: '#ffffff',
-                            // arrowColor: 'orange',
-                            // disabledArrowColor: '#d9e1e8',
-                            monthTextColor: '#ffffff',
-                            // indicatorColor: 'blue',
-                            textDayFontFamily: 'Source Sans Pro',
-                            textMonthFontFamily: 'Source Sans Pro',
-                            // textMonthColor: '#ffffff',
-                            // textDayHeaderFontFamily: 'monospace',
-                            // textDayFontWeight: '300',
-                            textMonthFontWeight: '700',
-                            // textDayHeaderFontWeight: '300',
-                            textDayFontSize: 12,
-                            textMonthFontSize: 26,
-                            textDayStyle: { borderColor: '#ffffff', alignItems: "center", borderWidth: 3, padding: 8, fontWeight: '700', borderRadius: 20, width: 33, height: 33, textAlign: 'center', marginTop: 0 },
-                            selectedDayTextColor: '#b6c1cd',
-                            // textDayHeaderFontSize: 16
-                        }}
-                        // style={{backgroundColor:'transparent'}}
-                        onDayPress={(day) => {
-                            let date = day.dateString;
-                            console.log(selecetedDays);
-                        }}
-                        markedDates={selecetedDays}
-                    />
+                    {CalendarItem()}
+                </View>
+                <View style={imageContainer}>
+                    <Image source={images.downArrow} style={image}/> 
                 </View>
             </View>
         </View>
@@ -95,6 +126,7 @@ const styles = (theme) => StyleSheet.create({
         // marginTop: height * 0.07
     },
     titleContainer: {
+        marginTop:height*0.07,
         justifyContent: 'center',
     },
     heading: {
@@ -122,6 +154,16 @@ const styles = (theme) => StyleSheet.create({
         paddingVertical: 5,
         fontSize: 26,
         lineHeight: 33,
+        
+        marginTop:height*0.03
+    },
+    imageContainer:{
+        alignItems:"center", 
+        padding: height*0.04
+    },
+    image:{
+        width:36,
+        height:30
     }
 
 })

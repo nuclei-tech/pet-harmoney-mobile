@@ -54,7 +54,8 @@ const cardIcon3 = require('../assets/images/listImages/Z3pUdU@300x1.png')
 //search icon
 const searchRoundIcon = require('../assets/images/background/SEARCH_ICON.png')
 
-
+//arrowIcon
+const downArrow = require('../assets/images/ARROW.png')
 
 export default {
     logo,
@@ -104,5 +105,7 @@ export default {
     cardIcon2,
     cardIcon3,
 
-    searchRoundIcon
+    searchRoundIcon,
+
+    downArrow
 };
