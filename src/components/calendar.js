@@ -1,6 +1,6 @@
 //header
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, Platform } from 'react-native';
 import { useSelector } from 'react-redux';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 import { images } from '../constants'
@@ -66,7 +66,7 @@ const MonthCalendar = ({ containerStyle, titleStyle }) => {
                 // textDayHeaderFontWeight: '300',
                 textDayFontSize: 12,
                 textMonthFontSize: 26,
-                textDayStyle: { borderColor: '#ffffff', alignItems: "center", borderWidth: 3, padding: 6, fontWeight: '700', borderRadius: 20, width: 29, height: 29, textAlign: 'center', marginTop: 1.5 },
+                textDayStyle: {...textDayStyle  },
                 selectedDayTextColor: '#6732C8',
                 selectedDayBackgroundColor: '#6732C8',
                 'stylesheet.calendar.IGNORE': {
@@ -97,7 +97,8 @@ const MonthCalendar = ({ containerStyle, titleStyle }) => {
         description,
         monthStyle,
         imageContainer,
-        image
+        image,
+        textDayStyle
     } = styles(theme.Theme);
     return (
         <View style={{ ...container, ...containerStyle }}>
@@ -164,6 +165,20 @@ const styles = (theme) => StyleSheet.create({
     image:{
         width:36,
         height:30
+    },
+    textDayStyle:{
+        borderColor: '#ffffff', 
+        alignItems: "center", 
+        borderWidth: 3, 
+        textAlign:'center',
+        fontWeight: '700', 
+        borderRadius: 15, 
+        width: 29, 
+        height: 29, 
+        textAlign: 'center', 
+        paddingTop:Platform=='ios'? 3.5:6,
+        marginTop: 1.5,
+
     }
 
 })
