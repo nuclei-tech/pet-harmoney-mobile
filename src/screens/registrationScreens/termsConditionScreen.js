@@ -1,29 +1,35 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, Text, View, StatusBar, SafeAreaView, ScrollView, Platform } from 'react-native';
-import { Header,ParagraphCard, Layout2,  Paragraph, CheckBoxField } from '../../components'
+import React from 'react';
+import { StyleSheet, View, ScrollView, Dimensions } from 'react-native';
+import { ParagraphCard, Layout2, Paragraph, CheckBoxField } from '../../components'
 import { termsAndConditions } from '../../constants'
 
 // Connect redux store.
 import { useSelector } from 'react-redux';
 
+const { height } = Dimensions.get('window')
+
 const TermsConditionScreen = props => {
     const { theme } = useSelector(state => state.theme);
+    const { layoutContanier, paragraphCardStyle, container,checkBoxContainer } = styles(theme)
+
     return (
-        <View style={styles.container}>
+        <View style={container}>
             <Layout2
                 type={'fullScreen'} // {halfScreen, small }
                 layoutColor={theme.Theme.colors.DARK_BLUE}
                 backgroundColor={theme.Theme.colors.GREEN}
-                headerTitle={'pet harmony'} 
-                customContainerStyle={{justifyContent:'center'}}
-                >
-                <ScrollView style={{ marginBottom: 10 }} showsVerticalScrollIndicator={false} nestedScrollEnabled={true}>
+                title={'pet harmony'}
+                noIcon
+                customContainerStyle={layoutContanier}
+            >
+                <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={true}>
                     <ParagraphCard
                         cardBorderColor={theme.Theme.colors.GREEN}
                         cardBackgroundColor={'transparent'}
                         titleColor={theme.Theme.colors.GREEN}
                         title={'Terms and Conditions'}
                         titleAlign={'left'}
+                        customCardContainer={paragraphCardStyle}
                         imageExists
                     >
                         <Paragraph
@@ -32,20 +38,32 @@ const TermsConditionScreen = props => {
                             textFontSize={14}
                             textFontLineHeight={18}
                             textFontWeight={'300'}
-                            paragraphMarginBottom={5}
                         />
                     </ParagraphCard>
+                    <View style={checkBoxContainer}>
+                        <CheckBoxField title={'I agree to the terms and conditions'} />
+                    </View>
                 </ScrollView>
             </Layout2>
         </View>
     );
 };
 
-const styles = StyleSheet.create({
+const styles = (theme) => StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white'
+        backgroundColor: theme.Theme.colors.WHITE
     },
+    layoutContanier: {
+        justifyContent: 'center'
+    },
+    paragraphCardStyle: {
+        marginTop: height * 0.06
+    },
+    checkBoxContainer:{
+        paddingTop:12.5,
+        marginTop: height * 0.02,
+    }
 });
 
 
