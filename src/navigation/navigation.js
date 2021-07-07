@@ -32,6 +32,7 @@ import MyPetScreen from '../screens/myPetScreen/myPetScreen'
 import CreateAccountScreen from '../screens/registrationScreens/createAccountScreen'
 import CreateAccountMobile from '../screens/registrationScreens/createAccountMobile'
 import TermsConditionScreen from '../screens/registrationScreens/termsConditionScreen'
+import PetRegisterForm from '../screens/registrationScreens/petRegisterForm'
 
 //forgotPassword screen
 import EmailEnterScreen from '../screens/forgotPasswordScreens/emailEnterScreen'
@@ -65,12 +66,19 @@ const HomeStackScreen = () => {
       screenOptions={{
         headerShown: false
       }}>
-      <HomeStack.Screen
+      {/* <HomeStack.Screen
         name={'HomeScreen'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={HomeScreen}
+      /> */}
+       <HomeStack.Screen
+        name={'Pet registation'}
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        component={PetRegisterForm}
       />
     </HomeStack.Navigator>
   );
@@ -160,7 +168,7 @@ const TabNav = props => {
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = null
+  let token = 1
 
 
   return (
@@ -177,11 +185,15 @@ const TabNav = props => {
            }}>
            <RegisterStackScreen.Screen
              name="Create Account"
-             component={TermsConditionScreen}
+             component={CreateAccountScreen}
            />
            <RegisterStackScreen.Screen
              name="Create Account Mobile"
              component={CreateAccountMobile}
+           />
+            <RegisterStackScreen.Screen
+             name="Terms Condition"
+             component={TermsConditionScreen}
            />
          </RegisterStackScreen.Navigator> 
 
