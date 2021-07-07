@@ -1,6 +1,6 @@
 //Navigation
 import React, { useEffect, useState } from 'react';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -11,52 +11,67 @@ import {
   Keyboard,
   Image
 } from 'react-native';
-import { colors } from '../theme'
+import { colors } from '../themes/colors.js'
 import { Header } from '../components'
-// Screen List
+import { images } from '../constants'
+
+// Sample Screen List
+// import HomeScreen from '../screens/homeScreen/homeScreen';
+// import TelevetScreen from '../screens/televetScreen/televetScreen';
+// import ComunityScreen from '../screens/comunity/comunityScreen';
+// import ShoppingScreen from '../screens/shopping/shoppingScreen'
+// import MyPetScreen from '../screens/MyPet/myPetScreen'
+
 import HomeScreen from '../screens/homeScreen/homeScreen';
 import TelevetScreen from '../screens/televetScreen/televetScreen';
-import ComunityScreen from '../screens/comunity/comunityScreen';
-import ShoppingScreen from '../screens/shopping/shoppingScreen'
-import MyPetScreen from '../screens/MyPet/myPetScreen'
-import CreateAccountScreen from '../screens/createAccountScreen/createAccountScreen'
-import CreateAccountMobile from '../screens/createAccountScreen/createAccountMobile'
-import Layout1 from '../screens/layouts/layout1';
-import {
-  images
-} from '../constants'
+import ComunityScreen from '../screens/communityScreen/communityScreen';
+import ShoppingScreen from '../screens/shoppingScreen/shoppingScreen'
+import MyPetScreen from '../screens/myPetScreen/myPetScreen'
+
+//Registration screen
+import CreateAccountScreen from '../screens/registrationScreens/createAccountScreen'
+import CreateAccountMobile from '../screens/registrationScreens/createAccountMobile'
+
+//forgotPassword screen
+import EmailEnterScreen from '../screens/forgotPasswordScreens/emailEnterScreen'
+import OtpHandleScreen from '../screens/forgotPasswordScreens/otpHandleScreen'
+import PasswordVerifyScreen from '../screens/forgotPasswordScreens/passwordVerifyScreen'
+
+
 // Connect redux store.
 import { useSelector, useDispatch } from 'react-redux';
 import { currentRoute } from '../store/modules/screen/screen'
 
 const Tab = createBottomTabNavigator();
-const MainStack = createStackNavigator();
+const HomeStack = createStackNavigator();
 const ShoppingScreenStack = createStackNavigator();
 const ComunityScreenStack = createStackNavigator();
 const TelevetScreenStack = createStackNavigator();
 const MyPetScreenStack = createStackNavigator();
 const RegisterStackScreen = createStackNavigator()
+const FogotPasswordStackScreen = createStackNavigator()
+
 const navigationRef = React.createRef();
 
 export const navigate = (name, params) => {
   navigationRef.current && navigationRef.current.navigate(name, params);
 };
 
-//Main route
-const MaineStackScreen = () => {
+//Home route
+const HomeStackScreen = () => {
   return (
-    <MainStack.Navigator
-    screenOptions={{
-      headerShown: false
-    }}>
-      <MainStack.Screen
+    <HomeStack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}>
+      <HomeStack.Screen
         name={'HomeScreen'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={HomeScreen}
       />
-    </MainStack.Navigator>
+    </HomeStack.Navigator>
   );
 };
 //Other route
@@ -106,7 +121,6 @@ const ShoppingScreenStacks = () => {
   );
 };
 
-
 const MyPetScreenStacks = () => {
   return (
     <MyPetScreenStack.Navigator
@@ -138,14 +152,14 @@ const TabNav = props => {
     };
   }, []);
   const _keyboardDidShow = () => {
-    setKeyboardShow(false);
+    setKeyboardShow(false)
   };
   const _keyboardDidHide = () => {
     setKeyboardShow(true);
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = 1
+  let token = null
 
 
   return (
@@ -155,21 +169,39 @@ const TabNav = props => {
         dispatch(currentRoute(currentRouteName))
       }}
     >
-      {!token ? 
-       <RegisterStackScreen.Navigator
-       screenOptions={{
-         headerShown: false
-       }}>
-       <RegisterStackScreen.Screen
-         name="Create Account"
-         component={CreateAccountScreen}
-       />
-       <RegisterStackScreen.Screen
-         name="Create Account Mobile"
-         component={CreateAccountMobile}
-       />
-     </RegisterStackScreen.Navigator> 
-     :
+      {!token ?
+           <RegisterStackScreen.Navigator
+           screenOptions={{
+             headerShown: false
+           }}>
+           <RegisterStackScreen.Screen
+             name="Create Account"
+             component={CreateAccountScreen}
+           />
+           <RegisterStackScreen.Screen
+             name="Create Account Mobile"
+             component={CreateAccountMobile}
+           />
+         </RegisterStackScreen.Navigator> 
+
+        // <FogotPasswordStackScreen.Navigator
+        //   screenOptions={{
+        //     headerShown: false
+        //   }}>
+        //   <FogotPasswordStackScreen.Screen
+        //     name="Email Enter Screen"
+        //     component={EmailEnterScreen}
+        //   />
+        //   <FogotPasswordStackScreen.Screen
+        //     name="Otp Handle Screen"
+        //     component={OtpHandleScreen}
+        //   />
+        //    <FogotPasswordStackScreen.Screen
+        //     name="Password Verify Screen"
+        //     component={PasswordVerifyScreen}
+        //   />
+        // </FogotPasswordStackScreen.Navigator>
+        :
         <Tab.Navigator
           tabBarOptions={{
             keyboardHidesTabBar: true,
@@ -247,7 +279,7 @@ const TabNav = props => {
         >
           <Tab.Screen
             name="Home"
-            component={MaineStackScreen}
+            component={HomeStackScreen}
           />
           <Tab.Screen
             name="Shopping"

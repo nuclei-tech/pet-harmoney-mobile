@@ -1,5 +1,5 @@
 import { Dimensions } from 'react-native';
-import { colors } from '../theme'
+import { colors } from './colors'
 
 const Theme = {
   // Main theam colors
@@ -50,11 +50,12 @@ const Theme = {
       fontFamily: "Aqum",
       fontSize: 18,
       lineHeight: 17,
-      letterSpacing: 0.2,
+      letterSpacing: 1.6,
       color: colors.YELLOW,
     },
     buttonTextStyles: {
       fontFamily: "SourceSansPro-Black",
+      fontWeight: 'bold',
       fontSize: 17,
       lineHeight: 21,
       letterSpacing: 0.2,
@@ -84,6 +85,11 @@ const Theme = {
   //default input style
   defaultInputStyle: {
     textStyle: {
+      fontFamily: "SourceSansPro-Black",
+      fontWeight: 'bold',
+      fontSize: 17,
+    },
+    textStyleBold:{
       fontFamily: "SourceSansPro-Black",
       fontWeight: 'bold',
       fontSize: 17,
@@ -284,6 +290,36 @@ const Theme = {
     placeHolderColor: colors.GREEN,
   },
 
+  //box field style
+  boxFieldStyle:{
+    textStyle:{
+      fontFamily: 'SourceSansPro-Bold',
+      fontSize: 14,
+      lineHeight: 18,
+      color: colors.GREEN,
+    }
+  },
+
+
+  //forgot email screen
+  forgotEmail:{
+    forgotTextStyles:{
+      fontFamily: 'SourceSansPro-Regular',
+      fontSize: 16,
+      lineHeight: 20,
+      color:colors.YELLOW
+    }
+  },
+
+  //otp screen
+  forgotOtp:{
+    forgotOtpText:{
+      fontFamily: 'SourceSansPro-Regular',
+      fontSize: 16,
+      lineHeight: 20,
+      color:colors.YELLOW
+    }
+  }
 };
 
 export default { Theme };

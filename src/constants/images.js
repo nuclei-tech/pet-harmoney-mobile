@@ -17,6 +17,7 @@ const bgGreen = require('../assets/images/background/BG_Green.png');
 const bgPurple = require('../assets/images/background/BG_Purple.png');
 const bgWhite = require('../assets/images/background/BG_White.png');
 const cover = require('../assets/images/background/cover.png');
+const event = require('../assets/images/background/event.png');
 
 const profile = require('../assets/images/profile.png');
 const reminderDetailCheckBoxIcon = require('../assets/images/CHECK_BOX.png');
@@ -77,7 +78,8 @@ export default {
     bgYellow,
     bgWhite,
     cover,
-
+    event,
+    
     profile,
     reminderDetailCheckBoxIcon,
     reminderDetailCheckedCheckBoxIcon,

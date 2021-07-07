@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Text } from 'react-native';
-import { size } from '../../theme'
 
 import { useSelector } from 'react-redux';
 
@@ -45,7 +44,7 @@ const styles =(props,theme) => StyleSheet.create({
     backgroundColor: props.backgroundColor 
   },
   backGroundAndBorder:{
-    borderColor: props.type == 'outline' ? props.boarderColor ? props.boarderColor : props.backgroundColor : 'transparent',
+    borderColor: props.type == 'outline' ? props.boarderColor ? props.boarderColor : props.backgroundColor : props.backgroundColor,
     backgroundColor: props.backgroundColor
   },
   buttonStyle: {
@@ -54,8 +53,8 @@ const styles =(props,theme) => StyleSheet.create({
     borderWidth: 4,
     marginTop: 8,
     marginBottom: 8,
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingTop: 8,
+    paddingBottom: 8,
   },
   smallButtonStyle: {
     width: props.buttonWidth ? props.buttonWidth : '100%',
@@ -63,11 +62,8 @@ const styles =(props,theme) => StyleSheet.create({
     borderWidth: 4,
     marginTop: 8,
     marginBottom: 12,
-    paddingTop: 4,
-    paddingBottom: 4,
-  },
-  containerStyle: {
-    borderRadius: size.SIZE.BASE,
+    paddingTop: 3,
+    paddingBottom: 3,
   },
   textStyle: {
     ...theme.Theme.defaultButtonStyle.textStyle,

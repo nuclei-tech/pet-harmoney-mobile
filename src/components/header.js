@@ -5,7 +5,7 @@ import { images } from '../constants'
 import { ProfilePicture } from '.'; './ProfilePicture'
 import { useSelector } from 'react-redux';
 
-const CustomHeader = ({ title, customStyle, login,  dark, customtTitleStyle }) => {
+const CustomHeader = ({ title, noIcon, customStyle, login, dark,customContainerStyle, customtTitleStyle }) => {
     const { theme } = useSelector(state => state.theme);
     const { headerContainer, leftHeader, rightHeader, textStyle, headerLogo, header, headerIcon, profileImageIcon } = styles(theme.Theme);
     const logo = dark ? images.logo_Black : images.logo;
@@ -14,14 +14,14 @@ const CustomHeader = ({ title, customStyle, login,  dark, customtTitleStyle }) =
     return (
         <View style={customStyle}>
             <SafeAreaView>
-                <View style={{ ...headerContainer }}>
+                <View style={{ ...headerContainer, ...customContainerStyle }}>
                     <View style={leftHeader}>
                         <Image source={logo} style={headerLogo} />
-                        <Text style={{...textStyle, ...customtTitleStyle}}>{title}</Text>
+                        <Text style={{ ...textStyle, ...customtTitleStyle }}>{title}</Text>
                     </View>
-                    <View style={rightHeader}>
+                    {noIcon ? <></> : <View style={rightHeader}>
                         <TouchableOpacity>
-                            <Image source={searchIcon } style={headerIcon} />
+                            <Image source={searchIcon} style={headerIcon} />
                         </TouchableOpacity>
                         {login ?
                             <TouchableOpacity>
@@ -30,13 +30,13 @@ const CustomHeader = ({ title, customStyle, login,  dark, customtTitleStyle }) =
                             <TouchableOpacity>
                                 <Image source={profileIcon} style={headerIcon} />
                             </TouchableOpacity>}
-                    </View>
+                    </View>}
                 </View>
             </SafeAreaView>
         </View>
     );
 };
-const styles = ( theme) => StyleSheet.create({
+const styles = (theme) => StyleSheet.create({
     headerContainer: {
         flexDirection: "row",
         justifyContent: "space-between",

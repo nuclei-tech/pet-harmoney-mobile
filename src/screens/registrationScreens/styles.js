@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { Colors } from '../../../config';
+import { Colors } from '../../../../config';
 
 export const styles = props =>
   StyleSheet.create({
@@ -25,5 +25,8 @@ export const styles = props =>
     textAlready:{
       ...props.Theme.createAccount.textAlready,
       marginTop:4
+    },
+    viewFillContain:{
+      width:'100%'
     }
   });

@@ -8,12 +8,12 @@ import { images } from '../../constants'
 
 
 
-const SearchField = ({ customMainContanier, customTextStyle, placeholderColor, placeholder,customviewTabContanier,customMainFlex,customSearchFlex,customSearchIconFlex}, props) => {
+const SearchField = ({ customMainContanier, customTextStyle, placeholderColor, placeholder, customviewTabContanier, customMainFlex, customSearchFlex, customSearchIconFlex,customItemViewContanier,customListTextField}, props) => {
     const { theme } = useSelector(state => state.theme);
     const [values, setValue] = useState('')
     const [viewTab, setViewTab] = useState(false)
     const [searchDetails, setSearchDetails] = useState([{ name: 'Search reasult1' }, { name: 'Search reasult2' }, { name: 'Search reasult3' }, { name: 'Search reasult5' }, { name: 'Search reasult6' }, { name: 'Search reasult7' }, { name: 'Search reasult8' }, { name: 'Search reasult' }, { name: 'Search reasult' }, { name: 'Search reasult' }, { name: 'Search reasult' }, { name: 'Search reasult' }, { name: 'Search reasult' }, { name: 'Search reasult' }, { name: 'Search reasult' }, { name: 'Search reasult' }, { name: 'Search reasult' }, { name: 'Search reasult' }])
-    const { mainTextStyles,listTextField,viewTabContanier,mainFlex,searchFlex,searchIconFlex } = styles(theme, props)
+    const { mainTextStyles, listTextField, viewTabContanier, mainFlex, searchFlex, searchIconFlex,flexRowHandle,itemViewContanier } = styles(theme, props)
 
     const searchTest = async (value) => {
         setValue(value)
@@ -30,8 +30,8 @@ const SearchField = ({ customMainContanier, customTextStyle, placeholderColor, p
         return (
             <View >
                 <TouchableOpacity onPress={() => handleSearch(item.name)}>
-                    <View style={{ marginVertical: 5 }}>
-                        <Text style={{...listTextField}}>{item.name}</Text>
+                    <View style={{...itemViewContanier,customItemViewContanier }}>
+                        <Text style={{ ...listTextField,customListTextField }}>{item.name}</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -39,20 +39,29 @@ const SearchField = ({ customMainContanier, customTextStyle, placeholderColor, p
     };
 
     return (
-        <View style={{...mainFlex,customMainFlex}}>
-            <View style={{...searchFlex,...customSearchFlex}}>
-                <TextInput
-                    style={{ ...mainTextStyles, ...customTextStyle, ...customMainContanier }}
-                    placeholder={placeholder}
-                    placeholderTextColor={placeholderColor ? placeholderColor : theme.Theme.defaultInputStyle.placeHolderColor}
-                    onChangeText={text => {
-                        searchTest(text);
-                    }}
-                    value={values}
-                />
-
+        <View style={{ ...mainFlex, customMainFlex }}>
+            <View style={flexRowHandle}>
+                <View style={{ ...searchFlex, ...customSearchFlex }}>
+                    <TextInput
+                        style={{ ...mainTextStyles, ...customTextStyle, ...customMainContanier }}
+                        placeholder={placeholder}
+                        placeholderTextColor={placeholderColor ? placeholderColor : theme.Theme.defaultInputStyle.placeHolderColor}
+                        onChangeText={text => {
+                            searchTest(text);
+                        }}
+                        value={values}
+                    />
+                </View>
+                <View style={{ ...searchIconFlex, ...customSearchIconFlex }}>
+                    <TouchableOpacity onPress={() => handleSearch(values)}>
+                        <Image source={images.searchRoundIcon} resizeMode={'contain'} />
+                    </TouchableOpacity>
+                </View>
+            </View>
+            <View style={flexRowHandle}>
+            <View style={{ ...searchFlex, ...customSearchFlex }}>
                 {viewTab ?
-                    <View style={{...viewTabContanier,...customviewTabContanier }}>
+                    <View style={{ ...viewTabContanier, ...customviewTabContanier }}>
                         <FlatList
                             data={searchDetails}
                             keyExtractor={(item, index) => index.toString()}
@@ -63,10 +72,8 @@ const SearchField = ({ customMainContanier, customTextStyle, placeholderColor, p
                     </View> : null
                 }
             </View>
-            <View style={{ ...searchIconFlex,...customSearchIconFlex }}>
-                <TouchableOpacity onPress={() => handleSearch(values)}>
-                    <Image source={images.searchRoundIcon} resizeMode={'contain'} style={{ marginVertical: 15 }} />
-                </TouchableOpacity>
+            <View style={{ ...searchIconFlex, ...customSearchIconFlex }}>
+            </View>
             </View>
         </View>
     )
@@ -85,36 +92,41 @@ const styles = (theme, props) => StyleSheet.create({
         paddingTop: 8,
         paddingBottom: 8,
         marginTop: 9,
-        marginBottom: 9
+        marginBottom: 5
     },
-    mainFlex:{
-        flex: 5, 
-        flexDirection: 'row'
+    flexRowHandle:{
+        flexDirection: 'row',
     },
-    searchFlex:{
-        flex: 4 
+    mainFlex: {
+        flex: 5,
     },
-    searchIconFlex:{
-        flex: 1, 
-        alignItems: 'center', 
-        justifyContent: 'flex-start'
+    searchFlex: {
+        flex: 4
     },
-    listTextField:{
+    searchIconFlex: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    listTextField: {
         ...theme.Theme.searchFieldStyle.listTextField,
     },
-    viewTabContanier:{
-        position:'relative',
+    viewTabContanier: {
+        position: 'relative',
         maxHeight: 150,
-        zIndex: 1, 
-        borderColor: theme.Theme.searchFieldStyle.boderColor, 
-        borderWidth: 1, 
-        backgroundColor:theme.Theme.colors.WHITE, 
-        overflow: 'scroll', 
-        width: '100%', 
-        alignContent: 'center', 
-        borderRadius: 10, 
-        padding: 10, 
+        zIndex: 1,
+        borderColor: theme.Theme.searchFieldStyle.boderColor,
+        borderWidth: 1,
+        backgroundColor: theme.Theme.colors.WHITE,
+        overflow: 'scroll',
+        width: '100%',
+        alignContent: 'center',
+        borderRadius: 10,
+        padding: 10,
         marginBottom: 15,
+    },
+    itemViewContanier:{
+        marginVertical: 5
     }
 })
 
