@@ -4,22 +4,19 @@ import { Image } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 import { images } from '../../constants'
 
-const ParagrapghCard = ({
-    cardBorderColor, 
-    cardBackgroundColor,
-    titleColor,
-    titleAlign, 
-    title,
-    imageExists,
-    children
-}) => {
-    const {theme} = useSelector(state => state.theme)
-    const {cardContainer, cardTitle, image, imageContainer} = styles(theme)
+const ParagrapghCard = (props) => {
+    const { theme } = useSelector(state => state.theme)
+    const { 
+        customCardContainer,
+        title,
+        imageExists,
+        children } = props
+    const { cardContainer, cardTitle, image, imageContainer } = styles(theme, props)
 
     return (
-        <View style={[cardContainer, {backgroundColor: cardBackgroundColor, borderColor: cardBorderColor,}]}>
-            {title && <Text style={[cardTitle, {textAlign: titleAlign, color: titleColor}]}>{title}</Text>}
-                {children}
+        <View style={{...cardContainer,...customCardContainer}}>
+            {title && <Text style={[cardTitle]}>{title}</Text>}
+            {children}
             {imageExists && <View style={imageContainer}>
                 <Image
                     source={images.termsDownArrow}
@@ -31,28 +28,32 @@ const ParagrapghCard = ({
     )
 }
 
-const styles = (props) => StyleSheet.create({
+const styles = (theme,props) => StyleSheet.create({
     cardContainer: {
         borderRadius: 20,
         borderWidth: 3,
-        paddingLeft: 34, 
-        paddingRight: 34, 
-        paddingTop: 35, 
+        paddingLeft: 34,
+        paddingRight: 34,
+        paddingTop: 35,
         paddingBottom: 35,
         width: '100%',
-        minHeight: 414
+        minHeight: 414,
+        backgroundColor: props.cardBackgroundColor, 
+        borderColor: props.cardBorderColor
     },
     cardTitle: {
-        marginBottom: 12, 
-        ...props.Theme.defaultParagraphCardTitleStyles
+        marginBottom: 12,
+        ...theme.Theme.defaultParagraphCardTitleStyles,
+        textAlign: props.titleAlign, 
+        color: props.titleColor
     },
-    
+
     image: {
         width: 22.8,
         height: 19,
     },
     imageContainer: {
-        alignItems: 'center', 
+        alignItems: 'center',
         marginTop: 20
     }
 })

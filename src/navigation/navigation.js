@@ -177,7 +177,7 @@ const TabNav = props => {
            }}>
            <RegisterStackScreen.Screen
              name="Create Account"
-             component={CreateAccountScreen}
+             component={TermsConditionScreen}
            />
            <RegisterStackScreen.Screen
              name="Create Account Mobile"

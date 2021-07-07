@@ -50,7 +50,7 @@ const styles = (theme) => StyleSheet.create({
         fontFamily: 'Aqum',
         fontSize: theme.size.HEADER_TITLE,
         color: theme.colors.WHITE,
-        letterSpacing: 0.2,
+        letterSpacing: 1.6,
         textAlign: 'center'
     },
     headerLogo: {
