@@ -19,6 +19,7 @@ const TermsConditionScreen = props => {
                 layoutColor={theme.Theme.colors.DARK_BLUE}
                 backgroundColor={theme.Theme.colors.GREEN}
                 title={'pet harmony'}
+                curve={'secondry'}
                 noIcon
                 customContainerStyle={layoutContanier}
             >
@@ -58,7 +59,7 @@ const styles = (theme) => StyleSheet.create({
         justifyContent: 'center'
     },
     paragraphCardStyle: {
-        marginTop: height * 0.06
+        marginTop: height * 0.05
     },
     checkBoxContainer:{
         paddingTop:12.5,

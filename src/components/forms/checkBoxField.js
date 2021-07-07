@@ -30,6 +30,7 @@ const CheckBoxField = ({ customMainFlex, customBoxFlex, customBoxContentFlex,tit
                   style={
                     Platform.OS == 'ios' && {
                       transform: [{scaleX: 0.8}, {scaleY: 0.8}],
+                      marginTop:5
                     }
                   }
                 />

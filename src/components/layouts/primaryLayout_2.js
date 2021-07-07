@@ -92,7 +92,7 @@ const styles = (props, theme) => StyleSheet.create({
         resizeMode: 'stretch',
         padding: theme.size.CONTAINER_PADDING,
         paddingBottom: 0,
-        height: '90%',
+        height: '95%',
         backgroundColor: props.backgroundColor ? props.backgroundColor : theme.colors.WHITE
     },
     samllScreen: {

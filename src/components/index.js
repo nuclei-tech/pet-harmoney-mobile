@@ -46,5 +46,5 @@ export{
     Cover,
     PlaceOrderCard,
     Calendar,
-    ScheduleTitle
+    ScheduleTitle,
 }
