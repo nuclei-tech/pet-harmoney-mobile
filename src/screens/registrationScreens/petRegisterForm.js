@@ -3,7 +3,7 @@ import { View, ScrollView, Text, TouchableOpacity } from 'react-native';
 import { Layout2, InputField, MediumContanier, ProfilePicture, Button } from '../../components'
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { format } from 'date-fns';
-import {images} from '../../constants'
+import {images,birthYearReverse} from '../../constants'
 
 import { styles } from './styles';
 
@@ -34,7 +34,7 @@ const PetRegisterForm = props => {
         let year = defaultDate.getFullYear()
         let month = defaultDate.getMonth()
         let day = defaultDate.getDate()
-        defaultDate.setFullYear(year - 18, month, day);
+        defaultDate.setFullYear(year - birthYearReverse, month, day);
         setDefaultDate(defaultDate)
     }, [])
 
