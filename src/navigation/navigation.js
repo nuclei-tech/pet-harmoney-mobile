@@ -31,6 +31,7 @@ import MyPetScreen from '../screens/myPetScreen/myPetScreen'
 //Registration screen
 import CreateAccountScreen from '../screens/registrationScreens/createAccountScreen'
 import CreateAccountMobile from '../screens/registrationScreens/createAccountMobile'
+import TermsConditionScreen from '../screens/registrationScreens/termsConditionScreen'
 
 //forgotPassword screen
 import EmailEnterScreen from '../screens/forgotPasswordScreens/emailEnterScreen'

@@ -106,19 +106,21 @@ const Theme = {
 
   //default paragraph font family
   defaultParagraphStyles: {
-    fontFamily: 'Source Sans Pro',
+    fontFamily: 'SourceSansPro-Black',
+    fontSize: 14,
+    lineHeight: 18,
   },
 
   //default paragraph card Font Styles
   defaultParagraphCardTitleStyles: {
     fontSize: 14,
     lineHeight: 18,
-    fontFamily: 'Source Sans Pro',
+    fontFamily: 'SourceSansPro-Black',
     fontWeight: 'bold'
   },
   //default icon header font styles
   defaultIconHeaderTitleStyles: {
-    fontFamily: 'Source Sans Pro',
+    fontFamily: 'SourceSansPro-Black',
     fontWeight: 'bold',
   },
   //cart list component style
