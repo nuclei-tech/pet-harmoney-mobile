@@ -3,6 +3,9 @@ import { StyleSheet, View, ScrollView, Dimensions } from 'react-native';
 import { ParagraphCard, Layout2, Paragraph, CheckBoxField } from '../../components'
 import { termsAndConditions } from '../../constants'
 
+import { styles } from './styles';
+
+
 // Connect redux store.
 import { useSelector } from 'react-redux';
 
@@ -49,23 +52,6 @@ const TermsConditionScreen = props => {
         </View>
     );
 };
-
-const styles = (theme) => StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: theme.Theme.colors.WHITE
-    },
-    layoutContanier: {
-        justifyContent: 'center'
-    },
-    paragraphCardStyle: {
-        marginTop: height * 0.05
-    },
-    checkBoxContainer:{
-        paddingTop:12.5,
-        marginTop: height * 0.02,
-    }
-});
 
 
 export default TermsConditionScreen;

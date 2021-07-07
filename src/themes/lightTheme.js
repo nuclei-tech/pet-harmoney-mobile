@@ -349,7 +349,17 @@ const Theme = {
       fontSize: 20,
       lineHeight: 25,
     }
-  }
+  },
+
+  //subscription selected screen
+  selectSubscription: {
+    payTextStyle: {
+      fontFamily: 'SourceSansPro-Regular',
+      color: colors.WHITE,
+      fontSize: 16,
+      lineHeight: 20,
+    }
+  },
 };
 
 export default { Theme };

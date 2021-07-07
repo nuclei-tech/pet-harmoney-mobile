@@ -1,18 +1,16 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, Dimensions, Text } from 'react-native';
-import {  Layout2, SubscriptionCard } from '../../components'
+import { View, ScrollView, Text } from 'react-native';
+import {  Layout2,InputField } from '../../components'
 
 import { styles } from './styles';
-
 
 // Connect redux store.
 import { useSelector } from 'react-redux';
 
-const { height } = Dimensions.get('window')
 
-const SubscriptionOption = props => {
+const SelectSubOption = props => {
     const { theme } = useSelector(state => state.theme);
-    const { layoutContanier, container,topContanier,subTextStyle,subTextValue,payOptionContanier,payTextStyle } = styles(theme)
+    const { layoutContanier, container,topContanier,subTextStyle,subTextValue,payOptionContanierText,payTextStyle } = styles(theme)
 
     return (
         <View style={container}>
@@ -30,16 +28,20 @@ const SubscriptionOption = props => {
                         <Text style={subTextStyle}>Subscription Options</Text>
                         <Text style={subTextValue}>$X.XX</Text>
                     </View>
-                    <View style={payOptionContanier}>
-                        <Text style={payTextStyle}>Payment Options</Text>
+                    <View style={payOptionContanierText}>
+                        <Text style={payTextStyle}>Add a payment method</Text>
                     </View>
-                    <SubscriptionCard title={'Subscription'} contentTitle={'Yearly Subscription '} leftContent={'$XX.XX Billed annually asa recurring payment'} rightTopContent={'$X.XX'} rightBottomContent={'Per Month'} />
-                    <SubscriptionCard contentTitle={'Yearly Subscription '} leftContent={'$XX.XX Billed annually asa recurring payment'} rightTopContent={'$X.XX'} rightBottomContent={'Per Month'} />
+                    <View>
+                        <InputField backgroundColor={'white'} placeholder={'Name on Card'}/>
+                        <InputField backgroundColor={'white'} placeholder={'Card Number'} />
+                        <InputField backgroundColor={'white'} placeholder={'Expiration Date'} />
+                        <InputField backgroundColor={'white'} placeholder={'CVV'} />
+                        <InputField backgroundColor={'white'} placeholder={'Billing Address'} />
+                    </View>
                 </ScrollView>
             </Layout2>
         </View>
     );
 };
 
-
-export default SubscriptionOption;
+export default SelectSubOption;
