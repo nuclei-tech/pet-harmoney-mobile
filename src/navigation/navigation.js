@@ -23,7 +23,11 @@ import { images } from '../constants'
 // import MyPetScreen from '../screens/MyPet/myPetScreen'
 
 import HomeScreen from '../screens/homeScreen/homeScreen';
+// Telemed screens
 import TelevetScreen from '../screens/televetScreen/televetScreen';
+import CalenderScreen from '../screens/televetScreen/calenderScreen.js'; 
+import PractitionerTypeScren from '../screens/televetScreen/PractitionerTypeScren.js'; 
+
 import ComunityScreen from '../screens/communityScreen/communityScreen';
 import ShoppingScreen from '../screens/shoppingScreen/shoppingScreen'
 import MyPetScreen from '../screens/myPetScreen/myPetScreen'
@@ -88,6 +92,20 @@ const TelevetScreenStacks = () => {
         }}
         name="televet"
         component={TelevetScreen}
+      />
+      <TelevetScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        name="calendar"
+        component={CalenderScreen}
+      />
+      <TelevetScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        name="practitionerType"
+        component={PractitionerTypeScren}
       />
     </TelevetScreenStack.Navigator>
   );
@@ -160,7 +178,7 @@ const TabNav = props => {
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = null
+  let token = 1
 
 
   return (
@@ -171,19 +189,19 @@ const TabNav = props => {
       }}
     >
       {!token ?
-           <RegisterStackScreen.Navigator
-           screenOptions={{
-             headerShown: false
-           }}>
-           <RegisterStackScreen.Screen
-             name="Create Account"
-             component={CreateAccountScreen}
-           />
-           <RegisterStackScreen.Screen
-             name="Create Account Mobile"
-             component={CreateAccountMobile}
-           />
-         </RegisterStackScreen.Navigator> 
+        <RegisterStackScreen.Navigator
+          screenOptions={{
+            headerShown: false
+          }}>
+          <RegisterStackScreen.Screen
+            name="Create Account"
+            component={CreateAccountScreen}
+          />
+          <RegisterStackScreen.Screen
+            name="Create Account Mobile"
+            component={CreateAccountMobile}
+          />
+        </RegisterStackScreen.Navigator>
 
         // <FogotPasswordStackScreen.Navigator
         //   screenOptions={{

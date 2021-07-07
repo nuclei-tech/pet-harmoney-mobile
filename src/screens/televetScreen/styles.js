@@ -1,10 +1,17 @@
 import { StyleSheet } from 'react-native';
 
-export const styles = props =>
+export const styles = (props,theme) =>
   StyleSheet.create({
-    // mainText: {
-    //   ...props.Theme.createAccount.mainText,
-    //   marginTop: 31,
-    //   marginBottom: 31,
-    // },
+    container:{
+      flex:1,
+      justifyContent:'center'
+    },
+    description: {
+        fontFamily: 'SourceSansPro-Regular',
+        color: theme.Theme.colors.WHITE,
+        textAlign: 'center',
+        paddingVertical: 5,
+        fontSize: 12,
+        lineHeight: 15,
+    },
   });

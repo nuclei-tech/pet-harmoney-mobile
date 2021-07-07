@@ -38,11 +38,7 @@ const MonthCalendar = ({ containerStyle, titleStyle }) => {
             // monthFormat={'yyyy MM'}
             // calendarBackground={'red'}
             theme={{
-                'stylesheet.calendar.header': {
-                    week: {
-                        marginTop: 5
-                    }
-                },
+               
                 backgroundColor: '#b6c1cd',
                 calendarBackground: '#6732C8',
                 textSectionTitleColor: '#b6c1cd',
@@ -102,11 +98,8 @@ const MonthCalendar = ({ containerStyle, titleStyle }) => {
     } = styles(theme.Theme);
     return (
         <View style={{ ...container, ...containerStyle }}>
-            <View  style={{ ...titleContainer, ...titleStyle }}>
-                <ScheduleTitle>Schedule a virtual session</ScheduleTitle>
-                <Text style={description}>Click on the solid dates to book an appointment</Text>
-            </View>
-            <View flex={3}>
+
+            <View flex={1}>
                 <View>
                     <Text style={monthStyle}>{currentMonth}</Text>
                 </View>
@@ -122,8 +115,9 @@ const MonthCalendar = ({ containerStyle, titleStyle }) => {
 };
 const styles = (theme) => StyleSheet.create({
     container: {
-        flex: 4,
+        flex: 1,
         flexDirection: 'column',
+        height:height*0.23
         // marginTop: height * 0.07
     },
     titleContainer: {
@@ -138,14 +132,6 @@ const styles = (theme) => StyleSheet.create({
         color: theme.colors.WHITE,
         textAlign: 'center',
         paddingVertical: 5
-    },
-    description: {
-        fontFamily: 'SourceSansPro-Regular',
-        color: theme.colors.WHITE,
-        textAlign: 'center',
-        paddingVertical: 5,
-        fontSize: 12,
-        lineHeight: 15,
     },
     monthStyle: {
         fontFamily: 'SourceSansPro-Regular',

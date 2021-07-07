@@ -56,6 +56,7 @@ const searchRoundIcon = require('../assets/images/background/SEARCH_ICON.png')
 
 //arrowIcon
 const downArrow = require('../assets/images/ARROW.png')
+const leftArrow = require('../assets/images/ARROW_left.png')
 
 export default {
     logo,
@@ -107,5 +108,6 @@ export default {
 
     searchRoundIcon,
 
-    downArrow
+    downArrow,
+    leftArrow
 };
