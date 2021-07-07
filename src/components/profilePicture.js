@@ -3,18 +3,16 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, SafeAreaView } from 'react-native';
 import { Header } from 'react-native-elements';
 import { images } from '../constants'
-import { useSelector } from 'react-redux';
 
-
-const ProfilePicture = ({ customStyle, useForTab, petImage }) => {
+const ProfilePicture = ({ customStyle }) => {
     const { theme } = useSelector(state => state.theme);
     const changeProfileImage = () => {
         console.log('in');
     }
     return (
-        <View>
-            <TouchableOpacity onPress={!useForTab ? changeProfileImage : null}>
-                <Image source={!useForTab ? images.profile : petImage} style={{ ...styles(theme).proPic, ...customStyle }} />
+        <View >
+            <TouchableOpacity onPress={changeProfileImage} >
+                <Image source={images.profile} style={{ ...styles(theme).proPic, ...customStyle }} />
             </TouchableOpacity>
         </View>
     );

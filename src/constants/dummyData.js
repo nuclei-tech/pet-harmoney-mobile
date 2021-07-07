@@ -16,16 +16,16 @@ export const reminderDetails = [
         description: 'Dailys, 7pm',
         checked: false
     },
-    // {
-    //     title: 'Grooming appt',
-    //     description: 'April 6, 4:00pm',
-    //     checked: false
-    // },
-    // {
-    //     title: 'Virtual Session',
-    //     description: 'May 15, 2:30pm',
-    //     checked: false
-    // }
+    {
+        title: 'Grooming appt',
+        description: 'April 6, 4:00pm',
+        checked: false
+    },
+    {
+        title: 'Virtual Session',
+        description: 'May 15, 2:30pm',
+        checked: false
+    }
 ];
 
 export const termsAndConditions = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam sem at lacus et magna nullam. Duis pharetra, nulla rutrum elementum ligula potenti fermentum blandit enim. Mauris neque volutpat morbi leo massa, maecenas varius nunc, adipiscing. Proin fermentum, ut quis nunc enim purus. Diam aliquam nullam laoreet blandit gravida adipiscing nec. Tempus et, bibendum nunc, gravida consectetur aliquet mauris porttitor. Convallis mattis vulputate scelerisque diam vestibulum, tincidunt cras posuere. Est consequat eget lacus donec. Aliquam dolor lobortis sit tempus commodo, pretium quis. Gravida vitae id nulla pharetra amet quam convallis in leo.'
@@ -85,46 +85,4 @@ export const iconTabDetails = [
         image: images.medication,
         title: 'Medication'
     }
-];
-
-export const petsTabDetails = [
-    {
-        image: images.profile,
-        name: 'Kiki'
-    },
-    {
-        image: images.profile,
-        name: 'Joanna'
-    },
-    {
-        image: images.profile,
-        name: 'Kip'
-    },
-];
-
-export const communityDetails = [
-    {
-        image: images.profile,
-        title: 'Leia Cortez',
-        time: '5min',
-        subTitle: 'Post text showing previews of what a pet community feed could show...'
-    },
-    {
-        image: images.profile,
-        title: 'Winnie the Golden',
-        time: '15min',
-        subTitle: 'Posts can also be made on behalf of pets'
-    },
-    {
-        image: images.profile,
-        title: 'Leia Cortez',
-        time: '25min',
-        subTitle: 'Post text showing previews of what a pet community feed could show...'
-    },
-    {
-        image: images.profile,
-        title: 'Winnie the Golden',
-        time: '1hr',
-        subTitle: 'Posts can also be made on behalf of pets'
-    },
 ];

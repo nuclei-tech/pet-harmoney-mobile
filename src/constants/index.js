@@ -1,5 +1,5 @@
 import images from "./images";
-import {reminderDetails, termsAndConditions, ratingComment,myCardList, iconTabDetails, petsTabDetails, communityDetails} from './dummyData'
+import {reminderDetails, termsAndConditions, ratingComment,myCardList, iconTabDetails} from './dummyData'
 
 export {
     images,
@@ -7,7 +7,5 @@ export {
     termsAndConditions,
     ratingComment,
     myCardList,
-    iconTabDetails,
-    petsTabDetails,
-    communityDetails
+    iconTabDetails
 }

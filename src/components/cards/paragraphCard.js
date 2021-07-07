@@ -7,28 +7,18 @@ import { images } from '../../constants'
 const ParagrapghCard = ({
     cardBorderColor, 
     cardBackgroundColor,
-    containerPaddingTop,
-    containerPaddingBottom,
-    containerPaddingLeft,
-    containerPaddingRight,
-    cardWidth,
-    cardMinHeight,
-    cardTitleMarginBottom,
     titleColor,
     titleAlign, 
     title,
     imageExists,
-    children,
-    forHomeCards
+    children
 }) => {
     const {theme} = useSelector(state => state.theme)
-    const {cardContainer, cardTitle, image, imageContainer, titleHome, containerHome} = styles(theme)
-    const cardViewStyles = {backgroundColor: cardBackgroundColor, borderColor: cardBorderColor, paddingTop: containerPaddingTop, paddingBottom: containerPaddingBottom, paddingLeft: containerPaddingLeft, paddingRight: containerPaddingRight, width: cardWidth, minHeight: cardMinHeight}
-    const titleStyles = {textAlign: titleAlign, color: titleColor}
+    const {cardContainer, cardTitle, image, imageContainer} = styles(theme)
 
     return (
-        <View style={[cardContainer, cardViewStyles, forHomeCards && containerHome]}>
-            {title && <Text style={[cardTitle, titleStyles, forHomeCards && {...titleHome, marginBottom: cardTitleMarginBottom}]}>{title}</Text>}
+        <View style={[cardContainer, {backgroundColor: cardBackgroundColor, borderColor: cardBorderColor,}]}>
+            {title && <Text style={[cardTitle, {textAlign: titleAlign, color: titleColor}]}>{title}</Text>}
                 {children}
             {imageExists && <View style={imageContainer}>
                 <Image
@@ -50,20 +40,13 @@ const styles = (props) => StyleSheet.create({
         paddingTop: 35, 
         paddingBottom: 35,
         width: '100%',
-        minHeight: 414, 
-        marginBottom: 15
-    },
-    containerHome: { 
-        borderRadius: 15, 
-        borderWidth: 2
+        minHeight: 414
     },
     cardTitle: {
         marginBottom: 12, 
         ...props.Theme.defaultParagraphCardTitleStyles
     },
-    titleHome: {
-        ...props.Theme.defaultParagraphCardTitleHomeStyles
-    },
+    
     image: {
         width: 22.8,
         height: 19,
