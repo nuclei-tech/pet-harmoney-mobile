@@ -8,14 +8,15 @@ import { useSelector } from 'react-redux';
 
 const TermsConditionScreen = props => {
     const { theme } = useSelector(state => state.theme);
-
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <Layout2
                 type={'fullScreen'} // {halfScreen, small }
                 layoutColor={theme.Theme.colors.DARK_BLUE}
-                backgroundColor={theme.Theme.colors.GREEN}>
-                <Header title={'pet harmony'} noIcon customContainerStyle={{justifyContent:'center'}}/>
+                backgroundColor={theme.Theme.colors.GREEN}
+                headerTitle={'pet harmony'} 
+                customContainerStyle={{justifyContent:'center'}}
+                >
                 <ScrollView style={{ marginBottom: 10 }} showsVerticalScrollIndicator={false} nestedScrollEnabled={true}>
                     <ParagraphCard
                         cardBorderColor={theme.Theme.colors.GREEN}
@@ -36,7 +37,7 @@ const TermsConditionScreen = props => {
                     </ParagraphCard>
                 </ScrollView>
             </Layout2>
-        </SafeAreaView>
+        </View>
     );
 };
 
