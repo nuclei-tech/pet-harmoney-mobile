@@ -65,6 +65,12 @@ const Theme = {
       fontSize: 12,
       lineHeight: 15,
       color: colors.GREEN
+    },
+    profileText:{
+      fontFamily: "SourceSansPro-Regular",
+      fontSize: 12,
+      lineHeight: 15,
+      color: colors.WHITE
     }
   },
 
@@ -106,7 +112,7 @@ const Theme = {
 
   //default paragraph font family
   defaultParagraphStyles: {
-    fontFamily: 'SourceSansPro-Black',
+    fontFamily: 'SourceSansPro-Regular',
     fontSize: 14,
     lineHeight: 18,
   },

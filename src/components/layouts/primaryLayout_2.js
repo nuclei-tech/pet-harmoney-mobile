@@ -60,12 +60,11 @@ const Layout2 = (props) => {
     }
 
     const backgroundStyle = getBackgroundStyle();
-
     return (
         <View flex={1}> 
             {props.type ? (
                 <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={{...backgroundStyle, ...props.customStyle}}>
-                    <Header title={props.headerTitle} customStyle={props.customStyle} login={props.ogin}  dark={props.dark}/>
+                    <Header {...props}/>
                     {props.children}
                 </ImageBackground>
             ) : (<View style={noImage}>
