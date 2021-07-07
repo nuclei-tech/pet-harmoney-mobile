@@ -21,7 +21,8 @@ import Cover from "./cover";
 import SearchField from './forms/searchField'
 import CheckBoxField from './forms/checkBoxField'
 import PlaceOrderCard from "./cards/placeOrderCard";
-
+import Calendar from "./calendar";
+import ScheduleTitle from "./scheduleTitle";
 export{
     ReminderButton,
     Button,
@@ -45,5 +46,7 @@ export{
     SearchField,
     CheckBoxField,
     Cover,
-    PlaceOrderCard
+    PlaceOrderCard,
+    Calendar,
+    ScheduleTitle,
 }

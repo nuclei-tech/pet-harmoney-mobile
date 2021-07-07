@@ -4,7 +4,10 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, SafeAreaView } from 'r
 import { Header } from 'react-native-elements';
 import { images } from '../constants'
 
-const ProfilePicture = ({ customStyle }) => {
+// Connect redux store.
+import { useSelector } from 'react-redux';
+
+const ProfilePicture = ({ customStyle,customImage }) => {
     const { theme } = useSelector(state => state.theme);
     const changeProfileImage = () => {
         console.log('in');
@@ -12,7 +15,7 @@ const ProfilePicture = ({ customStyle }) => {
     return (
         <View >
             <TouchableOpacity onPress={changeProfileImage} >
-                <Image source={images.profile} style={{ ...styles(theme).proPic, ...customStyle }} />
+                <Image source={customImage ? customImage :images.profile} style={{ ...styles(theme).proPic, ...customStyle }} />
             </TouchableOpacity>
         </View>
     );

@@ -65,6 +65,12 @@ const Theme = {
       fontSize: 12,
       lineHeight: 15,
       color: colors.GREEN
+    },
+    profileText: {
+      fontFamily: "SourceSansPro-Regular",
+      fontSize: 12,
+      lineHeight: 15,
+      color: colors.WHITE
     }
   },
 
@@ -89,7 +95,7 @@ const Theme = {
       fontWeight: 'bold',
       fontSize: 17,
     },
-    textStyleBold:{
+    textStyleBold: {
       fontFamily: "SourceSansPro-Black",
       fontWeight: 'bold',
       fontSize: 17,
@@ -106,19 +112,21 @@ const Theme = {
 
   //default paragraph font family
   defaultParagraphStyles: {
-    fontFamily: 'Source Sans Pro',
+    fontFamily: 'SourceSansPro-Regular',
+    fontSize: 14,
+    lineHeight: 18,
   },
 
   //default paragraph card Font Styles
   defaultParagraphCardTitleStyles: {
     fontSize: 14,
     lineHeight: 18,
-    fontFamily: 'Source Sans Pro',
+    fontFamily: 'SourceSansPro-Black',
     fontWeight: 'bold'
   },
   //default icon header font styles
   defaultIconHeaderTitleStyles: {
-    fontFamily: 'Source Sans Pro',
+    fontFamily: 'SourceSansPro-Black',
     fontWeight: 'bold',
   },
   //cart list component style
@@ -215,13 +223,13 @@ const Theme = {
       lineHeight: 18,
     },
     contentTitleStyle: {
-      fontFamily: 'SourceSansPro-Regular',
+      fontFamily: 'SourceSansPro-Bold',
       fontSize: 20,
       lineHeight: 25,
       color: colors.WHITE,
     },
     leftContentStyle: {
-      fontFamily: 'SourceSansPro-Regular',
+      fontFamily: 'SourceSansPro-Bold',
       fontSize: 11,
       lineHeight: 14,
       color: colors.WHITE,
@@ -233,7 +241,7 @@ const Theme = {
       color: colors.WHITE,
     },
     rightBottomStyle: {
-      fontFamily: 'SourceSansPro-Regular',
+      fontFamily: 'SourceSansPro-bold',
       fontSize: 14,
       color: colors.WHITE,
     },
@@ -281,7 +289,7 @@ const Theme = {
       fontWeight: 'bold',
       fontSize: 15,
     },
-    listTextField:{
+    listTextField: {
       fontFamily: "SourceSansPro-Regular",
       fontSize: 12,
     },
@@ -291,8 +299,8 @@ const Theme = {
   },
 
   //box field style
-  boxFieldStyle:{
-    textStyle:{
+  boxFieldStyle: {
+    textStyle: {
       fontFamily: 'SourceSansPro-Bold',
       fontSize: 14,
       lineHeight: 18,
@@ -302,22 +310,44 @@ const Theme = {
 
 
   //forgot email screen
-  forgotEmail:{
-    forgotTextStyles:{
+  forgotEmail: {
+    forgotTextStyles: {
       fontFamily: 'SourceSansPro-Regular',
       fontSize: 16,
       lineHeight: 20,
-      color:colors.YELLOW
+      color: colors.YELLOW
     }
   },
 
   //otp screen
-  forgotOtp:{
-    forgotOtpText:{
+  forgotOtp: {
+    forgotOtpText: {
       fontFamily: 'SourceSansPro-Regular',
       fontSize: 16,
       lineHeight: 20,
-      color:colors.YELLOW
+      color: colors.YELLOW
+    }
+  },
+
+  //register subscription
+  regSubscription: {
+    subTextStyle: {
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.WHITE,
+      fontSize: 20,
+      lineHeight: 25,
+    },
+    subTextValue: {
+      fontFamily: 'SourceSansPro-Regular',
+      color: colors.WHITE,
+      fontSize: 64,
+      lineHeight: 80,
+    },
+    payTextStyle: {
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.WHITE,
+      fontSize: 20,
+      lineHeight: 25,
     }
   }
 };

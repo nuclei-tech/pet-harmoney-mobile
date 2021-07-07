@@ -30,6 +30,7 @@ const CheckBoxField = ({ customMainFlex, customBoxFlex, customBoxContentFlex,tit
                   style={
                     Platform.OS == 'ios' && {
                       transform: [{scaleX: 0.8}, {scaleY: 0.8}],
+                      marginTop:5
                     }
                   }
                 />
@@ -46,6 +47,7 @@ const styles = (theme, props) => StyleSheet.create({
         flex: 5,
         flexDirection: 'row',
         justifyContent:'center',
+        marginLeft:-10
     },
     boxFlex: {
         flex: 0.8,
@@ -54,7 +56,7 @@ const styles = (theme, props) => StyleSheet.create({
     },
     boxContentFlex: {
         flex: 4.2,
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     textStyle: {
         ...theme.Theme.boxFieldStyle.textStyle,

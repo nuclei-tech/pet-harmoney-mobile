@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Dimensions,StatusBar,SafeAreaView } from 'react-native';
 import { Header } from '../../components'
 import { images } from '../../constants';
 import { useSelector } from 'react-redux';
@@ -8,7 +8,7 @@ const window = Dimensions.get('window');
 const Layout2 = (props) => {
     const { theme } = useSelector(state => state.theme);
     const colors = theme.Theme.colors;
-    const Inner = props.inner; // Note: variable name _must_ start with a capital letter 
+    // const Inner = props.inner; // Note: variable name _must_ start with a capital letter 
     const curve = props.curve ? props.curve : 'primary'
     const getBackgroundImage = () => {
         let backgroundImage;
@@ -60,11 +60,11 @@ const Layout2 = (props) => {
     }
 
     const backgroundStyle = getBackgroundStyle();
-
     return (
-        <View flex={1}>
+        <View flex={1}> 
             {props.type ? (
                 <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={{...backgroundStyle, ...props.customStyle}}>
+                    <Header {...props}/>
                     {props.children}
                 </ImageBackground>
             ) : (<View style={noImage}>
@@ -92,7 +92,7 @@ const styles = (props, theme) => StyleSheet.create({
         resizeMode: 'stretch',
         padding: theme.size.CONTAINER_PADDING,
         paddingBottom: 0,
-        height: '90%',
+        height: '95%',
         backgroundColor: props.backgroundColor ? props.backgroundColor : theme.colors.WHITE
     },
     samllScreen: {

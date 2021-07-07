@@ -31,6 +31,9 @@ import MyPetScreen from '../screens/myPetScreen/myPetScreen'
 //Registration screen
 import CreateAccountScreen from '../screens/registrationScreens/createAccountScreen'
 import CreateAccountMobile from '../screens/registrationScreens/createAccountMobile'
+import TermsConditionScreen from '../screens/registrationScreens/termsConditionScreen'
+import PetRegisterForm from '../screens/registrationScreens/petRegisterForm'
+import SubscriptionOption from '../screens/registrationScreens/subscriptionOption'
 
 //forgotPassword screen
 import EmailEnterScreen from '../screens/forgotPasswordScreens/emailEnterScreen'
@@ -64,12 +67,26 @@ const HomeStackScreen = () => {
       screenOptions={{
         headerShown: false
       }}>
-      <HomeStack.Screen
+      {/* <HomeStack.Screen
         name={'HomeScreen'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={HomeScreen}
+      /> */}
+       {/* <HomeStack.Screen
+        name={'Pet registation'}
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        component={PetRegisterForm}
+      /> */}
+       <HomeStack.Screen
+        name={'Subscription Option'}
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        component={SubscriptionOption}
       />
     </HomeStack.Navigator>
   );
@@ -159,7 +176,7 @@ const TabNav = props => {
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = null
+  let token = 1
 
 
   return (
@@ -182,6 +199,10 @@ const TabNav = props => {
              name="Create Account Mobile"
              component={CreateAccountMobile}
            />
+            <RegisterStackScreen.Screen
+             name="Terms Condition"
+             component={TermsConditionScreen}
+           />
          </RegisterStackScreen.Navigator> 
 
         // <FogotPasswordStackScreen.Navigator
@@ -203,6 +224,7 @@ const TabNav = props => {
         // </FogotPasswordStackScreen.Navigator>
         :
         <Tab.Navigator
+        tabBarVisible={false}
           tabBarOptions={{
             keyboardHidesTabBar: true,
             activeTintColor: theme.Theme.tab.ACTIVE_COLOR,
@@ -280,6 +302,11 @@ const TabNav = props => {
           <Tab.Screen
             name="Home"
             component={HomeStackScreen}
+            options={currentScreen == 'Subscription Option' ||  currentScreen == null ?{
+              tabBarVisible: false,
+            }:{
+              tabBarVisible: true,
+            }}
           />
           <Tab.Screen
             name="Shopping"
