@@ -29,6 +29,10 @@ const records = require('../assets/images/RECORDS_NEW.png');
 const sessions = require('../assets/images/SESSIONS_NEW.png');
 const medication = require('../assets/images/MEDICATION_NEW.png');
 const shopping = require('../assets/images/SHOPPING.png');
+const creditCardPurple = require('../assets/images/CREDIT_CARD_PURPLE.png');
+const creditCardGreen = require('../assets/images/CREDIT_CARD_GREEN.png');
+const creditCardOutline = require('../assets/images/CREDIT_CARD_OUTLINE.png');
+
 
 //bottom icon
 const televet = require('../assets/images/bottomIcon/TELEVET.png');
@@ -104,6 +108,9 @@ export default {
     cardIcon1,
     cardIcon2,
     cardIcon3,
+    creditCardOutline,
+    creditCardGreen,
+    creditCardPurple,
 
     searchRoundIcon,
 
