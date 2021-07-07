@@ -4,14 +4,17 @@ import { useSelector } from 'react-redux';
 
 //textFieldWidth
 //alignText
+//boderColor
+//textColor
 
-const InputField = ({ customMainContanier, customTextStyle, placeholderColor, placeholder, type, onChangeText, required, validator, errorMessage, requireMessage, onValidatorExecuted, customErrorContain, customErrorText }, props) => {
+const InputField = (props) => {
     const { theme } = useSelector(state => state.theme);
     const [values, setValue] = useState('')
     const [phoneNumber, setPhoneNumber] = useState(false)
     const [errordMessage, setErrordMessage] = useState();
     const [isvalid, setValid] = useState(true);
     const { mainTextStyles, errorContain, errorText,mainTextStylesPlaceHolder } = styles(theme, props)
+    const { customMainContanier, customTextStyle, placeholderColor, placeholder, type, onChangeText, required, validator, errorMessage, requireMessage, onValidatorExecuted, customErrorContain, customErrorText } = props
 
     let placeHolderText
 
@@ -88,6 +91,7 @@ const InputField = ({ customMainContanier, customTextStyle, placeholderColor, pl
                     Validation(values);
                 }}
                 value={values}
+                {...props}
             />
             {!isvalid ? (
                 <View style={{ ...errorContain, ...customErrorContain }}>
@@ -104,9 +108,9 @@ const styles = (theme, props) => StyleSheet.create({
     mainTextStyles: {
         ...theme.Theme.defaultInputStyle.textStyle,
         textAlign: props.alignText ? props.alignText : 'center',
-        color: theme.Theme.defaultInputStyle.textColor,
+        color: props.textColor ? props.textColor : theme.Theme.defaultInputStyle.textColor,
         paddingHorizontal: 20,
-        borderColor: theme.Theme.defaultInputStyle.boderColor,
+        borderColor: props.boderColor ? props.boderColor :theme.Theme.defaultInputStyle.boderColor,
         borderWidth: 4,
         width: '100%',
         borderRadius: 100,
@@ -114,13 +118,14 @@ const styles = (theme, props) => StyleSheet.create({
         paddingBottom:8,
         marginTop: 9,
         marginBottom: 9,
+        backgroundColor:props.backgroundColor ? props.backgroundColor:'transparent'
     },
     mainTextStylesPlaceHolder: {
         ...theme.Theme.defaultInputStyle.textStyleBold,
         textAlign: props.alignText ? props.alignText : 'center',
-        color: theme.Theme.defaultInputStyle.textColor,
+        color: props.textColor ? props.textColor : theme.Theme.defaultInputStyle.textColor,
         paddingHorizontal: 20,
-        borderColor: theme.Theme.defaultInputStyle.boderColor,
+        borderColor: props.boderColor ? props.boderColor :theme.Theme.defaultInputStyle.boderColor,
         borderWidth: 4,
         width: '100%',
         borderRadius: 100,
@@ -128,11 +133,11 @@ const styles = (theme, props) => StyleSheet.create({
         paddingBottom:12,
         marginTop: 9,
         marginBottom: 9,
+        backgroundColor:props.backgroundColor ? props.backgroundColor:'transparent'
     },
     errorContain: {
         flex: 1,
         alignItems: 'center',
-        
     },
     errorText: {
         ...theme.Theme.defaultInputStyle.textStyleError,

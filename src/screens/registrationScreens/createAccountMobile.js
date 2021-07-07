@@ -33,7 +33,7 @@ const CreateAccountMobile = props => {
         type={'otp'}
       />
       </View>
-      <Button title={'Register'} backgroundColor={theme.Theme.createAccount.registerBackGroundColor} textColor={theme.Theme.createAccount.registerTextColor} buttonStyle={styles(theme).registerButtonStyle} customTextStyle={styles(theme).buttonRegisterStyle} />
+      <Button onPress={()=>props.navigation.navigate('Terms Condition')} title={'Register'} backgroundColor={theme.Theme.createAccount.registerBackGroundColor} textColor={theme.Theme.createAccount.registerTextColor} buttonStyle={styles(theme).registerButtonStyle} customTextStyle={styles(theme).buttonRegisterStyle} />
       <TouchableOpacity>
       <Text style={styles(theme).textAlready}>already have an account?</Text>
       </TouchableOpacity>

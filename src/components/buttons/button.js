@@ -44,7 +44,7 @@ const styles =(props,theme) => StyleSheet.create({
     backgroundColor: props.backgroundColor 
   },
   backGroundAndBorder:{
-    borderColor: props.type == 'outline' ? props.boarderColor ? props.boarderColor : props.backgroundColor : 'transparent',
+    borderColor: props.type == 'outline' ? props.boarderColor ? props.boarderColor : props.backgroundColor : props.backgroundColor,
     backgroundColor: props.backgroundColor
   },
   buttonStyle: {

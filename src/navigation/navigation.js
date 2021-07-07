@@ -32,6 +32,15 @@ import MyPetScreen from '../screens/myPetScreen/myPetScreen'
 //Registration screen
 import CreateAccountScreen from '../screens/registrationScreens/createAccountScreen'
 import CreateAccountMobile from '../screens/registrationScreens/createAccountMobile'
+import TermsConditionScreen from '../screens/registrationScreens/termsConditionScreen'
+import PetRegisterForm from '../screens/registrationScreens/petRegisterForm'
+import SubscriptionOption from '../screens/registrationScreens/subscriptionOption'
+
+//forgotPassword screen
+import EmailEnterScreen from '../screens/forgotPasswordScreens/emailEnterScreen'
+import OtpHandleScreen from '../screens/forgotPasswordScreens/otpHandleScreen'
+import PasswordVerifyScreen from '../screens/forgotPasswordScreens/passwordVerifyScreen'
+
 
 // Connect redux store.
 import { useSelector, useDispatch } from 'react-redux';
@@ -44,6 +53,8 @@ const ComunityScreenStack = createStackNavigator();
 const TelevetScreenStack = createStackNavigator();
 const MyPetScreenStack = createStackNavigator();
 const RegisterStackScreen = createStackNavigator()
+const FogotPasswordStackScreen = createStackNavigator()
+
 const navigationRef = React.createRef();
 
 export const navigate = (name, params) => {
@@ -54,15 +65,29 @@ export const navigate = (name, params) => {
 const HomeStackScreen = () => {
   return (
     <HomeStack.Navigator
-    screenOptions={{
-      headerShown: false
-    }}>
-      <HomeStack.Screen
+      screenOptions={{
+        headerShown: false
+      }}>
+      {/* <HomeStack.Screen
         name={'HomeScreen'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={HomeScreen}
+      /> */}
+       {/* <HomeStack.Screen
+        name={'Pet registation'}
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        component={PetRegisterForm}
+      /> */}
+       <HomeStack.Screen
+        name={'Subscription Option'}
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        component={SubscriptionOption}
       />
     </HomeStack.Navigator>
   );
@@ -211,25 +236,48 @@ const TabNav = props => {
         dispatch(currentRoute(currentRouteName))
       }}
     >
-       {!token ? 
-       <RegisterStackScreen.Navigator
-       screenOptions={{
-         headerShown: false,
-        cardStyleInterpolator: forSlide,
-        // cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-        gestureEnabled: true,
-       }}>
-       <RegisterStackScreen.Screen
-         name="Create Account"
-         component={CreateAccountScreen}
-       />
-       <RegisterStackScreen.Screen
-         name="Create Account Mobile"
-         component={CreateAccountMobile}
-       />
-     </RegisterStackScreen.Navigator> 
-     :
+     
+      {!token ?
+           <RegisterStackScreen.Navigator
+           screenOptions={{
+             headerShown: false,
+             cardStyleInterpolator: forSlide,
+           // cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+           }}>
+           <RegisterStackScreen.Screen
+             name="Create Account"
+             component={CreateAccountScreen}
+           />
+           <RegisterStackScreen.Screen
+             name="Create Account Mobile"
+             component={CreateAccountMobile}
+           />
+            <RegisterStackScreen.Screen
+             name="Terms Condition"
+             component={TermsConditionScreen}
+           />
+         </RegisterStackScreen.Navigator> 
+
+        // <FogotPasswordStackScreen.Navigator
+        //   screenOptions={{
+        //     headerShown: false
+        //   }}>
+        //   <FogotPasswordStackScreen.Screen
+        //     name="Email Enter Screen"
+        //     component={EmailEnterScreen}
+        //   />
+        //   <FogotPasswordStackScreen.Screen
+        //     name="Otp Handle Screen"
+        //     component={OtpHandleScreen}
+        //   />
+        //    <FogotPasswordStackScreen.Screen
+        //     name="Password Verify Screen"
+        //     component={PasswordVerifyScreen}
+        //   />
+        // </FogotPasswordStackScreen.Navigator>
+        :
         <Tab.Navigator
+        tabBarVisible={false}
           tabBarOptions={{
             keyboardHidesTabBar: true,
             activeTintColor: theme.Theme.tab.ACTIVE_COLOR,
@@ -307,6 +355,11 @@ const TabNav = props => {
           <Tab.Screen
             name="Home"
             component={HomeStackScreen}
+            options={currentScreen == 'Subscription Option' ||  currentScreen == null ?{
+              tabBarVisible: false,
+            }:{
+              tabBarVisible: true,
+            }}
           />
           <Tab.Screen
             name="Shopping"
@@ -325,7 +378,7 @@ const TabNav = props => {
             component={MyPetScreenStacks}
           />
         </Tab.Navigator>
-}
+      }
     </NavigationContainer>
   );
 };

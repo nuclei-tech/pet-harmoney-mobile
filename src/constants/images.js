@@ -44,7 +44,7 @@ const communityBlue = require('../assets/images/bottomIcon/COMMUNITY_ICON_BLUE.p
 
 //common icon
 const petHarmonyLogo = require('../assets/images/commonImage/petHarmonyLogo.png');
-
+const defaultProfileImage = require('../assets/images/commonImage/defaultProfileImage.png');
 
 //list icons
 const cardIcon1 = require('../assets/images/listImages/98UziT@300x1.png')
@@ -54,7 +54,8 @@ const cardIcon3 = require('../assets/images/listImages/Z3pUdU@300x1.png')
 //search icon
 const searchRoundIcon = require('../assets/images/background/SEARCH_ICON.png')
 
-
+//arrowIcon
+const downArrow = require('../assets/images/ARROW.png')
 
 export default {
     logo,
@@ -104,5 +105,8 @@ export default {
     cardIcon2,
     cardIcon3,
 
-    searchRoundIcon
+    searchRoundIcon,
+
+    downArrow,
+    defaultProfileImage
 };
