@@ -1,7 +1,8 @@
 //Navigation
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, TransitionSpecs, CardStyleInterpolators } from '@react-navigation/stack';
+import {Animated} from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   StyleSheet,
@@ -176,8 +177,57 @@ const TabNav = props => {
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = 1
+  let token = null
 
+  // const config = {
+  //   animation: 'spring',
+  //   config: {
+  //     stiffness: 1000,
+  //     damping: 500,
+  //     mass: 3,
+  //     overshootClamping: true,
+  //     restDisplacementThreshold: 0.01,
+  //     restSpeedThreshold: 0.01,
+  //   },
+  // };
+
+  const forSlide = ({ current, next, inverted, layouts: { screen } }) => {
+    const progress = Animated.add(
+      current.progress.interpolate({
+        inputRange: [0, 1],
+        outputRange: [0, 1],
+        extrapolate: 'clamp',
+      }),
+      next
+        ? next.progress.interpolate({
+            inputRange: [0, 1],
+            outputRange: [0, 1],
+            extrapolate: 'clamp',
+          })
+        : 0
+    );
+  
+    return {
+      cardStyle: {
+        transform: [
+          {
+            translateX: Animated.multiply(
+              progress.interpolate({
+                inputRange: [0, 1, 2],
+                outputRange: [
+                  screen.width, // Focused, but offscreen in the beginning
+                  0, // Fully focused
+                  screen.width * -0.3, // Fully unfocused
+                ],
+                extrapolate: 'clamp',
+              }),
+              inverted
+            ),
+          },
+        ],
+      },
+    };
+  };
 
   return (
     <NavigationContainer ref={navigationRef}
@@ -186,10 +236,13 @@ const TabNav = props => {
         dispatch(currentRoute(currentRouteName))
       }}
     >
+     
       {!token ?
            <RegisterStackScreen.Navigator
            screenOptions={{
-             headerShown: false
+             headerShown: false,
+             cardStyleInterpolator: forSlide,
+           // cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
            }}>
            <RegisterStackScreen.Screen
              name="Create Account"
