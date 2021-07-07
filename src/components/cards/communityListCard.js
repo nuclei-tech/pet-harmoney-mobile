@@ -4,16 +4,9 @@ import { Image } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 import { images } from '../../constants'
 
-const ParagrapghCard = ({
+const CommunityListCard = ({
     cardBorderColor, 
     cardBackgroundColor,
-    containerPaddingTop,
-    containerPaddingBottom,
-    containerPaddingLeft,
-    containerPaddingRight,
-    cardWidth,
-    cardMinHeight,
-    cardTitleMarginBottom,
     titleColor,
     titleAlign, 
     title,
@@ -23,12 +16,13 @@ const ParagrapghCard = ({
 }) => {
     const {theme} = useSelector(state => state.theme)
     const {cardContainer, cardTitle, image, imageContainer, titleHome, containerHome} = styles(theme)
-    const cardViewStyles = {backgroundColor: cardBackgroundColor, borderColor: cardBorderColor, paddingTop: containerPaddingTop, paddingBottom: containerPaddingBottom, paddingLeft: containerPaddingLeft, paddingRight: containerPaddingRight, width: cardWidth, minHeight: cardMinHeight}
+    const cardViewStyles = {backgroundColor: cardBackgroundColor, borderColor: cardBorderColor}
     const titleStyles = {textAlign: titleAlign, color: titleColor}
+
 
     return (
         <View style={[cardContainer, cardViewStyles, forHomeCards && containerHome]}>
-            {title && <Text style={[cardTitle, titleStyles, forHomeCards && {...titleHome, marginBottom: cardTitleMarginBottom}]}>{title}</Text>}
+            {title && <Text style={[cardTitle, titleStyles, forHomeCards && titleHome]}>{title}</Text>}
                 {children}
             {imageExists && <View style={imageContainer}>
                 <Image
@@ -50,8 +44,7 @@ const styles = (props) => StyleSheet.create({
         paddingTop: 35, 
         paddingBottom: 35,
         width: '100%',
-        minHeight: 414, 
-        marginBottom: 15
+        height: 250
     },
     containerHome: { 
         borderRadius: 15, 
@@ -74,4 +67,4 @@ const styles = (props) => StyleSheet.create({
     }
 })
 
-export default ParagrapghCard
+export default CommunityListCard

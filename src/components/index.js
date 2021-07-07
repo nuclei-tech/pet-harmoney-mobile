@@ -20,6 +20,8 @@ import Cover from "./cover";
 import SearchField from './forms/searchField'
 import CheckBoxField from './forms/checkBoxField'
 import PlaceOrderCard from "./cards/placeOrderCard";
+import MyPetsTabs from "./myPetsTabBar/myPetsTabBar";
+import CommunityList from "./cards/communityList";
 
 export{
     ReminderButton,
@@ -43,5 +45,7 @@ export{
     SearchField,
     CheckBoxField,
     Cover,
-    PlaceOrderCard
+    PlaceOrderCard,
+    MyPetsTabs,
+    CommunityList
 }

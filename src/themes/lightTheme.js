@@ -116,6 +116,12 @@ const Theme = {
     fontFamily: 'Source Sans Pro',
     fontWeight: 'bold'
   },
+  defaultParagraphCardTitleHomeStyles: {
+    fontSize: 18,
+    lineHeight: 23,
+    fontFamily: 'Source Sans Pro',
+    fontWeight: '700'
+  },
   //default icon header font styles
   defaultIconHeaderTitleStyles: {
     fontFamily: 'Source Sans Pro',
@@ -303,6 +309,23 @@ const Theme = {
       lineHeight: 20,
       color:colors.YELLOW
     }
+  },
+
+  // my pet tab font styles
+  myPetTabFontStyles: {
+    fontFamily: 'Source Sans Pro',
+    fontWeight: '300',
+    fontSize: 16,
+    lineHeight: 20,
+    color: colors.WHITE
+  },
+  myPetTitleFonStyles: {
+    fontFamily: 'Source Sans Pro',
+        fontWeight: '700',
+        fontSize: 20,
+        lineHeight: 25,
+        alignSelf: 'center',
+        color: colors.WHITE,
   }
 };
 

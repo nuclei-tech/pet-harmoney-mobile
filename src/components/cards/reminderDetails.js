@@ -83,14 +83,16 @@ const ReminderDetailsCard = ({
     )
     
     return (
-        <Card containerStyle={{backgroundColor: backgroundColor}}>
+        <View>
+        {/* // <Card containerStyle={{backgroundColor: backgroundColor}}> */}
             {headerTitle && <Card.Title style={[headerTitleStyle, {color: headerTitleColor}]}>{headerTitle}</Card.Title>}
             <FlatList
                 keyExtractor={(item, index) => keyExtractor(item,index)}
                 data={dataList}
                 renderItem={(item, index) => renderItem(item,index)}
             />
-        </Card>
+        {/* // </Card> */}
+        </View>
 
     )
 
@@ -99,15 +101,22 @@ const ReminderDetailsCard = ({
 const styles = (props) => StyleSheet.create({
     checkBoxIcon: { width: 15, height: 15 },
     headerTitleStyle: {
-        fontSize:  props.Theme.size.DETAIL_CARD_HEADER_TITLE,
-        fontWeight: 'bold'
+        fontFamily: 'Source Sans Pro',
+        fontSize: 10,
+        lineHeight: 13,
+        fontWeight: '700'
     },
     titleStyle: {
-        fontSize: props.Theme.size.DETAIL_CARD_TITLE,
-        fontWeight: 'bold'
+        fontFamily: 'Source Sans Pro',
+        fontSize: 10,
+        lineHeight: 13,
+        fontWeight: '700'
     },
     descriptionStyle: {
-        fontSize: props.Theme.size.DETAIL_CARD_TITLE,
+        fontFamily: 'Source Sans Pro',
+        fontSize: 10,
+        lineHeight: 13,
+        fontWeight: 'normal'
     }
 })
 
