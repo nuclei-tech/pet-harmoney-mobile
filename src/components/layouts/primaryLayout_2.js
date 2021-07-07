@@ -8,7 +8,7 @@ const window = Dimensions.get('window');
 const Layout2 = (props) => {
     const { theme } = useSelector(state => state.theme);
     const colors = theme.Theme.colors;
-    const Inner = props.inner; // Note: variable name _must_ start with a capital letter 
+    // const Inner = props.inner; // Note: variable name _must_ start with a capital letter 
     const curve = props.curve ? props.curve : 'primary'
     const getBackgroundImage = () => {
         let backgroundImage;
