@@ -185,7 +185,7 @@ const TabNav = props => {
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = null
+  let token = 1
 
   // const config = {
   //   animation: 'spring',

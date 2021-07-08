@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import { View, TouchableOpacity, Text, Platform, ImageBackground, ActivityIndicator, StyleSheet } from 'react-native'
+import { View, TouchableOpacity, Text, Platform, ImageBackground, ActivityIndicator, StyleSheet, Dimensions } from 'react-native'
 import { CardIOModule, CardIOUtilities } from 'react-native-awesome-card-io'
 import { useSelector } from 'react-redux';
 import { Image } from 'react-native-elements';
 import { images } from'../../constants';
 
-const CreditCardScanner = ({middleImage}) => {
+const CreditCardScanner = ({middleImage,customTitleStyle}) => {
     const {theme} = useSelector(state => state.theme)
     const {titleStyles, mainContainer, imageBackgroundStyles, innerCardContainer, imageStyles, cardTitle} = styles(theme)
 
@@ -33,9 +33,9 @@ const CreditCardScanner = ({middleImage}) => {
 
       return (
         <View style={mainContainer}>
-            <Text style={titleStyles}>Add a payment method</Text>
+            <Text style={{...titleStyles,...customTitleStyle}}>Add a payment method</Text>
         <TouchableOpacity onPress={scanCard}>
-            <ImageBackground source={images.creditCardOutline} style={imageBackgroundStyles}>
+            <ImageBackground source={images.creditCardOutline} resizeMode={'stretch'} style={imageBackgroundStyles}>
           <View style={innerCardContainer}>
                                 <Image
                                         source={middleImage}
@@ -54,15 +54,18 @@ const CreditCardScanner = ({middleImage}) => {
 const styles = (props) => StyleSheet.create({
     mainContainer: { 
         flex: 1, 
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom:45
     },
     titleStyles: {
-        ...props.Theme.titleStyles,
-        marginBottom: 34
+        // ...props.Theme.titleStyles,
+        paddingTop:12.5,
+        paddingBottom:12.5,
+        marginBottom: 17
     },
     imageBackgroundStyles: {
-        width: 285, 
-        height: 168.27
+        width: Dimensions.get('window').width - 60, 
+        height:( Dimensions.get('window').width)/2
     },
     innerCardContainer: {
         flex: 1, 

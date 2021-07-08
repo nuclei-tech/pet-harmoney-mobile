@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, ScrollView, Text } from 'react-native';
-import {  Layout2,InputField } from '../../components'
+import {  Layout2,InputField,CreditCardScanner } from '../../components'
+import { images } from'../../constants';
 
 import { styles } from './styles';
 
@@ -29,14 +30,24 @@ const SelectSubOption = props => {
                         <Text style={subTextValue}>$X.XX</Text>
                     </View>
                     <View style={payOptionContanierText}>
-                        <Text style={payTextStyle}>Add a payment method</Text>
+                        <CreditCardScanner customTitleStyle={payTextStyle} middleImage={images.creditCardGreen}/>
                     </View>
-                    <View>
+
+                    {/* <CreditCardScanner/> */}
+
+
+                    <View style={{flex:1,flexDirection:'column'}}>
                         <InputField backgroundColor={'white'} placeholder={'Name on Card'}/>
-                        <InputField backgroundColor={'white'} placeholder={'Card Number'} />
-                        <InputField backgroundColor={'white'} placeholder={'Expiration Date'} />
-                        <InputField backgroundColor={'white'} placeholder={'CVV'} />
-                        <InputField backgroundColor={'white'} placeholder={'Billing Address'} />
+                        <InputField customTextStyle={{marginTop:3}} backgroundColor={'white'} placeholder={'Card Number'} />
+                        <View style={{flex:15,flexDirection:'row'}}>
+                        <View style={{flex:9}}>
+                        <InputField customTextStyle={{marginTop:3}} backgroundColor={'white'} placeholder={'Expiration Date'} />
+                        </View>
+                        <View style={{flex:6}}>
+                        <InputField  customTextStyle={{marginTop:3}} backgroundColor={'white'} placeholder={'CVV'} />
+                        </View>
+                        </View>
+                        <InputField customTextStyle={{marginTop:3}} backgroundColor={'white'} placeholder={'Billing Address'} />
                     </View>
                 </ScrollView>
             </Layout2>

@@ -5,7 +5,8 @@ const { height, width } = Dimensions.get('window')
 export const styles = props =>
   StyleSheet.create({
     container: {
-      flex: 1
+      flex: 1,
+      backgroundColor:'red'
     },
     mainText: {
       ...props.Theme.createAccount.mainText,
@@ -113,9 +114,9 @@ export const styles = props =>
     //sub option selected
 
     payOptionContanierText: {
-      marginTop: height * 0.07,
+      marginTop: 18,
       alignItems: 'center',
-      marginBottom: 20.5
+      flex:1
     },
     payTextStyle: {
       ...props.Theme.selectSubscription.payTextStyle
