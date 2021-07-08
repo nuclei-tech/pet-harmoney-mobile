@@ -6,7 +6,7 @@ import { Cover, ProfilePicture, ProfileTimeline} from '../../components'
 import { useSelector } from 'react-redux';
 import { Tab, TabView } from 'react-native-elements';
 import { navigate } from '../../navigation/navigation';
-import { images } from '../../constants';
+import { images, profileHistoryData } from '../../constants';
 
 const { height, width } = Dimensions.get('window');
 
@@ -42,7 +42,9 @@ const ComunityScreen = (props) => {
      >
        <View style={{paddingHorizontal: 44}}>
 
-       <ProfileTimeline />
+       <ProfileTimeline 
+        tabHistoryDetails={profileHistoryData}
+       />
        </View>
       
      </Cover>

@@ -86,3 +86,31 @@ export const iconTabDetails = [
         title: 'Medication'
     }
 ];
+
+export const profileHistoryData = [
+    {
+        title: 'Give Medications',
+        description: '1pm, July 6',
+        type: 'Virtual'
+    },
+    {
+        title: 'Walk the dog',
+        description: '1pm, July 6',
+        type: 'Visit'
+    },
+    {
+        title: 'Walk the dog',
+        description: '1pm, July 6',
+        type: 'Virtual'
+    },
+    {
+        title: 'Grooming appt',
+        description: '1pm, July 6',
+        type: 'Visit'
+    },
+    {
+        title: 'Virtual Session',
+        description: '1pm, July 6',
+        type: 'Visit'
+    }
+];

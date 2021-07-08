@@ -1,13 +1,19 @@
 import React, {useState} from 'react'
 import {StyleSheet, View, Text, TouchableOpacity, Animated, Dimensions} from 'react-native'
 import {useSelector} from 'react-redux'
+import { DetailList, Button } from '../../components'
+import { reminderDetails } from '../../constants'
 
 const { width } = Dimensions.get("window");
 
 const ProfileTimeline = ({tabAboutDetails, tabHistoryDetails}) => {
     const [selectedIndex, setSelectedIndex] = useState(0) 
     const { theme } = useSelector(state => state.theme);
-    const {tabTitlesStyle, tabTitleContainer, aboutStylesLabel, aboutStylesAnswer} = styles(theme)
+    const {tabTitlesStyle, tabTitleContainer, aboutStylesLabel, aboutStylesAnswer, historyMainBtnText, historyMainBtnContainer} = styles(theme)
+
+    const btnPressHandler = () => {
+        console.warn('clickaaaad');
+    }
 
     const tabViewHandler = (selectedIndex) => {
         
@@ -25,10 +31,22 @@ const ProfileTimeline = ({tabAboutDetails, tabHistoryDetails}) => {
                 break;
             case 1:
                 return (
-                    <View>
-                        <Text>Hello0000 1</Text>
-                        <Text>Hello 1</Text>
-                    </View>
+                    <View style={{justifyContent: 'center'}}>
+                    <DetailList 
+                        backgroundColor={theme.Theme.colors.WHITE}
+                        titleColor={theme.Theme.colors.RED}
+                        descriptionColor={theme.Theme.colors.DARK_BLUE}
+                        borderBottomColor={theme.Theme.colors.GREY}
+                        // headerTitleColor={theme.Theme.colors.WHITE}
+                        // headerTitle={'Upcoming Sessions'}
+                        dataList={tabHistoryDetails}
+                        listButtonExist
+                        listBtnColor={theme.Theme.colors.RED}
+                        listBtnTxtColor={theme.Theme.colors.WHITE}
+                        listBtnTitle={'Details'}
+                    />
+                    <Button customTextStyle={historyMainBtnText} buttonContainStyle={historyMainBtnContainer} onPress={btnPressHandler} textColor={theme.Theme.colors.WHITE} title={'Log a Visit'} backgroundColor={theme.Theme.colors.RED} />
+                    </View> 
                 )
                 break;
             case 2:
@@ -96,8 +114,8 @@ const styles = (props) => StyleSheet.create({
     tabTitleContainer: {
         marginTop: 32, 
         flexDirection: 'row', 
-        borderTopWidth: 1, 
-        borderBottomWidth: 1,
+        borderTopWidth: 0.5, 
+        borderBottomWidth: 0.5,
         borderColor: props.Theme.colors.GREY, 
         width: '100%',
         // alignItems: 'flex-start',
@@ -125,7 +143,14 @@ const styles = (props) => StyleSheet.create({
         fontSize: 14,
         lineHeight: 18,
         color: props.Theme.colors.BLACK
-    }
+    },
+    historyMainBtnText: {
+        fontFamily: 'SourceSansPro-Bold',
+        fontWeight: '700',
+        fontSize: 14,
+        lineHeight: 18,
+    },
+    historyMainBtnContainer: {width: 285, height: 41, alignSelf: 'center'}
 })
 
 export default ProfileTimeline
