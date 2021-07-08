@@ -121,4 +121,21 @@ export const styles = props =>
     payTextStyle: {
       ...props.Theme.selectSubscription.payTextStyle
     },
+    cardMain:{
+      flex: 1, 
+      flexDirection: 'column'
+    },
+    cardInputStyle:{
+      marginTop: 3 
+    },
+    subCardConatanier:{
+      flex: 15, 
+      flexDirection: 'row'
+    },
+    flexExpire:{
+      flex: 9 
+    },
+    flexCvv:{
+      flex: 6
+    }
   });

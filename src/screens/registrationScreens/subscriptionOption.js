@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, Dimensions, Text } from 'react-native';
-import {  Layout2, SubscriptionCard } from '../../components'
+import { StyleSheet, View, ScrollView, Dimensions, Text, TouchableOpacity } from 'react-native';
+import { Layout2, SubscriptionCard } from '../../components'
 
 import { styles } from './styles';
 
@@ -12,7 +12,7 @@ const { height } = Dimensions.get('window')
 
 const SubscriptionOption = props => {
     const { theme } = useSelector(state => state.theme);
-    const { layoutContanier, container,topContanier,subTextStyle,subTextValue,payOptionContanier,payTextStyle } = styles(theme)
+    const { layoutContanier, container, topContanier, subTextStyle, subTextValue, payOptionContanier, payTextStyle } = styles(theme)
 
     return (
         <View style={container}>
@@ -33,8 +33,12 @@ const SubscriptionOption = props => {
                     <View style={payOptionContanier}>
                         <Text style={payTextStyle}>Payment Options</Text>
                     </View>
-                    <SubscriptionCard title={'Subscription'} contentTitle={'Yearly Subscription '} leftContent={'$XX.XX Billed annually asa recurring payment'} rightTopContent={'$X.XX'} rightBottomContent={'Per Month'} />
-                    <SubscriptionCard contentTitle={'Yearly Subscription '} leftContent={'$XX.XX Billed annually asa recurring payment'} rightTopContent={'$X.XX'} rightBottomContent={'Per Month'} />
+                    <TouchableOpacity onPress={() => props.navigation.navigate('Select Subcription Option')}>
+                        <SubscriptionCard title={'Subscription'} contentTitle={'Yearly Subscription '} leftContent={'$XX.XX Billed annually asa recurring payment'} rightTopContent={'$X.XX'} rightBottomContent={'Per Month'} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => props.navigation.navigate('Select Subcription Option')}>
+                        <SubscriptionCard contentTitle={'Yearly Subscription '} leftContent={'$XX.XX Billed annually asa recurring payment'} rightTopContent={'$X.XX'} rightBottomContent={'Per Month'} />
+                    </TouchableOpacity>
                 </ScrollView>
             </Layout2>
         </View>

@@ -15,6 +15,10 @@ const TermsConditionScreen = props => {
     const { theme } = useSelector(state => state.theme);
     const { layoutContanier, paragraphCardStyle, container,checkBoxContainer } = styles(theme)
 
+    checkBoxState = (e) =>{ 
+console.warn('rrrr',e);
+    }
+
     return (
         <View style={container}>
             <Layout2
@@ -45,7 +49,7 @@ const TermsConditionScreen = props => {
                         />
                     </ParagraphCard>
                     <View style={checkBoxContainer}>
-                        <CheckBoxField title={'I agree to the terms and conditions'} />
+                        <CheckBoxField checkBoxState={checkBoxState} title={'I agree to the terms and conditions'} />
                     </View>
                 </ScrollView>
             </Layout2>

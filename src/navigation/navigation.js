@@ -69,27 +69,27 @@ const HomeStackScreen = () => {
       screenOptions={{
         headerShown: false
       }}>
-      {/* <HomeStack.Screen
+      <HomeStack.Screen
         name={'HomeScreen'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={HomeScreen}
-      /> */}
-       {/* <HomeStack.Screen
+      />
+       <HomeStack.Screen
         name={'Pet registation'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={PetRegisterForm}
-      /> */}
-       {/* <HomeStack.Screen
+      />
+       <HomeStack.Screen
         name={'Subscription Option'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={SelectSubOption}
-      /> */}
+      />
        <HomeStack.Screen
         name={'Select Subcription Option'}
         options={{
@@ -310,7 +310,7 @@ const TabNav = props => {
               let shoppingIcon = images.shoppingIcon
               let petIcon = images.petsIcon
               if (route.name === 'Home') {
-                if (currentScreen === "HomeScreen" || currentScreen === null) {
+                if (currentScreen === "HomeScreen" || currentScreen === null ) {
                   homeImageIcon = images.homeIconRed
                   fontStyle = theme.Theme.bottomIconColor.darkRed
                 }
@@ -363,7 +363,7 @@ const TabNav = props => {
           <Tab.Screen
             name="Home"
             component={HomeStackScreen}
-            options={currentScreen == 'Subscription Option' ||  currentScreen == null ?{
+            options={currentScreen == 'Subscription Option' ||  currentScreen == null &&  currentScreen === 'Home' || currentScreen === 'Select Subcription Option'?{
               tabBarVisible: false,
             }:{
               tabBarVisible: true,
