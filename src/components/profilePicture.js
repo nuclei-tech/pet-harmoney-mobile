@@ -7,7 +7,7 @@ import { images } from '../constants'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 
-const ProfilePicture = ({ customStyle,customImage }) => {
+const ProfilePicture = ({ customStyle,customImage,removeDefualtStyle }) => {
     const { theme } = useSelector(state => state.theme);
     const changeProfileImage = () => {
         console.log('in');
@@ -15,7 +15,7 @@ const ProfilePicture = ({ customStyle,customImage }) => {
     return (
         <View >
             <TouchableOpacity onPress={changeProfileImage} >
-                <Image source={customImage ? customImage :images.profile} style={{ ...styles(theme).proPic, ...customStyle }} />
+                <Image resizeMode={'contain'}  source={customImage ? customImage :images.profile} style={removeDefualtStyle ?{customStyle } :{ ...styles(theme).proPic, ...customStyle }} />
             </TouchableOpacity>
         </View>
     );

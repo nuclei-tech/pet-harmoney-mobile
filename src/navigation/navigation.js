@@ -45,6 +45,9 @@ import PasswordVerifyScreen from '../screens/forgotPasswordScreens/passwordVerif
 //reminder screen 
 import RemindSession from '../screens/reminderScreens/reminderSession'
 
+//time line screens
+import Reminders from '../screens/reminderScreens/reminders'
+
 
 // Connect redux store.
 import { useSelector, useDispatch } from 'react-redux';
@@ -58,6 +61,7 @@ const TelevetScreenStack = createStackNavigator();
 const MyPetScreenStack = createStackNavigator();
 const RegisterStackScreen = createStackNavigator()
 const FogotPasswordStackScreen = createStackNavigator()
+const TimeLineScreenStack = createStackNavigator()
 
 const navigationRef = React.createRef();
 
@@ -171,6 +175,20 @@ const MyPetScreenStacks = () => {
     </MyPetScreenStack.Navigator>
   );
 };
+
+const TimeLineScreenStacks = () =>{
+  return (
+    <TimeLineScreenStack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}>
+      <TimeLineScreenStack.Screen
+        name="Reminders"
+        component={Reminders}
+      />
+    </TimeLineScreenStack.Navigator>
+  );
+}
 
 
 const TabNav = props => {
@@ -390,6 +408,10 @@ const TabNav = props => {
           <Tab.Screen
             name="Shopping"
             component={ShoppingScreenStacks}
+          />
+           <Tab.Screen
+            name="TimeLine"
+            component={TimeLineScreenStacks}
           />
           <Tab.Screen
             name="Community"

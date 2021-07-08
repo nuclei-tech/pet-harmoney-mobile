@@ -12,6 +12,10 @@ const CustomButton = ({ title, onPress, type, color, textColor }) => {
   const { buttonStyle, textStyle, buttonContainer,containerStyle } = styles(theme);
   const buttonStyles = buttonStyle;
   const textStyles = textStyle;
+
+  onPressHandle = () =>{
+    console.warn('eeee=>>');
+  }
   
   return (
     <View style={buttonContainer}>
@@ -23,9 +27,9 @@ const CustomButton = ({ title, onPress, type, color, textColor }) => {
         icon={
             <Icon
               name="plus"
-              size={size.SIZE.BASE*1.2}
-              color={colors.BLACK}
-              type='font-awesome'
+              size={theme.Theme.size.BASE*1.2}
+              color={theme.Theme.colors.BLACK}
+              type='ant-design'
             />
           }
      />
@@ -36,7 +40,7 @@ const CustomButton = ({ title, onPress, type, color, textColor }) => {
 
 const styles =(theme)=> StyleSheet.create({
   buttonContainer: {
-    margin: theme.Theme.size.BASE,
+    //margin: theme.Theme.size.BASE,
     width:theme.Theme.size.BASE*2.5
   },
   containerStyle:{
@@ -52,7 +56,7 @@ const styles =(theme)=> StyleSheet.create({
     backgroundColor:theme.Theme.colors.WHITE,
   },
   textStyle: {
-    fontSize: size.FONT_SIZES.BUTTON,
+    fontSize:  theme.Theme.size.BASE,
     color: theme.Theme.colors.BLACK
   }
 })
