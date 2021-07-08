@@ -4,7 +4,7 @@ import CheckBox from '@react-native-community/checkbox';
 
 import { useSelector } from 'react-redux';
 
-const CheckBoxField = ({ customMainFlex, customBoxFlex, customBoxContentFlex,title,customTextStyle }, props) => {
+const CheckBoxField = ({ customMainFlex, customBoxFlex, customBoxContentFlex,title,customTextStyle,checkBoxState }, props) => {
     const { theme } = useSelector(state => state.theme);
     const {  mainFlex, boxFlex, boxContentFlex,textStyle } = styles(theme, props)
 
@@ -12,6 +12,7 @@ const CheckBoxField = ({ customMainFlex, customBoxFlex, customBoxContentFlex,tit
 
     const handleTerms = () =>{
         setCheckState(!checkState)
+        checkBoxState(checkState)
     }
 
     return (
