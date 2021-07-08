@@ -23,6 +23,8 @@ import CheckBoxField from './forms/checkBoxField'
 import PlaceOrderCard from "./cards/placeOrderCard";
 import Calendar from "./calendar";
 import ScheduleTitle from "./scheduleTitle";
+import ProfileTimeline from "./petProfileTimeline/petProfileTimeline";
+
 export{
     ReminderButton,
     Button,
@@ -49,4 +51,5 @@ export{
     PlaceOrderCard,
     Calendar,
     ScheduleTitle,
+    ProfileTimeline
 }

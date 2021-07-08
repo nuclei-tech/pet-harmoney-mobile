@@ -177,7 +177,7 @@ const TabNav = props => {
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = null
+  let token = 1
 
   // const config = {
   //   animation: 'spring',
@@ -355,11 +355,12 @@ const TabNav = props => {
           <Tab.Screen
             name="Home"
             component={HomeStackScreen}
-            options={currentScreen == 'Subscription Option' ||  currentScreen == null ?{
-              tabBarVisible: false,
-            }:{
-              tabBarVisible: true,
-            }}
+            options={{tabBarVisible: true}}
+            // options={currentScreen == 'Subscription Option' ||  currentScreen == null ?{
+            //   tabBarVisible: false,
+            // }:{
+            //   tabBarVisible: true,
+            // }}
           />
           <Tab.Screen
             name="Shopping"
