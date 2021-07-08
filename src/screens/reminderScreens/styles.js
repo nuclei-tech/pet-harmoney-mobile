@@ -36,5 +36,50 @@ export const styles = props =>
     testAudVid:{
       ...props.Theme.reminderSession.testAudVid,
       paddingVertical:3.5
+    },
+
+    //remiders screen
+    mainContanierReminders:{
+      flex: 2,
+    },
+    subContanierTop:{
+      flex: 1.8,
+    },
+    subContanierOther:{
+      flex: 0.3,
+    },
+    remiderProfileText:{
+      ...props.Theme.reminderSession.remiderProfileText,
+      marginTop:7,
+      paddingVertical:7
+    },
+    imageContent:{ 
+      flex: 0.4, 
+      justifyContent: 'center' 
+    },
+    subImageContent:{ 
+      alignItems: 'center' 
+    },
+    tableContanier:{ 
+      flex: 0.9,
+    },
+    reminderAddButton:{ 
+      flex: 0.4, 
+      flexDirection: 'row',
+      justifyContent:'center',
+      alignItems:'center' 
+    },
+    reminderButtonLeft:{
+      flex:0.9,
+      alignItems:'flex-end',
+      marginRight:9
+    },
+    reminderButtonRight:{
+      flex:1.1,
+      alignItems:'flex-start',
+      marginLeft:9
+    },
+    remindAddContent:{
+      ...props.Theme.reminderSession.remindAddContent,
     }
   });

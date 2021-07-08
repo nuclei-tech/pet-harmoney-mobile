@@ -49,6 +49,8 @@ const communityBlue = require('../assets/images/bottomIcon/COMMUNITY_ICON_BLUE.p
 //common icon
 const petHarmonyLogo = require('../assets/images/commonImage/petHarmonyLogo.png');
 const defaultProfileImage = require('../assets/images/commonImage/defaultProfileImage.png');
+const reminderIcon = require('../assets/images/commonImage/reminderIcon.png');
+
 
 //list icons
 const cardIcon1 = require('../assets/images/listImages/98UziT@300x1.png')
@@ -115,5 +117,7 @@ export default {
     searchRoundIcon,
 
     downArrow,
-    defaultProfileImage
+    defaultProfileImage,
+
+    reminderIcon
 };
