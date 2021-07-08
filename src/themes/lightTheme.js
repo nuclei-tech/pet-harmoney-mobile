@@ -360,6 +360,34 @@ const Theme = {
       lineHeight: 20,
     }
   },
+
+  //reminder session screen
+  reminderSession:{
+    profileText:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.WHITE,
+      fontSize: 26,
+      lineHeight: 31,
+    },
+    dayText:{
+      fontFamily: 'SourceSansPro-Light',
+      color: colors.BLUE,
+      fontSize: 64,
+      lineHeight: 76,
+    },
+    timeText:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.BLUE,
+      fontSize: 20,
+      lineHeight: 25,
+    },
+    testAudVid:{
+      fontFamily: 'SourceSansPro-Regular',
+      color: colors.BLUE,
+      fontSize: 12,
+      lineHeight: 15,
+    }
+  }
 };
 
 export default { Theme };
