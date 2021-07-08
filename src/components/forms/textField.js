@@ -114,8 +114,8 @@ const styles = (theme, props) => StyleSheet.create({
         borderWidth: 4,
         width: '100%',
         borderRadius: 100,
-        paddingTop: 8,
-        paddingBottom:8,
+        paddingTop: 9.5,
+        paddingBottom:9.5,
         marginTop: 9,
         marginBottom: 9,
         backgroundColor:props.backgroundColor ? props.backgroundColor:'transparent'
@@ -129,8 +129,8 @@ const styles = (theme, props) => StyleSheet.create({
         borderWidth: 4,
         width: '100%',
         borderRadius: 100,
-        paddingTop:4,
-        paddingBottom:12,
+        paddingTop:5.5,
+        paddingBottom:13.5,
         marginTop: 9,
         marginBottom: 9,
         backgroundColor:props.backgroundColor ? props.backgroundColor:'transparent'

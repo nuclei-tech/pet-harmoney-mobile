@@ -2,6 +2,9 @@ import React from 'react';
 import { StyleSheet, View, ScrollView, Dimensions, Text } from 'react-native';
 import {  Layout2, SubscriptionCard } from '../../components'
 
+import { styles } from './styles';
+
+
 // Connect redux store.
 import { useSelector } from 'react-redux';
 
@@ -37,37 +40,6 @@ const SubscriptionOption = props => {
         </View>
     );
 };
-
-const styles = (theme) => StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: theme.Theme.colors.WHITE
-    },
-    layoutContanier: {
-        justifyContent: 'center'
-    },
-    topContanier:{
-        marginTop: height * 0.07,
-        alignItems:'center'
-    },
-    subTextStyle:{
-       ...theme.Theme.regSubscription.subTextStyle
-    },
-    subTextValue:{
-        ...theme.Theme.regSubscription.subTextValue
-    },
-    payOptionContanier:{
-        marginTop: height * 0.07,
-        alignItems:'center',
-        borderBottomWidth:1,
-        paddingBottom:22,
-        borderColor:theme.Theme.colors.WHITE,
-        marginBottom:20.5
-    },
-    payTextStyle:{
-        ...theme.Theme.regSubscription.payTextStyle
-    }
-});
 
 
 export default SubscriptionOption;

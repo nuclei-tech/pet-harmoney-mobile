@@ -35,6 +35,7 @@ import CreateAccountMobile from '../screens/registrationScreens/createAccountMob
 import TermsConditionScreen from '../screens/registrationScreens/termsConditionScreen'
 import PetRegisterForm from '../screens/registrationScreens/petRegisterForm'
 import SubscriptionOption from '../screens/registrationScreens/subscriptionOption'
+import SelectSubOption from '../screens/registrationScreens/subscriptionSelectScreen'
 
 //forgotPassword screen
 import EmailEnterScreen from '../screens/forgotPasswordScreens/emailEnterScreen'
@@ -82,12 +83,19 @@ const HomeStackScreen = () => {
         }}
         component={PetRegisterForm}
       /> */}
-       <HomeStack.Screen
+       {/* <HomeStack.Screen
         name={'Subscription Option'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
-        component={SubscriptionOption}
+        component={SelectSubOption}
+      /> */}
+       <HomeStack.Screen
+        name={'Select Subcription Option'}
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        component={SelectSubOption}
       />
     </HomeStack.Navigator>
   );
@@ -177,7 +185,7 @@ const TabNav = props => {
   };
 
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
-  let token = null
+  let token = 1
 
   // const config = {
   //   animation: 'spring',
