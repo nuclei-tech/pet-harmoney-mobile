@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions,StatusBar,SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Dimensions, StatusBar, SafeAreaView } from 'react-native';
 import { Header } from '../../components'
 import { images } from '../../constants';
 import { useSelector } from 'react-redux';
 
-const window = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
 const Layout2 = (props) => {
     const { theme } = useSelector(state => state.theme);
     const colors = theme.Theme.colors;
@@ -31,7 +31,9 @@ const Layout2 = (props) => {
             case colors.PURPLE:
                 backgroundImage = images.bgPurple;
                 break;
-
+            case colors.WHITE:
+                backgroundImage = images.bgWhiteBackGround;
+                break;
             default:
                 backgroundImage = images.bgRed
                 break;
@@ -61,10 +63,10 @@ const Layout2 = (props) => {
 
     const backgroundStyle = getBackgroundStyle();
     return (
-        <View flex={1}> 
+        <View flex={1}>
             {props.type ? (
-                <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={{...backgroundStyle, ...props.customStyle}}>
-                    <Header {...props}/>
+                <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={{ ...backgroundStyle, ...props.customStyle }}>
+                    <Header  {...props} />
                     {props.children}
                 </ImageBackground>
             ) : (<View style={noImage}>
@@ -92,7 +94,7 @@ const styles = (props, theme) => StyleSheet.create({
         resizeMode: 'stretch',
         padding: theme.size.CONTAINER_PADDING,
         paddingBottom: 0,
-        height: '95%',
+        height: height*0.85,
         backgroundColor: props.backgroundColor ? props.backgroundColor : theme.colors.WHITE
     },
     samllScreen: {

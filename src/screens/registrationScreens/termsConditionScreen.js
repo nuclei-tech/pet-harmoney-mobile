@@ -13,10 +13,10 @@ const { height } = Dimensions.get('window')
 
 const TermsConditionScreen = props => {
     const { theme } = useSelector(state => state.theme);
-    const { layoutContanier, paragraphCardStyle, container,checkBoxContainer } = styles(theme)
+    const { layoutContanier, paragraphCardStyle, container, checkBoxContainer,flexMain,flexSubTop,flexSubBottom,flexParagraphContent } = styles(theme)
 
-    checkBoxState = (e) =>{ 
-console.warn('rrrr',e);
+    checkBoxState = (e) => {
+        console.warn('rrrr', e);
     }
 
     return (
@@ -30,28 +30,38 @@ console.warn('rrrr',e);
                 noIcon
                 customContainerStyle={layoutContanier}
             >
-                <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={true}>
-                    <ParagraphCard
-                        cardBorderColor={theme.Theme.colors.GREEN}
-                        cardBackgroundColor={'transparent'}
-                        titleColor={theme.Theme.colors.GREEN}
-                        title={'Terms and Conditions'}
-                        titleAlign={'left'}
-                        customCardContainer={paragraphCardStyle}
-                        imageExists
-                    >
-                        <Paragraph
-                            textColor={theme.Theme.colors.WHITE}
-                            paragraph={termsAndConditions}
-                            textFontSize={14}
-                            textFontLineHeight={18}
-                            textFontWeight={'300'}
-                        />
-                    </ParagraphCard>
-                    <View style={checkBoxContainer}>
-                        <CheckBoxField checkBoxState={checkBoxState} title={'I agree to the terms and conditions'} />
+                {/* <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={true}> */}
+                <View style={flexMain}>
+                    <View style={flexSubTop}>
+                        <View style={flexParagraphContent}>
+                            <ParagraphCard
+                                cardBorderColor={theme.Theme.colors.GREEN}
+                                cardBackgroundColor={'transparent'}
+                                titleColor={theme.Theme.colors.GREEN}
+                                title={'Terms and Conditions'}
+                                titleAlign={'left'}
+                                customCardContainer={paragraphCardStyle}
+                                imageExists
+                            >
+                                <Paragraph
+                                    textColor={theme.Theme.colors.WHITE}
+                                    paragraph={termsAndConditions}
+                                    textFontSize={14}
+                                    textFontLineHeight={18}
+                                    textFontWeight={'300'}
+                                />
+                            </ParagraphCard>
+                        </View>
+                        <View style={checkBoxContainer}>
+                            <CheckBoxField checkBoxState={checkBoxState} title={'I agree to the terms and conditions'} />
+                        </View>
                     </View>
-                </ScrollView>
+                    <View style={flexSubBottom}>
+                    </View>
+                </View>
+
+
+                {/* </ScrollView> */}
             </Layout2>
         </View>
     );

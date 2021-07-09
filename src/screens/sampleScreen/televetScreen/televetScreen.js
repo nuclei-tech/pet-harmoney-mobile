@@ -22,12 +22,10 @@ const TelevetScreen = props => {
         // 
         backgroundColor={colors.WHITE}
         layoutColor={colors.WHITE}
-        header={'Dark'} // color is required
       >
         <Header
           title='PET HARMONY'
           dark
-          // login={true} 
           customtTitleStyle={{ color: theme.Theme.colors.DARK_BLUE }}
         />
         <IconHeader 
