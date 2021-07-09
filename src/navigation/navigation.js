@@ -49,8 +49,8 @@ import RemindSession from '../screens/reminderScreens/reminderSession'
 import Reminders from '../screens/reminderScreens/reminders'
 
 //extra screens
-import MyCart from '../screens/myCardScreens/myCartScreen'
-
+import MyCart from '../screens/myCardScreens/myCartScreen' 
+import MyCartOrder from '../screens/myCardScreens/myCartOrderScreen'
 
 // Connect redux store.
 import { useSelector, useDispatch } from 'react-redux';
@@ -108,12 +108,19 @@ const HomeStackScreen = () => {
         component={SelectSubOption}
       /> */}
 
-      <HomeStack.Screen
+      {/* <HomeStack.Screen
         name={'My Cart'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={MyCart}
+      /> */}
+      <HomeStack.Screen
+        name={'My Cart order'}
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        component={MyCartOrder}
       />
     </HomeStack.Navigator>
   );

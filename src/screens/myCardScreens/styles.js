@@ -57,5 +57,28 @@ export const styles = props =>
     },
     flexBottomMain:{ 
       flex: 0.4 
+    },
+
+    //my card 
+    flexTopCardOrder:{
+      flex: 0.6,
+    },
+    flexTopButtonMainOrder:{
+      flex: 0.6,
+    },
+    flexMainTopOrder:{
+      flex: 1.85
+    }, 
+    flexBottomMainOrder:{
+      flex: 0.35,
+    },
+    flexTopProfileOrder:{ 
+      flex: 0.4,
+      justifyContent:'center',
+      alignItems:'center' 
+    },
+    orderText:{
+      ...props.Theme.myCard.orderText,
+      marginBottom:10
     }
   });

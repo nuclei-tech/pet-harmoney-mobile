@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text, View, Image, StyleSheet, Dimensions } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler';
 
 // Connect redux store.
 import { useSelector } from 'react-redux';
@@ -22,8 +23,9 @@ const PlaceOrderCard = ({ subtotal, shipping, total }) => {
     } = styles(theme, width, height)
 
     return (
+        <ScrollView>
         <View style={{ ...placeOrderCardContanier }}>
-            <View flex={0.75} style={buttonContainer}>
+            <View flex={1} style={buttonContainer}>
                 <InputField
                     customMainContanier={btnContanier}
                     placeholderColor={theme.Theme.colors.PLACEHOLDER_GRAY}
@@ -31,18 +33,18 @@ const PlaceOrderCard = ({ subtotal, shipping, total }) => {
                     placeholder={'Apply Coupon Code'}
                 />
             </View>
-            <View flex={0.75}>
+            <View flex={1}>
                 <View style={viewContainer} >
                     <Text style={titleText} flex={0.5}>Subtotal</Text>
-                    <Text style={valueText} flex={0.5}>{subtotal}</Text>
+                    <Text style={valueText} flex={0.5}>$X.XX</Text>
                 </View>
                 <View style={viewContainer} >
                     <Text style={titleText} flex={0.5}>Shiping</Text>
-                    <Text style={valueText} flex={0.5}>{shipping}</Text>
+                    <Text style={valueText} flex={0.5}>$X.XX</Text>
                 </View>
                 <View style={viewContainer} >
                     <Text style={titleText} flex={0.5}>Total</Text>
-                    <Text style={valueText} flex={0.5}>{total}</Text>
+                    <Text style={valueText} flex={0.5}>$X.XX</Text>
                 </View>
                 <View style={{ justifyContent: 'space-between', marginTop: height * 0.02 }} >
                     <Button title="Solid Button"
@@ -54,6 +56,7 @@ const PlaceOrderCard = ({ subtotal, shipping, total }) => {
             </View>
 
         </View>
+        </ScrollView>
     )
 }
 
@@ -61,13 +64,12 @@ const styles = (theme, width, height) => StyleSheet.create({
     placeOrderCardContanier: {
         flex: 2,
         flexDirection: 'row',
-        paddingLeft: 25,
         justifyContent: 'space-between'
 
     },
     buttonContainer: {
-        alignItems: 'flex-end',
-        marginRight: width * 0.072
+        alignItems: 'flex-start',
+        paddingRight: width * 0.072
     },
     btnContanier: {
         backgroundColor: '#ffffff',
@@ -80,18 +82,21 @@ const styles = (theme, width, height) => StyleSheet.create({
         color: theme.Theme.colors.PLACEHOLDER_GRAY
     },
     viewContainer: {
-        flexDirection: 'row', justifyContent: 'space-between'
+        flexDirection: 'row', 
+        justifyContent: 'space-between',
+        alignItems:'center',
     },
     titleText: {
         fontFamily: 'SourceSansPro-Bold',
-        alignSelf: 'flex-end',
+        alignSelf: 'center',
         fontSize: 13,
-        lineHeight: 16
+        lineHeight: 16,
     },
     valueText: {
         fontFamily: 'SourceSansPro-Light',
         fontSize: 24,
-        lineHeight: 30
+        lineHeight: 30,
+        color:theme.Theme.colors.DARK_BLUE
     },
     smallText: {
         fontFamily: 'SourceSansPro-Light',

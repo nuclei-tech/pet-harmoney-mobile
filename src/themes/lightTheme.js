@@ -423,6 +423,12 @@ const Theme = {
     },
     customTextStyle:{
       fontSize: 14,
+    },
+    orderText:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.DARK_BLUE,
+      fontSize: 14,
+      lineHeight: 18,
     }
   }
 };
