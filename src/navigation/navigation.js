@@ -1,8 +1,7 @@
 //Navigation
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, TransitionSpecs, CardStyleInterpolators } from '@react-navigation/stack';
-import { Animated } from 'react-native'
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   StyleSheet,
@@ -28,6 +27,7 @@ import HomeScreen from '../screens/homeScreen/homeScreen';
 import TelevetScreen from '../screens/televetScreen/televetScreen';
 import CalenderScreen from '../screens/televetScreen/calenderScreen.js'; 
 import PractitionerTypeScren from '../screens/televetScreen/PractitionerTypeScren.js'; 
+import PractitionerScren from '../screens/televetScreen/PractitionerScren.js'; 
 
 import ComunityScreen from '../screens/communityScreen/communityScreen';
 import ShoppingScreen from '../screens/shoppingScreen/shoppingScreen'
@@ -39,18 +39,11 @@ import CreateAccountMobile from '../screens/registrationScreens/createAccountMob
 import TermsConditionScreen from '../screens/registrationScreens/termsConditionScreen'
 import PetRegisterForm from '../screens/registrationScreens/petRegisterForm'
 import SubscriptionOption from '../screens/registrationScreens/subscriptionOption'
-import SelectSubOption from '../screens/registrationScreens/subscriptionSelectScreen'
 
 //forgotPassword screen
 import EmailEnterScreen from '../screens/forgotPasswordScreens/emailEnterScreen'
 import OtpHandleScreen from '../screens/forgotPasswordScreens/otpHandleScreen'
 import PasswordVerifyScreen from '../screens/forgotPasswordScreens/passwordVerifyScreen'
-
-//reminder screen 
-import RemindSession from '../screens/reminderScreens/reminderSession'
-
-//time line screens
-import Reminders from '../screens/reminderScreens/reminders'
 
 
 // Connect redux store.
@@ -65,7 +58,6 @@ const TelevetScreenStack = createStackNavigator();
 const MyPetScreenStack = createStackNavigator();
 const RegisterStackScreen = createStackNavigator()
 const FogotPasswordStackScreen = createStackNavigator()
-const TimeLineScreenStack = createStackNavigator()
 
 const navigationRef = React.createRef();
 
@@ -101,13 +93,6 @@ const HomeStackScreen = () => {
         }}
         component={SubscriptionOption}
       />
-      <HomeStack.Screen
-        name={'Select Subcription Option'}
-        options={{
-          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
-        }}
-        component={SelectSubOption}
-      />
     </HomeStack.Navigator>
   );
 };
@@ -118,20 +103,12 @@ const TelevetScreenStacks = () => {
       screenOptions={{
         headerShown: false
       }}>
-      {/* <TelevetScreenStack.Screen
-        options={{
-          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
-        }}
-        name="televet"
-        component={TelevetScreen}
-      /> */}
-
       <TelevetScreenStack.Screen
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
-        name="Televet Screen"
-        component={RemindSession}
+        name="televet"
+        component={PractitionerScren}
       />
       <TelevetScreenStack.Screen
         options={{
@@ -146,6 +123,13 @@ const TelevetScreenStacks = () => {
         }}
         name="practitionerType"
         component={PractitionerTypeScren}
+      />
+      <TelevetScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        name="practitioner"
+        component={PractitionerScren}
       />
     </TelevetScreenStack.Navigator>
   );
@@ -194,20 +178,6 @@ const MyPetScreenStacks = () => {
   );
 };
 
-const TimeLineScreenStacks = () =>{
-  return (
-    <TimeLineScreenStack.Navigator
-      screenOptions={{
-        headerShown: false
-      }}>
-      <TimeLineScreenStack.Screen
-        name="Reminders"
-        component={Reminders}
-      />
-    </TimeLineScreenStack.Navigator>
-  );
-}
-
 
 const TabNav = props => {
   const { theme } = useSelector(state => state.theme);
@@ -234,55 +204,6 @@ const TabNav = props => {
   let currentRouteName = navigationRef.current != null ? navigationRef.current.getCurrentRoute().name : null
   let token = 1
 
-  // const config = {
-  //   animation: 'spring',
-  //   config: {
-  //     stiffness: 1000,
-  //     damping: 500,
-  //     mass: 3,
-  //     overshootClamping: true,
-  //     restDisplacementThreshold: 0.01,
-  //     restSpeedThreshold: 0.01,
-  //   },
-  // };
-
-  const forSlide = ({ current, next, inverted, layouts: { screen } }) => {
-    const progress = Animated.add(
-      current.progress.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 1],
-        extrapolate: 'clamp',
-      }),
-      next
-        ? next.progress.interpolate({
-          inputRange: [0, 1],
-          outputRange: [0, 1],
-          extrapolate: 'clamp',
-        })
-        : 0
-    );
-
-    return {
-      cardStyle: {
-        transform: [
-          {
-            translateX: Animated.multiply(
-              progress.interpolate({
-                inputRange: [0, 1, 2],
-                outputRange: [
-                  screen.width, // Focused, but offscreen in the beginning
-                  0, // Fully focused
-                  screen.width * -0.3, // Fully unfocused
-                ],
-                extrapolate: 'clamp',
-              }),
-              inverted
-            ),
-          },
-        ],
-      },
-    };
-  };
 
   return (
     <NavigationContainer ref={navigationRef}
@@ -291,27 +212,24 @@ const TabNav = props => {
         dispatch(currentRoute(currentRouteName))
       }}
     >
-
       {!token ?
-        <RegisterStackScreen.Navigator
-          screenOptions={{
-            headerShown: false,
-            cardStyleInterpolator: forSlide,
-            // cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-          }}>
-          <RegisterStackScreen.Screen
-            name="Create Account"
-            component={CreateAccountScreen}
-          />
-          <RegisterStackScreen.Screen
-            name="Create Account Mobile"
-            component={CreateAccountMobile}
-          />
-          <RegisterStackScreen.Screen
-            name="Terms Condition"
-            component={TermsConditionScreen}
-          />
-        </RegisterStackScreen.Navigator>
+           <RegisterStackScreen.Navigator
+           screenOptions={{
+             headerShown: false
+           }}>
+           <RegisterStackScreen.Screen
+             name="Create Account"
+             component={CreateAccountScreen}
+           />
+           <RegisterStackScreen.Screen
+             name="Create Account Mobile"
+             component={CreateAccountMobile}
+           />
+            <RegisterStackScreen.Screen
+             name="Terms Condition"
+             component={TermsConditionScreen}
+           />
+         </RegisterStackScreen.Navigator> 
 
         // <FogotPasswordStackScreen.Navigator
         //   screenOptions={{
@@ -332,7 +250,7 @@ const TabNav = props => {
         // </FogotPasswordStackScreen.Navigator>
         :
         <Tab.Navigator
-          tabBarVisible={false}
+        tabBarVisible={false}
           tabBarOptions={{
             keyboardHidesTabBar: true,
             activeTintColor: theme.Theme.tab.ACTIVE_COLOR,
@@ -369,9 +287,6 @@ const TabNav = props => {
               }
               else if (route.name === 'TeleMed') {
                 if (currentScreen === "televet") {
-                  televetIcon = images.televetPurple
-                  fontStyle = theme.Theme.bottomIconColor.darkPurple
-                }else if(currentScreen === "Televet Screen"){
                   televetIcon = images.televetPurple
                   fontStyle = theme.Theme.bottomIconColor.darkPurple
                 }
@@ -413,23 +328,19 @@ const TabNav = props => {
           <Tab.Screen
             name="Home"
             component={HomeStackScreen}
-            options={currentScreen == 'Subscription Option' || currentScreen === 'Select Subcription Option'   || currentScreen == null ? {
-              tabBarVisible: true,
-            } : {
+            options={currentScreen == 'Subscription Option' ||  currentScreen == null ?{
+              tabBarVisible: false,
+            }:{
               tabBarVisible: true,
             }}
-          />
-          <Tab.Screen
-            name="TeleMed"
-            component={TelevetScreenStacks}
           />
           <Tab.Screen
             name="Shopping"
             component={ShoppingScreenStacks}
           />
-           <Tab.Screen
-            name="TimeLine"
-            component={TimeLineScreenStacks}
+          <Tab.Screen
+            name="TeleMed"
+            component={TelevetScreenStacks}
           />
           <Tab.Screen
             name="Community"

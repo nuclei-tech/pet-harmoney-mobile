@@ -23,6 +23,7 @@ import CheckBoxField from './forms/checkBoxField'
 import PlaceOrderCard from "./cards/placeOrderCard";
 import Calendar from "./calendar";
 import ScheduleTitle from "./scheduleTitle";
+import PractitionerCard from './cards/practitionerCard';
 export{
     ReminderButton,
     Button,
@@ -49,4 +50,5 @@ export{
     PlaceOrderCard,
     Calendar,
     ScheduleTitle,
+    PractitionerCard,
 }

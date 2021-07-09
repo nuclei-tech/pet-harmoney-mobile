@@ -5,7 +5,10 @@ import { useSelector } from 'react-redux';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 import { images } from '../constants'
 import {ScheduleTitle} from '../components'
+import { navigate } from '../navigation/navigation';
+
 const { width, height } = Dimensions.get('window');
+
 const MonthCalendar = ({ containerStyle, titleStyle }) => {
     const { theme } = useSelector(state => state.theme);
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -77,12 +80,15 @@ const MonthCalendar = ({ containerStyle, titleStyle }) => {
             onDayPress={(day) => {
                 let date = day.dateString;
                 setSelecetedDay({ [date]: selecetdStyle })
+                
+
             }}
             markedDates={{ ...selecetedDays, ...selecetedDay }}
             renderHeader={(date) => { return <></>}}
-            onMonthChange={(month) => {console.log(month);
+            onMonthChange={(month) => {
                 setCurrentMonth(months[month.month-1]);}}
             enableSwipeMonths={true}
+
 
         />)
     }
@@ -106,9 +112,9 @@ const MonthCalendar = ({ containerStyle, titleStyle }) => {
                 <View>
                     {CalendarItem()}
                 </View>
-                <View style={imageContainer}>
+                <TouchableOpacity style={imageContainer} onPress={()=>{navigate('practitioner')}}>
                     <Image source={images.downArrow} style={image}/> 
-                </View>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -155,7 +161,7 @@ const styles = (theme) => StyleSheet.create({
     textDayStyle:{
         borderColor: '#ffffff', 
         alignItems: "center", 
-        borderWidth: 3, 
+        borderWidth: 4, 
         textAlign:'center',
         fontWeight: '700', 
         borderRadius: 15, 

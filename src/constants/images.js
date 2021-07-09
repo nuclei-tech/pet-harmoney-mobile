@@ -20,6 +20,7 @@ const cover = require('../assets/images/background/cover.png');
 const event = require('../assets/images/background/event.png');
 
 const profile = require('../assets/images/profile.png');
+const practitioner = require('../assets/images/practitioner.png')
 const reminderDetailCheckBoxIcon = require('../assets/images/CHECK_BOX.png');
 const reminderDetailCheckedCheckBoxIcon = require('../assets/images/CHECKED_CHECK_BOX.png');
 const termsDownArrow = require('../assets/images/DOWN_ARROW.png');
@@ -70,6 +71,7 @@ export default {
     searchIcon,
     searchIcon_Black,
     profileIcon,
+    practitioner,
     profileIcon_Black,
     bgBlue,
     bgRed,

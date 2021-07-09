@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, SafeAreaView, Dimensions, TouchableOpacity, Image } from 'react-native';
+import { Text, View, SafeAreaView, Dimensions, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { styles } from './styles';
 import { Layout2, InputField, ScheduleTitle } from '../../components'
 import { images } from '../../constants'
@@ -10,21 +10,22 @@ import { navigate } from '../../navigation/navigation';
 const { width, height } = Dimensions.get('window');
 const TelevetScreen = props => {
   const { theme } = useSelector(state => state.theme);
-  const { container } = styles(props, theme);
+  const { container, containee, inputContainer,textStyle } = styles(props, theme);
   const [city, setCity] = useState('')
+  const {btnMrginTop} = customStyles;
   return (
     <SafeAreaView style={container}>
       <Layout2
         type={'fullScreen'} // {halfScreen, small }
         layoutColor={theme.Theme.colors.PURPLE}
-        headerTitle={'pet harmony'}
+        title={'pet harmony'}
       >
-        <View flex={1} style={{ alignItems: "center", paddingTop: height * 0.05 }}>
+        <View flex={1} style={containee}>
 
           <ScheduleTitle>{"Location"}</ScheduleTitle>
-          <View style={{marginTop: height*0.04}}>
+          <View style={inputContainer}>
             <InputField
-              customMainContanier={{ backgroundColor: theme.Theme.colors.PURPLE, borderColor: '#ffffff', width: 213, height:41 }}
+              customMainContanier={textStyle}
               placeholderColor={theme.Theme.colors.WHITE}
               placeholder={'City'}
               required={true}
@@ -33,7 +34,7 @@ const TelevetScreen = props => {
               onChangeText={text => setCity(text)}
             />
           </View>
-          <TouchableOpacity style={{marginTop:height*0.22}} onPress={()=>{navigate('practitionerType')}}>
+          <TouchableOpacity style={btnMrginTop} onPress={()=>{navigate('practitionerType')}}>
             <Image source={images.leftArrow}/>
           </TouchableOpacity>
         </View>
@@ -43,5 +44,9 @@ const TelevetScreen = props => {
 };
 
 
-
+const customStyles = StyleSheet.create({
+  btnMrginTop:{
+    marginTop:height*0.22
+  }
+});
 export default TelevetScreen;
