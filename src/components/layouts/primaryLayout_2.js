@@ -4,7 +4,7 @@ import { Header } from '../../components'
 import { images } from '../../constants';
 import { useSelector } from 'react-redux';
 
-const window = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
 const Layout2 = (props) => {
     const { theme } = useSelector(state => state.theme);
     const colors = theme.Theme.colors;
@@ -94,7 +94,7 @@ const styles = (props, theme) => StyleSheet.create({
         resizeMode: 'stretch',
         padding: theme.size.CONTAINER_PADDING,
         paddingBottom: 0,
-        height: '95%',
+        height: height*0.85,
         backgroundColor: props.backgroundColor ? props.backgroundColor : theme.colors.WHITE
     },
     samllScreen: {
