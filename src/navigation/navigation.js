@@ -28,6 +28,7 @@ import TelevetScreen from '../screens/televetScreen/televetScreen';
 import ComunityScreen from '../screens/communityScreen/communityScreen';
 import ShoppingScreen from '../screens/shoppingScreen/shoppingScreen'
 import MyPetScreen from '../screens/myPetScreen/myPetScreen'
+import PetVisitDetailScreen from '../screens/petVisitDetailScreen/petVisitDetailScreen';
 
 //Registration screen
 import CreateAccountScreen from '../screens/registrationScreens/createAccountScreen'
@@ -67,6 +68,44 @@ const navigationRef = React.createRef();
 
 export const navigate = (name, params) => {
   navigationRef.current && navigationRef.current.navigate(name, params);
+};
+
+const forSlide = ({ current, next, inverted, layouts: { screen } }) => {
+  const progress = Animated.add(
+    current.progress.interpolate({
+      inputRange: [0, 1],
+      outputRange: [0, 1],
+      extrapolate: 'clamp',
+    }),
+    next
+      ? next.progress.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, 1],
+          extrapolate: 'clamp',
+        })
+      : 0
+  );
+
+  return {
+    cardStyle: {
+      transform: [
+        {
+          translateX: Animated.multiply(
+            progress.interpolate({
+              inputRange: [0, 1, 2],
+              outputRange: [
+                screen.width, // Focused, but offscreen in the beginning
+                0, // Fully focused
+                screen.width * -0.3, // Fully unfocused
+              ],
+              extrapolate: 'clamp',
+            }),
+            inverted
+          ),
+        },
+      ],
+    },
+  };
 };
 
 //Home route
@@ -136,7 +175,8 @@ const ComunityScreenStacks = () => {
   return (
     <ComunityScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       <ComunityScreenStack.Screen
         options={{
@@ -144,6 +184,13 @@ const ComunityScreenStacks = () => {
         }}
         name="community"
         component={ComunityScreen}
+      />
+      <ComunityScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+        }}
+        name="Pet Visit Details"
+        component={PetVisitDetailScreen}
       />
     </ComunityScreenStack.Navigator>
   );
@@ -227,44 +274,6 @@ const TabNav = props => {
   //     restSpeedThreshold: 0.01,
   //   },
   // };
-
-  const forSlide = ({ current, next, inverted, layouts: { screen } }) => {
-    const progress = Animated.add(
-      current.progress.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 1],
-        extrapolate: 'clamp',
-      }),
-      next
-        ? next.progress.interpolate({
-          inputRange: [0, 1],
-          outputRange: [0, 1],
-          extrapolate: 'clamp',
-        })
-        : 0
-    );
-
-    return {
-      cardStyle: {
-        transform: [
-          {
-            translateX: Animated.multiply(
-              progress.interpolate({
-                inputRange: [0, 1, 2],
-                outputRange: [
-                  screen.width, // Focused, but offscreen in the beginning
-                  0, // Fully focused
-                  screen.width * -0.3, // Fully unfocused
-                ],
-                extrapolate: 'clamp',
-              }),
-              inverted
-            ),
-          },
-        ],
-      },
-    };
-  };
 
   return (
     <NavigationContainer ref={navigationRef}

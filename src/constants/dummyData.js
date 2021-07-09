@@ -111,3 +111,67 @@ export const iconTabDetails = [
         title: 'Medication'
     }
 ];
+
+export const profileHistoryData = [
+    {
+        title: 'Give Medications',
+        description: '1pm, July 6',
+        type: 'Virtual'
+    },
+    {
+        title: 'Walk the dog',
+        description: '1pm, July 6',
+        type: 'Visit'
+    },
+    {
+        title: 'Walk the dog',
+        description: '1pm, July 6',
+        type: 'Virtual'
+    },
+    {
+        title: 'Grooming appt',
+        description: '1pm, July 6',
+        type: 'Visit'
+    },
+    {
+        title: 'Virtual Session',
+        description: '1pm, July 6',
+        type: 'Visit'
+    }
+];
+
+export const petVisitDetails = [
+    {
+        title: 'Vet visit',
+        description: 'March 2021',
+    },
+    {
+        title: 'Checkup',
+        description: 'January 2020',
+    },
+    {
+        title: 'Deworming',
+        description: 'December 2020',
+    },
+    {
+        title: 'Vaccinations',
+        description: 'March 2021',
+    },
+    {
+        title: 'Vet visit',
+        description: 'March 2021',
+    },
+    {
+        title: 'Annual checkup',
+        description: 'February 2021',
+    },
+    {
+        title: 'Flea treatment',
+        description: 'March 2021',
+    },
+    {
+        title: 'Vaccinations',
+        description: 'March 2021',
+    }
+   
+];
