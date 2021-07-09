@@ -84,14 +84,14 @@ const ReminderDetailsCard = ({
     )
     
     return (
-        <Card containerStyle={{backgroundColor: backgroundColor,borderColor:mainBoraderColor ? mainBoraderColor :'transparent',margin:0}}>
+        <View containerStyle={{backgroundColor: backgroundColor,borderColor:mainBoraderColor ? mainBoraderColor :'transparent',margin:0}}>
             {headerTitle && <Card.Title style={[headerTitleStyle, {color: headerTitleColor}]}>{headerTitle}</Card.Title>}
             <FlatList
                 keyExtractor={(item, index) => keyExtractor(item,index)}
                 data={dataList}
                 renderItem={(item, index) => renderItem(item,index)}
             />
-        </Card>
+        </View>
 
     )
 

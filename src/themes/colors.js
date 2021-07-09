@@ -11,5 +11,6 @@ export const colors = {
     LIGHT_BLACK: '#636363',
     PINK: '#FF01B4',
     PLACEHOLDER_GRAY:'#E5E5E5',
+    WHITE_SMOKE:'#F2F2F2',
     LIGHT_PURPLE:'rgba(255, 255, 255, 0.17)'
 }

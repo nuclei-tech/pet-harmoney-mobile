@@ -18,6 +18,7 @@ const bgPurple = require('../assets/images/background/BG_Purple.png');
 const bgWhite = require('../assets/images/background/BG_White.png');
 const cover = require('../assets/images/background/cover.png');
 const event = require('../assets/images/background/event.png');
+const bgWhiteBackGround = require('../assets/images/background/bgWhiteBackGround.png')
 
 const profile = require('../assets/images/profile.png');
 const practitioner = require('../assets/images/practitioner.png')
@@ -51,6 +52,7 @@ const communityBlue = require('../assets/images/bottomIcon/COMMUNITY_ICON_BLUE.p
 const petHarmonyLogo = require('../assets/images/commonImage/petHarmonyLogo.png');
 const defaultProfileImage = require('../assets/images/commonImage/defaultProfileImage.png');
 const reminderIcon = require('../assets/images/commonImage/reminderIcon.png');
+const shopingCardIcon = require('../assets/images/commonImage/SHOPPING_ICON.png');
 
 
 //list icons
@@ -123,5 +125,7 @@ export default {
     leftArrow,
     defaultProfileImage,
 
-    reminderIcon
+    reminderIcon,
+    bgWhiteBackGround,
+    shopingCardIcon
 };
