@@ -20,11 +20,11 @@ const CustomButton = (props) => {
 
   switch (buttonType) {
     case 'small':
-      buttonStyles = boarderColor ? type == 'outline' ? [smallButtonStyle, buttonContainStyle, borderColorAdd] : [smallButtonStyle, buttonContainStyle,backGroundAndBorder] : [smallButtonStyle, buttonContainStyle,backGroundAndBorder];
+      buttonStyles = boarderColor ? type == 'outline' ? {...smallButtonStyle, ...buttonContainStyle, ...borderColorAdd} : {...smallButtonStyle, ...buttonContainStyle,...backGroundAndBorder} : {...smallButtonStyle, ...buttonContainStyle,...backGroundAndBorder};
     textStyles = customTextStyle ? [smallTextStyle, customTextStyle] : smallTextStyle;
       break;
     default:
-      buttonStyles = boarderColor ? type == 'outline' ? [buttonStyle, buttonContainStyle, borderColorAdd] : [buttonStyle, buttonContainStyle,backGroundAndBorder] : [buttonStyle, buttonContainStyle,backGroundAndBorder];
+      buttonStyles = boarderColor ? type == 'outline' ? {...buttonStyle, ...buttonContainStyle, ...borderColorAdd} : {...buttonStyle, ...buttonContainStyle,...backGroundAndBorder} : {...buttonStyle, ...buttonContainStyle,...backGroundAndBorder};
       textStyles = customTextStyle ? [textStyle, customTextStyle] : textStyle;
       break;
   }

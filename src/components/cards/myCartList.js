@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text, View, Image, StyleSheet } from 'react-native'
+import { FlatList } from 'react-native-gesture-handler';
 
 // Connect redux store.
 import { useSelector } from 'react-redux';
@@ -32,22 +33,36 @@ const MyCardList = (props) => {
         otherContanier,
     } = styles(theme)
 
-    return (
-        <View style={{ ...myCardListContanier, ...customMyCardListContanier }}>
+    const dataView = ({ item }) => {
+        return(
+              <View style={{ ...myCardListContanier, ...customMyCardListContanier }}>
             <View style={{ ...imageContanier, ...customImageContanier }}>
-                <Image source={data.image} resizeMode={'contain'} />
+                <Image source={item.image} resizeMode={'contain'} />
             </View>
             <View style={{ ...discriptionContanier, ...customDiscriptionContanier }}>
-                <Text style={{ ...description, ...customDescription }}>{data.description}</Text>
-                {data.offer ?
-                    <Text style={{ ...offer, ...customOffer }}>{data.offer}</Text>
+                <Text style={{ ...description, ...customDescription }}>{item.description}</Text>
+                {item.offer ?
+                    <Text style={{ ...offer, ...customOffer }}>{item.offer}</Text>
                     : null}
-                <Text style={{ ...subDiscription, ...customSubDiscription }}>{data.subDiscription}</Text>
+                <Text style={{ ...subDiscription, ...customSubDiscription }}>{item.subDiscription}</Text>
             </View>
             <View style={{ ...otherContanier, ...customOtherContanier }}>
                 <Text style={{ ...change, ...customChange }}>Change</Text>
-                <Text style={{ ...total, ...customTotal }}>${data.price}</Text>
+                <Text style={{ ...total, ...customTotal }}>${item.price}</Text>
             </View>
+        </View>
+        )
+        
+      
+    }
+
+    return (
+        <View style={styles(theme).mainContanier}>
+            <FlatList
+                data={data}
+                renderItem={dataView}
+                keyExtractor={data => data.image}
+            />
         </View>
     )
 }
@@ -95,8 +110,10 @@ const styles = (theme) => StyleSheet.create({
     total: {
         ...theme.Theme.cartListStyles.total,
         marginTop: 3
+    },
+    mainContanier:{ 
+        flex: 1 
     }
-
 })
 
 export default MyCardList

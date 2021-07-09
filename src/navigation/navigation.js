@@ -49,7 +49,7 @@ import RemindSession from '../screens/reminderScreens/reminderSession'
 import Reminders from '../screens/reminderScreens/reminders'
 
 //extra screens
-import MyCart from '../screens/extraScreens/myCartScreen'
+import MyCart from '../screens/myCardScreens/myCartScreen'
 
 
 // Connect redux store.

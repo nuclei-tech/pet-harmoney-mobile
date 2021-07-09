@@ -51,6 +51,7 @@ const communityBlue = require('../assets/images/bottomIcon/COMMUNITY_ICON_BLUE.p
 const petHarmonyLogo = require('../assets/images/commonImage/petHarmonyLogo.png');
 const defaultProfileImage = require('../assets/images/commonImage/defaultProfileImage.png');
 const reminderIcon = require('../assets/images/commonImage/reminderIcon.png');
+const shopingCardIcon = require('../assets/images/commonImage/SHOPPING_ICON.png');
 
 
 //list icons
@@ -121,5 +122,6 @@ export default {
     defaultProfileImage,
 
     reminderIcon,
-    bgWhiteBackGround
+    bgWhiteBackGround,
+    shopingCardIcon
 };

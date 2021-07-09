@@ -399,6 +399,31 @@ const Theme = {
       fontSize: 16,
       lineHeight: 20,
     }
+  },
+
+  //my cart screens
+  myCard:{
+    profileTextStyle:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.DARK_BLUE,
+      fontSize: 18,
+      lineHeight: 21,
+    },
+    subTotalText:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.DARK_BLUE,
+      fontSize: 12,
+      lineHeight: 14,
+    },
+    subPriceText:{
+      fontFamily: 'SourceSansPro-Light',
+      color: colors.DARK_BLUE,
+      fontSize: 22,
+      lineHeight: 24,
+    },
+    customTextStyle:{
+      fontSize: 14,
+    }
   }
 };
 

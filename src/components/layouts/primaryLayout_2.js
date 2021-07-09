@@ -66,7 +66,7 @@ const Layout2 = (props) => {
         <View flex={1}>
             {props.type ? (
                 <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={{ ...backgroundStyle, ...props.customStyle }}>
-                    <Header {...props} />
+                    <Header  {...props} />
                     {props.children}
                 </ImageBackground>
             ) : (<View style={noImage}>
