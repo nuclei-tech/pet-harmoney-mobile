@@ -25,7 +25,7 @@ import Calendar from "./calendar";
 import ScheduleTitle from "./scheduleTitle";
 import ProfileTimeline from "./petProfileTimeline/petProfileTimeline";
 import DetailList from "./cards/newDetailListCard";
-
+import ReceiptScanner from "./vetReceiptScanner/vetReceiptScanner";
 
 export{
     ReminderButton,
@@ -54,5 +54,6 @@ export{
     Calendar,
     ScheduleTitle,
     ProfileTimeline,
-    DetailList
+    DetailList,
+    ReceiptScanner
 }

@@ -32,7 +32,8 @@ const shopping = require('../assets/images/SHOPPING.png');
 const creditCardPurple = require('../assets/images/CREDIT_CARD_PURPLE.png');
 const creditCardGreen = require('../assets/images/CREDIT_CARD_GREEN.png');
 const creditCardOutline = require('../assets/images/CREDIT_CARD_OUTLINE.png');
-
+const doucumentScannerOutline = require('../assets/images/DOCUMENT_SCANNER_OUTLINE.png');
+const doucumentScanner = require('../assets/images/DOCUMENT_SCANNER.png');
 
 //bottom icon
 const televet = require('../assets/images/bottomIcon/TELEVET.png');
@@ -119,5 +120,7 @@ export default {
     downArrow,
     defaultProfileImage,
 
-    reminderIcon
+    reminderIcon,
+    doucumentScannerOutline,
+    doucumentScanner
 };
