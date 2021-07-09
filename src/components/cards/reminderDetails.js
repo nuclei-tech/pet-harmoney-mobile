@@ -17,7 +17,8 @@ const ReminderDetailsCard = ({
     listButtonExist,
     listBtnTitle,
     listBtnColor,
-    listBtnTxtColor
+    listBtnTxtColor,
+    mainBoraderColor
 }) => {
     const {theme} = useSelector(state => state.theme)
     const {checkBoxIcon, headerTitleStyle, titleStyle, descriptionStyle} = styles(theme)
@@ -83,7 +84,7 @@ const ReminderDetailsCard = ({
     )
     
     return (
-        <Card containerStyle={{backgroundColor: backgroundColor}}>
+        <Card containerStyle={{backgroundColor: backgroundColor,borderColor:mainBoraderColor ? mainBoraderColor :'transparent',margin:0}}>
             {headerTitle && <Card.Title style={[headerTitleStyle, {color: headerTitleColor}]}>{headerTitle}</Card.Title>}
             <FlatList
                 keyExtractor={(item, index) => keyExtractor(item,index)}

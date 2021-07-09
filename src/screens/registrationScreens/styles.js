@@ -5,7 +5,8 @@ const { height, width } = Dimensions.get('window')
 export const styles = props =>
   StyleSheet.create({
     container: {
-      flex: 1
+      flex: 1,
+      backgroundColor:'red'
     },
     mainText: {
       ...props.Theme.createAccount.mainText,
@@ -55,21 +56,86 @@ export const styles = props =>
       flex: 7,
       marginLeft: 7
     },
-    breedContanier:{
+    breedContanier: {
       flex: 9
     },
-    genderContanier:{
+    genderContanier: {
       flex: 7
     },
-    spayContanier:{
-      flex: 9, 
-      marginLeft: 7 
+    spayContanier: {
+      flex: 9,
+      marginLeft: 7
     },
-    addButtonContanier:{
-      alignItems: 'center', 
+    addButtonContanier: {
+      alignItems: 'center',
       paddingBottom: 15
     },
-    imageStyle:{
-      borderWidth:0
+    imageStyle: {
+      borderWidth: 0
+    },
+
+    //subscription option
+
+    layoutContanier: {
+      justifyContent: 'center'
+    },
+    topContanier: {
+      marginTop: height * 0.07,
+      alignItems: 'center'
+    },
+    subTextStyle: {
+      ...props.Theme.regSubscription.subTextStyle
+    },
+    subTextValue: {
+      ...props.Theme.regSubscription.subTextValue
+    },
+    payOptionContanier: {
+      marginTop: height * 0.07,
+      alignItems: 'center',
+      borderBottomWidth: 1,
+      paddingBottom: 22,
+      borderColor: props.Theme.colors.WHITE,
+      marginBottom: 20.5
+    },
+    payTextStyle: {
+      ...props.Theme.regSubscription.payTextStyle
+    },
+
+    //teams condition style
+
+    paragraphCardStyle: {
+      marginTop: height * 0.05
+    },
+    checkBoxContainer: {
+      paddingTop: 12.5,
+      marginTop: height * 0.02,
+    },
+
+    //sub option selected
+
+    payOptionContanierText: {
+      marginTop: 18,
+      alignItems: 'center',
+      flex:1
+    },
+    payTextStyle: {
+      ...props.Theme.selectSubscription.payTextStyle
+    },
+    cardMain:{
+      flex: 1, 
+      flexDirection: 'column'
+    },
+    cardInputStyle:{
+      marginTop: 3 
+    },
+    subCardConatanier:{
+      flex: 15, 
+      flexDirection: 'row'
+    },
+    flexExpire:{
+      flex: 9 
+    },
+    flexCvv:{
+      flex: 6
     }
   });
