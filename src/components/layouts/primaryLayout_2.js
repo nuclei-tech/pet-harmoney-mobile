@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions,StatusBar,SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Dimensions, StatusBar, SafeAreaView } from 'react-native';
 import { Header } from '../../components'
 import { images } from '../../constants';
 import { useSelector } from 'react-redux';
@@ -31,7 +31,9 @@ const Layout2 = (props) => {
             case colors.PURPLE:
                 backgroundImage = images.bgPurple;
                 break;
-
+            case colors.WHITE:
+                backgroundImage = images.bgWhiteBackGround;
+                break;
             default:
                 backgroundImage = images.bgRed
                 break;
@@ -61,10 +63,10 @@ const Layout2 = (props) => {
 
     const backgroundStyle = getBackgroundStyle();
     return (
-        <View flex={1}> 
+        <View flex={1}>
             {props.type ? (
-                <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={{...backgroundStyle, ...props.customStyle}}>
-                    <Header {...props}/>
+                <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={{ ...backgroundStyle, ...props.customStyle }}>
+                    <Header {...props} />
                     {props.children}
                 </ImageBackground>
             ) : (<View style={noImage}>

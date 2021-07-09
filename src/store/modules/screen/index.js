@@ -1,7 +1,8 @@
-import {actionType} from './actions.js';
+import { actionType } from './actions.js';
 
 const initialState = {
-  currentScreen: null
+  currentScreen: null,
+  tabColor: 'white'
 };
 
 const reducer = (state = initialState, action) => {
@@ -9,7 +10,12 @@ const reducer = (state = initialState, action) => {
     case actionType.CURRENT_ROUTE:
       return {
         ...state,
-        currentScreen: action.payload
+        currentScreen: action.payload,
+      };
+    case actionType.BOTTON_TAB_COLOR:
+      return {
+        ...state,
+        tabColor: action.payload,
       };
     default:
       return state;
