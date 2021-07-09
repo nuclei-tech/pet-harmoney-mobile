@@ -16,6 +16,7 @@ import ShoppingCardList from './cards/shoppingCartList'
 import SubscriptionCard from './cards/subscriptionCard'
 import Paragraph from './forms/paragraph'
 import SecondaryTopTitleHeader from './SecondaryHeaders/secondaryTopTitleHeader'
+import CreditCardScanner from './creditCardScanner/creditCardScanner'
 import Cover from "./cover";
 import SearchField from './forms/searchField'
 import CheckBoxField from './forms/checkBoxField'
@@ -41,6 +42,7 @@ export{
     ShoppingCardList,
     SubscriptionCard,
     SecondaryTopTitleHeader,
+    CreditCardScanner,
     SearchField,
     CheckBoxField,
     Cover,

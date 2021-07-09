@@ -29,6 +29,10 @@ const records = require('../assets/images/RECORDS_NEW.png');
 const sessions = require('../assets/images/SESSIONS_NEW.png');
 const medication = require('../assets/images/MEDICATION_NEW.png');
 const shopping = require('../assets/images/SHOPPING.png');
+const creditCardPurple = require('../assets/images/CREDIT_CARD_PURPLE.png');
+const creditCardGreen = require('../assets/images/CREDIT_CARD_GREEN.png');
+const creditCardOutline = require('../assets/images/CREDIT_CARD_OUTLINE.png');
+
 
 //bottom icon
 const televet = require('../assets/images/bottomIcon/TELEVET.png');
@@ -45,6 +49,8 @@ const communityBlue = require('../assets/images/bottomIcon/COMMUNITY_ICON_BLUE.p
 //common icon
 const petHarmonyLogo = require('../assets/images/commonImage/petHarmonyLogo.png');
 const defaultProfileImage = require('../assets/images/commonImage/defaultProfileImage.png');
+const reminderIcon = require('../assets/images/commonImage/reminderIcon.png');
+
 
 //list icons
 const cardIcon1 = require('../assets/images/listImages/98UziT@300x1.png')
@@ -105,10 +111,15 @@ export default {
     cardIcon1,
     cardIcon2,
     cardIcon3,
+    creditCardOutline,
+    creditCardGreen,
+    creditCardPurple,
 
     searchRoundIcon,
 
     downArrow,
     leftArrow,
-    defaultProfileImage
+    defaultProfileImage,
+
+    reminderIcon
 };

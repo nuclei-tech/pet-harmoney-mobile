@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { Button, Header, Calendar , ReminderButton, Layout2 } from '../../components'
+import { images } from'../../constants';
+import { Button, Header, Calendar , ReminderButton, Layout2, CreditCardScanner } from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 ;
@@ -16,10 +17,14 @@ const MyPetScreen = props => {
   return (
     <SafeAreaView style={styles.container}>
       <Layout2
-        type={'fullScreen'}
+       type={'fullScreen'}
         layoutColor={theme.Theme.colors.PURPLE} // color is required
       >
         <Header title={'pet harmony'}/>
+        <CreditCardScanner
+          middleImage={images.creditCardPurple}
+        />
+        
         <Calendar/>
       </Layout2>
     </SafeAreaView>

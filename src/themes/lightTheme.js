@@ -249,22 +249,38 @@ const Theme = {
 
 
   //secondary Top Title Header Font Styles
-  secondaryTopStylesMainText: {
-    fontFamily: 'Aqum',
-    fontWeight: 'bold',
-    fontSize: 12,
-    lineHeight: 12,
-    letterSpacing: 3.2,
-    color: colors.WHITE,
-  },
-  secondaryTopStylesSecondaryText: {
-    fontFamily: 'Aqum',
-    fontWeight: 'bold',
-    fontSize: 16,
-    lineHeight: 15,
-    letterSpacing: 3.2,
-    color: colors.WHITE,
-  },
+    secondaryTopStylesMainText: {
+        fontFamily: 'Aqum',
+        fontWeight: 'bold',
+        fontSize: 12,
+        lineHeight: 12,
+        letterSpacing: 3.2,
+        color: colors.WHITE,
+    },
+    secondaryTopStylesSecondaryText: {
+        fontFamily: 'Aqum',
+        fontWeight: 'bold',
+        fontSize: 16,
+        lineHeight: 15,
+        letterSpacing: 3.2,
+        color: colors.WHITE,
+    },
+
+    //credit card scanner fonst and colors
+    titleStyles: {
+      fontFamily: 'SourceSansPro-Regular',
+        fontSize: 16,
+        fontWeight: '300',
+        lineHeight: 20,
+        color: colors.WHITE,
+    },
+    cardTitle: {
+      fontFamily: 'Source Sans Pro',
+        fontSize: 14,
+        fontWeight: '700',
+        lineHeight: 18,
+        color: colors.WHITE
+    },
 
   //search filed style
   searchFieldStyle: {
@@ -332,6 +348,56 @@ const Theme = {
       color: colors.WHITE,
       fontSize: 20,
       lineHeight: 25,
+    }
+  },
+
+  //subscription selected screen
+  selectSubscription: {
+    payTextStyle: {
+      fontFamily: 'SourceSansPro-Regular',
+      color: colors.WHITE,
+      fontSize: 16,
+      lineHeight: 20,
+    }
+  },
+
+  //reminder session screen
+  reminderSession:{
+    profileText:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.WHITE,
+      fontSize: 26,
+      lineHeight: 31,
+    },
+    dayText:{
+      fontFamily: 'SourceSansPro-Light',
+      color: colors.BLUE,
+      fontSize: 64,
+      lineHeight: 76,
+    },
+    timeText:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.BLUE,
+      fontSize: 20,
+      lineHeight: 25,
+    },
+    testAudVid:{
+      fontFamily: 'SourceSansPro-Regular',
+      color: colors.BLUE,
+      fontSize: 12,
+      lineHeight: 15,
+    },
+    remiderProfileText:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.YELLOW,
+      fontSize: 24,
+      lineHeight: 28,
+    },
+    remindAddContent:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.YELLOW,
+      fontSize: 16,
+      lineHeight: 20,
     }
   }
 };
