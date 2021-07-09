@@ -114,3 +114,39 @@ export const profileHistoryData = [
         type: 'Visit'
     }
 ];
+
+export const petVisitDetails = [
+    {
+        title: 'Vet visit',
+        description: 'March 2021',
+    },
+    {
+        title: 'Checkup',
+        description: 'January 2020',
+    },
+    {
+        title: 'Deworming',
+        description: 'December 2020',
+    },
+    {
+        title: 'Vaccinations',
+        description: 'March 2021',
+    },
+    {
+        title: 'Vet visit',
+        description: 'March 2021',
+    },
+    {
+        title: 'Annual checkup',
+        description: 'February 2021',
+    },
+    {
+        title: 'Flea treatment',
+        description: 'March 2021',
+    },
+    {
+        title: 'Vaccinations',
+        description: 'March 2021',
+    }
+   
+];

@@ -44,6 +44,7 @@ const ComunityScreen = (props) => {
 
        <ProfileTimeline 
         tabHistoryDetails={profileHistoryData}
+        historyBtnNavigateScreen={'Pet Visit Details'}
        />
        </View>
       

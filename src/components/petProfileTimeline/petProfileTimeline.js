@@ -6,7 +6,7 @@ import { reminderDetails } from '../../constants'
 
 const { width } = Dimensions.get("window");
 
-const ProfileTimeline = ({tabAboutDetails, tabHistoryDetails}) => {
+const ProfileTimeline = ({tabAboutDetails, tabHistoryDetails, historyBtnNavigateScreen}) => {
     const [selectedIndex, setSelectedIndex] = useState(0) 
     const { theme } = useSelector(state => state.theme);
     const {tabTitlesStyle, tabTitleContainer, aboutStylesLabel, aboutStylesAnswer, historyMainBtnText, historyMainBtnContainer} = styles(theme)
@@ -44,6 +44,7 @@ const ProfileTimeline = ({tabAboutDetails, tabHistoryDetails}) => {
                         listBtnColor={theme.Theme.colors.RED}
                         listBtnTxtColor={theme.Theme.colors.WHITE}
                         listBtnTitle={'Details'}
+                        navigateScreen={historyBtnNavigateScreen}
                     />
                     <Button customTextStyle={historyMainBtnText} buttonContainStyle={historyMainBtnContainer} onPress={btnPressHandler} textColor={theme.Theme.colors.WHITE} title={'Log a Visit'} backgroundColor={theme.Theme.colors.RED} />
                     </View> 
