@@ -24,6 +24,10 @@ import PlaceOrderCard from "./cards/placeOrderCard";
 import Calendar from "./calendar";
 import ScheduleTitle from "./scheduleTitle";
 import PractitionerCard from './cards/practitionerCard';
+import ProfileTimeline from "./petProfileTimeline/petProfileTimeline";
+import DetailList from "./cards/newDetailListCard";
+
+
 export{
     ReminderButton,
     Button,
@@ -51,4 +55,6 @@ export{
     Calendar,
     ScheduleTitle,
     PractitionerCard,
+    ProfileTimeline,
+    DetailList
 }
