@@ -105,7 +105,8 @@ const styles = (theme) => StyleSheet.create({
     },
     whitBackgroundContainer: {
         width: '100%',
-        height: '100%'
+        height: '100%',
+        zIndex: 0
     }
 })
 export default Cover;

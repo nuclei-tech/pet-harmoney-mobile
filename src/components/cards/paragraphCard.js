@@ -38,7 +38,6 @@ const styles = (theme,props) => StyleSheet.create({
         paddingTop: 35,
         paddingBottom: 35,
         width: '100%',
-       // maxHeight: 414,
         backgroundColor: props.cardBackgroundColor, 
         borderColor: props.cardBorderColor
     },
