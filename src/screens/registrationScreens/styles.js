@@ -108,7 +108,22 @@ export const styles = props =>
     },
     checkBoxContainer: {
       paddingTop: 12.5,
-      marginTop: height * 0.02,
+      flex: 0.1,
+      justifyContent:'flex-start',
+      marginTop:height * 0.02,
+      marginBottom:height * 0.01
+    },
+    flexMain:{
+      flex:2
+    },
+    flexSubTop:{
+      flex:1.4
+    },
+    flexSubBottom:{
+      flex:0.6
+    },
+    flexParagraphContent:{
+      flex:1.3
     },
 
     //sub option selected

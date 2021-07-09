@@ -55,7 +55,9 @@ export const styles = props =>
     },
     imageContent:{ 
       flex: 0.4, 
-      justifyContent: 'center' 
+      justifyContent: 'center' ,
+      paddingTop:height*0.05,
+      paddingBottom:height*0.05
     },
     subImageContent:{ 
       alignItems: 'center' 
@@ -67,7 +69,9 @@ export const styles = props =>
       flex: 0.4, 
       flexDirection: 'row',
       justifyContent:'center',
-      alignItems:'center' 
+      alignItems:'center',
+      paddingTop:height*0.04,
+      paddingBottom:height*0.03
     },
     reminderButtonLeft:{
       flex:0.9,
