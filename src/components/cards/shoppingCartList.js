@@ -5,6 +5,7 @@ import { Rating, AirbnbRating } from 'react-native-elements';
 
 // Connect redux store.
 import { useSelector } from 'react-redux';
+import { FlatList } from 'react-native-gesture-handler';
 
 const ShoppingCardList = (props) => {
     const { theme } = useSelector(state => state.theme);
@@ -39,14 +40,15 @@ const ShoppingCardList = (props) => {
         buttonTextStyle,
     } = styles(theme)
 
-    return (
-        <View style={{ ...myCardListContanier, ...customMyCardListContanier }}>
+    itemView = ({item}) =>{
+        return(
+            <View style={{ ...myCardListContanier, ...customMyCardListContanier }}>
             <View style={{ ...imageContanier, ...customImageContanier }}>
-                <Image source={data.image} resizeMode={'contain'} />
+                <Image source={item.image} resizeMode={'contain'} />
             </View>
             <View style={{ ...discriptionContanier, ...customDiscriptionContanier }}>
-                <Text style={{ ...description, ...customDescription }}>{data.description}</Text>
-                <Text style={{ ...total, ...customTotal }}>${data.price}</Text>
+                <Text style={{ ...description, ...customDescription }}>{item.description}</Text>
+                <Text style={{ ...total, ...customTotal }}>${item.price}</Text>
 
                 <View style={{...ratingContent,...customRatingContent}}>
                     <View style={flexContain}>
@@ -66,6 +68,17 @@ const ShoppingCardList = (props) => {
                 customTextStyle={{...buttonTextStyle,...customButtonTextStyle}} buttonContainStyle={{...buttonContanier,...customButtonContanier}} title={'Add to cart'} />
             </View>
         </View>
+        )
+    }
+
+    return (
+      <View>
+           <FlatList
+                data={data}
+                renderItem={itemView}
+                keyExtractor={data => data.image}
+            />
+      </View>
     )
 }
 
