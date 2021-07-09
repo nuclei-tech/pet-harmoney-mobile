@@ -1,3 +1,4 @@
 export const actionType = {
   CURRENT_ROUTE:'CURRENT_ROUTE',
+  BOTTON_TAB_COLOR:'BOTTON_TAB_COLOR'
 };

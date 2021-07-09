@@ -49,6 +49,9 @@ import RemindSession from '../screens/reminderScreens/reminderSession'
 //time line screens
 import Reminders from '../screens/reminderScreens/reminders'
 
+//extra screens
+import MyCart from '../screens/myCardScreens/myCartScreen' 
+import MyCartOrder from '../screens/myCardScreens/myCartOrderScreen'
 
 // Connect redux store.
 import { useSelector, useDispatch } from 'react-redux';
@@ -115,7 +118,7 @@ const HomeStackScreen = () => {
       screenOptions={{
         headerShown: false
       }}>
-      <HomeStack.Screen
+      {/* <HomeStack.Screen
         name={'HomeScreen'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
@@ -142,6 +145,21 @@ const HomeStackScreen = () => {
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={SelectSubOption}
+      /> */}
+
+      {/* <HomeStack.Screen
+        name={'My Cart'}
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        component={MyCart}
+      /> */}
+      <HomeStack.Screen
+        name={'My Cart order'}
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        component={MyCartOrder}
       />
     </HomeStack.Navigator>
   );
@@ -223,7 +241,7 @@ const MyPetScreenStacks = () => {
   );
 };
 
-const TimeLineScreenStacks = () =>{
+const TimeLineScreenStacks = () => {
   return (
     <TimeLineScreenStack.Navigator
       screenOptions={{
@@ -240,7 +258,7 @@ const TimeLineScreenStacks = () =>{
 
 const TabNav = props => {
   const { theme } = useSelector(state => state.theme);
-  const { currentScreen } = useSelector(state => state.screen);
+  const { currentScreen,tabColor } = useSelector(state => state.screen);
 
   const dispatch = useDispatch()
 
@@ -275,6 +293,46 @@ const TabNav = props => {
   //   },
   // };
 
+  
+  const forSlide = ({ current, next, inverted, layouts: { screen } }) => {
+    const progress = Animated.add(
+      current.progress.interpolate({
+        inputRange: [0, 1],
+        outputRange: [0, 1],
+        extrapolate: 'clamp',
+      }),
+      next
+        ? next.progress.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, 1],
+          extrapolate: 'clamp',
+        })
+        : 0
+    );
+
+    return {
+      cardStyle: {
+        transform: [
+          {
+            translateX: Animated.multiply(
+              progress.interpolate({
+                inputRange: [0, 1, 2],
+                outputRange: [
+                  screen.width, // Focused, but offscreen in the beginning
+                  0, // Fully focused
+                  screen.width * -0.3, // Fully unfocused
+                ],
+                extrapolate: 'clamp',
+              }),
+              inverted
+            ),
+          },
+        ],
+      },
+    };
+  };
+
+
   return (
     <NavigationContainer ref={navigationRef}
       onStateChange={() => {
@@ -282,7 +340,6 @@ const TabNav = props => {
         dispatch(currentRoute(currentRouteName))
       }}
     >
-
       {!token ?
         <RegisterStackScreen.Navigator
           screenOptions={{
@@ -328,11 +385,11 @@ const TabNav = props => {
             keyboardHidesTabBar: true,
             activeTintColor: theme.Theme.tab.ACTIVE_COLOR,
             inactiveTintColor: theme.Theme.tab.TAB_TEXT_COLOR,
-            activeBackgroundColor: theme.Theme.tab.TAB_BACKGROUND,
-            inactiveBackgroundColor: theme.Theme.tab.TAB_BACKGROUND,
+            activeBackgroundColor: tabColor,
+            inactiveBackgroundColor: tabColor,
             style: {
-              borderTopColor: theme.Theme.tab.TAB_BACKGROUND,
-              backgroundColor: theme.Theme.tab.TAB_BACKGROUND,
+              borderTopWidth:0,
+              backgroundColor: tabColor,
               elevation: 0,
               shadowOpacity: 0,
             },
@@ -362,7 +419,7 @@ const TabNav = props => {
                 if (currentScreen === "televet") {
                   televetIcon = images.televetPurple
                   fontStyle = theme.Theme.bottomIconColor.darkPurple
-                }else if(currentScreen === "Televet Screen"){
+                } else if (currentScreen === "Televet Screen") {
                   televetIcon = images.televetPurple
                   fontStyle = theme.Theme.bottomIconColor.darkPurple
                 }
@@ -404,7 +461,7 @@ const TabNav = props => {
           <Tab.Screen
             name="Home"
             component={HomeStackScreen}
-            options={currentScreen == 'Subscription Option' || currentScreen === 'Select Subcription Option'   || currentScreen == null ? {
+            options={currentScreen == 'Subscription Option' || currentScreen === 'Select Subcription Option' || currentScreen == null ? {
               tabBarVisible: true,
             } : {
               tabBarVisible: true,
@@ -418,7 +475,7 @@ const TabNav = props => {
             name="Shopping"
             component={ShoppingScreenStacks}
           />
-           <Tab.Screen
+          <Tab.Screen
             name="TimeLine"
             component={TimeLineScreenStacks}
           />
