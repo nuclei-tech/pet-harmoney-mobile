@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import {StyleSheet, View, Text, TouchableOpacity, Animated, Dimensions} from 'react-native'
+import {StyleSheet, View, Text, TouchableOpacity, Animated, Dimensions, Platform} from 'react-native'
 import {useSelector} from 'react-redux'
 import { DetailList, Button } from '../../components'
 import { reminderDetails } from '../../constants'
 
-const { width } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 
 const ProfileTimeline = ({tabAboutDetails, tabHistoryDetails, historyBtnNavigateScreen}) => {
     const [selectedIndex, setSelectedIndex] = useState(0) 
@@ -37,8 +37,6 @@ const ProfileTimeline = ({tabAboutDetails, tabHistoryDetails, historyBtnNavigate
                         titleColor={theme.Theme.colors.RED}
                         descriptionColor={theme.Theme.colors.DARK_BLUE}
                         borderBottomColor={theme.Theme.colors.GREY}
-                        // headerTitleColor={theme.Theme.colors.WHITE}
-                        // headerTitle={'Upcoming Sessions'}
                         dataList={tabHistoryDetails}
                         listButtonExist
                         listBtnColor={theme.Theme.colors.RED}
@@ -122,7 +120,7 @@ const styles = (props) => StyleSheet.create({
         // alignItems: 'flex-start',
         justifyContent: 'space-between',
         paddingVertical: 16,
-        paddingLeft: 15
+        paddingLeft: 15,
     },
     tabTitlesStyle: {
         fontFamily: 'SourceSansPro-Bold',

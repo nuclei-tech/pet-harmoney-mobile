@@ -30,6 +30,7 @@ const ParagrapghCard = (props) => {
 
 const styles = (theme,props) => StyleSheet.create({
     cardContainer: {
+        flex: 1,
         borderRadius: 20,
         borderWidth: 3,
         paddingLeft: 34,
@@ -37,7 +38,7 @@ const styles = (theme,props) => StyleSheet.create({
         paddingTop: 35,
         paddingBottom: 35,
         width: '100%',
-        minHeight: 414,
+        maxHeight: 414,
         backgroundColor: props.cardBackgroundColor, 
         borderColor: props.cardBorderColor
     },

@@ -108,7 +108,7 @@ const ReminderDetailsCard = ({
 
 const styles = (props) => StyleSheet.create({
     listMainContainer:{
-        marginTop: 0, 
+        marginTop: 20, 
         marginBottom: 20
     },
     checkBoxIcon: { width: 15, height: 15 },

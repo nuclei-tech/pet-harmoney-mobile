@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image, ImageBackground, TouchableOpacity, Dimensions, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, Image, ImageBackground, TouchableOpacity, Dimensions, TouchableHighlight, Platform } from 'react-native';
 import { colors, size } from '../../theme'
 import { ProfilePicture, Layout2, ParagraphCard, DetailList, ReminderDetailCard} from '../../components'
 // Connect redux store.
@@ -29,8 +29,8 @@ const PetVisitDetails = (props) => {
             type={'halfScreen'}
             layoutColor={theme.Theme.colors.RED}
         >
-          <View style={{alignItems: 'center', justifyContent: 'center', paddingHorizontal: 15}}>
-            <View style={{ zIndex: 2, marginTop: 0}}>
+          <View style={{alignItems: 'center', paddingHorizontal: 15}}>
+            <View style={{ zIndex: 2}}>
               <ProfilePicture />
             </View>
             <View style={{position: 'absolute', zIndex: 0, top: 70, width: '100%'}}>
@@ -38,7 +38,7 @@ const PetVisitDetails = (props) => {
                     cardBackgroundColor={theme.Theme.colors.WHITE}
                     cardBorderColor={theme.Theme.colors.RED}
                     customCardContainer={{
-                      maxHeight: 515,
+                      maxHeight: Platform.OS === 'android' ? height * 0.65 : height * 0.6,
                       paddingTop: 70,
                       paddingLeft: 28,
                       paddingRight: 28,
@@ -54,6 +54,9 @@ const PetVisitDetails = (props) => {
                         headerTitleColor={theme.Theme.colors.RED}
                         headerTitle={'Bella’s Visit Details'}
                         dataList={petVisitDetails}
+                        customListMainContainerStyles={{
+                          marginTop: 0
+                        }}
                         customListItemContainerStyle={{
                           paddingVertical: 15,
                           paddingHorizontal: 22
