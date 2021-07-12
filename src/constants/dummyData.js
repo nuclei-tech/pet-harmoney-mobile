@@ -195,3 +195,61 @@ export const petVisitDetails = [
     }
    
 ];
+
+export const petsTabDetails = [
+    {
+        image: images.profile,
+        name: 'Kiki'
+    },
+    {
+        image: images.profile,
+        name: 'Joanna'
+    },
+    {
+        image: images.profile,
+        name: 'Kip'
+    },
+];
+
+export const communityDetails = [
+    {
+        image: images.profile,
+        title: 'Leia Cortez',
+        time: '5min',
+        subTitle: 'Post text showing previews of what a pet community feed could show...'
+    },
+    {
+        image: images.profile,
+        title: 'Winnie the Golden',
+        time: '15min',
+        subTitle: 'Posts can also be made on behalf of pets'
+    },
+    {
+        image: images.profile,
+        title: 'Leia Cortez',
+        time: '25min',
+        subTitle: 'Post text showing previews of what a pet community feed could show...'
+    },
+    {
+        image: images.profile,
+        title: 'Winnie the Golden',
+        time: '1hr',
+        subTitle: 'Posts can also be made on behalf of pets'
+    },
+];
+
+export const petTimelineDetails = [
+    {
+        title: 'Walk the dog',
+        description: 'Mondays at 10am',
+    },
+    {
+        title: 'Televet visit',
+        description: 'Dailys, 8am',
+    },
+    {
+        title: 'Walk the dog',
+        description: 'Dailys, 7pm',
+    },
+    
+];
