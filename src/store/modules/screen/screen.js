@@ -23,6 +23,9 @@ export const getColorCode = (route) => {
         case 'My Cart order':
           dispatch({ type: actionType.BOTTON_TAB_COLOR, payload: colors.WHITE_SMOKE })
           break;
+        case 'Shopping':
+          dispatch({ type: actionType.BOTTON_TAB_COLOR, payload: colors.WHITE_SMOKE })
+          break;
         default:
           dispatch({ type: actionType.BOTTON_TAB_COLOR, payload: colors.WHITE })
           break;

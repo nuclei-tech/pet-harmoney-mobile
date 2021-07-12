@@ -430,6 +430,16 @@ const Theme = {
       fontSize: 14,
       lineHeight: 18,
     }
+  },
+
+  //shopping
+  shoppoing:{
+    topContainText:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.DARK_BLUE,
+      fontSize: 18,
+      lineHeight: 21
+    }
   }
 };
 

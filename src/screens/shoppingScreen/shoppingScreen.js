@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux';
 const ShoppingScreen = props => {
 
   const { theme } = useSelector(state => state.theme);
-  const { container } = styles(theme)
+  const { container,topContain,topContainText,subBottomContanier } = styles(theme)
 
   return (
     <View style={container}>
@@ -29,8 +29,16 @@ const ShoppingScreen = props => {
 
         <View flex={2}>
           <View flex={1.6}>
-                <SearchField/>
-                <ShoppingCardList data={myCardList}/>
+            <View flex={0.1} style={topContain}>
+            <Text style={topContainText}>Shooping</Text>
+            </View>
+            <View flex={0.2}>
+            <SearchField/>
+            </View>
+              <View flex={1.3} style={subBottomContanier}>
+              <ShoppingCardList data={myCardList}  buttonBackground={theme.Theme.colors.BLUE}
+                  buttonTextColor={theme.Theme.colors.WHITE}/>
+              </View>
           </View>
           <View flex={0.4}>
           </View>
