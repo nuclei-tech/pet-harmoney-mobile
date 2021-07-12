@@ -482,7 +482,7 @@ const Theme = {
 
 
 
-   //reminder session screen
+   //rate session screen
    rateSession:{
     rateTopText:{
       fontFamily: 'SourceSansPro-Bold',
@@ -498,6 +498,16 @@ const Theme = {
     }
   },
 
+
+   //chat session screen
+   chatSession:{
+    chatContent:{
+      fontFamily: 'SourceSansPro-Regular',
+      color: colors.WHITE,
+      fontSize: 14,
+      lineHeight: 18,
+    },
+  },
 
 
 

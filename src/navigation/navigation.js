@@ -59,6 +59,7 @@ import RemindSession from '../screens/reminderScreens/reminderSession'
 //time line screens
 import Reminders from '../screens/reminderScreens/reminders'
 import RateSession from '../screens/rateSessionScreen/rateSession'
+import SessionChat from '../screens/sessionChatScreen/sessionChat'
 
 //extra screens
 import MyCart from '../screens/myCardScreens/myCartScreen' 
@@ -300,9 +301,13 @@ const TimeLineScreenStacks = () => {
         name="Reminders"
         component={Reminders}
       /> */}
-       <TimeLineScreenStack.Screen
+       {/* <TimeLineScreenStack.Screen
         name="Rate session"
         component={RateSession}
+      /> */}
+        <TimeLineScreenStack.Screen
+        name="Session chat"
+        component={SessionChat}
       />
     </TimeLineScreenStack.Navigator>
   );
