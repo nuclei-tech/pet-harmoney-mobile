@@ -79,7 +79,7 @@ const styles = (theme, props) => StyleSheet.create({
         // paddingVertical:4
     },
     locationStyle: {
-        fontFamily: 'SourceSansPro-Regular',
+        fontFamily: 'SourceSansPro-Light',
         fontWeight: '300',
         fontSize: 12,
         lineHeight: 15,

@@ -33,7 +33,7 @@ const PractitionerScren = props => {
       >
         <View flex={1} style={containee}>
 
-          <ScheduleTitle>{"Choose an available practitioner"}</ScheduleTitle>
+          <ScheduleTitle customTextSyle={{opacity:0.5}}>{"Choose an available practitioner"}</ScheduleTitle>
           <View style={ListContainer}>
             <FlatList
               data={practitioners}
