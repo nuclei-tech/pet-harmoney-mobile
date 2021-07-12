@@ -28,6 +28,7 @@ import TelevetScreen from '../screens/televetScreen/televetScreen';
 import CalenderScreen from '../screens/televetScreen/calenderScreen.js'; 
 import PractitionerTypeScren from '../screens/televetScreen/PractitionerTypeScren.js'; 
 import PractitionerScren from '../screens/televetScreen/PractitionerScren.js'; 
+import SubscriptionScren from '../screens/televetScreen/SubscriptionScren.js'; 
 
 import ComunityScreen from '../screens/communityScreen/communityScreen';
 import ShoppingScreen from '../screens/shoppingScreen/shoppingScreen'
@@ -181,7 +182,7 @@ const TelevetScreenStacks = () => {
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         name="televet"
-        component={PractitionerScren}
+        component={SubscriptionScren}//{TelevetScreen}
       />
       <TelevetScreenStack.Screen
         options={{
@@ -203,6 +204,13 @@ const TelevetScreenStacks = () => {
         }}
         name="practitioner"
         component={PractitionerScren}
+      />
+      <TelevetScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
+        }}
+        name="subscription"
+        component={SubscriptionScren}
       />
     </TelevetScreenStack.Navigator>
   );

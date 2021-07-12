@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { he } from 'date-fns/locale';
 
 const { width, height } = Dimensions.get('window');
-const PractitionerScren = props => {
+const SubscriptionScren = props => {
 
   const { theme } = useSelector(state => state.theme);
   const [selectedId, setSelectedId] = useState(null);
@@ -33,7 +33,7 @@ const PractitionerScren = props => {
       >
         <View flex={1} style={containee}>
 
-          <ScheduleTitle>{"Choose an available practitioner"}</ScheduleTitle>
+          <ScheduleTitle>{"Virtual Session with Dr Shayna McAfee, DVM"}</ScheduleTitle>
           <View style={ListContainer}>
             <FlatList
               data={practitioners}
@@ -63,4 +63,4 @@ const customStyles = StyleSheet.create({
 });
 
 
-export default PractitionerScren;
+export default SubscriptionScren;

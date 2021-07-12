@@ -54,7 +54,7 @@ let AppWrapper = connect(mapStateToProps, mapDispatchToProps)(IndexApp);
 
 const App = () => {
   useEffect(()=>{
-    SplashScreen.hide();
+    // SplashScreen.hide();
   },[])
   return (
     <Provider store={store}>
