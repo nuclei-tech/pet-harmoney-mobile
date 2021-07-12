@@ -8,6 +8,7 @@ const ParagrapghCard = (props) => {
     const { theme } = useSelector(state => state.theme)
     const { 
         customCardContainer,
+        customCardTitleStyles,
         title,
         imageExists,
         children } = props
@@ -15,7 +16,7 @@ const ParagrapghCard = (props) => {
 
     return (
         <View style={{...cardContainer,...customCardContainer}}>
-            {title && <Text style={[cardTitle]}>{title}</Text>}
+            {title && <Text style={[cardTitle, customCardTitleStyles]}>{title}</Text>}
             {children}
             {imageExists && <View style={imageContainer}>
                 <Image

@@ -26,6 +26,8 @@ import ScheduleTitle from "./scheduleTitle";
 import PractitionerCard from './cards/practitionerCard';
 import ProfileTimeline from "./petProfileTimeline/petProfileTimeline";
 import DetailList from "./cards/newDetailListCard";
+import MyPetsTabs from "./myPetsTabBar/myPetsTabBar";
+import CommunityList from "./cards/communityList";
 import ReceiptScanner from "./vetReceiptScanner/vetReceiptScanner";
 
 export{
@@ -57,5 +59,7 @@ export{
     PractitionerCard,
     ProfileTimeline,
     DetailList,
+    MyPetsTabs,
+    CommunityList,
     ReceiptScanner
 }
