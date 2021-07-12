@@ -5,14 +5,14 @@ import { useSelector } from 'react-redux';
 
 const CommunityList = ({communityDetails}) => {
     const {theme} = useSelector(state => state.theme)
-    const {titleStyle, subTitleStyle, container, image} = styles(theme)
+    const {titleStyle, subTitleStyle, container, image, listContentStyle} = styles(theme)
 
     const keyExtractor = (item,index) => index.toString();
 
     const renderItem = ({item,index}) => (
         <ListItem containerStyle={[container,communityDetails.length - 1 !== index && { borderBottomWidth: 0.5}]} key={index} bottomDivider={communityDetails.length - 1 !== index ? true : false}>
               <Image style={image} source={item.image} />
-              <ListItem.Content style={{ marginLeft: -7}}>
+              <ListItem.Content style={listContentStyle}>
                 <ListItem.Title style={titleStyle}>{item.title} | {item.time}</ListItem.Title>
                 <ListItem.Subtitle style={subTitleStyle}>{item.subTitle}</ListItem.Subtitle>
               </ListItem.Content>
@@ -57,6 +57,9 @@ const styles = (props) => StyleSheet.create({
         height: 29, 
         width: 29, 
         borderRadius: 30,
+    },
+    listContentStyle: {
+      marginLeft: -7
     }
 })
 
