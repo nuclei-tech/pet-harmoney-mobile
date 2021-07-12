@@ -9,7 +9,8 @@ import {
   Text,
   Dimensions,
   Keyboard,
-  Image
+  Image,
+  Animated
 } from 'react-native';
 import { colors } from '../themes/colors.js'
 import { Header } from '../components'
@@ -33,6 +34,8 @@ import ComunityScreen from '../screens/communityScreen/communityScreen';
 import ShoppingScreen from '../screens/shoppingScreen/shoppingScreen'
 import MyPetScreen from '../screens/myPetScreen/myPetScreen'
 import PetVisitDetailScreen from '../screens/petVisitDetailScreen/petVisitDetailScreen';
+import VetReceiptScanScreen from '../screens/vetReceiptScanScreen/vetReceiptScanScreen';
+
 
 //Registration screen
 import CreateAccountScreen from '../screens/registrationScreens/createAccountScreen'
@@ -181,7 +184,7 @@ const TelevetScreenStacks = () => {
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         name="televet"
-        component={PractitionerScren}
+        component={TelevetScreen}
       />
       <TelevetScreenStack.Screen
         options={{
@@ -228,6 +231,14 @@ const ComunityScreenStacks = () => {
         name="Pet Visit Details"
         component={PetVisitDetailScreen}
       />
+      <ComunityScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+        }}
+        name="Vet Receipt Scan"
+        component={VetReceiptScanScreen}
+      />
+      
     </ComunityScreenStack.Navigator>
   );
 };

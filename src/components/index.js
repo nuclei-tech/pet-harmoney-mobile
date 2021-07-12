@@ -28,6 +28,7 @@ import ProfileTimeline from "./petProfileTimeline/petProfileTimeline";
 import DetailList from "./cards/newDetailListCard";
 import MyPetsTabs from "./myPetsTabBar/myPetsTabBar";
 import CommunityList from "./cards/communityList";
+import ReceiptScanner from "./vetReceiptScanner/vetReceiptScanner";
 
 export{
     ReminderButton,
@@ -59,5 +60,6 @@ export{
     ProfileTimeline,
     DetailList,
     MyPetsTabs,
-    CommunityList
+    CommunityList,
+    ReceiptScanner
 }
