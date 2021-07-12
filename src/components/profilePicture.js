@@ -15,7 +15,7 @@ const ProfilePicture = ({ customStyle,customImage,removeDefualtStyle }) => {
     return (
         <View >
             <TouchableOpacity onPress={changeProfileImage} >
-                <Image resizeMode={'contain'}  source={customImage ? customImage :images.profile} style={removeDefualtStyle ?{customStyle } :{ ...styles(theme).proPic, ...customStyle }} />
+                <Image resizeMode={'contain'}  source={customImage ? customImage :images.profile} style={removeDefualtStyle ? customStyle :{ ...styles(theme).proPic, ...customStyle }} />
             </TouchableOpacity>
         </View>
     );

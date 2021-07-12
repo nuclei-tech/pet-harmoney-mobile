@@ -3,6 +3,7 @@ import {StyleSheet, View, Text, TouchableOpacity, Animated, Dimensions, Platform
 import {useSelector} from 'react-redux'
 import { DetailList, Button } from '../../components'
 import { reminderDetails } from '../../constants'
+import {navigate} from '../../navigation/navigation'
 
 const { width, height } = Dimensions.get("window");
 
@@ -12,7 +13,7 @@ const ProfileTimeline = ({tabAboutDetails, tabHistoryDetails, historyBtnNavigate
     const {tabTitlesStyle, tabTitleContainer, aboutStylesLabel, aboutStylesAnswer, historyMainBtnText, historyMainBtnContainer} = styles(theme)
 
     const btnPressHandler = () => {
-        console.warn('clickaaaad');
+        navigate('Vet Receipt Scan')
     }
 
     const tabViewHandler = (selectedIndex) => {
