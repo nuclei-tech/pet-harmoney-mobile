@@ -10,7 +10,7 @@ import { images, profileHistoryData } from '../../constants';
 
 const { height, width } = Dimensions.get('window');
 
-const ComunityScreen = (props) => {
+const PetDetailTimelineScreen = (props) => {
   const [index, setIndex] = useState(1)
   const { theme } = useSelector(state => state.theme);
 
@@ -34,7 +34,7 @@ const ComunityScreen = (props) => {
   } = styles(theme.Theme);
   return (
     <SafeAreaView style={container}>
-     {/* <Cover
+     <Cover
       coverImage={images.cover}
       name={'Bella Emerson'}
       description={'just a happy little pomeranian'}
@@ -48,8 +48,7 @@ const ComunityScreen = (props) => {
        />
        </View>
       
-     </Cover> */}
-     <Text>Community screen</Text>
+     </Cover>
     </SafeAreaView>
   );
 };
@@ -92,4 +91,4 @@ const styles = (theme) => StyleSheet.create({
 });
 
 
-export default ComunityScreen;
+export default PetDetailTimelineScreen;

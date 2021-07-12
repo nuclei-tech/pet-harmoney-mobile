@@ -35,6 +35,7 @@ import ShoppingScreen from '../screens/shoppingScreen/shoppingScreen'
 import MyPetScreen from '../screens/myPetScreen/myPetScreen'
 import PetVisitDetailScreen from '../screens/petVisitDetailScreen/petVisitDetailScreen';
 import VetReceiptScanScreen from '../screens/vetReceiptScanScreen/vetReceiptScanScreen';
+import PetDetailTimelineScreen from '../screens/petDetailTimelineScreen/petDetailTimelineScreen';
 
 
 //Registration screen
@@ -124,7 +125,8 @@ const HomeStackScreen = () => {
   return (
     <HomeStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       <HomeStack.Screen
         name={'HomeScreen'}
@@ -132,6 +134,27 @@ const HomeStackScreen = () => {
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={HomeScreen}
+      />
+      <ComunityScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+        }}
+        name="Pet Details Timeline"
+        component={PetDetailTimelineScreen}
+      />
+       <ComunityScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+        }}
+        name="Pet Visit Details"
+        component={PetVisitDetailScreen}
+      />
+      <ComunityScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+        }}
+        name="Vet Receipt Scan"
+        component={VetReceiptScanScreen}
       />
        <HomeStack.Screen
         name={'Pet registation'}
@@ -177,7 +200,8 @@ const TelevetScreenStacks = () => {
   return (
     <TelevetScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       <TelevetScreenStack.Screen
         options={{
@@ -224,20 +248,7 @@ const ComunityScreenStacks = () => {
         name="community"
         component={ComunityScreen}
       />
-      <ComunityScreenStack.Screen
-        options={{
-          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
-        }}
-        name="Pet Visit Details"
-        component={PetVisitDetailScreen}
-      />
-      <ComunityScreenStack.Screen
-        options={{
-          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
-        }}
-        name="Vet Receipt Scan"
-        component={VetReceiptScanScreen}
-      />
+     
       
     </ComunityScreenStack.Navigator>
   );

@@ -26,7 +26,8 @@ const MyPetsTab = ({
                             <View style={{alignItems: 'center'}}>
                                
                                 <ProfilePicture
-                                        useForTab
+                                        useInTabs
+                                        useInTabsNavigationScreen={'Pet Details Timeline'}
                                         petImage={item.image}
                                         customStyle={proPicStyles}
                                 />
