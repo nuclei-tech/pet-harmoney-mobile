@@ -58,6 +58,7 @@ import RemindSession from '../screens/reminderScreens/reminderSession'
 
 //time line screens
 import Reminders from '../screens/reminderScreens/reminders'
+import RateSession from '../screens/rateSessionScreen/rateSession'
 
 //extra screens
 import MyCart from '../screens/myCardScreens/myCartScreen' 
@@ -75,6 +76,7 @@ const ComunityScreenStack = createStackNavigator();
 const TelevetScreenStack = createStackNavigator();
 const MyPetScreenStack = createStackNavigator();
 const RegisterStackScreen = createStackNavigator()
+const TimeLineScreenStack = createStackNavigator()
 const FogotPasswordStackScreen = createStackNavigator()
 
 const navigationRef = React.createRef();
@@ -294,9 +296,13 @@ const TimeLineScreenStacks = () => {
       screenOptions={{
         headerShown: false
       }}>
-      <TimeLineScreenStack.Screen
+      {/* <TimeLineScreenStack.Screen
         name="Reminders"
         component={Reminders}
+      /> */}
+       <TimeLineScreenStack.Screen
+        name="Rate session"
+        component={RateSession}
       />
     </TimeLineScreenStack.Navigator>
   );
