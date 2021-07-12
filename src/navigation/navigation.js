@@ -185,7 +185,7 @@ const TelevetScreenStacks = () => {
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         name="televet"
-        component={SubscriptionScren}//{TelevetScreen}
+        component={TelevetScreen}
       />
       <TelevetScreenStack.Screen
         options={{
@@ -209,9 +209,7 @@ const TelevetScreenStacks = () => {
         component={PractitionerScren}
       />
       <TelevetScreenStack.Screen
-        options={{
-          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
-        }}
+        
         name="subscription"
         component={SubscriptionScren}
       />
