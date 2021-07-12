@@ -182,7 +182,7 @@ const TelevetScreenStacks = () => {
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         name="televet"
-        component={PractitionerScren}
+        component={TelevetScreen}
       />
       <TelevetScreenStack.Screen
         options={{
