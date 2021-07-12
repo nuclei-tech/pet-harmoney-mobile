@@ -13,7 +13,7 @@ const ScheduleTitle = (props) => {
     return (
         <View >
           
-                <Text style={heading}>{props.children}</Text>
+                <Text style={{...heading, ...props.customTextSyle}}>{props.children}</Text>
                
         </View>
     );

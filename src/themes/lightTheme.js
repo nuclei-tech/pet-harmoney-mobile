@@ -400,7 +400,21 @@ const Theme = {
       lineHeight: 20,
     }
   },
-
+  //document scanner
+  titleStyles: {
+    fontFamily: 'SourceSansPro-Regular',
+      fontSize: 16,
+      fontWeight: '300',
+      lineHeight: 20,
+      color: colors.WHITE,
+  },
+  cardTitle: {
+    fontFamily: 'Source Sans Pro',
+      fontSize: 14,
+      fontWeight: '700',
+      lineHeight: 18,
+      color: colors.WHITE
+  },
   //my cart screens
   myCard:{
     profileTextStyle:{
