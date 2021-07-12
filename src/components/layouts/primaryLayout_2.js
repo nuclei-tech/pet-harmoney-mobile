@@ -70,6 +70,7 @@ const Layout2 = (props) => {
                     {props.children}
                 </ImageBackground>
             ) : (<View style={noImage}>
+                 <Header  {...props} />
                 {props.children}
             </View>)}
 

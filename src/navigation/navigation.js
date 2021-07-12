@@ -29,6 +29,7 @@ import TelevetScreen from '../screens/televetScreen/televetScreen';
 import CalenderScreen from '../screens/televetScreen/calenderScreen.js'; 
 import PractitionerTypeScren from '../screens/televetScreen/PractitionerTypeScren.js'; 
 import PractitionerScren from '../screens/televetScreen/PractitionerScren.js'; 
+import SubscriptionScren from '../screens/televetScreen/SubscriptionScren.js'; 
 
 import ComunityScreen from '../screens/communityScreen/communityScreen';
 import ShoppingScreen from '../screens/shoppingScreen/shoppingScreen'
@@ -230,6 +231,11 @@ const TelevetScreenStacks = () => {
         }}
         name="practitioner"
         component={PractitionerScren}
+      />
+      <TelevetScreenStack.Screen
+        
+        name="subscription"
+        component={SubscriptionScren}
       />
     </TelevetScreenStack.Navigator>
   );

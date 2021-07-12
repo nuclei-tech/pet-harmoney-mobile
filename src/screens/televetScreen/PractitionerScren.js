@@ -19,9 +19,9 @@ const PractitionerScren = props => {
   
   const renderItem = ({item}) => {
     return (
-      <View>
+      <TouchableOpacity onPress={()=>{navigate('subscription')}}>
         <PractitionerCard item={item} />
-      </View>
+      </TouchableOpacity>
     )
   }
   return (

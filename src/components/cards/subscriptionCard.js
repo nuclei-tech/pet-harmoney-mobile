@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, Image, StyleSheet } from 'react-native'
+import { Text, View, Image,TouchableOpacity, StyleSheet } from 'react-native'
 
 // Connect redux store.
 import { useSelector } from 'react-redux';
@@ -13,7 +13,7 @@ const SubscriptionCard = (props) => {
     return (
         <View style={{ ...mainCardContanier, ...customMainCardContanier }}>
             <Text style={{ ...mainTextStyle, ...customMainTextStyle }}>{title}</Text>
-            <View style={{ ...subCardContanier, ...customSubCardContanier }}>
+            <TouchableOpacity style={{ ...subCardContanier, ...customSubCardContanier }}>
                 <Text style={{ ...contentTitleStyle, ...customContentTitleStyle }}>{contentTitle}</Text>
                 <View style={{ ...flexMainCard, ...customFlexMainCard }}>
                     <View style={{ ...flexSubTopMain, ...customFlexTopSubMain }}>
@@ -26,7 +26,7 @@ const SubscriptionCard = (props) => {
                     </View>
 
                 </View>
-            </View>
+            </TouchableOpacity>
         </View>
     )
 }
