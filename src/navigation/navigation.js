@@ -40,6 +40,7 @@ import CreateAccountMobile from '../screens/registrationScreens/createAccountMob
 import TermsConditionScreen from '../screens/registrationScreens/termsConditionScreen'
 import PetRegisterForm from '../screens/registrationScreens/petRegisterForm'
 import SubscriptionOption from '../screens/registrationScreens/subscriptionOption'
+import SelectSubOption from '../screens/registrationScreens/subscriptionSelectScreen'
 
 //forgotPassword screen
 import EmailEnterScreen from '../screens/forgotPasswordScreens/emailEnterScreen'
@@ -122,7 +123,7 @@ const HomeStackScreen = () => {
       screenOptions={{
         headerShown: false
       }}>
-      {/* <HomeStack.Screen
+      <HomeStack.Screen
         name={'HomeScreen'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
@@ -149,7 +150,7 @@ const HomeStackScreen = () => {
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={SelectSubOption}
-      /> */}
+      />
 
       {/* <HomeStack.Screen
         name={'My Cart'}
@@ -157,14 +158,14 @@ const HomeStackScreen = () => {
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={MyCart}
-      /> */}
-      <HomeStack.Screen
+      />
+      {/* <HomeStack.Screen
         name={'My Cart order'}
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={MyCartOrder}
-      />
+      /> */}
     </HomeStack.Navigator>
   );
 };
@@ -480,13 +481,13 @@ const TabNav = props => {
             options={currentScreen == 'Subscription Option' || currentScreen === 'Select Subcription Option' || currentScreen == null ? {
               tabBarVisible: true,
             } : {
-              tabBarVisible: false,
+              tabBarVisible: true,
             }}
           />
-          <Tab.Screen
+          {/* <Tab.Screen
             name="Shopping"
             component={ShoppingScreenStacks}
-          />
+          /> */}
           <Tab.Screen
             name="TeleMed"
             component={TelevetScreenStacks}

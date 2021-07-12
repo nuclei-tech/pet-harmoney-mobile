@@ -2,9 +2,19 @@ import { StyleSheet } from 'react-native';
 
 export const styles = props =>
   StyleSheet.create({
-    // mainText: {
-    //   ...props.Theme.createAccount.mainText,
-    //   marginTop: 31,
-    //   marginBottom: 31,
-    // },
+    container: {
+      flex: 1
+    },
+    topContain:{
+      alignSelf:'center',
+      marginTop:10,
+      marginBottom:10,
+      marginTop:21
+    },
+    topContainText:{
+     ...props.Theme.shoppoing.topContainText
+    },
+    subBottomContanier:{
+      marginTop:41
+    }
   });
