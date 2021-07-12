@@ -9,7 +9,8 @@ import {
   Text,
   Dimensions,
   Keyboard,
-  Image
+  Image,
+  Animated
 } from 'react-native';
 import { colors } from '../themes/colors.js'
 import { Header } from '../components'
