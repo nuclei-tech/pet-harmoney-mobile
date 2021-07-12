@@ -54,6 +54,8 @@ const petHarmonyLogo = require('../assets/images/commonImage/petHarmonyLogo.png'
 const defaultProfileImage = require('../assets/images/commonImage/defaultProfileImage.png');
 const reminderIcon = require('../assets/images/commonImage/reminderIcon.png');
 const shopingCardIcon = require('../assets/images/commonImage/SHOPPING_ICON.png');
+const starIcon = require('../assets/images/commonImage/StarIcon.png');
+const starIconEmpty = require('../assets/images/commonImage/StarEmpty.png');
 
 
 //list icons
@@ -131,5 +133,7 @@ export default {
     doucumentScanner,
 
     bgWhiteBackGround,
-    shopingCardIcon
+    shopingCardIcon,
+    starIcon,
+    starIconEmpty
 };

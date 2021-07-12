@@ -478,7 +478,32 @@ const Theme = {
         lineHeight: 25,
         alignSelf: 'center',
         color: colors.WHITE,
-  }
+  },
+
+
+
+   //reminder session screen
+   rateSession:{
+    rateTopText:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.YELLOW,
+      fontSize: 24,
+      lineHeight: 28,
+    },
+    commentText:{
+      fontFamily: 'SourceSansPro-Light',
+      color: colors.BLACK,
+      fontSize: 14,
+      lineHeight: 18,
+    }
+  },
+
+
+
+
+
+
+
 };
 
 export default { Theme };
