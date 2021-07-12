@@ -28,6 +28,7 @@ const PetVisitDetails = (props) => {
         <Layout2
             type={'halfScreen'}
             layoutColor={theme.Theme.colors.RED}
+            title={'PET HARMONY'}
         >
           <View style={{alignItems: 'center', paddingHorizontal: 15}}>
             <View style={{ zIndex: 2}}>
