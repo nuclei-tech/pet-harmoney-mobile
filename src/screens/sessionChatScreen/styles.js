@@ -100,6 +100,7 @@ export const styles = props =>
       borderColor:props.Theme.colors.WHITE
     },
     chatMainContent:{
+      marginHorizontal: 10,
       borderTopColor:props.Theme.colors.WHITE,
       borderTopWidth:0.5,
       borderBottomColor:props.Theme.colors.WHITE,

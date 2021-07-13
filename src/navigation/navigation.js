@@ -257,8 +257,13 @@ const ComunityScreenStacks = () => {
         name="community"
         component={ComunityScreen}
       />
-     
-      
+     <ComunityScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+        }}
+        name="Session chat"
+        component={SessionChat}
+      />
     </ComunityScreenStack.Navigator>
   );
 };
@@ -266,7 +271,8 @@ const ShoppingScreenStacks = () => {
   return (
     <ShoppingScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       <ShoppingScreenStack.Screen
         name="Shopping"
@@ -280,7 +286,8 @@ const MyPetScreenStacks = () => {
   return (
     <MyPetScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       <MyPetScreenStack.Screen
         name="My pet"
@@ -295,7 +302,8 @@ const TimeLineScreenStacks = () => {
   return (
     <TimeLineScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       {/* <TimeLineScreenStack.Screen
         name="Reminders"
@@ -305,10 +313,10 @@ const TimeLineScreenStacks = () => {
         name="Rate session"
         component={RateSession}
       /> */}
-        <TimeLineScreenStack.Screen
+        {/* <TimeLineScreenStack.Screen
         name="Session chat"
         component={SessionChat}
-      />
+      /> */}
     </TimeLineScreenStack.Navigator>
   );
 }

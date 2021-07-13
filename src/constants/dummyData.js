@@ -284,3 +284,5 @@ export const petTimelineDetails = [
     },
     
 ];
+
+export const callText = 'Bella’s health is great overall. She would benefit from loosing 1-2 lbs of body fat and we have perscribed purina pro low carb as a'

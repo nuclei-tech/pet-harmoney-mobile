@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, ScrollView, Text, TouchableOpacity } from 'react-native';
-import { Layout2, InputField, CreditCardScanner, ProfilePicture, Button, ReminderDetailCard,ReminderButton } from '../../components'
-import { images, reminderDetails } from '../../constants';
+import { Layout2, InputField, CreditCardScanner, ProfilePicture, Button, ReminderDetailCard,ReminderButton, Paragraph } from '../../components'
+import { images, reminderDetails, callText } from '../../constants';
 
 import { styles } from './styles';
 
@@ -34,12 +34,18 @@ const Reminders = props => {
                         </View>
                         <View style={tableContanier}>
                             <View style={chatMainContent}
-      >
-          <ScrollView>
-          <Text style={chatContent}>
-                           Bella’s health is great overall. She would benefit from loosing 1-2 lbs of body fat and we have perscribed purina pro low carb as a
-                           </Text>
-          </ScrollView>
+            >
+          
+                                <Paragraph
+                                    paragraph={callText}
+                                    textColor={theme.Theme.colors.WHITE}
+                                    textFontSize={14}
+                                    textFontLineHeight={18}
+                                    textFontWeight={'normal'}
+                                    customParagraphTextStyles={{
+                                        paddingHorizontal: 38
+                                    }}
+                                />
 
                             </View>
                            

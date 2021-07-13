@@ -84,6 +84,7 @@ const ComunityScreen = (props) => {
               width: 73,
               height: 19
             }}
+            navigateScreen={'Session chat'}
             />
 
 </View>
