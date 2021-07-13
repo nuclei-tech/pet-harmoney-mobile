@@ -160,6 +160,37 @@ export const profileHistoryData = [
     }
 ];
 
+export const sessionDetails = [
+    {
+        title: 'Kiki Emerson',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Bella Rivera',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Joanna Qu',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Munchi Groom',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Cali Topanga',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Ricki Maxxa',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Hola Gabba',
+        description: '1pm, July 6',
+    }
+];
+
 export const petVisitDetails = [
     {
         title: 'Vet visit',

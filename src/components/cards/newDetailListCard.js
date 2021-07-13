@@ -135,7 +135,7 @@ const styles = (props) => StyleSheet.create({
         lineHeight: 9,
         paddingVertical: 0
     },
-    listButtonContainer: {width: 73, height: 22, alignSelf: 'flex-end'}
+    listButtonContainer: {width: 73, height: 19, alignSelf: 'center'}
 })
 
 export default ReminderDetailsCard
