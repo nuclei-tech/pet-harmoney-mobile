@@ -1,5 +1,5 @@
 import images from "./images";
-import {reminderDetails, callText, termsAndConditions, ratingComment,myCardList, iconTabDetails, profileHistoryData, petVisitDetails,practitioners, petsTabDetails, communityDetails, petTimelineDetails, sessionDetails} from './dummyData'
+import {reminderDetails, callText, rateText, termsAndConditions, ratingComment,myCardList, iconTabDetails, profileHistoryData, petVisitDetails,practitioners, petsTabDetails, communityDetails, petTimelineDetails, sessionDetails} from './dummyData'
 
 const birthYearReverse = 18
 
@@ -18,5 +18,6 @@ export {
     communityDetails,
     petTimelineDetails,
     sessionDetails,
-    callText
+    callText,
+    rateText
 }

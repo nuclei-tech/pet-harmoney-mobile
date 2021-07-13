@@ -65,7 +65,7 @@ export const styles = props =>
     },
     subContanier:{
       flex: 0.6, alignItems: 'center', justifyContent: 'center',
-      marginTop:48
+      marginTop:0
     },
     subContanierBottom:{
       flex: 1.4, alignItems: 'center', justifyContent: 'flex-start',

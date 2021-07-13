@@ -264,7 +264,15 @@ const ComunityScreenStacks = () => {
         name="Session chat"
         component={SessionChat}
       />
-    </ComunityScreenStack.Navigator>
+    <ComunityScreenStack.Screen
+    options={{
+      header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+    }}
+    name="Rate the session"
+    component={RateSession}
+  />
+</ComunityScreenStack.Navigator>
+    
   );
 };
 const ShoppingScreenStacks = () => {

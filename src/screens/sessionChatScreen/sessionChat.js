@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, ScrollView, Text, TouchableOpacity } from 'react-native';
 import { Layout2, InputField, CreditCardScanner, ProfilePicture, Button, ReminderDetailCard,ReminderButton, Paragraph } from '../../components'
 import { images, reminderDetails, callText } from '../../constants';
-
+import {navigate} from '../../navigation/navigation'
 import { styles } from './styles';
 
 // Connect redux store.
@@ -10,9 +10,9 @@ import { useSelector } from 'react-redux';
 
 
 const Reminders = props => {
+    
     const { theme } = useSelector(state => state.theme);
     const { container, layoutContanier,chatMainContent,chatContent, mainContanierReminders,imageContent,tableContanier,reminderAddButton,remindAddContent,reminderButtonRight,reminderButtonLeft,subImageContent,subContanierOther, subContanierTop } = styles(theme)
-
 
     return (
         <View style={container}>
@@ -35,7 +35,8 @@ const Reminders = props => {
                         <View style={tableContanier}>
                             <View style={chatMainContent}
             >
-          
+                                <TouchableOpacity onPress={() => navigate('Rate the session')}>
+
                                 <Paragraph
                                     paragraph={callText}
                                     textColor={theme.Theme.colors.WHITE}
@@ -45,8 +46,9 @@ const Reminders = props => {
                                     customParagraphTextStyles={{
                                         paddingHorizontal: 38
                                     }}
-                                />
+                                    />
 
+                                    </TouchableOpacity>
                             </View>
                            
                         </View>
