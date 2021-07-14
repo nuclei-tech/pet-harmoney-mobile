@@ -29,7 +29,7 @@ import DetailList from "./cards/newDetailListCard";
 import MyPetsTabs from "./myPetsTabBar/myPetsTabBar";
 import CommunityList from "./cards/communityList";
 import ReceiptScanner from "./vetReceiptScanner/vetReceiptScanner";
-
+import LocationSearch from "./forms/locationSearch";
 export{
     ReminderButton,
     Button,
@@ -61,5 +61,6 @@ export{
     DetailList,
     MyPetsTabs,
     CommunityList,
-    ReceiptScanner
+    ReceiptScanner,
+    LocationSearch
 }

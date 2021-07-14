@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, SafeAreaView, Dimensions, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { styles } from './styles';
-import { Layout2, InputField, ScheduleTitle } from '../../components'
+import { Layout2, InputField, ScheduleTitle, LocationSearch } from '../../components'
 import { images } from '../../constants'
 // Connect redux store.
 import { useSelector } from 'react-redux';
@@ -23,6 +23,7 @@ const TelevetScreen = props => {
         <View flex={1} style={containee}>
 
           <ScheduleTitle>{"Location"}</ScheduleTitle>
+          {/* <LocationSearch/> */}
           <View style={inputContainer}>
             <InputField
               customMainContanier={textStyle}
