@@ -412,7 +412,7 @@ const TabNav = props => {
               elevation: 0,
               shadowOpacity: 0,
               paddingHorizontal: 45,
-              height: Platform.OS === 'ios' ? Dimensions.get('window'). height * 0.1 : Dimensions.get('window'). height * 0.08
+              height: Platform.OS === 'ios' ? Dimensions.get('window'). height * 0.1 : Dimensions.get('window'). height * 0.095
             },
             showLabel: false,
           }}
