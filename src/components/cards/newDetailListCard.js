@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, View, TouchableNativeFeedback, ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableNativeFeedback, ActivityIndicator, FlatList, TouchableOpacity, Dimensions } from 'react-native';
 import { Card, ListItem, Image } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 import { images } from '../../constants'
 import { Button } from '../../components'
 import { navigate } from '../../navigation/navigation';
-
+const { height, width} = Dimensions.get('window');
 const ReminderDetailsCard = ({
     backgroundColor, 
     titleColor, 
@@ -100,6 +100,7 @@ const ReminderDetailsCard = ({
                 keyExtractor={(item, index) => keyExtractor(item,index)}
                 data={dataList}
                 renderItem={(item, index) => renderItem(item,index)}
+                
             />
         </View>
     )
@@ -109,7 +110,8 @@ const ReminderDetailsCard = ({
 const styles = (props) => StyleSheet.create({
     listMainContainer:{
         marginTop: 20, 
-        marginBottom: 20
+        marginBottom: 20,
+        maxHeight: height*0.33
     },
     checkBoxIcon: { width: 15, height: 15 },
     headerTitleStyle: {
