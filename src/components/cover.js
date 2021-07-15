@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, TouchableHighlight, ImageBackground, Image, Dim
 import { images } from '../constants'
 import { ProfilePicture, Header } from '../components';
 import { useSelector } from 'react-redux';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const { height, width } = Dimensions.get('window');
 const Cover = ({ customStyle, coverImage, event, children, customEventStyle, eventName, name, customNameStyle, description, customDescriptionStyle }) => {
@@ -37,9 +38,6 @@ const Cover = ({ customStyle, coverImage, event, children, customEventStyle, eve
                 <View onPress={changeProfileImage} flex={1} style={proPicContainer}>
                     {event ? <></> : <ProfilePicture source={images.profile} />}
                 </View>
-            </View>
-
-            <View flex={3} >
                 <ImageBackground resizeMode='stretch' source={images.bgWhite} style={whitBackgroundContainer}>
                     <View style={coverHeader}>
                         {event ? <Text style={{ ...eventStyle, ...customEventStyle }}>{eventName}</Text> : <></>}
@@ -48,7 +46,6 @@ const Cover = ({ customStyle, coverImage, event, children, customEventStyle, eve
                         {children}
                     </View>
                 </ImageBackground>
-
             </View>
         </View>
     );
@@ -105,8 +102,9 @@ const styles = (theme) => StyleSheet.create({
     },
     whitBackgroundContainer: {
         width: '100%',
+        // position: 'absolute',
         height: '100%',
-        zIndex: 0
+        flex: 7
     }
 })
 export default Cover;
