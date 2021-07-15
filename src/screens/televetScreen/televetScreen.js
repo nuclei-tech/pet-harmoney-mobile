@@ -23,17 +23,10 @@ const TelevetScreen = props => {
         <View flex={1} style={containee}>
 
           <ScheduleTitle>{"Location"}</ScheduleTitle>
-          {/* <LocationSearch/> */}
           <View style={inputContainer}>
-            <InputField
-              customMainContanier={textStyle}
-              placeholderColor={theme.Theme.colors.WHITE}
-              placeholder={'City'}
-              required={true}
-              value={city}
-              requireMessage={'City is required'}
-              onChangeText={text => setCity(text)}
-            />
+
+          <LocationSearch/>
+            
           </View>
           <TouchableOpacity style={btnMrginTop} onPress={()=>{navigate('practitionerType')}}>
             <Image source={images.leftArrow}/>
