@@ -15,6 +15,7 @@ const bgDBlue2 = require('../assets/images/background/BG_DBlue_2.png');
 const bgYellow = require('../assets/images/background/BG_Yellow.png');
 const bgGreen = require('../assets/images/background/BG_Green.png');
 const bgPurple = require('../assets/images/background/BG_Purple.png');
+const bgPurple2 = require('../assets/images/background/BG_Purple_2.png');
 const bgWhite = require('../assets/images/background/BG_White.png');
 const cover = require('../assets/images/background/cover.png');
 const event = require('../assets/images/background/event.png');
@@ -135,5 +136,6 @@ export default {
     bgWhiteBackGround,
     shopingCardIcon,
     starIcon,
-    starIconEmpty
+    starIconEmpty,
+    bgPurple2
 };

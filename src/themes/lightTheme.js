@@ -407,6 +407,7 @@ const Theme = {
       lineHeight: 20,
     }
   },
+  
   //document scanner
   titleStyles: {
     fontFamily: 'SourceSansPro-Regular',
@@ -509,7 +510,45 @@ const Theme = {
     },
   },
 
-
+ // session confirmed font styles
+ confirmSession:{
+  profileText:{
+    fontFamily: 'SourceSansPro-Bold',
+    color: colors.WHITE,
+    fontSize: 24,
+    lineHeight: 28,
+  },
+  dayText:{
+    fontFamily: 'SourceSansPro-Light',
+    color: colors.PURPLE,
+    fontSize: 64,
+    lineHeight: 76,
+  },
+  timeText:{
+    fontFamily: 'SourceSansPro-Bold',
+    color: colors.PURPLE,
+    fontSize: 20,
+    lineHeight: 25,
+  },
+  testAudVid:{
+    fontFamily: 'SourceSansPro-Regular',
+    color: colors.PURPLE,
+    fontSize: 12,
+    lineHeight: 15,
+  },
+  remiderProfileText:{
+    fontFamily: 'SourceSansPro-Bold',
+    color: colors.YELLOW,
+    fontSize: 24,
+    lineHeight: 28,
+  },
+  remindAddContent:{
+    fontFamily: 'SourceSansPro-Bold',
+    color: colors.YELLOW,
+    fontSize: 16,
+    lineHeight: 20,
+  }
+},
 
 
 
