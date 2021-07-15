@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, SafeAreaView, Dimensions, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { styles } from './styles';
-import { Layout2, InputField, ScheduleTitle } from '../../components'
+import { Layout2, InputField, ScheduleTitle, LocationSearch } from '../../components'
 import { images } from '../../constants'
 // Connect redux store.
 import { useSelector } from 'react-redux';
@@ -24,15 +24,9 @@ const TelevetScreen = props => {
 
           <ScheduleTitle>{"Location"}</ScheduleTitle>
           <View style={inputContainer}>
-            <InputField
-              customMainContanier={textStyle}
-              placeholderColor={theme.Theme.colors.WHITE}
-              placeholder={'City'}
-              required={true}
-              value={city}
-              requireMessage={'City is required'}
-              onChangeText={text => setCity(text)}
-            />
+
+          <LocationSearch/>
+            
           </View>
           <TouchableOpacity style={btnMrginTop} onPress={()=>{navigate('practitionerType')}}>
             <Image source={images.leftArrow}/>
