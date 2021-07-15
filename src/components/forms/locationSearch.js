@@ -35,13 +35,16 @@ const locationSearch = (props) => {
                     textInput: {
                         height: 38,
                         color: '#ffffff',
-                        fontSize: 16,
+                        fontSize: 17,
+                        lineHeight:21,
                         borderRadius:20,
+                        fontFamily:'SourceSansPro-Regular',
                         width:width*0.51,
                         textAlign:'center',
                         backgroundColor:'transparent',
                         borderColor:'#ffffff',
                         borderWidth:2,
+                        placeholderTextColor:'#ffffff'
                     },
                     predefinedPlacesDescription: {
                         color: '#ffffff',
