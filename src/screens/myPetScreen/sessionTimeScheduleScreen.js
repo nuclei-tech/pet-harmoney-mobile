@@ -16,28 +16,35 @@ const RemindSession = props => {
 
 
     return (
-        <View style={container}>
+      <View style={container}>
             <Layout2
-                type={'small'} // {halfScreen, small }
+                type={'fullScreen'} // {halfScreen, small }
                 layoutColor={theme.Theme.colors.PURPLE}
                 backgroundColor={theme.Theme.colors.WHITE}
                 title={'pet harmony'}
-                curve={'primary'}
-                // customContainerStyle={layoutContanier}
+                curve={'secondary'}
             >
-                <View style={mainContanier}>
-                    <View style={subContanier}>
-                        <ProfilePicture />
-                        <Text style={profileText}>Bella’s virtual session is confirmed!</Text>
-                    </View>
-                    <View style={subContanier}>
-                        <Text style={testAudVid}>Add to my calendar</Text>
-                        <Text  style={dayText}>May 15</Text>
-                        <Text style={timeText}>at 2:30PM</Text>
-                    </View>
+                <View flex={1} style={{ alignItems: "center", paddingTop: height * 0.05 }}>
+
+                  <ScheduleTitle>{"Schedule a virtual session"}</ScheduleTitle>
+                  <Text style={{
+                    fontFamily: 'Source Sans Pro',
+                    fontWeight: '300',
+                    fontSize: 64,
+                    lineHeight: 76,
+                    color: 'white',
+                    marginTop: 40
+                  }}>May 15</Text>
+                  <InputField
+                    placeholderColor={theme.Theme.colors.WHITE}
+                    placeholder={'2:30PM'}
+                    customMainContanier={{borderColor: theme.Theme.colors.WHITE, height: 52, width: 213, marginTop: 20}}
+                  />
                 </View>
+                    
             </Layout2>
         </View>
+       
     );
 };
 
