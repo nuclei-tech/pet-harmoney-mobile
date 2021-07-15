@@ -1,19 +1,46 @@
-// import axios from 'axios'
-import {showMessage} from 'react-native-flash-message';
-import {actionType} from './actions.js';
+import { LOAD_OWNERS } from './queries';
+import { ADD_PET } from './mutations';
+
+import {client} from '../../../apolloClient' // this only when api not using apollo hooks
+
+import { useQuery,useMutation } from '@apollo/client';
+
 
 //user loging using email and password
-export const loginUser = loginDetails => {
+export const loginUser = () => {
   return async dispatch => {
-    try {
-      dispatch({type: actionType.AUTH_LOADING, payload: true});
-      dispatch({type: actionType.SET_USER, payload: user.user});
-      showMessage({
-        message: `You have successfully logged out`,
-        type: 'success',
-      });
-    } catch (err) {
-      dispatch({type: actionType.AUTH_LOADING, payload: false});
+  client.query({
+    query: LOAD_OWNERS,
+  }).then((res) => {
+   const {loading,data} = res
+    if (data) {
+      console.warn('eee=>>>>>>',data);
+      // dispatch({ type: 'FETCH_ADS_FULFILLED', payload: resp.data.allAds });
     }
-  };
+  })
+  }
+
 };
+
+export const addUser = (data) => {
+  return async dispatch => {
+  client.mutate({
+    mutation: ADD_PET,
+    variables: {
+      name: "ffffff",
+      type: "type",
+      age: 0,
+      ownerId: "ownerId"
+  }
+  }).then((res) => {
+    const {loading,data} = res
+    if (res.data) {
+      dispatch(loginUser())
+      console.warn('eee=>>>>>>',data);
+      // dispatch({ type: 'FETCH_ADS_FULFILLED', payload: resp.data.allAds });
+    }
+  });
+  }
+};
+
+
