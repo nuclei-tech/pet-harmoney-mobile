@@ -59,6 +59,7 @@ import RemindSession from '../screens/reminderScreens/reminderSession'
 //time line screens
 import Reminders from '../screens/reminderScreens/reminders'
 import RateSession from '../screens/rateSessionScreen/rateSession'
+import SessionChat from '../screens/sessionChatScreen/sessionChat'
 
 //extra screens
 import MyCart from '../screens/myCardScreens/myCartScreen' 
@@ -256,16 +257,30 @@ const ComunityScreenStacks = () => {
         name="community"
         component={ComunityScreen}
       />
-     
-      
-    </ComunityScreenStack.Navigator>
+     <ComunityScreenStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+        }}
+        name="Session chat"
+        component={SessionChat}
+      />
+    <ComunityScreenStack.Screen
+    options={{
+      header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+    }}
+    name="Rate the session"
+    component={RateSession}
+  />
+</ComunityScreenStack.Navigator>
+    
   );
 };
 const ShoppingScreenStacks = () => {
   return (
     <ShoppingScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       <ShoppingScreenStack.Screen
         name="Shopping"
@@ -279,7 +294,8 @@ const MyPetScreenStacks = () => {
   return (
     <MyPetScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       <MyPetScreenStack.Screen
         name="My pet"
@@ -294,16 +310,21 @@ const TimeLineScreenStacks = () => {
   return (
     <TimeLineScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       {/* <TimeLineScreenStack.Screen
         name="Reminders"
         component={Reminders}
       /> */}
-       <TimeLineScreenStack.Screen
+       {/* <TimeLineScreenStack.Screen
         name="Rate session"
         component={RateSession}
-      />
+      /> */}
+        {/* <TimeLineScreenStack.Screen
+        name="Session chat"
+        component={SessionChat}
+      /> */}
     </TimeLineScreenStack.Navigator>
   );
 }

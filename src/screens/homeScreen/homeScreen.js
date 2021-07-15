@@ -17,8 +17,8 @@ const HomeScreen = props => {
     <SafeAreaView style={container}>
     <Layout2
      backgroundColor={theme.Theme.colors.DARK_BLUE}
+     title={'PET HARMONY'}
    >
-     <Header title="pet harmony"/>
      <MyPetsTabs tabDetails={petsTabDetails} />
       <ParagraphCard
            cardBorderColor={theme.Theme.colors.BLUE}

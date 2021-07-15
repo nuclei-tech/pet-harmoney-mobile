@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, ScrollView, Text, TouchableOpacity } from 'react-native';
-import { Layout2, InputField, CreditCardScanner, ProfilePicture, Button } from '../../components'
-import { images } from '../../constants';
+import { Layout2, Paragraph, ParagraphCard, ProfilePicture, Button } from '../../components'
+import { images, rateText } from '../../constants';
 import Stars from 'react-native-stars';
 
 import { styles } from './styles';
@@ -39,9 +39,24 @@ const RateSession = props => {
                             spacing={8}
                         />
                     </View>
-                    <View style={subContanierBottom}>
-                        <Text style={commentText}>Dr. Azza was amazing, she answered all of my questions and gave me the perfect next steps to pursue. I’m hooked on Pet Harmony.</Text>
-                    </View>
+                    <ParagraphCard
+                        cardBackgroundColor={theme.Theme.colors.WHITE}
+                        cardBorderColor={theme.Theme.colors.BLUE}
+                        customCardContainer={{
+                            maxHeight: 414,
+                            flex: 1.4,
+                            marginBottom:80,
+                            marginTop:80,
+                        }}
+                    >
+                        <Paragraph
+                            paragraph={rateText}
+                            textColor={theme.Theme.colors.BLACK}
+                            textFontSize={14}
+                            textFontLineHeight={18}
+                            textFontWeight={'300'}
+                        />
+                    </ParagraphCard>
                 </View>
             </Layout2>
         </View>

@@ -160,6 +160,37 @@ export const profileHistoryData = [
     }
 ];
 
+export const sessionDetails = [
+    {
+        title: 'Kiki Emerson',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Bella Rivera',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Joanna Qu',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Munchi Groom',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Cali Topanga',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Ricki Maxxa',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Hola Gabba',
+        description: '1pm, July 6',
+    }
+];
+
 export const petVisitDetails = [
     {
         title: 'Vet visit',
@@ -253,3 +284,6 @@ export const petTimelineDetails = [
     },
     
 ];
+
+export const callText = 'Bella’s health is great overall. She would benefit from loosing 1-2 lbs of body fat and we have perscribed purina pro low carb as a'
+export const rateText = 'Dr. Azza was amazing, she answered all of my questions and gave me the perfect next steps to pursue. I’m hooked on Pet Harmony.'

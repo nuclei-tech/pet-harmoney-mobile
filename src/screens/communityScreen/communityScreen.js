@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image, ImageBackground, TouchableOpacity, Dimensions, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, StatusBar, ImageBackground, TouchableOpacity, Dimensions, TouchableHighlight } from 'react-native';
 import { colors, size } from '../../theme'
-import { Cover, ProfilePicture, ProfileTimeline} from '../../components'
+import { Layout2, SecondaryTopTitleHeader, Header, IconTabHeader, DetailList} from '../../components'
 // Connect redux store.
 import { useSelector } from 'react-redux';
 import { Tab, TabView } from 'react-native-elements';
 import { navigate } from '../../navigation/navigation';
-import { images, profileHistoryData } from '../../constants';
+import { images, profileHistoryData, iconTabDetails, sessionDetails } from '../../constants';
 
 const { height, width } = Dimensions.get('window');
 
@@ -34,22 +34,61 @@ const ComunityScreen = (props) => {
   } = styles(theme.Theme);
   return (
     <SafeAreaView style={container}>
-     {/* <Cover
-      coverImage={images.cover}
-      name={'Bella Emerson'}
-      description={'just a happy little pomeranian'}
-      customEventStyle
-     >
-       <View style={{paddingHorizontal: 44}}>
+      <SecondaryTopTitleHeader backgroundCustomColor={theme.Theme.colors.BLUE} withDefultHeader />
+      <Layout2
+            type={'fullScreen'}
+            layoutColor={theme.Theme.colors.BLUE}
+            noHeader
+            
+        >
+          <View style={{paddingHorizontal: 20}}>
 
-       <ProfileTimeline 
-        tabHistoryDetails={profileHistoryData}
-        historyBtnNavigateScreen={'Pet Visit Details'}
-       />
-       </View>
-      
-     </Cover> */}
-     <Text>Community screen</Text>
+          <IconTabHeader 
+            tabDetails={iconTabDetails}
+            containerMarginTop={31}
+            containerMarginBottom={35}
+            />
+          <DetailList 
+            backgroundColor={theme.Theme.colors.BLUE}
+            titleColor={theme.Theme.colors.GREEN}
+            descriptionColor={theme.Theme.colors.WHITE}
+            borderBottomColor={theme.Theme.colors.WHITE}
+            headerTitle={'Upcoming Sessions'}
+            headerTitleColor={theme.Theme.colors.WHITE}
+            dataList={sessionDetails}
+            listButtonExist
+            listBtnColor={theme.Theme.colors.GREEN}
+            listBtnTitle={'Start Session'}
+            listBtnTxtColor={theme.Theme.colors.DARK_BLUE}
+            customListItemContainerStyle={{
+              paddingVertical: 0,
+              paddingLeft: 30,
+              paddingRight: 10
+            }}
+            customListMainContainerStyles={{
+              marginTop: 13,
+            }}
+            customHeaderTitleStyle={{
+              fontFamily: 'Source Sans Pro',
+              fontWeight: '700',
+              fontSize: 18,
+              lineHeight: 21.37
+            }}
+            customListButtonTextStyles={{
+              fontFamily: 'Source Sans Pro',
+              fontWeight: '700',
+              fontSize: 9,
+              lineHeight: 11
+            }}
+            customListButtonContainerStyles={{
+              width: 73,
+              height: 19
+            }}
+            navigateScreen={'Session chat'}
+            />
+
+</View>
+        </Layout2>
     </SafeAreaView>
   );
 };
@@ -57,7 +96,7 @@ const ComunityScreen = (props) => {
 const styles = (theme) => StyleSheet.create({
   container: {
     flex: 4,
-    backgroundColor: theme.colors.WHITE
+    backgroundColor: theme.colors.WHITE,
   },
   backGroundImageContainer: {
     justifyContent: 'space-between'
