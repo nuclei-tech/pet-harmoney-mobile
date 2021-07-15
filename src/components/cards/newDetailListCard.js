@@ -111,7 +111,7 @@ const styles = (props) => StyleSheet.create({
     listMainContainer:{
         marginTop: 20, 
         marginBottom: 20,
-        maxHeight: height*0.33
+        // maxHeight: height*0.33
     },
     checkBoxIcon: { width: 15, height: 15 },
     headerTitleStyle: {
