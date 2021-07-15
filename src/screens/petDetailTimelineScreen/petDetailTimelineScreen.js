@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image, ImageBackground, TouchableOpacity, Dimensions, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, ImageBackground, TouchableOpacity, Dimensions, TouchableHighlight } from 'react-native';
 import { colors, size } from '../../theme'
 import { Cover, ProfilePicture, ProfileTimeline} from '../../components'
 // Connect redux store.
@@ -24,7 +24,7 @@ const PetDetailTimelineScreen = (props) => {
 
   const {
     container,
-    backGroundImageContainer,
+    profileTimelineContainer,
     imageContainer,
     image,
     headerCustomStyle,
@@ -40,14 +40,12 @@ const PetDetailTimelineScreen = (props) => {
       description={'just a happy little pomeranian'}
       customEventStyle
      >
-       <View style={{paddingHorizontal: 44}}>
-
-       <ProfileTimeline 
+       <View  style={profileTimelineContainer}>
+      <ProfileTimeline 
         tabHistoryDetails={profileHistoryData}
         historyBtnNavigateScreen={'Pet Visit Details'}
        />
        </View>
-      
      </Cover>
     </SafeAreaView>
   );
@@ -87,7 +85,8 @@ const styles = (theme) => StyleSheet.create({
   whitBackgroundContainer: {
     width: '100%',
     height: '100%'
-  }
+  },
+  profileTimelineContainer: {paddingHorizontal: 44}
 });
 
 
