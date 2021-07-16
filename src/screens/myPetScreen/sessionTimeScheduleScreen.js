@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, ScrollView, Text, TouchableOpacity, Dimensions } from 'react-native';
 import { Layout2, ScheduleTitle, InputField, ProfilePicture, Button } from '../../components'
 import { images } from '../../constants';
-
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { styles } from './styles';
 
 // Connect redux store.
@@ -13,7 +13,7 @@ const {height, width} = Dimensions.get('window')
 const SessionTimeConfirmScreen = props => {
     const { theme } = useSelector(state => state.theme);
     const { container, layoutContanier, profileText,mainContanier,subContanier,dayText,timeText,customButtonContent,testAudVid } = styles(theme)
-
+    
 
     return (
       <View style={container}>
@@ -41,8 +41,8 @@ const SessionTimeConfirmScreen = props => {
                     customMainContanier={{borderColor: theme.Theme.colors.WHITE, height: 52, width: 213, marginTop: 20, paddingTop: 0, paddingBottom: 2,}}
                     rightImageExist
                     editable={false}
+                    TouchableAndroid={TouchableOpacity}
                   />
-                  
                 </View>
                     
             </Layout2>
