@@ -37,7 +37,7 @@ import MyPetScreen from '../screens/myPetScreen/myPetScreen'
 import PetVisitDetailScreen from '../screens/petVisitDetailScreen/petVisitDetailScreen';
 import VetReceiptScanScreen from '../screens/vetReceiptScanScreen/vetReceiptScanScreen';
 import PetDetailTimelineScreen from '../screens/petDetailTimelineScreen/petDetailTimelineScreen';
-
+import PetSessionConfirmScreen from '../screens/myPetScreen/sessionTimeScheduleScreen';
 
 //Registration screen
 import CreateAccountScreen from '../screens/registrationScreens/createAccountScreen'
@@ -139,21 +139,21 @@ const HomeStackScreen = () => {
         }}
         component={HomeScreen}
       />
-      <ComunityScreenStack.Screen
+      <HomeStack.Screen
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
         }}
         name="Pet Details Timeline"
         component={PetDetailTimelineScreen}
       />
-       <ComunityScreenStack.Screen
+       <HomeStack.Screen
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
         }}
         name="Pet Visit Details"
         component={PetVisitDetailScreen}
       />
-      <ComunityScreenStack.Screen
+      <HomeStack.Screen
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
         }}
@@ -297,9 +297,13 @@ const MyPetScreenStacks = () => {
         headerShown: false,
         cardStyleInterpolator: forSlide,
       }}>
-      <MyPetScreenStack.Screen
+      {/* <MyPetScreenStack.Screen
         name="My pet"
         component={MyPetScreen}
+      /> */}
+      <MyPetScreenStack.Screen
+        name="Pet Session Confirm"
+        component={PetSessionConfirmScreen}
       />
     </MyPetScreenStack.Navigator>
   );

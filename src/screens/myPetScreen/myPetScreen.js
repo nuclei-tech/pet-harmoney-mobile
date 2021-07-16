@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, ScrollView, Text, TouchableOpacity } from 'react-native';
-import { Layout2, InputField, CreditCardScanner, ProfilePicture, Button } from '../../components'
+import { View, ScrollView, Text, TouchableOpacity, Dimensions } from 'react-native';
+import { Layout2, ScheduleTitle, InputField, ProfilePicture, Button } from '../../components'
 import { images } from '../../constants';
 
 import { styles } from './styles';
@@ -8,6 +8,7 @@ import { styles } from './styles';
 // Connect redux store.
 import { useSelector } from 'react-redux';
 
+const {height, width} = Dimensions.get('window')
 
 const RemindSession = props => {
     const { theme } = useSelector(state => state.theme);
