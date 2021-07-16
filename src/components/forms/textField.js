@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, TextInput, View, Text } from 'react-native'
+import { StyleSheet, TextInput, View, Text, Image, TouchableOpacity } from 'react-native'
 import { useSelector } from 'react-redux';
-
+import {images} from '../../constants'
 //textFieldWidth
 //alignText
 //boderColor
@@ -13,7 +13,7 @@ const InputField = (props) => {
     const [phoneNumber, setPhoneNumber] = useState(false)
     const [errordMessage, setErrordMessage] = useState();
     const [isvalid, setValid] = useState(true);
-    const { mainTextStyles, errorContain, errorText,mainTextStylesPlaceHolder } = styles(theme, props)
+    const { mainTextStyles, errorContain, errorText,mainTextStylesPlaceHolder, imageExistTextStyles, imageExistContainer, imageExistArrow } = styles(theme, props)
     const { customMainContanier, customTextStyle, placeholderColor, placeholder, type, onChangeText, required, validator, errorMessage, requireMessage, onValidatorExecuted, customErrorContain, customErrorText } = props
 
     let placeHolderText
@@ -68,6 +68,27 @@ const InputField = (props) => {
 
     return (
         <View>
+           { 
+           props.rightImageExist ?
+           <View style={{ ...mainTextStyles, ...customTextStyle, ...customMainContanier, ...imageExistContainer}}>
+ 
+            <TouchableOpacity style={{flex: 1}}>
+
+                        <TextInput
+                            style={imageExistTextStyles}
+                            placeholder={placeHolderText}
+                            placeholderTextColor={placeholderColor}
+                            // underlineColorAndroid="transparent"
+                            {...props}
+                        />
+            </TouchableOpacity>
+            <TouchableOpacity style={{alignSelf: 'center'}} onPress={()=> console.warn('image pressed')}>
+
+            <Image source={images.downArrow} style={imageExistArrow} />
+            </TouchableOpacity>
+
+        </View>
+        :
             <TextInput
                 style={type == 'otp' && values == '' ? { ...mainTextStylesPlaceHolder, ...customTextStyle, ...customMainContanier }:{ ...mainTextStyles, ...customTextStyle, ...customMainContanier }}
                 placeholder={placeHolderText}
@@ -93,6 +114,8 @@ const InputField = (props) => {
                 value={values}
                 {...props}
             />
+            }
+            
             {!isvalid ? (
                 <View style={{ ...errorContain, ...customErrorContain }}>
                     <Text style={{ ...errorText, ...customErrorText }}>
@@ -120,6 +143,13 @@ const styles = (theme, props) => StyleSheet.create({
         marginBottom: 9,
         backgroundColor:props.backgroundColor ? props.backgroundColor:'transparent'
     },
+    imageExistTextStyles: {
+        ...theme.Theme.defaultInputStyle.textStyle,
+        flex:1,
+        textAlign: 'center',
+        width: 160,
+        paddingLeft: 10
+    },
     mainTextStylesPlaceHolder: {
         ...theme.Theme.defaultInputStyle.textStyleBold,
         textAlign: props.alignText ? props.alignText : 'center',
@@ -142,6 +172,15 @@ const styles = (theme, props) => StyleSheet.create({
     errorText: {
         ...theme.Theme.defaultInputStyle.textStyleError,
         color: theme.Theme.colors.RED
+    }, 
+    imageExistContainer: {
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        justifyContent: 'center'
+    },
+    imageExistArrow: {
+        height: 16, 
+        width: 19.2
     }
 })
 

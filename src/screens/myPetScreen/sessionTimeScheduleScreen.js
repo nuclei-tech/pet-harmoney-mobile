@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 
 const {height, width} = Dimensions.get('window')
 
-const RemindSession = props => {
+const SessionTimeConfirmScreen = props => {
     const { theme } = useSelector(state => state.theme);
     const { container, layoutContanier, profileText,mainContanier,subContanier,dayText,timeText,customButtonContent,testAudVid } = styles(theme)
 
@@ -37,9 +37,12 @@ const RemindSession = props => {
                   }}>May 15</Text>
                   <InputField
                     placeholderColor={theme.Theme.colors.WHITE}
-                    placeholder={'2:30PM'}
-                    customMainContanier={{borderColor: theme.Theme.colors.WHITE, height: 52, width: 213, marginTop: 20}}
+                    placeholder={'select time'}
+                    customMainContanier={{borderColor: theme.Theme.colors.WHITE, height: 52, width: 213, marginTop: 20, paddingTop: 0, paddingBottom: 2,}}
+                    rightImageExist
+                    editable={false}
                   />
+                  
                 </View>
                     
             </Layout2>
@@ -48,4 +51,4 @@ const RemindSession = props => {
     );
 };
 
-export default RemindSession;
+export default SessionTimeConfirmScreen;
