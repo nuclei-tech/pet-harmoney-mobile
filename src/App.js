@@ -57,7 +57,7 @@ let AppWrapper = connect(mapStateToProps, mapDispatchToProps)(IndexApp);
 
 const App = () => {
   useEffect(()=>{
-    SplashScreen.hide();
+    // SplashScreen.hide();
   },[])
   return (
     <ApolloProvider client={client} >

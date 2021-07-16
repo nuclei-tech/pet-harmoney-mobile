@@ -10,6 +10,7 @@ import {
   Dimensions,
   Keyboard,
   Image,
+  Platform,
   Animated
 } from 'react-native';
 import { colors } from '../themes/colors.js'
@@ -468,6 +469,8 @@ const TabNav = props => {
               backgroundColor: tabColor,
               elevation: 0,
               shadowOpacity: 0,
+              paddingHorizontal: 45,
+              height: Platform.OS === 'ios' ? Dimensions.get('window'). height * 0.1 : Dimensions.get('window'). height * 0.095
             },
             showLabel: false,
           }}
@@ -582,11 +585,11 @@ export const styles = props =>
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop: 5,
+      paddingTop: 10,
     },
     iconStyle: {
-      height: Dimensions.get('window').width / 15 * 1,
-      width: Dimensions.get('window').width / 15 * 1
+      height: 43,
+      width: 43
     }
   });
 
