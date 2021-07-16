@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, ScrollView } from 'react-native';
 import { useSelector } from 'react-redux';
 
-const Paragraph = ({ textColor, paragraph, textFontSize, textFontLineHeight, textFontWeight }) => {
+const Paragraph = ({ textColor, paragraph, textFontSize, textFontLineHeight, textFontWeight, customParagraphTextStyles }) => {
     const { theme } = useSelector(state => state.theme)
     const { paragraphText } = styles(theme)
 
@@ -10,7 +10,7 @@ const Paragraph = ({ textColor, paragraph, textFontSize, textFontLineHeight, tex
 
     return (
         <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={true}>
-            <Text style={[paragraphText, manuallyConfiguredTextStyles]}>
+            <Text style={[paragraphText, manuallyConfiguredTextStyles, customParagraphTextStyles]}>
                 {paragraph}
             </Text>
         </ScrollView>

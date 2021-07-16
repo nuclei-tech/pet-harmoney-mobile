@@ -30,11 +30,15 @@ import TelevetScreen from '../screens/televetScreen/televetScreen';
 import CalenderScreen from '../screens/televetScreen/calenderScreen.js'; 
 import PractitionerTypeScren from '../screens/televetScreen/PractitionerTypeScren.js'; 
 import PractitionerScren from '../screens/televetScreen/PractitionerScren.js'; 
+import SubscriptionScren from '../screens/televetScreen/SubscriptionScren.js'; 
 
 import ComunityScreen from '../screens/communityScreen/communityScreen';
 import ShoppingScreen from '../screens/shoppingScreen/shoppingScreen'
 import MyPetScreen from '../screens/myPetScreen/myPetScreen'
 import PetVisitDetailScreen from '../screens/petVisitDetailScreen/petVisitDetailScreen';
+import VetReceiptScanScreen from '../screens/vetReceiptScanScreen/vetReceiptScanScreen';
+import PetDetailTimelineScreen from '../screens/petDetailTimelineScreen/petDetailTimelineScreen';
+import PetSessionConfirmScreen from '../screens/myPetScreen/sessionTimeScheduleScreen';
 
 //Registration screen
 import CreateAccountScreen from '../screens/registrationScreens/createAccountScreen'
@@ -55,6 +59,8 @@ import RemindSession from '../screens/reminderScreens/reminderSession'
 
 //time line screens
 import Reminders from '../screens/reminderScreens/reminders'
+import RateSession from '../screens/rateSessionScreen/rateSession'
+import SessionChat from '../screens/sessionChatScreen/sessionChat'
 
 //extra screens
 import MyCart from '../screens/myCardScreens/myCartScreen' 
@@ -72,6 +78,7 @@ const ComunityScreenStack = createStackNavigator();
 const TelevetScreenStack = createStackNavigator();
 const MyPetScreenStack = createStackNavigator();
 const RegisterStackScreen = createStackNavigator()
+const TimeLineScreenStack = createStackNavigator()
 const FogotPasswordStackScreen = createStackNavigator()
 
 const navigationRef = React.createRef();
@@ -123,7 +130,8 @@ const HomeStackScreen = () => {
   return (
     <HomeStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       <HomeStack.Screen
         name={'HomeScreen'}
@@ -131,6 +139,27 @@ const HomeStackScreen = () => {
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         component={HomeScreen}
+      />
+      <HomeStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+        }}
+        name="Pet Details Timeline"
+        component={PetDetailTimelineScreen}
+      />
+       <HomeStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+        }}
+        name="Pet Visit Details"
+        component={PetVisitDetailScreen}
+      />
+      <HomeStack.Screen
+        options={{
+          header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+        }}
+        name="Vet Receipt Scan"
+        component={VetReceiptScanScreen}
       />
        <HomeStack.Screen
         name={'Pet registation'}
@@ -176,14 +205,15 @@ const TelevetScreenStacks = () => {
   return (
     <TelevetScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       <TelevetScreenStack.Screen
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />)
         }}
         name="televet"
-        component={PractitionerScren}
+        component={TelevetScreen}
       />
       <TelevetScreenStack.Screen
         options={{
@@ -206,6 +236,11 @@ const TelevetScreenStacks = () => {
         name="practitioner"
         component={PractitionerScren}
       />
+      <TelevetScreenStack.Screen
+        
+        name="subscription"
+        component={SubscriptionScren}
+      />
     </TelevetScreenStack.Navigator>
   );
 };
@@ -223,21 +258,30 @@ const ComunityScreenStacks = () => {
         name="community"
         component={ComunityScreen}
       />
-      <ComunityScreenStack.Screen
+     <ComunityScreenStack.Screen
         options={{
           header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
         }}
-        name="Pet Visit Details"
-        component={PetVisitDetailScreen}
+        name="Session chat"
+        component={SessionChat}
       />
-    </ComunityScreenStack.Navigator>
+    <ComunityScreenStack.Screen
+    options={{
+      header: ({ navigation, scene }) => (<Header title='PET HARMONY' headerColor={colors.RED} />),
+    }}
+    name="Rate the session"
+    component={RateSession}
+  />
+</ComunityScreenStack.Navigator>
+    
   );
 };
 const ShoppingScreenStacks = () => {
   return (
     <ShoppingScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
       <ShoppingScreenStack.Screen
         name="Shopping"
@@ -251,11 +295,16 @@ const MyPetScreenStacks = () => {
   return (
     <MyPetScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
-      <MyPetScreenStack.Screen
+      {/* <MyPetScreenStack.Screen
         name="My pet"
         component={MyPetScreen}
+      /> */}
+      <MyPetScreenStack.Screen
+        name="Pet Session Confirm"
+        component={PetSessionConfirmScreen}
       />
     </MyPetScreenStack.Navigator>
   );
@@ -266,12 +315,21 @@ const TimeLineScreenStacks = () => {
   return (
     <TimeLineScreenStack.Navigator
       screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyleInterpolator: forSlide,
       }}>
-      <TimeLineScreenStack.Screen
+      {/* <TimeLineScreenStack.Screen
         name="Reminders"
         component={Reminders}
-      />
+      /> */}
+       {/* <TimeLineScreenStack.Screen
+        name="Rate session"
+        component={RateSession}
+      /> */}
+        {/* <TimeLineScreenStack.Screen
+        name="Session chat"
+        component={SessionChat}
+      /> */}
     </TimeLineScreenStack.Navigator>
   );
 }

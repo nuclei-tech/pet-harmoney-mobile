@@ -160,6 +160,37 @@ export const profileHistoryData = [
     }
 ];
 
+export const sessionDetails = [
+    {
+        title: 'Kiki Emerson',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Bella Rivera',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Joanna Qu',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Munchi Groom',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Cali Topanga',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Ricki Maxxa',
+        description: '1pm, July 6',
+    },
+    {
+        title: 'Hola Gabba',
+        description: '1pm, July 6',
+    }
+];
+
 export const petVisitDetails = [
     {
         title: 'Vet visit',
@@ -195,3 +226,64 @@ export const petVisitDetails = [
     }
    
 ];
+
+export const petsTabDetails = [
+    {
+        image: images.profile,
+        name: 'Kiki'
+    },
+    {
+        image: images.profile,
+        name: 'Joanna'
+    },
+    {
+        image: images.profile,
+        name: 'Kip'
+    },
+];
+
+export const communityDetails = [
+    {
+        image: images.profile,
+        title: 'Leia Cortez',
+        time: '5min',
+        subTitle: 'Post text showing previews of what a pet community feed could show...'
+    },
+    {
+        image: images.profile,
+        title: 'Winnie the Golden',
+        time: '15min',
+        subTitle: 'Posts can also be made on behalf of pets'
+    },
+    {
+        image: images.profile,
+        title: 'Leia Cortez',
+        time: '25min',
+        subTitle: 'Post text showing previews of what a pet community feed could show...'
+    },
+    {
+        image: images.profile,
+        title: 'Winnie the Golden',
+        time: '1hr',
+        subTitle: 'Posts can also be made on behalf of pets'
+    },
+];
+
+export const petTimelineDetails = [
+    {
+        title: 'Walk the dog',
+        description: 'Mondays at 10am',
+    },
+    {
+        title: 'Televet visit',
+        description: 'Dailys, 8am',
+    },
+    {
+        title: 'Walk the dog',
+        description: 'Dailys, 7pm',
+    },
+    
+];
+
+export const callText = 'Bella’s health is great overall. She would benefit from loosing 1-2 lbs of body fat and we have perscribed purina pro low carb as a'
+export const rateText = 'Dr. Azza was amazing, she answered all of my questions and gave me the perfect next steps to pursue. I’m hooked on Pet Harmony.'

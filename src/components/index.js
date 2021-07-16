@@ -26,8 +26,10 @@ import ScheduleTitle from "./scheduleTitle";
 import PractitionerCard from './cards/practitionerCard';
 import ProfileTimeline from "./petProfileTimeline/petProfileTimeline";
 import DetailList from "./cards/newDetailListCard";
-
-
+import MyPetsTabs from "./myPetsTabBar/myPetsTabBar";
+import CommunityList from "./cards/communityList";
+import ReceiptScanner from "./vetReceiptScanner/vetReceiptScanner";
+import LocationSearch from "./forms/locationSearch";
 export{
     ReminderButton,
     Button,
@@ -56,5 +58,9 @@ export{
     ScheduleTitle,
     PractitionerCard,
     ProfileTimeline,
-    DetailList
+    DetailList,
+    MyPetsTabs,
+    CommunityList,
+    ReceiptScanner,
+    LocationSearch
 }

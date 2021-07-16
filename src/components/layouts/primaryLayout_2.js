@@ -29,7 +29,7 @@ const Layout2 = (props) => {
                 backgroundImage = images.bgGreen;
                 break;
             case colors.PURPLE:
-                backgroundImage = images.bgPurple;
+                backgroundImage = curve == 'primary' ? images.bgPurple2 : images.bgPurple;
                 break;
             case colors.WHITE:
                 backgroundImage = images.bgWhiteBackGround;
@@ -66,10 +66,11 @@ const Layout2 = (props) => {
         <View flex={1}>
             {props.type ? (
                 <ImageBackground resizeMode='stretch' source={getBackgroundImage()} style={{ ...backgroundStyle, ...props.customStyle }}>
-                    <Header  {...props} />
+                    {!props.noHeader && <Header  {...props} />}
                     {props.children}
                 </ImageBackground>
             ) : (<View style={noImage}>
+                 {!props.noHeader && <Header  {...props} />}
                 {props.children}
             </View>)}
 
@@ -94,7 +95,7 @@ const styles = (props, theme) => StyleSheet.create({
         resizeMode: 'stretch',
         padding: theme.size.CONTAINER_PADDING,
         paddingBottom: 0,
-        height: height*0.85,
+        height: props.noHeader ? height*0.65 : height*0.8,
         backgroundColor: props.backgroundColor ? props.backgroundColor : theme.colors.WHITE
     },
     samllScreen: {

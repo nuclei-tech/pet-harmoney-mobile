@@ -15,6 +15,7 @@ const bgDBlue2 = require('../assets/images/background/BG_DBlue_2.png');
 const bgYellow = require('../assets/images/background/BG_Yellow.png');
 const bgGreen = require('../assets/images/background/BG_Green.png');
 const bgPurple = require('../assets/images/background/BG_Purple.png');
+const bgPurple2 = require('../assets/images/background/BG_Purple_2.png');
 const bgWhite = require('../assets/images/background/BG_White.png');
 const cover = require('../assets/images/background/cover.png');
 const event = require('../assets/images/background/event.png');
@@ -34,7 +35,8 @@ const shopping = require('../assets/images/SHOPPING.png');
 const creditCardPurple = require('../assets/images/CREDIT_CARD_PURPLE.png');
 const creditCardGreen = require('../assets/images/CREDIT_CARD_GREEN.png');
 const creditCardOutline = require('../assets/images/CREDIT_CARD_OUTLINE.png');
-
+const doucumentScannerOutline = require('../assets/images/DOCUMENT_SCANNER_OUTLINE.png');
+const doucumentScanner = require('../assets/images/DOCUMENT_SCANNER.png');
 
 //bottom icon
 const televet = require('../assets/images/bottomIcon/TELEVET.png');
@@ -53,6 +55,8 @@ const petHarmonyLogo = require('../assets/images/commonImage/petHarmonyLogo.png'
 const defaultProfileImage = require('../assets/images/commonImage/defaultProfileImage.png');
 const reminderIcon = require('../assets/images/commonImage/reminderIcon.png');
 const shopingCardIcon = require('../assets/images/commonImage/SHOPPING_ICON.png');
+const starIcon = require('../assets/images/commonImage/StarIcon.png');
+const starIconEmpty = require('../assets/images/commonImage/StarEmpty.png');
 
 
 //list icons
@@ -126,6 +130,12 @@ export default {
     defaultProfileImage,
 
     reminderIcon,
+    doucumentScannerOutline,
+    doucumentScanner,
+
     bgWhiteBackGround,
-    shopingCardIcon
+    shopingCardIcon,
+    starIcon,
+    starIconEmpty,
+    bgPurple2
 };

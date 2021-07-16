@@ -124,6 +124,13 @@ const Theme = {
     fontFamily: 'SourceSansPro-Black',
     fontWeight: 'bold'
   },
+  defaultParagraphCardTitleHomeStyles: {
+    fontSize: 18,
+    lineHeight: 23,
+    fontFamily: 'Source Sans Pro',
+    fontWeight: '700'
+  },
+
   //default icon header font styles
   defaultIconHeaderTitleStyles: {
     fontFamily: 'SourceSansPro-Black',
@@ -400,7 +407,22 @@ const Theme = {
       lineHeight: 20,
     }
   },
-
+  
+  //document scanner
+  titleStyles: {
+    fontFamily: 'SourceSansPro-Regular',
+      fontSize: 16,
+      fontWeight: '300',
+      lineHeight: 20,
+      color: colors.WHITE,
+  },
+  cardTitle: {
+    fontFamily: 'Source Sans Pro',
+      fontSize: 14,
+      fontWeight: '700',
+      lineHeight: 18,
+      color: colors.WHITE
+  },
   //my cart screens
   myCard:{
     profileTextStyle:{
@@ -440,7 +462,97 @@ const Theme = {
       fontSize: 18,
       lineHeight: 21
     }
+  },
+
+  // my pet tab font styles
+  myPetTabFontStyles: {
+    fontFamily: 'Source Sans Pro',
+    fontWeight: '300',
+    fontSize: 16,
+    lineHeight: 20,
+    color: colors.WHITE
+  },
+  myPetTitleFonStyles: {
+    fontFamily: 'Source Sans Pro',
+        fontWeight: '700',
+        fontSize: 20,
+        lineHeight: 25,
+        alignSelf: 'center',
+        color: colors.WHITE,
+  },
+
+
+
+   //rate session screen
+   rateSession:{
+    rateTopText:{
+      fontFamily: 'SourceSansPro-Bold',
+      color: colors.YELLOW,
+      fontSize: 24,
+      lineHeight: 28,
+    },
+    commentText:{
+      fontFamily: 'SourceSansPro-Light',
+      color: colors.BLACK,
+      fontSize: 14,
+      lineHeight: 18,
+    }
+  },
+
+
+   //chat session screen
+   chatSession:{
+    chatContent:{
+      fontFamily: 'SourceSansPro-Regular',
+      color: colors.WHITE,
+      fontSize: 14,
+      lineHeight: 18,
+    },
+  },
+
+ // session confirmed font styles
+ confirmSession:{
+  profileText:{
+    fontFamily: 'SourceSansPro-Bold',
+    color: colors.WHITE,
+    fontSize: 24,
+    lineHeight: 28,
+  },
+  dayText:{
+    fontFamily: 'SourceSansPro-Light',
+    color: colors.PURPLE,
+    fontSize: 64,
+    lineHeight: 76,
+  },
+  timeText:{
+    fontFamily: 'SourceSansPro-Bold',
+    color: colors.PURPLE,
+    fontSize: 20,
+    lineHeight: 25,
+  },
+  testAudVid:{
+    fontFamily: 'SourceSansPro-Regular',
+    color: colors.PURPLE,
+    fontSize: 12,
+    lineHeight: 15,
+  },
+  remiderProfileText:{
+    fontFamily: 'SourceSansPro-Bold',
+    color: colors.YELLOW,
+    fontSize: 24,
+    lineHeight: 28,
+  },
+  remindAddContent:{
+    fontFamily: 'SourceSansPro-Bold',
+    color: colors.YELLOW,
+    fontSize: 16,
+    lineHeight: 20,
   }
+},
+
+
+
+
 };
 
 export default { Theme };
