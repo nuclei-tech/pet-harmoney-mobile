@@ -5,6 +5,7 @@ import {API_URL} from '../config';
 import {StatusBar} from 'react-native';
 import SplashScreen from 'react-native-splash-screen'
 import {ApolloProvider} from '@apollo/client';
+import messaging from '@react-native-firebase/messaging';
 
 import { bindActionCreators } from 'redux';
 import configureStore from './store';
@@ -41,6 +42,28 @@ const store = configureStore();
 //   },
 // );
 
+const getFcmToken = async () => {
+  const fcmToken = await messaging().getToken();
+  if (fcmToken) {
+   console.log(fcmToken);
+   console.log("Your Firebase Token is:", fcmToken);
+  } else {
+   console.log("Failed", "No token received");
+  }
+}
+
+const requestUserPermission = async () => {
+  const authStatus = await messaging().requestPermission();
+  const enabled =
+    authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
+    authStatus === messaging.AuthorizationStatus.PROVISIONAL;
+
+  if (enabled) {
+    getFcmToken()
+    console.log('Authorization status:', authStatus);
+  }
+}
+
 const IndexApp = props => {
   return props.children;
 };
@@ -57,12 +80,13 @@ let AppWrapper = connect(mapStateToProps, mapDispatchToProps)(IndexApp);
 
 const App = () => {
   useEffect(()=>{
-    // SplashScreen.hide();
+    SplashScreen.hide();
+    requestUserPermission();
   },[])
   return (
     <ApolloProvider client={client} >
       <Provider  store={store}>
-        <StatusBar barStyle={'dark-content'} />
+        <StatusBar barStyle={'light-content'} />
         <AppWrapper>
           <MainApp />
         </AppWrapper>
