@@ -11,6 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		52FB36B526A58E5300376F7F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52FB36B426A58E5300376F7F /* GoogleService-Info.plist */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8E88968356AA7F63B347FEFB /* libPods-pet_harmony-pet_harmonyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC7F8309C840EDBC0C699F0 /* libPods-pet_harmony-pet_harmonyTests.a */; };
 		90B4FDBB7C2DF369C115CB09 /* libPods-pet_harmony.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9D4DBD6B617A04D0D7A92F /* libPods-pet_harmony.a */; };
@@ -59,6 +60,7 @@
 		35FB1BE89C0E4465BF9372F8 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		3C9D4DBD6B617A04D0D7A92F /* libPods-pet_harmony.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pet_harmony.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2E1EF4F45D43459D89AAAB /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		52FB36B426A58E5300376F7F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7299D4C58C1644539292F36B /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		77228CAF9DD532541ADE2BD5 /* Pods-pet_harmony-pet_harmonyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pet_harmony-pet_harmonyTests.release.xcconfig"; path = "Target Support Files/Pods-pet_harmony-pet_harmonyTests/Pods-pet_harmony-pet_harmonyTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = pet_harmony/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		13B07FAE1A68108700A75B9A /* pet_harmony */ = {
 			isa = PBXGroup;
 			children = (
+				52FB36B426A58E5300376F7F /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -330,6 +333,7 @@
 				C128B756268AF6E0007ED9E5 /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
 				C128B75C268AF6E0007ED9E5 /* SourceSansPro-BoldItalic.ttf in Resources */,
 				C128B758268AF6E0007ED9E5 /* SourceSansPro-Regular.ttf in Resources */,
+				52FB36B526A58E5300376F7F /* GoogleService-Info.plist in Resources */,
 				C128B759268AF6E0007ED9E5 /* SourceSansPro-LightItalic.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				C128B757268AF6E0007ED9E5 /* Aqum.ttf in Resources */,
