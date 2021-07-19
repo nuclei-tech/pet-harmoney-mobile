@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "422184777497",
+    "project_id": "petharmony-f6964",
+    "storage_bucket": "petharmony-f6964.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422184777497:android:65cd7cee8094505b013788",
+        "android_client_info": {
+          "package_name": "com.pet_harmony"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422184777497-afk45df4k876a5772li5oa6b3moop3fm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBqkfbVAPdEcJTHS5ITweodDJDSO1OrlE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422184777497-afk45df4k876a5772li5oa6b3moop3fm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
