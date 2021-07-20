@@ -34,7 +34,9 @@ const Theme = {
     darkRed: colors.RED,
     lightBlue: colors.BLUE,
     darkPurple: colors.PURPLE,
-    black: colors.BLACK
+    black: colors.BLACK,
+    green: colors.GREEN,
+    white: colors.WHITE
   },
 
   //create an account

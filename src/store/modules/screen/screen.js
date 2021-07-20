@@ -17,6 +17,9 @@ export const getColorCode = (route) => {
   return async dispatch => {
     try {
       switch (route) {
+        case 'HomeScreen':
+          dispatch({ type: actionType.BOTTON_TAB_COLOR, payload: colors.DARK_BLUE })
+          break;
         case 'My Cart':
           dispatch({ type: actionType.BOTTON_TAB_COLOR, payload: colors.WHITE_SMOKE })
           break;

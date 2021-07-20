@@ -2,7 +2,7 @@ import React,{useEffect} from 'react';
 import axios from 'axios';
 
 import {API_URL} from '../config';
-import {StatusBar} from 'react-native';
+import {StatusBar, Platform} from 'react-native';
 import SplashScreen from 'react-native-splash-screen'
 import {ApolloProvider} from '@apollo/client';
 
@@ -57,12 +57,12 @@ let AppWrapper = connect(mapStateToProps, mapDispatchToProps)(IndexApp);
 
 const App = () => {
   useEffect(()=>{
-    // SplashScreen.hide();
+    SplashScreen.hide();
   },[])
   return (
     <ApolloProvider client={client} >
       <Provider  store={store}>
-        <StatusBar barStyle={'dark-content'} />
+        <StatusBar barStyle={Platform.OS === 'android' ? 'light-content' : 'dark-content'} />
         <AppWrapper>
           <MainApp />
         </AppWrapper>
