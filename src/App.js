@@ -2,7 +2,7 @@ import React,{useEffect} from 'react';
 import axios from 'axios';
 
 import {API_URL} from '../config';
-import {StatusBar} from 'react-native';
+import {StatusBar, Alert} from 'react-native';
 import SplashScreen from 'react-native-splash-screen'
 import {ApolloProvider} from '@apollo/client';
 import messaging from '@react-native-firebase/messaging';
@@ -82,6 +82,10 @@ const App = () => {
   useEffect(()=>{
     SplashScreen.hide();
     requestUserPermission();
+    // const unsubscribe = messaging().onMessage(async remoteMessage => {
+    //   Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
+    // });
+    // return unsubscribe;
   },[])
   return (
     <ApolloProvider client={client} >
