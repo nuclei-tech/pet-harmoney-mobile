@@ -1,8 +1,8 @@
 import React from 'react'
 import {StyleSheet, View, Text, ActivityIndicator, TouchableOpacity} from 'react-native'
-import { Image } from 'react-native-elements';
+import { Image, Icon } from 'react-native-elements';
 import { useSelector } from 'react-redux';
-import { ProfilePicture } from '../../components'
+import { ProfilePicture, ReminderButton } from '../../components'
 
 const MyPetsTab = ({
     tabDetails,
@@ -12,12 +12,25 @@ const MyPetsTab = ({
 }) => {
 
     const {theme} = useSelector(state => state.theme)
-    const {titleTextStyle, mainContainerHorizontal, titleStyles, mainContainer, proPicStyles} = styles(theme)
+    const {titleTextStyle, mainContainerHorizontal, iconOuterContainer, titleStyles, mainContainer, proPicStyles, addIconContainer, titleAfterIcon} = styles(theme)
     const containerStyles = {marginTop: containerMarginTop, marginBottom: containerMarginBottom}
 
     return (
         <View style={mainContainer}>
-            <Text style={titleStyles}>My Pets</Text>
+            <View style={addIconContainer}>
+                <Text style={[titleStyles, titleAfterIcon]}>My Pets</Text>
+                <TouchableOpacity>
+                <View style={iconOuterContainer}>
+                        <Icon
+                            name="plus"
+                            size={theme.Theme.size.BASE*1.2}
+                            color={theme.Theme.colors.BLACK}
+                            type='ant-design'
+                        />
+                </View>
+                </TouchableOpacity>
+            </View>
+            
         <View style={[mainContainerHorizontal, containerStyles]}>
             {
                 tabDetails.map((item, index) => {
@@ -69,7 +82,27 @@ const styles = (props) => StyleSheet.create({
         height: 79, 
         width: 79, 
         borderWidth: 2
-    }
+    },
+
+    //add pet icon
+    addIconContainer: {
+        flexDirection: 'row',
+     justifyContent: 'space-between', 
+     alignItems: 'center'
+    },
+    titleAfterIcon: {
+        textAlign: 'center', 
+        flex: 1, 
+        marginLeft: 70
+    },
+    iconOuterContainer: {
+        width: 30, 
+        backgroundColor: 'white', 
+        borderRadius: 50, 
+        alignSelf: 'center', 
+        marginRight: 40, 
+        marginBottom: 20
+    },
 })
 
 export default MyPetsTab

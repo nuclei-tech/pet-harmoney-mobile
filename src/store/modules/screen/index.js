@@ -1,8 +1,9 @@
 import { actionType } from './actions.js';
+import {colors} from '../../../themes/colors'
 
 const initialState = {
   currentScreen: null,
-  tabColor: 'white'
+  tabColor: colors.DARK_BLUE
 };
 
 const reducer = (state = initialState, action) => {

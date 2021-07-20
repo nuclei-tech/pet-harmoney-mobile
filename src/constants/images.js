@@ -43,6 +43,13 @@ const televet = require('../assets/images/bottomIcon/TELEVET.png');
 const televetPurple = require('../assets/images/bottomIcon/TELEVET_PURPLR.png');
 const homeIcon = require('../assets/images/bottomIcon/HOME_ICON.png');
 const homeIconRed = require('../assets/images/bottomIcon/HOME_ICON_RED.png');
+const homeIconGreen = require('../assets/images/bottomIcon/HOME_GREEN.png');
+const homeIconPets = require('../assets/images/bottomIcon/HOME_PETS.png');
+const homeIconCommunity = require('../assets/images/bottomIcon/HOME_COMMUNITY.png');
+const homeIconTelemed = require('../assets/images/bottomIcon/HOME_TELEVET.png');
+const homeIconTimeline = require('../assets/images/bottomIcon/HOME_TIMELINE.png');
+const homeIconShopping = require('../assets/images/bottomIcon/HOME_SHOPPING.png');
+
 const shoppingIcon = require('../assets/images/bottomIcon/SHOPPING.png');
 const shoppingIconBlue = require('../assets/images/bottomIcon/SHOPPING_BLUE.png');
 const timeLine = require('../assets/images/bottomIcon/TIMELINE.png');
@@ -115,6 +122,12 @@ export default {
     medication,
     shopping,
 
+    homeIconGreen,
+    homeIconCommunity,
+    homeIconPets,
+    homeIconTelemed,
+    homeIconTimeline,
+    homeIconShopping,
 
     cardIcon1,
     cardIcon2,

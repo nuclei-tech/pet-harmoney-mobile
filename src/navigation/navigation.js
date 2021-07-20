@@ -470,7 +470,7 @@ const TabNav = props => {
               elevation: 0,
               shadowOpacity: 0,
               paddingHorizontal: 45,
-              height: Platform.OS === 'ios' ? Dimensions.get('window'). height * 0.1 : Dimensions.get('window'). height * 0.095
+              height: Platform.OS === 'ios' ? Dimensions.get('window'). height * 0.1 : Dimensions.get('window'). height * 0.095,
             },
             showLabel: false,
           }}
@@ -478,6 +478,14 @@ const TabNav = props => {
             tabBarIcon: ({ focused }) => {
               let iconName = route.name;
               let fontStyle;
+
+              let homeHome = images.homeIconGreen
+              let homePets = images.homeIconPets
+              let homeCommunity = images.homeIconCommunity
+              let homeTelemed = images.homeIconTelemed
+              let homeTimeline = images.homeIconTimeline
+              let homeShopping = images.homeIconShopping
+
               let homeImageIcon = images.homeIcon
               let televetIcon = images.televet
               let communityIcon = images.community
@@ -486,7 +494,7 @@ const TabNav = props => {
               if (route.name === 'Home') {
                 if (currentScreen === "HomeScreen" || currentScreen === null) {
                   homeImageIcon = images.homeIconRed
-                  fontStyle = theme.Theme.bottomIconColor.darkRed
+                  fontStyle = theme.Theme.bottomIconColor.green
                 }
               } else if (route.name === 'Community') {
                 if (currentScreen === "community") {
@@ -518,18 +526,19 @@ const TabNav = props => {
                 <View style={styles(theme).iconContanier}>
                   {didKeyboardShow ? (
                     iconName === 'Home' ? (
-                      <Image style={styles(props).iconStyle} source={homeImageIcon} />
+                      <Image style={styles(props).iconStyle} source={currentScreen === "HomeScreen" || currentScreen === null ? homeHome : homeImageIcon} />
                     ) : iconName === 'Shopping' ? (
-                      <Image style={styles(props).iconStyle} source={shoppingIcon} />
+                      <Image style={styles(props).iconStyle} source={currentScreen === "HomeScreen" || currentScreen === null ? homeShopping : shoppingIcon} />
                     ) : iconName === 'TeleMed' ? (
-                      <Image style={styles(props).iconStyle} source={televetIcon} />
+                      <Image style={styles(props).iconStyle} source={currentScreen === "HomeScreen" || currentScreen === null ? homeTelemed : televetIcon} />
                     ) : iconName === 'Community' ? (
-                      <Image style={styles(props).iconStyle} source={communityIcon} />
+                      <Image style={styles(props).iconStyle} source={currentScreen === "HomeScreen" || currentScreen === null ? homeCommunity : communityIcon} />
                     ) : (
-                      <Image style={styles(props).iconStyle} source={petIcon} />
+                      <Image style={styles(props).iconStyle} source={currentScreen === "HomeScreen" || currentScreen === null ? homePets : petIcon} />
                     )
                   ) : null}
-                  <Text style={{ ...styles(theme).bottemText, color: fontStyle ? fontStyle : theme.Theme.bottomIconColor.black }}>
+                  <Text style={{ ...styles(theme).bottemText, color: fontStyle ? fontStyle : currentScreen === "HomeScreen" || currentScreen === null ? theme.Theme.bottomIconColor.white : theme.Theme.bottomIconColor.black }}>
+                
                     {route.name}
                   </Text>
                 </View>
@@ -589,7 +598,7 @@ export const styles = props =>
     },
     iconStyle: {
       height: 43,
-      width: 43
+      width: 43,
     }
   });
 

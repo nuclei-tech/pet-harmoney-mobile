@@ -18,7 +18,7 @@ const CustomButton = ({ title, onPress, type, color, textColor }) => {
   }
   
   return (
-    <View style={buttonContainer}>
+    <View style={[buttonContainer]}>
       <Button
         type="solid"
         buttonStyle={buttonStyles}
