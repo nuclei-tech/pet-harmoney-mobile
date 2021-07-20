@@ -1,8 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, ActivityIndicator, View } from 'react-native';
+import { StyleSheet, Text, ActivityIndicator, View, TouchableOpacity } from 'react-native';
 import { Image } from 'react-native-elements';
+// import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useSelector } from 'react-redux';
 import { images } from '../../constants'
+import {navigate} from '../../navigation/navigation'
 
 const ParagrapghCard = (props) => {
     const { theme } = useSelector(state => state.theme)
@@ -11,11 +13,14 @@ const ParagrapghCard = (props) => {
         customCardTitleStyles,
         title,
         imageExists,
+        navigationScreen,
         children } = props
     const { cardContainer, cardTitle, image, imageContainer } = styles(theme, props)
 
     return (
         <View style={{...cardContainer,...customCardContainer}}>
+           {navigationScreen ? 
+           <TouchableOpacity>
             {title && <Text style={[cardTitle, customCardTitleStyles]}>{title}</Text>}
             {children}
             {imageExists && <View style={imageContainer}>
@@ -25,6 +30,20 @@ const ParagrapghCard = (props) => {
                     PlaceholderContent={<ActivityIndicator />}
                 />
             </View>}
+            </TouchableOpacity>
+            :
+            <View>
+            {title && <Text style={[cardTitle, customCardTitleStyles]}>{title}</Text>}
+            {children}
+            {imageExists && <View style={imageContainer}>
+                <Image
+                    source={images.termsDownArrow}
+                    style={image}
+                    PlaceholderContent={<ActivityIndicator />}
+                />
+            </View>}
+            </View>
+            }
         </View>
     )
 }
@@ -46,7 +65,8 @@ const styles = (theme,props) => StyleSheet.create({
         marginBottom: 12,
         ...theme.Theme.defaultParagraphCardTitleStyles,
         textAlign: props.titleAlign, 
-        color: props.titleColor
+        color: props.titleColor,
+        // fle
     },
 
     image: {

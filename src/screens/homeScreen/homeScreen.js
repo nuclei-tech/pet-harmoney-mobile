@@ -45,6 +45,7 @@ const HomeScreen = props => {
           <CommunityList communityDetails={communityDetails} />
         </ParagraphCard>
         <ParagraphCard
+        navigationScreen
           cardBorderColor={theme.Theme.colors.YELLOW}
           cardBackgroundColor={'transparent'}
           titleColor={theme.Theme.colors.WHITE}
